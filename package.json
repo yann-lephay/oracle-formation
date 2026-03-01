@@ -1,0 +1,13 @@
+{
+  "name": "oracle-formation",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/quelle-formation",
+    "build": "npm run build --workspace=apps/quelle-formation",
+    "start": "npm run start --workspace=apps/quelle-formation",
+    "lint": "npm run lint --workspace=apps/quelle-formation"
+  },
+  "workspaces": [
+    "apps/*"
+  ]
+}
