@@ -10,7 +10,6 @@ export interface BlogPost {
   category: string;
   metaTitle: string;
   metaDescription: string;
-  keywords: string[];
   sections: {
     title: string;
     content: string;
@@ -32,12 +31,6 @@ export const blogPosts: BlogPost[] = [
     metaTitle: "Optimiser son Budget Déplacement Pro 2026 — 7 Leviers",
     metaDescription:
       "7 leviers concrets pour réduire votre budget déplacement professionnel de 20-35 % en 2026 : TMC, politique voyage, carte corporate, réservation anticipée.",
-    keywords: [
-      "budget déplacement professionnel",
-      "réduire coûts voyage affaires",
-      "optimisation frais déplacement",
-      "travel management",
-    ],
     sections: [
       {
         title: "Le déplacement pro, un poste sous-optimisé",
@@ -83,6 +76,8 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
+const blogPostsBySlug = new Map(blogPosts.map((p) => [p.slug, p]));
+
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
-  return blogPosts.find((p) => p.slug === slug);
+  return blogPostsBySlug.get(slug);
 }

@@ -6,12 +6,3 @@ export const seoConfig = {
     "Comparez les meilleures solutions de déplacement professionnel : TMC, cartes corporate, notes de frais. Indépendant et gratuit.",
   twitter: "@deplacementpro",
 };
-
-export function buildTitle(page: string): string {
-  return `${page} | ${seoConfig.siteName}`;
-}
-
-export function buildCanonical(path: string): string {
-  const clean = path.startsWith("/") ? path : `/${path}`;
-  return `${seoConfig.siteUrl}${clean}`;
-}

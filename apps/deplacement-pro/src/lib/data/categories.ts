@@ -11,7 +11,6 @@ export interface Categorie {
   useCases: string[];
   targetAudience: string;
   priceRange: string;
-  solutionCount: number;
 }
 
 export const categories: Categorie[] = [
@@ -41,7 +40,6 @@ export const categories: Categorie[] = [
     ],
     targetAudience: "PME et ETI avec plus de 50 déplacements par an",
     priceRange: "5 € – 25 € / réservation",
-    solutionCount: 3,
   },
   {
     slug: "self-booking-tool",
@@ -69,7 +67,6 @@ export const categories: Categorie[] = [
     ],
     targetAudience: "Entreprises de 20 à 500 salariés",
     priceRange: "0 € – 15 € / utilisateur / mois",
-    solutionCount: 2,
   },
   {
     slug: "carte-corporate",
@@ -97,7 +94,6 @@ export const categories: Categorie[] = [
     ],
     targetAudience: "TPE, PME et ETI",
     priceRange: "0 € – 9 € / carte / mois",
-    solutionCount: 2,
   },
   {
     slug: "notes-de-frais",
@@ -125,10 +121,11 @@ export const categories: Categorie[] = [
     ],
     targetAudience: "Toutes tailles d'entreprise",
     priceRange: "4 € – 12 € / utilisateur / mois",
-    solutionCount: 2,
   },
 ];
 
+const categoriesBySlug = new Map(categories.map((c) => [c.slug, c]));
+
 export function getCategoryBySlug(slug: string): Categorie | undefined {
-  return categories.find((c) => c.slug === slug);
+  return categoriesBySlug.get(slug);
 }

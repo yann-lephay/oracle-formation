@@ -254,6 +254,8 @@ export const comparisons: Comparison[] = [
   },
 ];
 
+const comparisonsBySlug = new Map(comparisons.map((c) => [c.slug, c]));
+
 export function getComparisonBySlug(slug: string): Comparison | undefined {
-  return comparisons.find((c) => c.slug === slug);
+  return comparisonsBySlug.get(slug);
 }

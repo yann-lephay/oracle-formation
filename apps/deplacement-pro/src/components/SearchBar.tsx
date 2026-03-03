@@ -1,13 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect, useMemo } from "react";
+import { useState, useRef, useEffect, useMemo, useId } from "react";
 import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
-import { solutions } from "@/lib/data/solutions";
-import { categories } from "@/lib/data/categories";
-import { guides } from "@/lib/data/guides";
 
-interface SearchResult {
+export interface SearchItem {
   label: string;
   href: string;
   type: string;
@@ -20,41 +17,21 @@ function normalize(str: string): string {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
-export function SearchBar() {
+export function SearchBar({ items }: { items: SearchItem[] }) {
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const ref = useRef<HTMLDivElement>(null);
   const router = useRouter();
-
-  const allItems = useMemo<SearchResult[]>(
-    () => [
-      ...solutions.map((s) => ({
-        label: s.name,
-        href: `/solution/${s.slug}`,
-        type: "Solutions",
-      })),
-      ...categories.map((c) => ({
-        label: c.name,
-        href: `/${c.slug}`,
-        type: "Catégories",
-      })),
-      ...guides.map((g) => ({
-        label: g.shortTitle,
-        href: `/guides/${g.slug}`,
-        type: "Guides",
-      })),
-    ],
-    []
-  );
+  const listboxId = useId();
 
   const results = useMemo(() => {
     if (!query.trim()) return [];
     const q = normalize(query);
-    return allItems
+    return items
       .filter((item) => normalize(item.label).includes(q))
       .slice(0, 8);
-  }, [query, allItems]);
+  }, [query, items]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -83,6 +60,8 @@ export function SearchBar() {
     }
   };
 
+  const isExpanded = open && results.length > 0;
+
   return (
     <div ref={ref} className="relative max-w-md mx-auto w-full">
       <div className="relative">
@@ -100,18 +79,30 @@ export function SearchBar() {
           placeholder="Rechercher une solution, catégorie, guide…"
           className="w-full pl-10 pr-4 py-2.5 text-sm border border-border rounded bg-surface text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
           role="combobox"
-          aria-expanded={open && results.length > 0}
+          aria-expanded={isExpanded}
           aria-haspopup="listbox"
+          aria-controls={listboxId}
+          aria-activedescendant={
+            isExpanded && activeIndex >= 0
+              ? `${listboxId}-option-${activeIndex}`
+              : undefined
+          }
         />
       </div>
 
-      {open && results.length > 0 && (
+      {isExpanded && (
         <ul
+          id={listboxId}
           className="absolute top-full left-0 right-0 mt-1 bg-surface border border-border rounded shadow-sm max-h-72 overflow-y-auto z-50"
           role="listbox"
         >
           {results.map((result, index) => (
-            <li key={result.href} role="option" aria-selected={index === activeIndex}>
+            <li
+              key={result.href}
+              id={`${listboxId}-option-${index}`}
+              role="option"
+              aria-selected={index === activeIndex}
+            >
               <button
                 className={`w-full text-left px-4 py-2.5 text-sm flex items-center justify-between transition-colors ${
                   index === activeIndex ? "bg-muted" : "hover:bg-muted"

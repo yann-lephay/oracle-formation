@@ -189,6 +189,8 @@ export const villes: Ville[] = [
   },
 ];
 
+const villesBySlug = new Map(villes.map((v) => [v.slug, v]));
+
 export function getVilleBySlug(slug: string): Ville | undefined {
-  return villes.find((v) => v.slug === slug);
+  return villesBySlug.get(slug);
 }

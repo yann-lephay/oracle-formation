@@ -9,7 +9,6 @@ export interface Guide {
   readingTime: string;
   metaTitle: string;
   metaDescription: string;
-  keywords: string[];
   sections: {
     title: string;
     content: string;
@@ -31,12 +30,6 @@ export const guides: Guide[] = [
     metaTitle: "Barème Kilométrique 2026 — Tableau Officiel & Calcul",
     metaDescription:
       "Barème kilométrique 2026 officiel : tableau complet, calcul des indemnités, majoration véhicules électriques (+20 %). Guide pratique avec exemples.",
-    keywords: [
-      "barème kilométrique 2026",
-      "indemnités kilométriques",
-      "frais kilométriques",
-      "barème fiscal voiture",
-    ],
     sections: [
       {
         title: "Qu'est-ce que le barème kilométrique ?",
@@ -95,12 +88,6 @@ export const guides: Guide[] = [
     metaTitle: "Indemnités Repas 2026 — Barèmes URSSAF & Calcul",
     metaDescription:
       "Indemnités repas 2026 : barèmes URSSAF mis à jour, panier repas, restaurant, grand déplacement. Guide pratique avec exemples et automatisation.",
-    keywords: [
-      "indemnités repas 2026",
-      "panier repas 2026",
-      "barème URSSAF repas",
-      "frais de repas déplacement",
-    ],
     sections: [
       {
         title: "Les différents types d'indemnités repas",
@@ -154,12 +141,6 @@ export const guides: Guide[] = [
     metaTitle: "Politique Voyage Entreprise 2026 — Modèle & Template Gratuit",
     metaDescription:
       "Modèle de politique voyage entreprise 2026 : classes de transport, hébergement, validation, outils. Template gratuit prêt à l'emploi.",
-    keywords: [
-      "politique voyage entreprise",
-      "travel policy",
-      "modèle politique voyage",
-      "règles déplacement professionnel",
-    ],
     sections: [
       {
         title: "Pourquoi une politique voyage ?",
@@ -212,6 +193,8 @@ export const guides: Guide[] = [
   },
 ];
 
+const guidesBySlug = new Map(guides.map((g) => [g.slug, g]));
+
 export function getGuideBySlug(slug: string): Guide | undefined {
-  return guides.find((g) => g.slug === slug);
+  return guidesBySlug.get(slug);
 }

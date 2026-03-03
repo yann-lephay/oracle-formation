@@ -56,7 +56,7 @@ export default async function CategoriePage({
       <section className="bg-graph-paper border-b border-border">
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-20">
           <div className="max-w-3xl">
-            <div className="badge mb-4">{cat.solutionCount} solutions comparées</div>
+            <div className="badge mb-4">{sols.length} solutions comparées</div>
             <h1 className="text-3xl md:text-4xl font-extrabold font-heading text-foreground mb-4">
               {cat.name}
             </h1>
@@ -148,33 +148,33 @@ export default async function CategoriePage({
       </section>
 
       {/* FAQ */}
-      {cat.keywords.length > 0 && (
-        <section className="section-padding">
-          <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-2xl font-bold font-heading text-foreground mb-6">
-              Questions fréquentes
-            </h2>
-            {sols.length > 0 && sols[0].faq.length > 0 && (
-              <>
-                <script
-                  type="application/ld+json"
-                  dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(generateFAQSchema(sols[0].faq)),
-                  }}
-                />
-                <div className="space-y-4 max-w-3xl">
-                  {sols[0].faq.map((item) => (
-                    <div key={item.question} className="card p-5">
-                      <h3 className="font-semibold text-foreground mb-2">{item.question}</h3>
-                      <p className="text-sm text-muted-foreground">{item.answer}</p>
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
-        </section>
-      )}
+      {(() => {
+        const allFaq = sols.flatMap((s) => s.faq);
+        if (allFaq.length === 0) return null;
+        return (
+          <section className="section-padding">
+            <div className="max-w-6xl mx-auto px-4">
+              <h2 className="text-2xl font-bold font-heading text-foreground mb-6">
+                Questions fréquentes
+              </h2>
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify(generateFAQSchema(allFaq)),
+                }}
+              />
+              <div className="space-y-4 max-w-3xl">
+                {allFaq.map((item) => (
+                  <div key={item.question} className="card p-5">
+                    <h3 className="font-semibold text-foreground mb-2">{item.question}</h3>
+                    <p className="text-sm text-muted-foreground">{item.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
     </>
   );
 }

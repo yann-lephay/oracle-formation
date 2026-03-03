@@ -6,11 +6,11 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Solutions", href: "/solution/navan" },
-  { label: "Comparer", href: "/comparer/navan-vs-travelperk" },
+  { label: "TMC", href: "/tmc" },
+  { label: "Cartes Corporate", href: "/carte-corporate" },
+  { label: "Notes de Frais", href: "/notes-de-frais" },
   { label: "Guides", href: "/guides/bareme-kilometrique-2026" },
   { label: "Blog", href: "/blog" },
-  { label: "Méthodologie", href: "/methodologie" },
 ];
 
 export function Header() {

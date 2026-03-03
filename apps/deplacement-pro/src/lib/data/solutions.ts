@@ -440,10 +440,16 @@ export const solutions: Solution[] = [
   },
 ];
 
+const solutionsBySlug = new Map(solutions.map((s) => [s.slug, s]));
+
 export function getSolutionBySlug(slug: string): Solution | undefined {
-  return solutions.find((s) => s.slug === slug);
+  return solutionsBySlug.get(slug);
 }
 
 export function getSolutionsByCategory(categorySlug: string): Solution[] {
   return solutions.filter((s) => s.categories.includes(categorySlug));
+}
+
+export function getSolutionCountByCategory(categorySlug: string): number {
+  return solutions.filter((s) => s.categories.includes(categorySlug)).length;
 }

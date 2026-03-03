@@ -13,12 +13,18 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { categories } from "@/lib/data/categories";
-import { solutions } from "@/lib/data/solutions";
+import { solutions, getSolutionCountByCategory } from "@/lib/data/solutions";
 import { comparisons } from "@/lib/data/comparisons";
 import { guides } from "@/lib/data/guides";
 import { generateWebsiteSchema, generateOrganizationSchema } from "@/lib/structured-data";
 import { DevisForm } from "@/components/DevisForm";
-import { SearchBar } from "@/components/SearchBar";
+import { SearchBar, type SearchItem } from "@/components/SearchBar";
+
+const searchItems: SearchItem[] = [
+  ...solutions.map((s) => ({ label: s.name, href: `/solution/${s.slug}`, type: "Solutions" })),
+  ...categories.map((c) => ({ label: c.name, href: `/${c.slug}`, type: "Catégories" })),
+  ...guides.map((g) => ({ label: g.shortTitle, href: `/guides/${g.slug}`, type: "Guides" })),
+];
 
 const iconMap: Record<string, React.ElementType> = {
   Globe,
@@ -63,7 +69,7 @@ export default function HomePage() {
               Trouvez l&apos;outil adapté à votre entreprise. 100 % indépendant, 100 % gratuit.
             </p>
 
-            <SearchBar />
+            <SearchBar items={searchItems} />
 
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
               <span className="flex items-center gap-1.5">
@@ -138,7 +144,7 @@ export default function HomePage() {
                       {cat.priceRange}
                     </span>
                     <span className="badge text-[10px]">
-                      {cat.solutionCount} solution{cat.solutionCount > 1 ? "s" : ""}
+                      {getSolutionCountByCategory(cat.slug)} solutions
                     </span>
                   </div>
                 </Link>

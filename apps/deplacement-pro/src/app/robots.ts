@@ -7,10 +7,6 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
       },
-      {
-        userAgent: ["GPTBot", "Claude-Web", "PerplexityBot", "Google-Extended"],
-        disallow: "/",
-      },
     ],
     sitemap: "https://deplacementpro.fr/sitemap.xml",
   };
