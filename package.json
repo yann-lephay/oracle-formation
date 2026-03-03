@@ -1,11 +1,15 @@
 {
-  "name": "oracle-formation",
+  "name": "oracle-b2b",
   "private": true,
   "scripts": {
     "dev": "npm run dev --workspace=apps/quelle-formation",
     "build": "npm run build --workspace=apps/quelle-formation",
     "start": "npm run start --workspace=apps/quelle-formation",
-    "lint": "npm run lint --workspace=apps/quelle-formation"
+    "lint": "npm run lint --workspace=apps/quelle-formation",
+    "dev:dp": "npm run dev --workspace=apps/deplacement-pro",
+    "build:dp": "npm run build --workspace=apps/deplacement-pro",
+    "start:dp": "npm run start --workspace=apps/deplacement-pro",
+    "lint:dp": "npm run lint --workspace=apps/deplacement-pro"
   },
   "workspaces": [
     "apps/*"

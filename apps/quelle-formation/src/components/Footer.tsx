@@ -7,7 +7,7 @@ export function Footer() {
     const topDomaines = domaines.slice(0, 8);
 
     return (
-        <footer className="bg-surface-900 text-surface-300" id="footer">
+        <footer className="bg-foreground text-muted" id="footer">
             <div className="container-narrow mx-auto px-4 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {/* Brand */}
@@ -18,18 +18,18 @@ export function Footer() {
                                 alt="QuelleFormation"
                                 width={36}
                                 height={36}
-                                className="rounded-xl"
+                                className="rounded-lg"
                             />
-                            <span className="text-lg font-bold font-heading text-white">
-                                Quelle<span className="text-primary-400">Formation</span>
+                            <span className="text-lg font-bold font-heading text-primary-foreground">
+                                Quelle<span className="text-accent">Formation</span>
                             </span>
                         </Link>
-                        <p className="text-sm text-surface-400 leading-relaxed">
+                        <p className="text-sm text-primary-foreground/50 leading-relaxed">
                             Comparez les meilleures formations professionnelles en France.
                             Prix, avis, CPF, organismes certifiés. Trouvez la formation qui
                             vous correspond.
                         </p>
-                        <div className="flex items-center gap-2 text-xs text-surface-500">
+                        <div className="flex items-center gap-2 text-xs text-primary-foreground/40">
                             <MapPin className="w-3.5 h-3.5" />
                             <span>Paris, France</span>
                         </div>
@@ -37,7 +37,7 @@ export function Footer() {
 
                     {/* Formations populaires */}
                     <div>
-                        <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+                        <h3 className="text-sm font-semibold text-primary-foreground uppercase tracking-wider mb-4">
                             Formations populaires
                         </h3>
                         <ul className="space-y-2.5">
@@ -45,7 +45,7 @@ export function Footer() {
                                 <li key={d.slug}>
                                     <Link
                                         href={`/formation/${d.slug}`}
-                                        className="text-sm text-surface-400 hover:text-primary-400 transition-colors"
+                                        className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
                                     >
                                         Formation {d.shortName}
                                     </Link>
@@ -56,7 +56,7 @@ export function Footer() {
 
                     {/* Organismes */}
                     <div>
-                        <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+                        <h3 className="text-sm font-semibold text-primary-foreground uppercase tracking-wider mb-4">
                             Organismes
                         </h3>
                         <ul className="space-y-2.5">
@@ -79,7 +79,7 @@ export function Footer() {
                                 <li key={org.slug}>
                                     <Link
                                         href={`/organisme/${org.slug}`}
-                                        className="text-sm text-surface-400 hover:text-primary-400 transition-colors"
+                                        className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
                                     >
                                         Avis {org.name}
                                     </Link>
@@ -90,14 +90,14 @@ export function Footer() {
 
                     {/* Infos */}
                     <div>
-                        <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+                        <h3 className="text-sm font-semibold text-primary-foreground uppercase tracking-wider mb-4">
                             Informations
                         </h3>
                         <ul className="space-y-2.5">
                             <li>
                                 <Link
                                     href="/blog"
-                                    className="text-sm text-surface-400 hover:text-primary-400 transition-colors"
+                                    className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
                                 >
                                     Blog
                                 </Link>
@@ -105,7 +105,7 @@ export function Footer() {
                             <li>
                                 <Link
                                     href="/methodologie"
-                                    className="text-sm text-surface-400 hover:text-primary-400 transition-colors"
+                                    className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
                                 >
                                     Notre méthodologie
                                 </Link>
@@ -113,7 +113,7 @@ export function Footer() {
                             <li>
                                 <Link
                                     href="/mentions-legales"
-                                    className="text-sm text-surface-400 hover:text-primary-400 transition-colors"
+                                    className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
                                 >
                                     Mentions légales
                                 </Link>
@@ -121,7 +121,7 @@ export function Footer() {
                             <li>
                                 <Link
                                     href="/confidentialite"
-                                    className="text-sm text-surface-400 hover:text-primary-400 transition-colors"
+                                    className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
                                 >
                                     Politique de confidentialité
                                 </Link>
@@ -129,7 +129,7 @@ export function Footer() {
                             <li>
                                 <a
                                     href="mailto:contact@quelleformationpro.fr"
-                                    className="text-sm text-surface-400 hover:text-primary-400 transition-colors flex items-center gap-1.5"
+                                    className="text-sm text-primary-foreground/50 hover:text-accent transition-colors flex items-center gap-1.5"
                                 >
                                     <Mail className="w-3.5 h-3.5" />
                                     Contact
@@ -140,11 +140,11 @@ export function Footer() {
                 </div>
 
                 {/* Bottom */}
-                <div className="mt-12 pt-8 border-t border-surface-800 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-xs text-surface-500">
+                <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p className="text-xs text-primary-foreground/40">
                         © {new Date().getFullYear()} QuelleFormation.fr — Tous droits réservés.
                     </p>
-                    <p className="text-xs text-surface-500 text-center md:text-right max-w-md">
+                    <p className="text-xs text-primary-foreground/40 text-center md:text-right max-w-md">
                         QuelleFormation.fr est un comparateur indépendant. Certains liens sont des liens
                         d&apos;affiliation qui nous permettent de financer le site sans surcoût pour vous.
                     </p>

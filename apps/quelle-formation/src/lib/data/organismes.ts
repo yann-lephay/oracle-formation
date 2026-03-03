@@ -327,7 +327,7 @@ export const organismes: Organisme[] = [
                     "Oui, Studi est certifié Qualiopi et délivre des diplômes inscrits au RNCP. C'est le plus grand organisme de formation en ligne en France avec 70 000+ étudiants. La qualité varie selon les parcours.",
             },
         ],
-        logoPath: "/logos/studi.png",
+        logoPath: "/logos/studi.svg",
     },
     {
         slug: "ironhack",
@@ -466,7 +466,7 @@ export const organismes: Organisme[] = [
                     "Oui, l'AFPA dispose de résidences sur la plupart de ses centres, avec hébergement et restauration inclus pour les stagiaires en formation longue. C'est un avantage unique parmi les organismes de formation.",
             },
         ],
-        logoPath: "/logos/afpa.png",
+        logoPath: "/logos/afpa.jpg",
     },
     {
         slug: "cnam",
@@ -522,7 +522,7 @@ export const organismes: Organisme[] = [
                     "Les tarifs du CNAM sont très compétitifs car c'est un établissement public. Comptez 150 € à 300 € par unité d'enseignement (UE). Un diplôme complet coûte entre 2 000 € et 8 000 €, finançable par le CPF.",
             },
         ],
-        logoPath: "/logos/cnam.png",
+        logoPath: "/logos/cnam.svg",
     },
     {
         slug: "m2i-formation",
@@ -627,7 +627,7 @@ export const organismes: Organisme[] = [
                     "Oui, Demos est certifié Qualiopi, ce qui garantit la qualité des processus de formation et permet le financement par le CPF, les OPCO et France Travail.",
             },
         ],
-        logoPath: "/logos/demos.png",
+        logoPath: "/logos/demos.svg",
     },
     {
         slug: "simplon",

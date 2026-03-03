@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Trophy, ArrowRight, Award, CheckCircle2, Minus } from "lucide-react";
 import { comparisons, getComparisonBySlug } from "@/lib/data/comparisons";
@@ -59,55 +60,71 @@ export default async function ComparerPage({ params }: PageProps) {
             />
 
             {/* Hero */}
-            <section className="hero-gradient text-white">
+            <section className="hero-gradient">
                 <div className="container-narrow mx-auto px-4 py-14 md:py-18 relative z-10">
-                    <nav className="flex items-center gap-2 text-sm text-white/50 mb-6">
-                        <Link href="/" className="hover:text-white/80">Accueil</Link>
+                    <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+                        <Link href="/" className="hover:text-foreground">Accueil</Link>
                         <span>/</span>
-                        <Link href="/#comparatifs" className="hover:text-white/80">Comparatifs</Link>
+                        <Link href="/#comparatifs" className="hover:text-foreground">Comparatifs</Link>
                         <span>/</span>
-                        <span className="text-white/80">{comp.title}</span>
+                        <span className="text-foreground">{comp.title}</span>
                     </nav>
 
                     <div className="flex items-center justify-center gap-8 md:gap-12 mb-8">
                         <div className="text-center">
-                            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center mx-auto mb-3">
-                                <span className="text-2xl md:text-3xl font-extrabold text-white">
-                                    {org1?.name.charAt(0) || "1"}
-                                </span>
-                            </div>
-                            <p className="font-bold text-white text-sm md:text-base">
+                            {org1 ? (
+                                <Image
+                                    src={org1.logoPath}
+                                    alt={`Logo ${org1.name}`}
+                                    width={64}
+                                    height={64}
+                                    className="rounded-lg mx-auto mb-3"
+                                />
+                            ) : (
+                                <div className="w-16 h-16 rounded-lg glass-card flex items-center justify-center mx-auto mb-3">
+                                    <span className="text-2xl font-extrabold text-foreground">1</span>
+                                </div>
+                            )}
+                            <p className="font-bold text-foreground text-sm md:text-base">
                                 {org1?.name || comp.organisme1}
                             </p>
                             {org1 && (
-                                <p className="text-xs text-white/50 mt-0.5">{org1.priceRange}</p>
+                                <p className="text-xs text-muted-foreground mt-0.5">{org1.priceRange}</p>
                             )}
                         </div>
 
                         <div className="text-center">
-                            <span className="text-2xl md:text-3xl font-extrabold text-white/30">VS</span>
+                            <span className="text-2xl md:text-3xl font-extrabold text-border">VS</span>
                         </div>
 
                         <div className="text-center">
-                            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center mx-auto mb-3">
-                                <span className="text-2xl md:text-3xl font-extrabold text-white">
-                                    {org2?.name.charAt(0) || "2"}
-                                </span>
-                            </div>
-                            <p className="font-bold text-white text-sm md:text-base">
+                            {org2 ? (
+                                <Image
+                                    src={org2.logoPath}
+                                    alt={`Logo ${org2.name}`}
+                                    width={64}
+                                    height={64}
+                                    className="rounded-lg mx-auto mb-3"
+                                />
+                            ) : (
+                                <div className="w-16 h-16 rounded-lg glass-card flex items-center justify-center mx-auto mb-3">
+                                    <span className="text-2xl font-extrabold text-foreground">2</span>
+                                </div>
+                            )}
+                            <p className="font-bold text-foreground text-sm md:text-base">
                                 {org2?.name || comp.organisme2}
                             </p>
                             {org2 && (
-                                <p className="text-xs text-white/50 mt-0.5">{org2.priceRange}</p>
+                                <p className="text-xs text-muted-foreground mt-0.5">{org2.priceRange}</p>
                             )}
                         </div>
                     </div>
 
-                    <h1 className="text-3xl md:text-4xl font-extrabold text-center leading-tight mb-4">
+                    <h1 className="text-3xl md:text-4xl font-extrabold text-center leading-tight mb-4 text-foreground">
                         {comp.title} : Quel organisme choisir en 2026 ?
                     </h1>
 
-                    <p className="text-center text-white/60 max-w-2xl mx-auto">
+                    <p className="text-center text-muted-foreground max-w-2xl mx-auto">
                         {comp.intro}
                     </p>
                 </div>
@@ -116,7 +133,7 @@ export default async function ComparerPage({ params }: PageProps) {
             {/* Criteria comparison */}
             <section className="section-padding">
                 <div className="container-narrow mx-auto px-4">
-                    <h2 className="text-2xl font-extrabold text-surface-900 mb-8 text-center">
+                    <h2 className="text-2xl font-extrabold text-foreground mb-8 text-center">
                         Comparaison critère par critère
                     </h2>
 
@@ -124,7 +141,7 @@ export default async function ComparerPage({ params }: PageProps) {
                         {comp.criteria.map((criterion) => (
                             <div key={criterion.name} className="glass-card p-6">
                                 <div className="flex items-center justify-between mb-4">
-                                    <h3 className="font-bold text-surface-900 text-lg">{criterion.name}</h3>
+                                    <h3 className="font-bold text-foreground text-lg">{criterion.name}</h3>
                                     {criterion.winner === 1 && (
                                         <span className="badge badge-winner flex items-center gap-1">
                                             <Trophy className="w-3.5 h-3.5" />
@@ -138,7 +155,7 @@ export default async function ComparerPage({ params }: PageProps) {
                                         </span>
                                     )}
                                     {criterion.winner === 0 && (
-                                        <span className="badge bg-surface-100 text-surface-600 flex items-center gap-1">
+                                        <span className="badge flex items-center gap-1">
                                             <Minus className="w-3.5 h-3.5" />
                                             Égalité
                                         </span>
@@ -147,40 +164,40 @@ export default async function ComparerPage({ params }: PageProps) {
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                     <div
-                                        className={`p-4 rounded-xl border-2 ${criterion.winner === 1
-                                                ? "border-accent-500/30 bg-accent-500/5"
-                                                : "border-surface-200 bg-surface-50"
+                                        className={`p-4 rounded border-2 ${criterion.winner === 1
+                                                ? "border-accent/30 bg-accent/5"
+                                                : "border-border bg-muted"
                                             }`}
                                     >
-                                        <p className="text-xs font-semibold text-surface-500 mb-1">
+                                        <p className="text-xs font-semibold text-muted-foreground mb-1">
                                             {org1?.name || comp.organisme1}
                                         </p>
-                                        <p className="text-sm text-surface-800 font-medium">
+                                        <p className="text-sm text-foreground font-medium">
                                             {criterion.org1Score}
                                         </p>
                                         {criterion.winner === 1 && (
-                                            <CheckCircle2 className="w-4 h-4 text-accent-500 mt-2" />
+                                            <CheckCircle2 className="w-4 h-4 text-accent mt-2" />
                                         )}
                                     </div>
                                     <div
-                                        className={`p-4 rounded-xl border-2 ${criterion.winner === 2
-                                                ? "border-accent-500/30 bg-accent-500/5"
-                                                : "border-surface-200 bg-surface-50"
+                                        className={`p-4 rounded border-2 ${criterion.winner === 2
+                                                ? "border-accent/30 bg-accent/5"
+                                                : "border-border bg-muted"
                                             }`}
                                     >
-                                        <p className="text-xs font-semibold text-surface-500 mb-1">
+                                        <p className="text-xs font-semibold text-muted-foreground mb-1">
                                             {org2?.name || comp.organisme2}
                                         </p>
-                                        <p className="text-sm text-surface-800 font-medium">
+                                        <p className="text-sm text-foreground font-medium">
                                             {criterion.org2Score}
                                         </p>
                                         {criterion.winner === 2 && (
-                                            <CheckCircle2 className="w-4 h-4 text-accent-500 mt-2" />
+                                            <CheckCircle2 className="w-4 h-4 text-accent mt-2" />
                                         )}
                                     </div>
                                 </div>
 
-                                <p className="text-sm text-surface-500">{criterion.analysis}</p>
+                                <p className="text-sm text-muted-foreground">{criterion.analysis}</p>
                             </div>
                         ))}
                     </div>
@@ -188,15 +205,15 @@ export default async function ComparerPage({ params }: PageProps) {
             </section>
 
             {/* Verdict */}
-            <section className="section-padding bg-white">
+            <section className="section-padding bg-surface">
                 <div className="container-narrow mx-auto px-4">
                     <div className="max-w-3xl mx-auto">
-                        <div className="gradient-border glass-card p-8">
-                            <h2 className="text-2xl font-extrabold text-surface-900 mb-4 flex items-center gap-2">
-                                <Award className="w-6 h-6 text-primary-600" />
+                        <div className="glass-card p-8">
+                            <h2 className="text-2xl font-extrabold text-foreground mb-4 flex items-center gap-2">
+                                <Award className="w-6 h-6 text-accent" />
                                 Notre verdict
                             </h2>
-                            <p className="text-surface-600 leading-relaxed mb-6">{comp.verdict}</p>
+                            <p className="text-muted-foreground leading-relaxed mb-6">{comp.verdict}</p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {org1 && (
@@ -226,7 +243,7 @@ export default async function ComparerPage({ params }: PageProps) {
             {/* Other comparisons */}
             <section className="section-padding">
                 <div className="container-narrow mx-auto px-4">
-                    <h2 className="text-xl font-extrabold text-surface-900 mb-4">Autres comparatifs</h2>
+                    <h2 className="text-xl font-extrabold text-foreground mb-4">Autres comparatifs</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {comparisons
                             .filter((c) => c.slug !== slug)
@@ -237,10 +254,10 @@ export default async function ComparerPage({ params }: PageProps) {
                                     href={`/comparer/${c.slug}`}
                                     className="glass-card p-4 flex items-center justify-between group"
                                 >
-                                    <span className="font-semibold text-sm text-surface-900 group-hover:text-primary-600 transition-colors">
+                                    <span className="font-semibold text-sm text-foreground group-hover:text-accent transition-colors">
                                         {c.title}
                                     </span>
-                                    <ArrowRight className="w-4 h-4 text-surface-400 group-hover:text-primary-600 transition-colors" />
+                                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-colors" />
                                 </Link>
                             ))}
                     </div>

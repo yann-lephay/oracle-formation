@@ -36,21 +36,21 @@ export default function BlogIndexPage() {
             />
 
             {/* Hero */}
-            <section className="hero-gradient text-white">
+            <section className="hero-gradient">
                 <div className="container-narrow mx-auto px-4 py-16 md:py-20 relative z-10">
                     <div className="max-w-3xl">
-                        <nav className="flex items-center gap-2 text-sm text-white/50 mb-6">
-                            <Link href="/" className="hover:text-white/80">
+                        <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+                            <Link href="/" className="hover:text-foreground">
                                 Accueil
                             </Link>
                             <span>/</span>
-                            <span className="text-white/80">Blog</span>
+                            <span className="text-foreground">Blog</span>
                         </nav>
 
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 text-foreground">
                             Blog Formation Professionnelle
                         </h1>
-                        <p className="text-lg text-white/70 max-w-2xl">
+                        <p className="text-lg text-muted-foreground max-w-2xl">
                             Guides, conseils et comparatifs pour vous aider à choisir la
                             bonne formation et financer votre projet.
                         </p>
@@ -68,13 +68,13 @@ export default function BlogIndexPage() {
                                 href={`/blog/${article.slug}`}
                                 className="glass-card p-6 flex flex-col group"
                             >
-                                <h2 className="text-lg font-bold text-surface-900 group-hover:text-primary-600 transition-colors mb-2">
+                                <h2 className="text-lg font-bold text-foreground group-hover:text-accent transition-colors mb-2">
                                     {article.title}
                                 </h2>
-                                <p className="text-sm text-surface-600 line-clamp-3 mb-4 flex-1">
+                                <p className="text-sm text-muted-foreground line-clamp-3 mb-4 flex-1">
                                     {article.excerpt}
                                 </p>
-                                <div className="flex items-center gap-4 text-xs text-surface-400 mb-4">
+                                <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4">
                                     <span className="flex items-center gap-1">
                                         <Calendar className="w-3.5 h-3.5" />
                                         {new Date(article.publishedAt).toLocaleDateString("fr-FR", {
@@ -88,7 +88,7 @@ export default function BlogIndexPage() {
                                         {article.readingTime}
                                     </span>
                                 </div>
-                                <span className="text-xs text-primary-600 font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                                <span className="text-xs text-accent font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
                                     Lire l&apos;article
                                     <ArrowRight className="w-3.5 h-3.5" />
                                 </span>

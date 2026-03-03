@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
     Star,
     CheckCircle2,
@@ -98,10 +99,10 @@ export function OrganismeFilters({ organismes }: OrganismeFiltersProps) {
                                 onChange={(e) => setCpfOnly(e.target.checked)}
                                 className="sr-only peer"
                             />
-                            <div className="w-9 h-5 bg-surface-200 rounded-full peer-checked:bg-primary-600 transition-colors" />
-                            <div className="absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow-sm peer-checked:translate-x-4 transition-transform" />
+                            <div className="w-9 h-5 bg-secondary rounded-full peer-checked:bg-primary transition-colors" />
+                            <div className="absolute left-0.5 top-0.5 w-4 h-4 bg-surface rounded-full shadow-sm peer-checked:translate-x-4 transition-transform" />
                         </div>
-                        <span className="text-sm font-medium text-surface-700">CPF uniquement</span>
+                        <span className="text-sm font-medium text-foreground">CPF uniquement</span>
                     </label>
 
                     {/* Format pills */}
@@ -112,8 +113,8 @@ export function OrganismeFilters({ organismes }: OrganismeFiltersProps) {
                                 onClick={() => toggleFormat(format)}
                                 className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                                     selectedFormats.has(format)
-                                        ? "bg-primary-600 text-white border-primary-600"
-                                        : "bg-white text-surface-600 border-surface-200 hover:border-primary-300"
+                                        ? "bg-primary text-primary-foreground border-primary"
+                                        : "bg-surface text-muted-foreground border-border hover:border-foreground/30"
                                 }`}
                             >
                                 {format}
@@ -133,8 +134,8 @@ export function OrganismeFilters({ organismes }: OrganismeFiltersProps) {
                                 }
                                 className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                                     selectedBudget === range.max
-                                        ? "bg-primary-600 text-white border-primary-600"
-                                        : "bg-white text-surface-600 border-surface-200 hover:border-primary-300"
+                                        ? "bg-primary text-primary-foreground border-primary"
+                                        : "bg-surface text-muted-foreground border-border hover:border-foreground/30"
                                 }`}
                             >
                                 {range.label}
@@ -146,7 +147,7 @@ export function OrganismeFilters({ organismes }: OrganismeFiltersProps) {
                     {hasActiveFilters && (
                         <button
                             onClick={resetFilters}
-                            className="text-xs text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1 shrink-0"
+                            className="text-xs text-accent hover:text-accent/80 font-medium flex items-center gap-1 shrink-0"
                         >
                             <RotateCcw className="w-3 h-3" />
                             Réinitialiser
@@ -161,10 +162,17 @@ export function OrganismeFilters({ organismes }: OrganismeFiltersProps) {
                     {filtered.map((org, index) => (
                         <div key={org.slug} className="glass-card p-6 md:p-8">
                             <div className="flex flex-col md:flex-row md:items-start gap-6">
-                                {/* Rank */}
+                                {/* Rank + Logo */}
                                 <div className="flex items-center gap-4 md:flex-col md:items-center shrink-0">
-                                    <div className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center">
-                                        <span className="text-lg font-bold text-primary-600">
+                                    <div className="relative">
+                                        <Image
+                                            src={org.logoPath}
+                                            alt={`Logo ${org.name}`}
+                                            width={48}
+                                            height={48}
+                                            className="rounded shrink-0"
+                                        />
+                                        <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center">
                                             {index + 1}
                                         </span>
                                     </div>
@@ -178,19 +186,19 @@ export function OrganismeFilters({ organismes }: OrganismeFiltersProps) {
                                 <div className="flex-1 min-w-0">
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
                                         <div>
-                                            <h3 className="text-xl font-bold text-surface-900">
+                                            <h3 className="text-xl font-bold text-foreground">
                                                 {org.name}
                                             </h3>
-                                            <p className="text-sm text-surface-500">{org.tagline}</p>
+                                            <p className="text-sm text-muted-foreground">{org.tagline}</p>
                                         </div>
                                         <div className="text-right">
-                                            <p className="text-lg font-bold text-primary-600">
+                                            <p className="text-lg font-bold text-accent">
                                                 {org.priceRange}
                                             </p>
                                         </div>
                                     </div>
 
-                                    <p className="text-sm text-surface-600 mb-4 line-clamp-3">
+                                    <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
                                         {org.description.slice(0, 250)}…
                                     </p>
 
@@ -199,16 +207,16 @@ export function OrganismeFilters({ organismes }: OrganismeFiltersProps) {
                                         {org.prosAndCons.pros.slice(0, 4).map((pro) => (
                                             <div
                                                 key={pro}
-                                                className="flex items-start gap-2 text-sm text-surface-600"
+                                                className="flex items-start gap-2 text-sm text-muted-foreground"
                                             >
-                                                <CheckCircle2 className="w-4 h-4 text-accent-500 shrink-0 mt-0.5" />
+                                                <CheckCircle2 className="w-4 h-4 text-success shrink-0 mt-0.5" />
                                                 <span>{pro}</span>
                                             </div>
                                         ))}
                                     </div>
 
                                     {/* Badges + CTA */}
-                                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 border-t border-surface-100">
+                                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 border-t border-border">
                                         <div className="flex flex-wrap gap-1.5">
                                             {org.certifications.map((c) => (
                                                 <span key={c} className="badge badge-qualiopi text-[10px]">
@@ -221,7 +229,7 @@ export function OrganismeFilters({ organismes }: OrganismeFiltersProps) {
                                             {org.formats.map((f) => (
                                                 <span
                                                     key={f}
-                                                    className="badge text-[10px] bg-surface-100 text-surface-600"
+                                                    className="badge text-[10px] bg-muted text-muted-foreground"
                                                 >
                                                     {f}
                                                 </span>
@@ -243,8 +251,8 @@ export function OrganismeFilters({ organismes }: OrganismeFiltersProps) {
                 </div>
             ) : (
                 <div className="glass-card p-8 text-center">
-                    <GraduationCap className="w-12 h-12 text-surface-300 mx-auto mb-4" />
-                    <p className="text-surface-500 mb-4">
+                    <GraduationCap className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                    <p className="text-muted-foreground mb-4">
                         Aucun organisme ne correspond à vos critères.
                     </p>
                     <button

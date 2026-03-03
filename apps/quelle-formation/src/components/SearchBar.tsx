@@ -169,8 +169,8 @@ export function SearchBar() {
 
     return (
         <div className="max-w-xl mx-auto relative">
-            <div className="flex items-center bg-white rounded-2xl shadow-2xl shadow-black/20 overflow-hidden">
-                <div className="flex items-center gap-2 pl-5 text-surface-400">
+            <div className="flex items-center bg-surface rounded border border-border overflow-hidden">
+                <div className="flex items-center gap-2 pl-4 text-muted-foreground">
                     <Search className="w-5 h-5" />
                 </div>
                 <input
@@ -187,7 +187,7 @@ export function SearchBar() {
                     }}
                     onKeyDown={handleKeyDown}
                     placeholder="Ex : formation développeur web, data analyst, marketing digital…"
-                    className="flex-1 px-3 py-4 text-surface-800 placeholder:text-surface-400 text-sm outline-none"
+                    className="flex-1 px-3 py-3.5 text-foreground placeholder:text-muted-foreground text-sm outline-none bg-transparent"
                     aria-label="Rechercher une formation"
                     role="combobox"
                     aria-expanded={showDropdown}
@@ -206,7 +206,7 @@ export function SearchBar() {
                             router.push("/#domaines");
                         }
                     }}
-                    className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-4 text-sm font-semibold transition-colors"
+                    className="bg-primary hover:bg-primary/80 text-primary-foreground px-6 py-3.5 text-sm font-medium transition-colors"
                 >
                     Chercher
                 </button>
@@ -218,13 +218,13 @@ export function SearchBar() {
                     ref={listboxRef}
                     id="search-listbox"
                     role="listbox"
-                    className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-surface-200/60 overflow-hidden z-50"
+                    className="absolute top-full left-0 right-0 mt-1 bg-surface rounded border border-border overflow-hidden z-50 shadow-sm"
                 >
                     {categories.map((cat) => {
                         const CatIcon = categoryIcons[cat.name as keyof typeof categoryIcons];
                         return (
                             <div key={cat.name}>
-                                <div className="px-4 py-2 text-xs font-semibold text-surface-400 uppercase tracking-wider bg-surface-50 flex items-center gap-1.5">
+                                <div className="px-4 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider bg-muted flex items-center gap-1.5">
                                     <CatIcon className="w-3.5 h-3.5" />
                                     {cat.name}
                                 </div>
@@ -238,8 +238,8 @@ export function SearchBar() {
                                             aria-selected={globalIndex === activeIndex}
                                             className={`w-full text-left px-4 py-3 text-sm transition-colors ${
                                                 globalIndex === activeIndex
-                                                    ? "bg-primary-50 text-primary-700"
-                                                    : "text-surface-700 hover:bg-surface-50"
+                                                    ? "bg-muted text-accent"
+                                                    : "text-foreground hover:bg-muted"
                                             }`}
                                             onMouseEnter={() => setActiveIndex(globalIndex)}
                                             onClick={() => selectResult(item)}

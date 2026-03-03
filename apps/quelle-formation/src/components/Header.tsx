@@ -15,7 +15,7 @@ const navLinks = [
             { label: "Marketing Digital", href: "/formation/marketing-digital" },
             { label: "Cybersécurité", href: "/formation/cybersecurite" },
             { label: "Intelligence Artificielle", href: "/formation/intelligence-artificielle" },
-            { label: "Toutes les formations →", href: "/#domaines" },
+            { label: "Toutes les formations", href: "/#domaines" },
         ],
     },
     {
@@ -28,7 +28,7 @@ const navLinks = [
             { label: "AFPA", href: "/organisme/afpa" },
             { label: "CNAM", href: "/organisme/cnam" },
             { label: "Simplon", href: "/organisme/simplon" },
-            { label: "Tous les organismes →", href: "/#organismes" },
+            { label: "Tous les organismes", href: "/#organismes" },
         ],
     },
     {
@@ -38,7 +38,7 @@ const navLinks = [
             { label: "OpenClassrooms vs Jedha", href: "/comparer/openclassrooms-vs-jedha" },
             { label: "Le Wagon vs Ironhack", href: "/comparer/le-wagon-vs-ironhack" },
             { label: "Jedha vs DataScientest", href: "/comparer/jedha-vs-datascientest" },
-            { label: "Tous les comparatifs →", href: "/#comparatifs" },
+            { label: "Tous les comparatifs", href: "/#comparatifs" },
         ],
     },
     { label: "Blog", href: "/blog" },
@@ -50,24 +50,23 @@ export function Header() {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
     return (
-        <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-surface-200/60">
-            <div className="container-narrow mx-auto flex items-center justify-between px-4 h-16 md:h-18">
+        <header className="sticky top-0 z-50 bg-background border-b border-border">
+            <div className="max-w-6xl mx-auto flex items-center justify-between px-4 h-14">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 group" aria-label="QuelleFormation.fr — Accueil">
+                <Link href="/" className="flex items-center gap-2" aria-label="QuelleFormation — Accueil">
                     <Image
                         src="/quelleformation-logo.png"
                         alt="QuelleFormation"
-                        width={36}
-                        height={36}
-                        className="group-hover:opacity-80 transition-opacity"
+                        width={28}
+                        height={28}
                     />
-                    <span className="text-lg font-bold font-heading text-surface-900 hidden sm:inline">
-                        Quelle<span className="gradient-text">Formation</span>
+                    <span className="text-base font-bold font-heading text-foreground hidden sm:inline">
+                        Quelle<span className="text-accent">Formation</span>
                     </span>
                 </Link>
 
                 {/* Desktop nav */}
-                <nav className="hidden md:flex items-center gap-1" aria-label="Navigation principale">
+                <nav className="hidden md:flex items-center gap-0.5" aria-label="Navigation principale">
                     {navLinks.map((link) =>
                         link.children ? (
                             <div
@@ -77,19 +76,19 @@ export function Header() {
                                 onMouseLeave={() => setOpenDropdown(null)}
                             >
                                 <button
-                                    className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-surface-700 hover:text-primary-600 hover:bg-primary-50 transition-colors"
+                                    className="flex items-center gap-1 px-3 py-2 rounded text-sm font-medium text-foreground hover:text-accent hover:bg-muted transition-colors"
                                     aria-expanded={openDropdown === link.label}
                                 >
                                     {link.label}
                                     <ChevronDown className="w-3.5 h-3.5" />
                                 </button>
                                 {openDropdown === link.label && (
-                                    <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-surface-200/60 py-2 animate-fade-in-up">
+                                    <div className="absolute top-full left-0 mt-1 w-56 bg-surface rounded border border-border py-1 shadow-sm animate-fade-in-up">
                                         {link.children.map((child) => (
                                             <Link
                                                 key={child.href}
                                                 href={child.href}
-                                                className="block px-4 py-2.5 text-sm text-surface-700 hover:text-primary-600 hover:bg-primary-50 transition-colors"
+                                                className="block px-4 py-2 text-sm text-foreground hover:text-accent hover:bg-muted transition-colors"
                                             >
                                                 {child.label}
                                             </Link>
@@ -101,7 +100,7 @@ export function Header() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="px-3 py-2 rounded-lg text-sm font-medium text-surface-700 hover:text-primary-600 hover:bg-primary-50 transition-colors"
+                                className="px-3 py-2 rounded text-sm font-medium text-foreground hover:text-accent hover:bg-muted transition-colors"
                             >
                                 {link.label}
                             </Link>
@@ -110,15 +109,15 @@ export function Header() {
                 </nav>
 
                 {/* CTA */}
-                <div className="hidden md:flex items-center gap-3">
+                <div className="hidden md:block">
                     <Link href="/#devis" className="btn-primary text-sm">
-                        Demander un devis gratuit
+                        Demander un devis
                     </Link>
                 </div>
 
                 {/* Mobile toggle */}
                 <button
-                    className="md:hidden p-2 rounded-lg text-surface-700 hover:bg-surface-100"
+                    className="md:hidden p-2 rounded text-foreground hover:bg-muted"
                     onClick={() => setMobileOpen(!mobileOpen)}
                     aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
                 >
@@ -128,13 +127,13 @@ export function Header() {
 
             {/* Mobile nav */}
             {mobileOpen && (
-                <div className="md:hidden bg-white border-t border-surface-200/60 animate-fade-in-up">
-                    <nav className="px-4 py-4 space-y-1" aria-label="Navigation mobile">
+                <div className="md:hidden bg-surface border-t border-border">
+                    <nav className="px-4 py-3 space-y-0.5" aria-label="Navigation mobile">
                         {navLinks.map((link) => (
                             <div key={link.label}>
                                 <Link
                                     href={link.href}
-                                    className="block px-3 py-2.5 rounded-lg text-sm font-medium text-surface-700 hover:text-primary-600 hover:bg-primary-50"
+                                    className="block px-3 py-2 rounded text-sm font-medium text-foreground hover:text-accent hover:bg-muted"
                                     onClick={() => setMobileOpen(false)}
                                 >
                                     {link.label}
@@ -145,7 +144,7 @@ export function Header() {
                                             <Link
                                                 key={child.href}
                                                 href={child.href}
-                                                className="block px-3 py-2 rounded-lg text-xs text-surface-500 hover:text-primary-600 hover:bg-primary-50"
+                                                className="block px-3 py-1.5 rounded text-xs text-muted-foreground hover:text-accent hover:bg-muted"
                                                 onClick={() => setMobileOpen(false)}
                                             >
                                                 {child.label}
@@ -161,7 +160,7 @@ export function Header() {
                                 className="btn-primary text-sm w-full text-center"
                                 onClick={() => setMobileOpen(false)}
                             >
-                                Demander un devis gratuit
+                                Demander un devis
                             </Link>
                         </div>
                     </nav>

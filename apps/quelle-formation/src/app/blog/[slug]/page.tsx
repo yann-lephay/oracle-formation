@@ -41,17 +41,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 function ContentRenderer({ block }: { block: ContentBlock }) {
     switch (block.type) {
         case "paragraph":
-            return <p className="text-surface-600 leading-relaxed mb-4">{block.text}</p>;
+            return <p className="text-muted-foreground leading-relaxed mb-4">{block.text}</p>;
         case "heading":
             if (block.level === 2) {
                 return (
-                    <h2 className="text-xl md:text-2xl font-bold text-surface-900 mt-8 mb-4">
+                    <h2 className="text-xl md:text-2xl font-bold text-foreground mt-8 mb-4">
                         {block.text}
                     </h2>
                 );
             }
             return (
-                <h3 className="text-lg font-bold text-surface-900 mt-6 mb-3">
+                <h3 className="text-lg font-bold text-foreground mt-6 mb-3">
                     {block.text}
                 </h3>
             );
@@ -59,8 +59,8 @@ function ContentRenderer({ block }: { block: ContentBlock }) {
             return (
                 <ul className="space-y-2 mb-4 ml-1">
                     {block.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-sm text-surface-600">
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary-500 shrink-0 mt-1.5" />
+                        <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-1.5" />
                             <span>{item}</span>
                         </li>
                     ))}
@@ -69,21 +69,21 @@ function ContentRenderer({ block }: { block: ContentBlock }) {
         case "callout": {
             const variants = {
                 info: { bg: "bg-blue-50 border-blue-200", icon: Info, color: "text-blue-600" },
-                tip: { bg: "bg-accent-50 border-accent-200", icon: Lightbulb, color: "text-accent-600" },
+                tip: { bg: "bg-accent/5 border-accent/20", icon: Lightbulb, color: "text-accent" },
                 warning: { bg: "bg-amber-50 border-amber-200", icon: AlertTriangle, color: "text-amber-600" },
             };
             const v = variants[block.variant];
             return (
-                <div className={`${v.bg} border rounded-xl p-4 mb-4 flex items-start gap-3`}>
+                <div className={`${v.bg} border rounded p-4 mb-4 flex items-start gap-3`}>
                     <v.icon className={`w-5 h-5 ${v.color} shrink-0 mt-0.5`} />
-                    <p className="text-sm text-surface-700">{block.text}</p>
+                    <p className="text-sm text-foreground">{block.text}</p>
                 </div>
             );
         }
         case "cta":
             return (
                 <div className="glass-card p-6 text-center mb-4">
-                    <p className="text-surface-700 mb-3">{block.text}</p>
+                    <p className="text-foreground mb-3">{block.text}</p>
                     <Link href={block.href} className="btn-primary text-sm inline-flex">
                         {block.label}
                         <ArrowRight className="w-4 h-4" />
@@ -143,23 +143,23 @@ export default async function BlogArticlePage({ params }: PageProps) {
             />
 
             {/* Hero */}
-            <section className="hero-gradient text-white">
+            <section className="hero-gradient">
                 <div className="container-narrow mx-auto px-4 py-14 md:py-18 relative z-10">
                     <div className="max-w-3xl">
-                        <nav className="flex items-center gap-2 text-sm text-white/50 mb-6">
-                            <Link href="/" className="hover:text-white/80">Accueil</Link>
+                        <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+                            <Link href="/" className="hover:text-foreground">Accueil</Link>
                             <span>/</span>
-                            <Link href="/blog" className="hover:text-white/80">Blog</Link>
+                            <Link href="/blog" className="hover:text-foreground">Blog</Link>
                             <span>/</span>
-                            <span className="text-white/80 truncate">{article.title}</span>
+                            <span className="text-foreground truncate">{article.title}</span>
                         </nav>
 
-                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight mb-4">
+                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight mb-4 text-foreground">
                             {article.title}
                         </h1>
-                        <p className="text-lg text-white/70 mb-6">{article.excerpt}</p>
+                        <p className="text-lg text-muted-foreground mb-6">{article.excerpt}</p>
 
-                        <div className="flex items-center gap-4 text-sm text-white/50">
+                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
                             <span className="flex items-center gap-1.5">
                                 <Calendar className="w-4 h-4" />
                                 {new Date(article.updatedAt).toLocaleDateString("fr-FR", {
@@ -190,19 +190,19 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
             {/* FAQ */}
             {article.faq.length > 0 && (
-                <section className="section-padding bg-white">
+                <section className="section-padding bg-surface">
                     <div className="container-narrow mx-auto px-4">
-                        <h2 className="text-2xl font-extrabold text-surface-900 mb-6">
+                        <h2 className="text-2xl font-extrabold text-foreground mb-6">
                             Questions fréquentes
                         </h2>
                         <div className="max-w-3xl space-y-3">
                             {article.faq.map((faq) => (
                                 <details key={faq.question} className="glass-card p-4 group">
-                                    <summary className="cursor-pointer list-none flex items-center justify-between font-semibold text-sm text-surface-900">
+                                    <summary className="cursor-pointer list-none flex items-center justify-between font-semibold text-sm text-foreground">
                                         {faq.question}
-                                        <Award className="w-4 h-4 text-surface-400 group-open:rotate-180 transition-transform" />
+                                        <Award className="w-4 h-4 text-muted-foreground group-open:rotate-180 transition-transform" />
                                     </summary>
-                                    <p className="mt-2 text-sm text-surface-600 leading-relaxed">
+                                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                                         {faq.answer}
                                     </p>
                                 </details>
@@ -219,7 +219,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
                         {/* Related formations */}
                         {relatedDomaineData.length > 0 && (
                             <div>
-                                <h3 className="font-bold text-surface-900 mb-4">
+                                <h3 className="font-bold text-foreground mb-4">
                                     Formations associées
                                 </h3>
                                 <div className="space-y-2">
@@ -229,10 +229,10 @@ export default async function BlogArticlePage({ params }: PageProps) {
                                             href={`/formation/${d.slug}`}
                                             className="glass-card p-3 flex items-center justify-between group"
                                         >
-                                            <span className="text-sm font-medium text-surface-700 group-hover:text-primary-600 transition-colors">
+                                            <span className="text-sm font-medium text-foreground group-hover:text-accent transition-colors">
                                                 Formation {d.name}
                                             </span>
-                                            <ArrowRight className="w-4 h-4 text-surface-400 group-hover:text-primary-600" />
+                                            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-accent" />
                                         </Link>
                                     ))}
                                 </div>
@@ -242,7 +242,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
                         {/* Related organismes */}
                         {relatedOrganismeData.length > 0 && (
                             <div>
-                                <h3 className="font-bold text-surface-900 mb-4">
+                                <h3 className="font-bold text-foreground mb-4">
                                     Organismes mentionnés
                                 </h3>
                                 <div className="space-y-2">
@@ -252,10 +252,10 @@ export default async function BlogArticlePage({ params }: PageProps) {
                                             href={`/organisme/${o.slug}`}
                                             className="glass-card p-3 flex items-center justify-between group"
                                         >
-                                            <span className="text-sm font-medium text-surface-700 group-hover:text-primary-600 transition-colors">
+                                            <span className="text-sm font-medium text-foreground group-hover:text-accent transition-colors">
                                                 Avis {o.name}
                                             </span>
-                                            <ArrowRight className="w-4 h-4 text-surface-400 group-hover:text-primary-600" />
+                                            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-accent" />
                                         </Link>
                                     ))}
                                 </div>
@@ -266,13 +266,13 @@ export default async function BlogArticlePage({ params }: PageProps) {
             </section>
 
             {/* DevisForm */}
-            <section className="section-padding bg-primary-950" id="devis">
+            <section className="section-padding bg-primary" id="devis">
                 <div className="container-narrow mx-auto px-4">
                     <div className="text-center mb-10">
-                        <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
+                        <h2 className="text-2xl md:text-3xl font-extrabold text-primary-foreground mb-3">
                             Besoin d&apos;aide pour choisir votre formation ?
                         </h2>
-                        <p className="text-white/70 max-w-2xl mx-auto">
+                        <p className="text-primary-foreground/70 max-w-2xl mx-auto">
                             Recevez un devis personnalisé de plusieurs organismes en une seule demande.
                             Gratuit et sans engagement.
                         </p>

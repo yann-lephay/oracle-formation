@@ -24,12 +24,12 @@ export default function MentionsLegalesPage() {
       />
 
       {/* Header */}
-      <section className="bg-surface-100 border-b border-surface-200">
+      <section className="bg-muted border-b border-border">
         <div className="container-narrow mx-auto px-4 py-12 md:py-16">
-          <h1 className="text-3xl md:text-4xl font-extrabold font-heading text-surface-900">
+          <h1 className="text-3xl md:text-4xl font-extrabold font-heading text-foreground">
             Mentions légales
           </h1>
-          <p className="mt-3 text-surface-600 text-lg">
+          <p className="mt-3 text-muted-foreground text-lg">
             Dernière mise à jour : mars 2026
           </p>
         </div>
@@ -42,10 +42,10 @@ export default function MentionsLegalesPage() {
 
             {/* Éditeur */}
             <div className="space-y-3">
-              <h2 className="text-xl font-bold font-heading text-surface-900">
+              <h2 className="text-xl font-bold font-heading text-foreground">
                 1. Éditeur du site
               </h2>
-              <div className="text-surface-700 leading-relaxed space-y-1">
+              <div className="text-muted-foreground leading-relaxed space-y-1">
                 <p><strong>Nom :</strong> LEPHAY Yann</p>
                 <p><strong>Statut :</strong> Entrepreneur individuel (Auto-entrepreneur)</p>
                 <p><strong>SIRET :</strong> 899 650 204 00022</p>
@@ -57,10 +57,10 @@ export default function MentionsLegalesPage() {
 
             {/* Hébergeur */}
             <div className="space-y-3">
-              <h2 className="text-xl font-bold font-heading text-surface-900">
+              <h2 className="text-xl font-bold font-heading text-foreground">
                 2. Hébergeur
               </h2>
-              <div className="text-surface-700 leading-relaxed space-y-1">
+              <div className="text-muted-foreground leading-relaxed space-y-1">
                 <p><strong>Vercel Inc.</strong></p>
                 <p>440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</p>
                 <p>Site web : vercel.com</p>
@@ -69,10 +69,10 @@ export default function MentionsLegalesPage() {
 
             {/* Propriété intellectuelle */}
             <div className="space-y-3">
-              <h2 className="text-xl font-bold font-heading text-surface-900">
+              <h2 className="text-xl font-bold font-heading text-foreground">
                 3. Propriété intellectuelle
               </h2>
-              <p className="text-surface-700 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 L&apos;ensemble des contenus présents sur le site QuelleFormation.fr (textes,
                 images, graphismes, logo, icônes, etc.) est protégé par les lois françaises
                 et internationales relatives à la propriété intellectuelle. Toute
@@ -83,15 +83,15 @@ export default function MentionsLegalesPage() {
 
             {/* Données personnelles */}
             <div className="space-y-3">
-              <h2 className="text-xl font-bold font-heading text-surface-900">
+              <h2 className="text-xl font-bold font-heading text-foreground">
                 4. Données personnelles
               </h2>
-              <p className="text-surface-700 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 Les informations relatives au traitement de vos données personnelles sont
                 détaillées dans notre{" "}
                 <a
                   href="/confidentialite"
-                  className="text-primary-600 hover:underline"
+                  className="text-accent hover:underline"
                 >
                   Politique de confidentialité
                 </a>
@@ -101,10 +101,10 @@ export default function MentionsLegalesPage() {
 
             {/* Cookies */}
             <div className="space-y-3">
-              <h2 className="text-xl font-bold font-heading text-surface-900">
+              <h2 className="text-xl font-bold font-heading text-foreground">
                 5. Cookies
               </h2>
-              <p className="text-surface-700 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 Le site utilise des cookies à des fins de mesure d&apos;audience (Vercel Analytics)
                 et d&apos;amélioration de l&apos;expérience utilisateur. Ces cookies sont anonymes et
                 ne permettent pas d&apos;identifier personnellement un visiteur. Vous pouvez
@@ -114,10 +114,10 @@ export default function MentionsLegalesPage() {
 
             {/* Liens d'affiliation */}
             <div className="space-y-3">
-              <h2 className="text-xl font-bold font-heading text-surface-900">
+              <h2 className="text-xl font-bold font-heading text-foreground">
                 6. Liens d&apos;affiliation
               </h2>
-              <p className="text-surface-700 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 QuelleFormation.fr est un comparateur indépendant. Certains liens présents
                 sur le site sont des liens d&apos;affiliation : lorsque vous cliquez sur ces
                 liens et effectuez un achat ou une inscription, nous pouvons percevoir une
@@ -129,10 +129,10 @@ export default function MentionsLegalesPage() {
 
             {/* Limitation de responsabilité */}
             <div className="space-y-3">
-              <h2 className="text-xl font-bold font-heading text-surface-900">
+              <h2 className="text-xl font-bold font-heading text-foreground">
                 7. Limitation de responsabilité
               </h2>
-              <p className="text-surface-700 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 Les informations fournies sur QuelleFormation.fr sont données à titre
                 indicatif. Malgré tout le soin apporté à leur rédaction, l&apos;éditeur ne
                 saurait garantir l&apos;exactitude, la complétude ou l&apos;actualité des
@@ -143,10 +143,10 @@ export default function MentionsLegalesPage() {
 
             {/* Droit applicable */}
             <div className="space-y-3">
-              <h2 className="text-xl font-bold font-heading text-surface-900">
+              <h2 className="text-xl font-bold font-heading text-foreground">
                 8. Droit applicable
               </h2>
-              <p className="text-surface-700 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 Les présentes mentions légales sont régies par le droit français. En cas de
                 litige, et après tentative de résolution amiable, les tribunaux français
                 seront seuls compétents.

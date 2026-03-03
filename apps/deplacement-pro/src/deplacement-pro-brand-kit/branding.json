@@ -1,0 +1,408 @@
+{
+  "icons": {
+    "style": "line",
+    "library": "lucide-react",
+    "size_default": "24px",
+    "stroke_width": 1.5,
+    "suggested_icons": [
+      {
+        "context": "Comparaison",
+        "icon_name": "sliders-horizontal"
+      },
+      {
+        "context": "Voyage",
+        "icon_name": "plane"
+      },
+      {
+        "context": "Finances",
+        "icon_name": "wallet"
+      },
+      {
+        "context": "Support",
+        "icon_name": "life-buoy"
+      },
+      {
+        "context": "Paramètres",
+        "icon_name": "settings"
+      },
+      {
+        "context": "Dashboard",
+        "icon_name": "layout-dashboard"
+      }
+    ],
+    "library_rationale": "Offre un ensemble complet d'icônes linéaires, propres et minimalistes qui correspondent parfaitement au style de trait 'fin' et à l'esthétique professionnelle et épurée de la marque."
+  },
+  "colors": {
+    "info": "#3B82F6",
+    "muted": "#DEDEDE",
+    "accent": "#A04E6D",
+    "border": "#EAEAEA",
+    "primary": "#2A5A6D",
+    "success": "#22C55E",
+    "surface": "#F4F4F4",
+    "warning": "#FACC15",
+    "secondary": "#7A9CA9",
+    "background": "#FDFDFD",
+    "foreground": "#202020",
+    "destructive": "#DC2626",
+    "color_rationale": "Un bleu pétrole raffiné (#2A5A6D) insuffle confiance et professionnalisme, équilibré par un accent prune chaud (#A04E6D) pour l'accessibilité. L'utilisation généreuse du blanc cassé crée un canevas épuré, minimaliste et accueillant, idéal pour un outil de décision.",
+    "muted_foreground": "#606060",
+    "primary_foreground": "#F8F8F8"
+  },
+  "tagline": "Comparez et optimisez vos solutions de déplacements professionnels.",
+  "ui_style": {
+    "box_shadow": "0 4px 12px rgba(0, 0, 0, 0.04)",
+    "card_style": "Arrière-plan blanc cassé, ombre subtile, et un border-radius de 8px pour une sensation douce et professionnelle.",
+    "input_style": "Bordure de 1px en couleur muted, border-radius de 8px, et un léger éclat au focus pour une clarté visuelle. Texte foreground.",
+    "border_width": "1px",
+    "button_style": "Des boutons épurés, légèrement arrondis et minimalistes. Le texte principal sur un fond primaire pour les boutons remplis, et le texte accentué sur un fond transparent pour les boutons fantômes.",
+    "icon_library": "lucide-react",
+    "stroke_style": "thin",
+    "border_radius": "8px",
+    "button_accent": {
+      "border": "none",
+      "background": "var(--accent)",
+      "text_color": "var(--primary-foreground)",
+      "hover_background": "#803E57"
+    },
+    "button_primary": {
+      "border": "none",
+      "background": "var(--primary)",
+      "text_color": "var(--primary-foreground)",
+      "hover_background": "#224A5A"
+    },
+    "stroke_style_rationale": "Reflète l'approche minimaliste et raffinée de la marque, garantissant une interface nette et précise qui met l'accent sur la clarté plutôt que sur le poids visuel."
+  },
+  "claude_md": "# Déplacement Pro : Expertise & Clarté\n\n> Simplifier la complexité des déplacements professionnels par une guidance experte et une interface intuitive.\n\n## 🎨 Couleurs\n| Token | Hex | Usage |\n|---|---|---|\n| `primary` | `#2A5A6D` | Actions principales, titres, icônes | \n| `primary-foreground` | `#F8F8F8` | Texte sur éléments primaires |\n| `secondary` | `#7A9CA9` | Éléments d'arrière-plan, barres de progression |\n| `accent` | `#A04E6D` | Éléments de mise en évidence, alertes, badges |\n| `background` | `#FDFDFD` | Arrière-plan général de l'interface |\n| `foreground` | `#202020` | Texte principal |\n| `surface` | `#F4F4F4` | Cartes, conteneurs, éléments sur le fond |\n| `muted` | `#DEDEDE` | Bordures fines, séparateurs, arrière-plans subtils |\n| `muted-foreground` | `#606060` | Texte secondaire, placeholders |\n| `border` | `#EAEAEA` | Bordures d'éléments UI |\n\n## ✒️ Typographie\n| Rôle | Police | Poids |\n|---|---|---|\n| **Titres** | Urbanist | 600, 700, 800 |\n| **Corps** | DM Sans | 400, 500, 600 |\n| **Mono** | Space Mono | Pour données techniques/codes |\n\n## 💡 Icônes\n| Bibliothèque | Style | Largeur de trait | Taille par défaut |\n|---|---|---|---|\n| lucide-react | Line | 1.5 | 24px |\n\n**Icônes suggérées :**\n- Comparaison: `sliders-horizontal`\n- Voyage: `plane`\n- Finances: `wallet`\n- Support: `life-buoy`\n\n## 🗣️ Voix de la Marque\n- **Ton** : Expert, Accessible, Clair, Rassurant.\n- **Règles** :\n  - Langage direct et concis (français).\n  - Accent sur les bénéfices concrets (gain de temps, économies).\n  - Ton pédagogique et guidant.\n  - Utilisation du 'vous' respectueux.\n\n## 🧩 Composants Clés\n| Nom | Objectif |\n|---|---|\n| Bloc Comparatif Détaillé | Présenter les solutions et faciliter la comparaison |\n| Sélection Rapide | Filtrer et trier les résultats efficacement |\n| Assistant de Recommandation | Suggérer des solutions personnalisées par IA |\n\n## ✨ Animations\n| Déclencheur | Animation | Configuration Spring |\n|---|---|---|\n| Survol (Hover) | `lift` (élévation subtile) | `snappy` (stiffness: 400) |\n| Clic (Click) | `press` (légère pression) | `snappy` (stiffness: 400) |\n| Entrée (Entry) | `fade-up` (apparition douce) | `snappy` (stiffness: 400) |\n\n**Messages de chargement :**\n- \"Analyse des meilleures solutions pour vos déplacements...\"\n- \"Optimisation de votre budget voyage en cours...\"\n\n## 🖼️ Système Graphique\n- **Motif de fond** : Points discrets en gris clair (`radial-gradient(#DEDEDE 0.5px, transparent 0.5px)`).\n- **Forme d'accent** : Chevron inversé subtil (`primary`) dans les coins inférieurs droits.\n- **Séparateur** : Ligne fine estompée (`linear-gradient` avec `#EAEAEA`).\n\n## ♿ Accessibilité\n```css\n:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }\n@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }\n```\n- Contraste couleur : Min. 4.5:1 pour le texte.\n- Cibles tactiles : Min. 44x44px.\n- Navigation clavier : Tous les éléments interactifs accessibles.\n- Sémantique : Utilisation appropriée des balises HTML.\n\n## 🚫 À Éviter\n- Combinaisons de couleurs génériques (bleu roi/orange).\n- Polices Inter/Roboto pour les titres (manque de personnalité).\n- Icônes avec un style de trait épais (incohérence avec 'thin').\n- Interfaces surchargées visuellement, manquant de blanc.\n",
+  "rationale": "Déplacement Pro se positionne comme le guide fiable et moderne pour les PME/ETI, simplifiant la comparaison et la gestion des déplacements professionnels. L'identité visuelle est conçue pour être experte, accessible et épurée, facilitant la prise de décision.",
+  "animations": {
+    "philosophy": "Des animations subtiles, réactives et ciblées améliorent l'expérience utilisateur sans distraire de l'objectif principal qui est la prise de décision claire et efficace.",
+    "click_style": "press",
+    "hover_style": "lift",
+    "loading_style": {
+      "size": "32px",
+      "type": "spinner",
+      "color": "var(--primary)",
+      "stroke_width": "4px"
+    },
+    "spring_config": {
+      "preset": "snappy",
+      "damping": 30,
+      "stiffness": 400
+    },
+    "success_style": {
+      "type": "checkmark",
+      "stamp_text": "Validé !"
+    },
+    "entry_animation": "fade-up",
+    "loader_messages": [
+      "Analyse des meilleures solutions pour vos déplacements...",
+      "Optimisation de votre budget voyage en cours...",
+      "Recherche des offres les plus avantageuses...",
+      "Préparation de votre comparatif personnalisé...",
+      "Calcul de vos économies potentielles...",
+      "Mise à jour des dernières tendances du marché...",
+      "Chargement des données de performance des TMC..."
+    ],
+    "page_transitions": {
+      "style": "fade-in-slide-up",
+      "easing": "ease-out",
+      "duration": "350ms"
+    },
+    "micro_interactions": [
+      {
+        "easing": "ease-out",
+        "trigger": "button_click",
+        "duration": "150ms",
+        "animation": "press"
+      },
+      {
+        "easing": "ease-out",
+        "trigger": "card_hover",
+        "duration": "200ms",
+        "animation": "lift (y: -4px, shadow: 0 6px 16px rgba(0,0,0,0.08))"
+      },
+      {
+        "easing": "ease-in-out",
+        "trigger": "input_focus",
+        "duration": "180ms",
+        "animation": "border_glow (color: var(--primary), width: 1px)"
+      },
+      {
+        "easing": "ease-out",
+        "trigger": "tab_switch",
+        "duration": "250ms",
+        "animation": "fade-in (x: 8px)"
+      }
+    ]
+  },
+  "components": {
+    "card_style": "Arrière-plan 'var(--background)', 'border-radius' de '8px', et 'box-shadow' subtile pour une élévation douce et une séparation claire du contenu.",
+    "badge_usage": "Petits badges arrondis utilisant les couleurs 'secondary' ou 'accent' pour indiquer le statut (ex: 'Nouveau', 'Populaire'), les notifications ou les filtres actifs, avec un texte en 'primary-foreground' ou 'foreground'.",
+    "input_style": "Bordure de '1px' en 'var(--muted)', 'border-radius' de '8px'. Au focus, une bordure subtile '1px' de 'var(--primary)' pour un retour visuel clair.",
+    "button_variants": [
+      {
+        "name": "primary",
+        "style": "Fond '#2A5A6D', texte '#F8F8F8', légèrement arrondi."
+      },
+      {
+        "name": "secondary",
+        "style": "Bordure et texte '#2A5A6D' sur fond transparent, pour les actions secondaires."
+      },
+      {
+        "name": "accent",
+        "style": "Fond '#A04E6D', texte '#F8F8F8', pour les actions promotionnelles ou mises en avant."
+      },
+      {
+        "name": "ghost",
+        "style": "Fond transparent, texte '#202020', pour les actions tertiaires ou les liens."
+      }
+    ],
+    "unique_components": [
+      {
+        "name": "Bloc Comparatif Détaillé",
+        "purpose": "Affiche les caractéristiques clés, les prix et les avantages d'une solution de déplacement professionnel, permettant une comparaison côte à côte interactive.",
+        "description": "Une carte interactive et personnalisable présentant les éléments essentiels d'une solution (fonctionnalités, coûts, avis, intégrations). Inclut des onglets pour des vues comparatives et des actions rapides. Conçu pour être clair et faciliter la prise de décision.",
+        "when_to_use": "Sur les pages de résultats de comparaison, les fiches détaillées des solutions, ou les tableaux de bord d'analyse."
+      },
+      {
+        "name": "Sélection Rapide",
+        "purpose": "Permet un filtrage et un tri rapide et intuitif des résultats de comparaison basé sur des critères pertinents.",
+        "description": "Un ensemble de filtres et de boutons de tri visuels (ex: 'Meilleur prix', 'Notation', 'Services inclus') qui s'appliquent instantanément aux résultats. Utilise des badges pour les sélections actives.",
+        "when_to_use": "En haut ou sur le côté des pages de résultats de recherche/comparaison pour affiner les options."
+      },
+      {
+        "name": "Assistant de Recommandation",
+        "purpose": "Un module intelligent qui suggère des solutions optimales en fonction des politiques de voyage et des besoins spécifiques de l'entreprise.",
+        "description": "Une interface conversationnelle ou un formulaire guidé où l'utilisateur entre ses critères (budget, destinations, types de services). L'assistant utilise l'IA pour présenter les solutions les plus adaptées avec des justifications claires.",
+        "when_to_use": "Dans un module dédié sur le tableau de bord ou comme un outil intégré pour les nouveaux utilisateurs."
+      }
+    ]
+  },
+  "typography": {
+    "scale": {
+      "lg": "1.46484375rem",
+      "sm": "0.9375rem",
+      "xl": "1.8310546875rem",
+      "xs": "0.8rem",
+      "2xl": "2.288818359375rem",
+      "3xl": "2.86105794921875rem",
+      "4xl": "3.5763224365234375rem",
+      "5xl": "4.470403045654297rem",
+      "base": "1.171875rem"
+    },
+    "mono_usage": "Utilisé pour l'affichage de données techniques, de codes ou d'informations financières dans un format structuré et lisible.",
+    "body_weights": [
+      400,
+      500,
+      600
+    ],
+    "body_font_url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap",
+    "mono_font_url": "https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;500&display=swap",
+    "body_font_name": "DM Sans",
+    "mono_font_name": "Space Mono",
+    "heading_weights": [
+      600,
+      700,
+      800
+    ],
+    "heading_font_url": "https://fonts.googleapis.com/css2?family=Urbanist:wght@600;700;800&display=swap",
+    "heading_font_name": "Urbanist",
+    "pairing_rationale": "Urbanist apporte une structure moderne et épurée aux titres, tandis que DM Sans offre une grande lisibilité et une sensation à la fois conviviale et professionnelle pour le corps du texte, assurant un équilibre entre expertise et accessibilité."
+  },
+  "brand_voice": {
+    "tone": "Expert, Accessible, Clair, Rassurant",
+    "do_not": [
+      "Utiliser un ton trop décontracté ou familier.",
+      "Employer des formulations trop complexes ou ambiguës.",
+      "Faire des promesses non étayées ou exagérées.",
+      "Inclure du jargon technique sans explication claire."
+    ],
+    "cta_style": "Direct, axé sur l'action, et orienté vers le bénéfice pour l'utilisateur.",
+    "example_ctas": [
+      "Comparer les solutions",
+      "Découvrir mon potentiel d'économie",
+      "Obtenir un comparatif gratuit"
+    ],
+    "writing_rules": [
+      "Utiliser un langage direct et concis, évitant le jargon inutile.",
+      "Mettre l'accent sur les bénéfices concrets pour le professionnel (gain de temps, économies, conformité).",
+      "Adopter un ton pédagogique et guidant, sans être condescendant.",
+      "Employer la deuxième personne du pluriel ('vous') pour une approche respectueuse et professionnelle.",
+      "Éviter les superlatifs excessifs et les promesses irréalistes."
+    ],
+    "example_headlines": [
+      "Simplifiez la gestion de vos déplacements professionnels.",
+      "Trouvez la solution idéale pour votre entreprise.",
+      "Des comparatifs clairs pour des décisions éclairées."
+    ],
+    "personality_adjectives": [
+      "Informé",
+      "Efficace",
+      "Fiable",
+      "Transparent",
+      "Accommodant"
+    ]
+  },
+  "project_name": "Déplacement Pro",
+  "css_variables": ":root {\n  --primary: #2A5A6D;\n  --primary-foreground: #F8F8F8;\n\n  --secondary: #7A9CA9;\n  --secondary-foreground: #202020;\n\n  --accent: #A04E6D;\n  --accent-foreground: #F8F8F8;\n\n  --background: #FDFDFD;\n  --foreground: #202020;\n\n  --surface: #F4F4F4;\n\n  --muted: #DEDEDE;\n  --muted-foreground: #606060;\n\n  --border: #EAEAEA;\n\n  --destructive: #DC2626;\n  --destructive-foreground: #F8F8F8;\n\n  --success: #22C55E;\n  --warning: #FACC15;\n  --info: #3B82F6;\n\n  --radius: 8px;\n\n  /* Typography */\n  --font-sans: 'DM Sans', sans-serif;\n  --font-heading: 'Urbanist', sans-serif;\n  --font-mono: 'Space Mono', monospace;\n}",
+  "graphic_system": {
+    "divider": {
+      "css": "width: 100%; height: 1px; background: linear-gradient(to right, rgba(234, 234, 234, 0) 0%, #eaeaea 20%, #eaeaea 80%, rgba(234, 234, 234, 0) 100%);",
+      "style": "thin_line_faded",
+      "usage": "Pour séparer les sections majeures de contenu, les éléments au sein des cartes, ou les lignes dans les tableaux, assurant une hiérarchie visuelle propre et aérée."
+    },
+    "philosophy": "Utiliser des éléments graphiques subtils et structurants pour renforcer la clarté et le professionnalisme, sans encombrer visuellement l'interface, soulignant le rôle d'outil de décision.",
+    "accent_shape": {
+      "type": "subtle_chevron_corner",
+      "usage": "Comme élément décoratif dans les coins de cartes de comparaison, les blocs de fonctionnalités ou les sections de témoignages pour ajouter un point d'intérêt.",
+      "description": "Une forme de chevron inversé minimaliste, utilisant la couleur primaire, subtilement positionnée dans le coin inférieur droit de certains blocs de contenu ou cartes, suggérant la progression et la comparaison."
+    },
+    "background_pattern": {
+      "css": "background-image: radial-gradient(#DEDEDE 0.5px, transparent 0.5px); background-size: 20px 20px; opacity: 0.03;",
+      "type": "subtle_grid_dots",
+      "usage": "Sur les sections d'en-tête, les arrière-plans de grandes cartes, ou les zones de contenu secondaire pour ajouter de la profondeur.",
+      "description": "Un motif de points très discret, en gris clair (opacité 0.03), visible sur de plus grandes sections d'arrière-plan, ajoutant texture et une base technique sans distraction."
+    }
+  },
+  "generated_logos": [
+    {
+      "style": "primary",
+      "generatedAt": "2026-03-03T13:29:05.174Z"
+    }
+  ],
+  "suggested_names": [
+    {
+      "name": "TrajetFacile",
+      "tagline": "Votre assistant pour des déplacements professionnels sans tracas.",
+      "rationale": "Combine deux mots français pour un nom clair et évocateur de simplicité et d'efficacité dans les déplacements.",
+      "domain_ideas": [
+        "trajetfacile.com",
+        "trajetfacilehq.com",
+        "trajetfacileapp.com",
+        "trytrajetfacile.com"
+      ]
+    },
+    {
+      "name": "Boussole",
+      "tagline": "L'outil qui guide vos choix pour les déplacements pros.",
+      "rationale": "Un nom métaphorique qui évoque la guidance et l'orientation dans la complexité des solutions de déplacement, court et mémorable.",
+      "domain_ideas": [
+        "boussole.com",
+        "boussoleapp.com",
+        "laboussole.com",
+        "tryboussole.com"
+      ]
+    },
+    {
+      "name": "Voyana",
+      "tagline": "L'intelligence des déplacements professionnels à portée de main.",
+      "rationale": "Un mot inventé, moderne et sonore, suggérant voyage et analyse, facile à prononcer et distinctif.",
+      "domain_ideas": [
+        "voyana.com",
+        "voyanaplus.com",
+        "voyanapro.com",
+        "getvoyana.com"
+      ]
+    }
+  ],
+  "tailwind_config": {
+    "colors": {
+      "card": {
+        "DEFAULT": "var(--background)",
+        "foreground": "var(--foreground)"
+      },
+      "info": "var(--info)",
+      "ring": "var(--primary)",
+      "input": "var(--border)",
+      "muted": {
+        "DEFAULT": "var(--muted)",
+        "foreground": "var(--muted-foreground)"
+      },
+      "accent": {
+        "DEFAULT": "var(--accent)",
+        "foreground": "var(--primary-foreground)"
+      },
+      "border": "var(--border)",
+      "popover": {
+        "DEFAULT": "var(--background)",
+        "foreground": "var(--foreground)"
+      },
+      "primary": {
+        "DEFAULT": "var(--primary)",
+        "foreground": "var(--primary-foreground)"
+      },
+      "success": "var(--success)",
+      "warning": "var(--warning)",
+      "secondary": {
+        "DEFAULT": "var(--secondary)",
+        "foreground": "var(--foreground)"
+      },
+      "background": "var(--background)",
+      "foreground": "var(--foreground)",
+      "destructive": {
+        "DEFAULT": "var(--destructive)",
+        "foreground": "var(--primary-foreground)"
+      }
+    },
+    "animation": {
+      "border-glow": "border-glow 0.8s infinite alternate",
+      "pulse-subtle": "pulse-subtle 1.5s infinite"
+    },
+    "boxShadow": {
+      "DEFAULT": "0 4px 12px rgba(0, 0, 0, 0.04)"
+    },
+    "keyframes": {
+      "border-glow": {
+        "to": {
+          "box-shadow": "0 0 0 3px rgba(42, 90, 109, 0.0)"
+        },
+        "from": {
+          "box-shadow": "0 0 0 0px rgba(42, 90, 109, 0.2)"
+        }
+      },
+      "pulse-subtle": {
+        "50%": {
+          "transform": "scale(1.03)"
+        },
+        "0%, 100%": {
+          "transform": "scale(1)"
+        }
+      }
+    },
+    "fontFamily": {
+      "mono": [
+        "Space Mono",
+        "monospace"
+      ],
+      "sans": [
+        "DM Sans",
+        "sans-serif"
+      ],
+      "heading": [
+        "Urbanist",
+        "sans-serif"
+      ]
+    },
+    "borderRadius": {
+      "lg": "8px",
+      "md": "6px",
+      "sm": "4px"
+    }
+  },
+  "visual_identity": {
+    "approach": "combination",
+    "logo_concepts": [
+      {
+        "name": "Déplacement Pro",
+        "style": "Wordmark + Abstract Mark",
+        "symbolism": "Représente la comparaison, l'orientation, l'efficacité et le mouvement professionnel. Les lignes épurées symbolisent la clarté et la modernité inhérentes à la prise de décision éclairée.",
+        "description": "Un wordmark épuré 'Déplacement Pro' associé à un symbole abstrait minimaliste représentant deux formes superposées, suggérant la comparaison, la progression et la clarté. Les lignes sont nettes et contemporaines.",
+        "scalability_notes": "Le marqueur géométrique simple assure une excellente lisibilité en tant que favicon (16px) et dans tous les contextes numériques et imprimés, sans devenir un 'blob'."
+      }
+    ],
+    "approach_rationale": "Combine le nom de marque fort 'Déplacement Pro' avec un symbole abstrait minimaliste et évolutif pour une reconnaissance immédiate, même à petite taille, tout en offrant la clarté du nom complet.",
+    "illustration_style": "Illustrations linéaires et épurées avec une palette de couleurs limitée au primaire, secondaire et accent, utilisant des formes géométriques douces. Priorise la clarté et la pertinence par rapport à l'ornementation.",
+    "imagery_guidelines": "Photographies professionnelles, lumineuses et authentiques de bureaux modernes, de personnes interagissant (en réunion, en voyage d'affaires) ou de paysages urbains, avec une légère désaturation pour maintenir la cohérence de la palette."
+  }
+}

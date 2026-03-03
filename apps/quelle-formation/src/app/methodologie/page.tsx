@@ -88,16 +88,16 @@ export default function MethodologiePage() {
       />
 
       {/* Hero */}
-      <section className="hero-gradient text-white">
+      <section className="hero-gradient">
         <div className="container-narrow mx-auto px-4 py-16 md:py-24 relative z-10">
           <div className="max-w-3xl">
-            <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-sm font-medium text-white/80 mb-4">
+            <span className="inline-block px-3 py-1 rounded-full border border-border text-sm font-medium text-muted-foreground mb-4">
               Transparence totale
             </span>
-            <h1 className="text-3xl md:text-5xl font-extrabold font-heading leading-tight">
+            <h1 className="text-3xl md:text-5xl font-extrabold font-heading leading-tight text-foreground">
               Notre méthodologie de comparaison
             </h1>
-            <p className="mt-4 text-lg text-white/70 leading-relaxed max-w-2xl">
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed max-w-2xl">
               QuelleFormation.fr évalue chaque organisme de formation selon des critères
               objectifs et vérifiables. Aucun organisme ne peut payer pour améliorer son
               classement.
@@ -110,7 +110,7 @@ export default function MethodologiePage() {
       <section className="section-padding">
         <div className="container-narrow mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold font-heading text-surface-900 mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold font-heading text-foreground mb-6">
               Nos principes
             </h2>
             <div className="grid gap-4 sm:grid-cols-3">
@@ -132,8 +132,8 @@ export default function MethodologiePage() {
                   key={p.title}
                   className="glass-card p-6 space-y-2"
                 >
-                  <h3 className="font-bold font-heading text-surface-900">{p.title}</h3>
-                  <p className="text-sm text-surface-600 leading-relaxed">{p.text}</p>
+                  <h3 className="font-bold font-heading text-foreground">{p.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{p.text}</p>
                 </div>
               ))}
             </div>
@@ -142,13 +142,13 @@ export default function MethodologiePage() {
       </section>
 
       {/* Critères */}
-      <section className="section-padding bg-surface-100">
+      <section className="section-padding bg-muted">
         <div className="container-narrow mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold font-heading text-surface-900 mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold font-heading text-foreground mb-2">
               Les 6 critères d&apos;évaluation
             </h2>
-            <p className="text-surface-600 mb-8">
+            <p className="text-muted-foreground mb-8">
               Chaque organisme est évalué sur ces critères, pondérés selon leur importance
               pour les apprenants.
             </p>
@@ -159,17 +159,17 @@ export default function MethodologiePage() {
                   key={c.title}
                   className="glass-card p-6 flex gap-4"
                 >
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center">
-                    <c.icon className="w-5 h-5 text-primary-600" />
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <c.icon className="w-5 h-5 text-accent" />
                   </div>
                   <div className="flex-1 space-y-1">
                     <div className="flex items-baseline gap-2">
-                      <h3 className="font-bold font-heading text-surface-900">{c.title}</h3>
-                      <span className="text-xs font-semibold text-primary-600 bg-primary-50 px-2 py-0.5 rounded-full">
+                      <h3 className="font-bold font-heading text-foreground">{c.title}</h3>
+                      <span className="text-xs font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded-full">
                         {c.weight}
                       </span>
                     </div>
-                    <p className="text-sm text-surface-600 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {c.description}
                     </p>
                   </div>
@@ -184,14 +184,14 @@ export default function MethodologiePage() {
       <section className="section-padding">
         <div className="container-narrow mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold font-heading text-surface-900 mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold font-heading text-foreground mb-6">
               Nos sources
             </h2>
             <ul className="space-y-3">
               {sources.map((s) => (
                 <li key={s} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-surface-700 leading-relaxed">{s}</span>
+                  <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span className="text-foreground leading-relaxed">{s}</span>
                 </li>
               ))}
             </ul>
@@ -200,10 +200,10 @@ export default function MethodologiePage() {
       </section>
 
       {/* Processus */}
-      <section className="section-padding bg-surface-100">
+      <section className="section-padding bg-muted">
         <div className="container-narrow mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold font-heading text-surface-900 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold font-heading text-foreground mb-8">
               Notre processus
             </h2>
             <div className="space-y-6">
@@ -230,12 +230,12 @@ export default function MethodologiePage() {
                 },
               ].map((s) => (
                 <div key={s.step} className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center text-sm font-bold">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">
                     {s.step}
                   </div>
                   <div className="space-y-1">
-                    <h3 className="font-bold font-heading text-surface-900">{s.title}</h3>
-                    <p className="text-sm text-surface-600 leading-relaxed">{s.text}</p>
+                    <h3 className="font-bold font-heading text-foreground">{s.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{s.text}</p>
                   </div>
                 </div>
               ))}
@@ -247,12 +247,12 @@ export default function MethodologiePage() {
       {/* CTA */}
       <section className="section-padding">
         <div className="container-narrow mx-auto px-4 text-center">
-          <p className="text-surface-600 mb-4">
+          <p className="text-muted-foreground mb-4">
             Une question sur notre méthodologie ? Une information à corriger ?
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="mailto:contact@quelle-telephonie-pro.fr"
+              href="mailto:contact@quelleformationpro.fr"
               className="btn-primary text-sm"
             >
               Nous contacter

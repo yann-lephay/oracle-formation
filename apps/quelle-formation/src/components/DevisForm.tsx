@@ -84,17 +84,19 @@ export function DevisForm({ defaultDomaine }: DevisFormProps = {}) {
   if (status === "success") {
     return (
       <div className="glass-card p-8 md:p-12 text-center space-y-4 max-w-2xl mx-auto">
-        <CheckCircle2 className="w-12 h-12 text-primary-500 mx-auto" />
-        <h3 className="text-2xl font-bold text-surface-900">
+        <CheckCircle2 className="w-12 h-12 text-accent mx-auto" />
+        <h3 className="text-2xl font-bold text-foreground">
           Demande envoyée !
         </h3>
-        <p className="text-surface-600">
+        <p className="text-muted-foreground">
           Merci {formData.prenom}. Vous recevrez vos devis personnalisés sous 48h
           à l&apos;adresse <strong>{formData.email}</strong>.
         </p>
       </div>
     );
   }
+
+  const inputClass = "w-full rounded border border-border bg-surface px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors";
 
   return (
     <form
@@ -104,8 +106,8 @@ export function DevisForm({ defaultDomaine }: DevisFormProps = {}) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Prénom */}
         <div className="space-y-1.5">
-          <label htmlFor="prenom" className="text-sm font-medium text-surface-700">
-            Prénom <span className="text-accent-500">*</span>
+          <label htmlFor="prenom" className="text-sm font-medium text-foreground">
+            Prénom <span className="text-accent">*</span>
           </label>
           <input
             id="prenom"
@@ -115,14 +117,14 @@ export function DevisForm({ defaultDomaine }: DevisFormProps = {}) {
             value={formData.prenom}
             onChange={handleChange}
             placeholder="Votre prénom"
-            className="w-full rounded-xl border border-surface-200 bg-white px-4 py-3 text-sm text-surface-800 placeholder:text-surface-400 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-colors"
+            className={inputClass}
           />
         </div>
 
         {/* Email */}
         <div className="space-y-1.5">
-          <label htmlFor="email" className="text-sm font-medium text-surface-700">
-            Email <span className="text-accent-500">*</span>
+          <label htmlFor="email" className="text-sm font-medium text-foreground">
+            Email <span className="text-accent">*</span>
           </label>
           <input
             id="email"
@@ -132,13 +134,13 @@ export function DevisForm({ defaultDomaine }: DevisFormProps = {}) {
             value={formData.email}
             onChange={handleChange}
             placeholder="vous@exemple.com"
-            className="w-full rounded-xl border border-surface-200 bg-white px-4 py-3 text-sm text-surface-800 placeholder:text-surface-400 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-colors"
+            className={inputClass}
           />
         </div>
 
         {/* Téléphone */}
         <div className="space-y-1.5">
-          <label htmlFor="telephone" className="text-sm font-medium text-surface-700">
+          <label htmlFor="telephone" className="text-sm font-medium text-foreground">
             Téléphone
           </label>
           <input
@@ -148,13 +150,13 @@ export function DevisForm({ defaultDomaine }: DevisFormProps = {}) {
             value={formData.telephone}
             onChange={handleChange}
             placeholder="06 12 34 56 78"
-            className="w-full rounded-xl border border-surface-200 bg-white px-4 py-3 text-sm text-surface-800 placeholder:text-surface-400 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-colors"
+            className={inputClass}
           />
         </div>
 
         {/* Domaine */}
         <div className="space-y-1.5">
-          <label htmlFor="domaine" className="text-sm font-medium text-surface-700">
+          <label htmlFor="domaine" className="text-sm font-medium text-foreground">
             Domaine de formation
           </label>
           <select
@@ -162,7 +164,7 @@ export function DevisForm({ defaultDomaine }: DevisFormProps = {}) {
             name="domaine"
             value={formData.domaine}
             onChange={handleChange}
-            className="w-full rounded-xl border border-surface-200 bg-white px-4 py-3 text-sm text-surface-800 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-colors"
+            className={inputClass}
           >
             <option value="">— Sélectionnez —</option>
             {domaines.map((d) => (
@@ -176,7 +178,7 @@ export function DevisForm({ defaultDomaine }: DevisFormProps = {}) {
 
         {/* Situation */}
         <div className="space-y-1.5">
-          <label htmlFor="situation" className="text-sm font-medium text-surface-700">
+          <label htmlFor="situation" className="text-sm font-medium text-foreground">
             Situation actuelle
           </label>
           <select
@@ -184,7 +186,7 @@ export function DevisForm({ defaultDomaine }: DevisFormProps = {}) {
             name="situation"
             value={formData.situation}
             onChange={handleChange}
-            className="w-full rounded-xl border border-surface-200 bg-white px-4 py-3 text-sm text-surface-800 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-colors"
+            className={inputClass}
           >
             <option value="">— Sélectionnez —</option>
             {SITUATIONS.map((s) => (
@@ -197,7 +199,7 @@ export function DevisForm({ defaultDomaine }: DevisFormProps = {}) {
 
         {/* Financement */}
         <div className="space-y-1.5">
-          <label htmlFor="financement" className="text-sm font-medium text-surface-700">
+          <label htmlFor="financement" className="text-sm font-medium text-foreground">
             Financement envisagé
           </label>
           <select
@@ -205,7 +207,7 @@ export function DevisForm({ defaultDomaine }: DevisFormProps = {}) {
             name="financement"
             value={formData.financement}
             onChange={handleChange}
-            className="w-full rounded-xl border border-surface-200 bg-white px-4 py-3 text-sm text-surface-800 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-colors"
+            className={inputClass}
           >
             <option value="">— Sélectionnez —</option>
             {FINANCEMENTS.map((f) => (
@@ -218,7 +220,7 @@ export function DevisForm({ defaultDomaine }: DevisFormProps = {}) {
 
         {/* Message */}
         <div className="space-y-1.5 sm:col-span-2">
-          <label htmlFor="message" className="text-sm font-medium text-surface-700">
+          <label htmlFor="message" className="text-sm font-medium text-foreground">
             Message
           </label>
           <textarea
@@ -228,14 +230,14 @@ export function DevisForm({ defaultDomaine }: DevisFormProps = {}) {
             value={formData.message}
             onChange={handleChange}
             placeholder="Décrivez votre projet de formation…"
-            className="w-full rounded-xl border border-surface-200 bg-white px-4 py-3 text-sm text-surface-800 placeholder:text-surface-400 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-colors resize-y"
+            className={`${inputClass} resize-y`}
           />
         </div>
       </div>
 
       {/* Error */}
       {status === "error" && (
-        <div className="mt-4 flex items-center gap-2 text-red-500 text-sm">
+        <div className="mt-4 flex items-center gap-2 text-destructive text-sm">
           <AlertCircle className="w-4 h-4 shrink-0" />
           <span>{errorMessage}</span>
         </div>
@@ -260,7 +262,7 @@ export function DevisForm({ defaultDomaine }: DevisFormProps = {}) {
             </>
           )}
         </button>
-        <p className="text-xs text-surface-500 mt-3">
+        <p className="text-xs text-muted-foreground mt-3">
           Gratuit et sans engagement. Vos données restent confidentielles.
         </p>
       </div>

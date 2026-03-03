@@ -99,32 +99,32 @@ export default async function FormationDomainePage({ params }: PageProps) {
             />
 
             {/* Hero */}
-            <section className="hero-gradient text-white">
+            <section className="hero-gradient">
                 <div className="container-narrow mx-auto px-4 py-16 md:py-20 relative z-10">
                     <div className="max-w-3xl">
                         {/* Breadcrumb */}
-                        <nav className="flex items-center gap-2 text-sm text-white/50 mb-6">
-                            <Link href="/" className="hover:text-white/80">
+                        <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+                            <Link href="/" className="hover:text-foreground">
                                 Accueil
                             </Link>
                             <span>/</span>
-                            <span className="text-white/80">Formation {domaine.name}</span>
+                            <span className="text-foreground">Formation {domaine.name}</span>
                         </nav>
 
                         <div className="flex items-center gap-3 mb-4">
                             {domaine.cpfEligible && (
                                 <span className="badge badge-cpf">Éligible CPF</span>
                             )}
-                            <span className="badge bg-white/10 text-white/90 border border-white/20">
+                            <span className="badge">
                                 Demande {domaine.demandLevel}
                             </span>
                         </div>
 
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 text-foreground">
                             Formation {domaine.name} en 2026
                         </h1>
 
-                        <p className="text-lg text-white/70 max-w-2xl leading-relaxed mb-8">
+                        <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed mb-8">
                             {domaine.description}
                         </p>
 
@@ -154,11 +154,11 @@ export default async function FormationDomainePage({ params }: PageProps) {
                             ].map((metric) => (
                                 <div
                                     key={metric.label}
-                                    className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10"
+                                    className="glass-card p-4"
                                 >
-                                    <metric.icon className="w-5 h-5 text-primary-300 mb-2" />
-                                    <p className="text-xs text-white/50">{metric.label}</p>
-                                    <p className="text-sm font-bold text-white">{metric.value}</p>
+                                    <metric.icon className="w-5 h-5 text-accent mb-2" />
+                                    <p className="text-xs text-muted-foreground">{metric.label}</p>
+                                    <p className="text-sm font-bold text-foreground">{metric.value}</p>
                                 </div>
                             ))}
                         </div>
@@ -169,7 +169,7 @@ export default async function FormationDomainePage({ params }: PageProps) {
             {/* Organismes */}
             <section className="section-padding">
                 <div className="container-narrow mx-auto px-4">
-                    <h2 className="text-2xl md:text-3xl font-extrabold text-surface-900 mb-8">
+                    <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-8">
                         {organismes.length} organismes pour se former en {domaine.name}
                     </h2>
 
@@ -177,8 +177,8 @@ export default async function FormationDomainePage({ params }: PageProps) {
                         <OrganismeFilters organismes={organismes} />
                     ) : (
                         <div className="glass-card p-8 text-center">
-                            <GraduationCap className="w-12 h-12 text-surface-300 mx-auto mb-4" />
-                            <p className="text-surface-500">
+                            <GraduationCap className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                            <p className="text-muted-foreground">
                                 Nous travaillons à ajouter des organismes pour ce domaine. Revenez bientôt !
                             </p>
                         </div>
@@ -187,13 +187,13 @@ export default async function FormationDomainePage({ params }: PageProps) {
             </section>
 
             {/* DevisForm */}
-            <section className="section-padding bg-primary-950" id="devis">
+            <section className="section-padding bg-primary" id="devis">
                 <div className="container-narrow mx-auto px-4">
                     <div className="text-center mb-10">
-                        <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
+                        <h2 className="text-2xl md:text-3xl font-extrabold text-primary-foreground mb-3">
                             Besoin d&apos;aide pour choisir votre formation {domaine.name} ?
                         </h2>
-                        <p className="text-white/70 max-w-2xl mx-auto">
+                        <p className="text-primary-foreground/70 max-w-2xl mx-auto">
                             Recevez un devis personnalisé de plusieurs organismes en une seule demande.
                             Gratuit et sans engagement.
                         </p>
@@ -203,12 +203,12 @@ export default async function FormationDomainePage({ params }: PageProps) {
             </section>
 
             {/* Villes */}
-            <section className="section-padding bg-white">
+            <section className="section-padding bg-surface">
                 <div className="container-narrow mx-auto px-4">
-                    <h2 className="text-2xl md:text-3xl font-extrabold text-surface-900 mb-3">
+                    <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-3">
                         Formation {domaine.name} par ville
                     </h2>
-                    <p className="text-surface-500 mb-8">
+                    <p className="text-muted-foreground mb-8">
                         Trouvez une formation {domaine.name.toLowerCase()} près de chez vous.
                     </p>
 
@@ -219,11 +219,11 @@ export default async function FormationDomainePage({ params }: PageProps) {
                                 href={`/formation/${slug}/${ville.slug}`}
                                 className="glass-card p-4 text-center group"
                             >
-                                <MapPin className="w-5 h-5 text-primary-400 mx-auto mb-2" />
-                                <p className="text-sm font-semibold text-surface-900 group-hover:text-primary-600 transition-colors">
+                                <MapPin className="w-5 h-5 text-accent mx-auto mb-2" />
+                                <p className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
                                     {ville.name}
                                 </p>
-                                <p className="text-xs text-surface-400 mt-0.5">
+                                <p className="text-xs text-muted-foreground mt-0.5">
                                     Formation {domaine.shortName}
                                 </p>
                             </Link>
@@ -235,7 +235,7 @@ export default async function FormationDomainePage({ params }: PageProps) {
             {/* FAQ */}
             <section className="section-padding">
                 <div className="container-narrow mx-auto px-4">
-                    <h2 className="text-2xl md:text-3xl font-extrabold text-surface-900 mb-8">
+                    <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-8">
                         Questions fréquentes sur la formation {domaine.name}
                     </h2>
 
@@ -245,11 +245,11 @@ export default async function FormationDomainePage({ params }: PageProps) {
                                 key={faq.question}
                                 className="glass-card p-5 group open:pb-6"
                             >
-                                <summary className="cursor-pointer list-none flex items-center justify-between font-semibold text-surface-900">
+                                <summary className="cursor-pointer list-none flex items-center justify-between font-semibold text-foreground">
                                     {faq.question}
-                                    <Award className="w-5 h-5 text-surface-400 group-open:rotate-180 transition-transform" />
+                                    <Award className="w-5 h-5 text-muted-foreground group-open:rotate-180 transition-transform" />
                                 </summary>
-                                <p className="mt-3 text-sm text-surface-600 leading-relaxed">
+                                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                                     {faq.answer}
                                 </p>
                             </details>
