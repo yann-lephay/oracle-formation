@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://deplacementpro.fr/sitemap.xml",
+    sitemap: "https://deplacement-pro.fr/sitemap.xml",
   };
 }

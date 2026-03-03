@@ -63,7 +63,7 @@ export default function ConfidentialitePage() {
               Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de
               rectification, d&apos;effacement, de portabilité et d&apos;opposition.
               Pour exercer ces droits, contactez-nous à :
-              contact@deplacementpro.fr.
+              contact@deplacement-pro.fr.
             </p>
           </div>
 
@@ -95,7 +95,7 @@ export default function ConfidentialitePage() {
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Pour toute question relative à la protection de vos données :
-              contact@deplacementpro.fr.
+              contact@deplacement-pro.fr.
             </p>
           </div>
         </div>

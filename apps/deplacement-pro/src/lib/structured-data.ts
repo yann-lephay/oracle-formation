@@ -34,7 +34,7 @@ export function generateOrganizationSchema() {
     sameAs: [],
     contactPoint: {
       "@type": "ContactPoint",
-      email: "contact@deplacementpro.fr",
+      email: "contact@deplacement-pro.fr",
       contactType: "customer service",
       availableLanguage: "French",
     },

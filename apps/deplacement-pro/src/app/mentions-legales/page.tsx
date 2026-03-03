@@ -23,7 +23,7 @@ export default function MentionsLegalesPage() {
               RCS : [Ville] [Numéro]<br />
               Numéro de TVA : [Numéro]<br />
               Directeur de la publication : [Nom]<br />
-              Contact : contact@deplacementpro.fr
+              Contact : contact@deplacement-pro.fr
             </p>
           </div>
 

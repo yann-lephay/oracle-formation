@@ -28,7 +28,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://deplacementpro.fr"),
+  metadataBase: new URL("https://deplacement-pro.fr"),
   title: {
     template: "%s | DeplacementPro.fr",
     default: "DeplacementPro.fr — Comparateur de Solutions de Déplacement Professionnel 2026",
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://deplacementpro.fr",
+    canonical: "https://deplacement-pro.fr",
   },
 };
 

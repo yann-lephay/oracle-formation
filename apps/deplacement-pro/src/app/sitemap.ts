@@ -6,7 +6,7 @@ import { guides } from "@/lib/data/guides";
 import { villes } from "@/lib/data/villes";
 import { blogPosts } from "@/lib/data/blog";
 
-const BASE_URL = "https://deplacementpro.fr";
+const BASE_URL = "https://deplacement-pro.fr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();

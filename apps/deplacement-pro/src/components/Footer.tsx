@@ -111,7 +111,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:contact@deplacementpro.fr"
+                  href="mailto:contact@deplacement-pro.fr"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5"
                 >
                   <Mail className="w-3.5 h-3.5" strokeWidth={1.5} />
