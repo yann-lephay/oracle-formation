@@ -91,6 +91,35 @@ export function generateBreadcrumbSchema(items: { name: string; url: string }[])
     };
 }
 
+export function generateArticleSchema(params: {
+    title: string;
+    description: string;
+    url: string;
+    publishedAt: string;
+    updatedAt: string;
+    author: string;
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: params.title,
+        description: params.description,
+        url: params.url,
+        datePublished: params.publishedAt,
+        dateModified: params.updatedAt,
+        author: {
+            "@type": "Organization",
+            name: params.author,
+            url: seoConfig.siteUrl,
+        },
+        publisher: {
+            "@type": "Organization",
+            name: seoConfig.siteName,
+            url: seoConfig.siteUrl,
+        },
+    };
+}
+
 export function generateComparisonSchema(params: {
     name: string;
     description: string;

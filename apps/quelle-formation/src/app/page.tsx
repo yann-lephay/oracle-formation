@@ -1,7 +1,6 @@
 import Link from "next/link";
 import {
   GraduationCap,
-  Search,
   CheckCircle2,
   ArrowRight,
   Star,
@@ -25,6 +24,8 @@ import { domaines } from "@/lib/data/domaines";
 import { organismes } from "@/lib/data/organismes";
 import { comparisons } from "@/lib/data/comparisons";
 import { generateWebsiteSchema, generateOrganizationSchema } from "@/lib/structured-data";
+import { DevisForm } from "@/components/DevisForm";
+import { SearchBar } from "@/components/SearchBar";
 
 const iconMap: Record<string, React.ElementType> = {
   Code,
@@ -91,37 +92,19 @@ export default function HomePage() {
             </h1>
 
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
-              Comparez <strong className="text-white">8 organismes certifiés Qualiopi</strong>,
+              Comparez <strong className="text-white">14 organismes certifiés Qualiopi</strong>,
               20 domaines de formation et trouvez le meilleur financement CPF.
               100 % indépendant, 100 % gratuit.
             </p>
 
             {/* Search bar */}
-            <div className="max-w-xl mx-auto">
-              <div className="flex items-center bg-white rounded-2xl shadow-2xl shadow-black/20 overflow-hidden">
-                <div className="flex items-center gap-2 pl-5 text-surface-400">
-                  <Search className="w-5 h-5" />
-                </div>
-                <input
-                  type="text"
-                  placeholder="Ex : formation développeur web, data analyst, marketing digital…"
-                  className="flex-1 px-3 py-4 text-surface-800 placeholder:text-surface-400 text-sm outline-none"
-                  aria-label="Rechercher une formation"
-                />
-                <Link
-                  href="/#domaines"
-                  className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-4 text-sm font-semibold transition-colors"
-                >
-                  Chercher
-                </Link>
-              </div>
-            </div>
+            <SearchBar />
 
             {/* Trust badges */}
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-white/60">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-accent-400" />
-                8 organismes certifiés Qualiopi
+                14 organismes certifiés Qualiopi
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-accent-400" />
@@ -143,7 +126,7 @@ export default function HomePage() {
             {[
               { value: "38,9M", label: "Titulaires CPF en France", icon: Users },
               { value: "20+", label: "Domaines de formation", icon: BookOpen },
-              { value: "8", label: "Organismes comparés", icon: Award },
+              { value: "14", label: "Organismes comparés", icon: Award },
               { value: "100%", label: "Indépendant et gratuit", icon: Shield },
             ].map((stat) => (
               <div key={stat.label} className="glass-card p-5 text-center">
@@ -341,33 +324,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============ DEVIS CTA ============ */}
+      {/* ============ DEVIS FORMULAIRE ============ */}
       <section className="section-padding bg-primary-950" id="devis">
-        <div className="container-narrow mx-auto px-4 text-center">
-          <div className="max-w-2xl mx-auto space-y-6">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white">
+        <div className="container-narrow mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
               Besoin d&apos;aide pour choisir ?
             </h2>
-            <p className="text-white/70 text-lg">
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
               Recevez un devis personnalisé de plusieurs organismes en une seule demande.
               Gratuit et sans engagement.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/#devis"
-                className="btn-primary text-base px-8 py-4"
-              >
-                <GraduationCap className="w-5 h-5" />
-                Demander mon devis gratuit
-              </Link>
-              <Link
-                href="/methodologie"
-                className="btn-secondary text-base px-8 py-4 !bg-transparent !text-white !border-white/30 hover:!bg-white/10"
-              >
-                Notre méthodologie
-              </Link>
-            </div>
           </div>
+          <DevisForm />
         </div>
       </section>
 

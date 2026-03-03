@@ -1,10 +1,10 @@
 /**
- * SEO Configuration for quelle-formation.fr
+ * SEO Configuration for quelleformationpro.fr
  */
 
 export const seoConfig = {
     siteName: "QuelleFormation.fr",
-    siteUrl: "https://quelle-formation.fr",
+    siteUrl: "https://quelleformationpro.fr",
     defaultTitle: "QuelleFormation.fr — Comparateur de Formations Professionnelles 2026",
     defaultDescription:
         "Comparez les meilleures formations professionnelles en France. Prix, avis, CPF, organismes certifiés Qualiopi. Trouvez la formation qui vous correspond.",

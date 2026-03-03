@@ -1,0 +1,331 @@
+{
+  "icons": {
+    "style": "line-medium",
+    "library": "lucide-react",
+    "size_default": "24px",
+    "stroke_width": 1.5,
+    "suggested_icons": [
+      {
+        "context": "Navigation/Home",
+        "icon_name": "home"
+      },
+      {
+        "context": "Search",
+        "icon_name": "search"
+      },
+      {
+        "context": "Settings",
+        "icon_name": "settings"
+      },
+      {
+        "context": "User Profile",
+        "icon_name": "user"
+      },
+      {
+        "context": "Favorites/Bookmark",
+        "icon_name": "bookmark"
+      },
+      {
+        "context": "Comparison",
+        "icon_name": "columns-3"
+      },
+      {
+        "context": "Star Rating",
+        "icon_name": "star"
+      },
+      {
+        "context": "Filter",
+        "icon_name": "filter"
+      },
+      {
+        "context": "Arrow Right",
+        "icon_name": "arrow-right"
+      },
+      {
+        "context": "External Link",
+        "icon_name": "external-link"
+      }
+    ],
+    "library_rationale": "Lucide-react icons align perfectly with the 'Modern & Minimal' aesthetic, offering clean lines and highly legible symbols. Their customizable stroke width ensures seamless integration with the thin stroke style of the UI."
+  },
+  "colors": {
+    "info": "#3B82F6",
+    "muted": "#CBD5E1",
+    "accent": "#FF7E6B",
+    "border": "#E2E8F0",
+    "primary": "#006C71",
+    "success": "#22C55E",
+    "surface": "#F1F5F9",
+    "warning": "#FBBF24",
+    "secondary": "#E0F2F1",
+    "background": "#F9FAFC",
+    "foreground": "#1E293B",
+    "destructive": "#EF4444",
+    "color_rationale": "A sophisticated deep teal (#006C71) forms the primary, conveying trust and professionalism, balanced with a vibrant coral accent (#FF7E6B) for energy and distinctiveness. A clean, light background (#F9FAFC) ensures readability and a modern, minimal aesthetic, avoiding generic blue/purple gradients.",
+    "muted_foreground": "#64748B",
+    "primary_foreground": "#FFFFFF"
+  },
+  "tagline": "Votre guide indépendant pour la formation professionnelle en France.",
+  "ui_style": {
+    "box_shadow": "0px 2px 4px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.02)",
+    "card_style": "Clean, elevated cards with background surface color, 6px border radius, and a subtle box shadow for a sense of depth without heavy visual weight.",
+    "input_style": "Minimalist inputs with 1px border in border color, 6px radius, and a subtle focus ring in primary color.",
+    "border_width": "1px",
+    "button_style": {
+      "accent": "Solid fill with accent color, 6px radius, slightly bolder shadow on hover.",
+      "primary": "Solid fill with primary color, 6px radius, subtle shadow on hover.",
+      "secondary": "Outline with border color, text in foreground color, 6px radius."
+    },
+    "icon_library": "lucide-react",
+    "stroke_style": "thin",
+    "border_radius": "6px",
+    "stroke_style_rationale": "A 'thin' stroke style (1px borders, 1.5px icon strokes) supports the 'Modern & Minimal' aesthetic, conveying refinement, precision, and an uncluttered user interface. This consistency ensures visual harmony across all UI elements."
+  },
+  "claude_md": "# QuelleFormation: Votre guide indépendant pour la formation professionnelle en France.\n\n## 🎨 Couleurs\n| Token | Hex | Usage |\n|---|---|---|\n| `primary` | `#006C71` | Actions principales, titres |\n| `primary-foreground` | `#FFFFFF` | Texte sur primaire |\n| `secondary` | `#E0F2F1` | Éléments de support, fonds subtils |\n| `accent` | `#FF7E6B` | Accents visuels, notifications |\n| `background` | `#F9FAFC` | Fond principal de l'application |\n| `foreground` | `#1E293B` | Texte principal |\n| `surface` | `#F1F5F9` | Cartes, panneaux |\n| `muted` | `#CBD5E1` | Éléments désactivés, fonds secondaires |\n| `muted-foreground` | `#64748B` | Texte secondaire |\n| `border` | `#E2E8F0` | Bordures, séparateurs |\n| `destructive` | `#EF4444` | Actions dangereuses |\n\n## ✒️ Typographie\n- **Titres**: Urbanist (`--font-heading`) - `wght@600;700;800`\n- **Corps**: DM Sans (`--font-body`) - `wght@400;500;700`\n- **Mono**: Source Code Pro (`--font-mono`) pour données techniques.\n\n## 🖼️ Icônes\n- **Bibliothèque**: `lucide-react`\n- **Style**: Line (trait fin) - `stroke-width: 1.5`\n- **Taille par défaut**: `24px`\n\n| Contexte | Icône |\n|---|---|\n| Accueil | `home` |\n| Recherche | `search` |\n| Réglages | `settings` |\n| Profil | `user` |\n| Comparaison | `columns-3` |\n| Évaluation | `star` |\n\n## 🗣️ Voix de Marque\n- Langage clair et concis.\n- Ton professionnel et bienveillant.\n- Objectivité dans les comparaisons.\n- Mettre l'accent sur les bénéfices utilisateur.\n- Formalité mais approche accessible.\n\n## 🧩 Composants Clés\n| Nom | But |\n|---|---|\n| **Matrice de Comparaison** | Afficher des comparaisons détaillées de formations. |\n| **Carte d'Évaluation** | Présenter les avis et notes des utilisateurs. |\n| **Visualiseur de Progression** | Illustrer les parcours de carrière potentiels. |\n\n## ✨ Animations\n| Déclencheur | Animation |\n|---|---|\n| **Hover** (boutons, cartes) | `lift` (légère élévation) |\n| **Click** (boutons) | `press` (léger enfoncement) |\n| **Entrée d'éléments** | `fade-up` (apparition par le bas) |\n| **Chargement** | `smooth` (ressort doux) |\n\n## 📐 Système Graphique\n- **Fond**: Dégradé linéaire subtil pour ajouter de la profondeur (`linear-gradient(to top right, #F8F9FB, #F9FAFC)`).\n- **Accents**: Crochets d'angle minimalistes (`┌`, `┐`) pour encadrer des blocs d'information clés.\n- **Séparateurs**: Lignes fines de couleur `border` (`1px solid var(--border)`).\n\n## ♿ Accessibilité\n```css\n*:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }\n@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }\n```\n- Contraste WCAG AA (min 4.5:1).\n- Cibles tactiles minimum 44x44px.\n- Navigation au clavier complète.\n- Respecte `prefers-reduced-motion`.\n\n## 🚫 À Éviter\n- Noms de marque génériques ou clichés (`Aetheria`, `Lumina`, `Nexus`, etc.).\n- Combinaisons de couleurs trop vues (Dark mode + orange/violet).\n- Utilisation d'Inter/Roboto pour les titres ou le corps dans les apps grand public.\n- Logos avec la lettre 'Q' (pour QuelleFormation).\n- Polices de caractères identiques pour titres et corps.",
+  "rationale": "QuelleFormation provides a modern, independent platform for professional training comparison. The brand identity reflects professionalism, clarity, and forward-thinking guidance, emphasizing a clean aesthetic and vibrant, yet sophisticated, energy.",
+  "animations": {
+    "philosophy": "Animations are subtle, purposeful, and enhance the user experience without distraction. They add a touch of modern sophistication and fluidity, reflecting the brand's 'smooth' and 'guiding' nature.",
+    "click_style": "press",
+    "hover_style": "lift",
+    "loading_style": "Linear progress bar at the top of the viewport, with a subtle pulse animation using the primary color.",
+    "spring_config": {
+      "preset": "smooth",
+      "damping": 14,
+      "stiffness": 120
+    },
+    "success_style": {
+      "type": "checkmark",
+      "stamp_text": "C'est validé !"
+    },
+    "entry_animation": "fade-up",
+    "loader_messages": [
+      "Analyse des meilleures formations disponibles...",
+      "Comparaison des programmes et des coûts...",
+      "Recherche d'avis certifiés...",
+      "Optimisation de vos options de carrière...",
+      "Préparation de votre parcours d'apprentissage...",
+      "Collecte des dernières opportunités de formation...",
+      "Construire votre tableau de bord personnalisé..."
+    ],
+    "page_transitions": "Smooth fade-in and slide-up for content, ensuring a seamless flow between pages. Duration around 300ms.",
+    "micro_interactions": [
+      {
+        "easing": "ease-out",
+        "trigger": "button:hover",
+        "duration": "150ms",
+        "animation": "scale(1.02) translateY(-2px)"
+      },
+      {
+        "easing": "ease-in-out",
+        "trigger": "link:hover",
+        "duration": "200ms",
+        "animation": "color-change, underline-grow"
+      },
+      {
+        "easing": "ease-out",
+        "trigger": "card:hover",
+        "duration": "250ms",
+        "animation": "box-shadow-grow, lift"
+      },
+      {
+        "easing": "ease-in-out",
+        "trigger": "input:focus",
+        "duration": "100ms",
+        "animation": "border-color-primary, subtle-ring"
+      }
+    ]
+  },
+  "components": {
+    "card_style": "Minimalist cards with a 'surface' background, 6px border-radius, and a subtle drop shadow (box_shadow). Content is well-spaced, and borders are 1px in 'border' color.",
+    "badge_usage": "Used for categories, statuses, or ratings. Small, rounded rectangles with background colors from the muted or secondary palette, and foreground text from muted_foreground. Accent color for critical or highlighted badges.",
+    "input_style": "Clean inputs with 1px 'border' color border, 6px border-radius. Focus state applies a 1px 'primary' color border and a subtle ring shadow.",
+    "button_variants": [
+      {
+        "name": "Primary Button",
+        "style": "Solid background (primary color), white text, 6px border-radius, subtle shadow. Hover: slight lift and darken background."
+      },
+      {
+        "name": "Secondary Button",
+        "style": "Transparent background, 1px border (border color), foreground text, 6px border-radius. Hover: subtle background fill with secondary color."
+      },
+      {
+        "name": "Accent Button",
+        "style": "Solid background (accent color), white text, 6px border-radius. Hover: slight lift and darken background."
+      },
+      {
+        "name": "Ghost Button",
+        "style": "Transparent background, foreground text. Hover: subtle background fill with muted color."
+      }
+    ],
+    "unique_components": [
+      {
+        "name": "Comparison Matrix",
+        "purpose": "Display detailed side-by-side comparison of selected training programs.",
+        "description": "A responsive table-like component allowing users to compare features, costs, ratings, and outcomes of multiple courses. Features sticky headers and scrollable content for large datasets. Highlighting key differences with accent color.",
+        "when_to_use": "On dedicated comparison pages, or within search results when multiple items are selected for comparison."
+      },
+      {
+        "name": "Course Rating & Review Card",
+        "purpose": "Showcase user reviews and ratings for individual training courses.",
+        "description": "An interactive card displaying average star rating, number of reviews, and excerpts from recent user comments. Includes options to filter reviews and submit new ones. Features the accent color for star highlights.",
+        "when_to_use": "On individual course detail pages and as a module within search results."
+      },
+      {
+        "name": "Progression Path Visualizer",
+        "purpose": "Illustrate potential career paths or skill progression based on course completion.",
+        "description": "An interactive SVG-based visual showing interconnected courses or skills, highlighting prerequisites and advanced options. Users can click nodes to explore related training. Uses primary and accent colors to denote current vs. recommended paths.",
+        "when_to_use": "On user profile dashboards or within course recommendations."
+      }
+    ]
+  },
+  "typography": {
+    "scale": {
+      "lg": "1.25em",
+      "sm": "0.9em",
+      "xl": "1.563em",
+      "xs": "0.8em",
+      "2xl": "1.953em",
+      "3xl": "2.441em",
+      "4xl": "3.052em",
+      "5xl": "3.815em",
+      "base": "1em"
+    },
+    "mono_usage": "Used for code snippets, data tables, and technical documentation, ensuring legibility and a consistent technical feel.",
+    "body_weights": [
+      400,
+      500,
+      700
+    ],
+    "body_font_url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap",
+    "mono_font_url": "https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap",
+    "body_font_name": "DM Sans",
+    "mono_font_name": "Source Code Pro",
+    "heading_weights": [
+      600,
+      700,
+      800
+    ],
+    "heading_font_url": "https://fonts.googleapis.com/css2?family=Urbanist:wght@600;700;800&display=swap",
+    "heading_font_name": "Urbanist",
+    "pairing_rationale": "Urbanist provides a strong, modern, and geometric presence for headings, reflecting a cutting-edge and professional brand. DM Sans offers exceptional legibility and a clean, neutral tone for body text, ensuring content clarity in a data-rich comparison app. This pairing creates hierarchy while maintaining a cohesive, sophisticated sans-serif aesthetic."
+  },
+  "brand_voice": {
+    "tone": "Professional, Guiding, Empowering, Clear, Confident",
+    "do_not": [
+      "Use overly casual or slang language.",
+      "Make unsubstantiated claims or guarantees.",
+      "Overwhelm users with excessive information.",
+      "Employ scare tactics or high-pressure sales language."
+    ],
+    "cta_style": "Direct, benefit-oriented, and action-driven. Use strong verbs.",
+    "example_ctas": [
+      "Découvrir les formations",
+      "Commencer ma recherche",
+      "Voir les avis"
+    ],
+    "writing_rules": [
+      "Use clear, concise language, avoiding jargon.",
+      "Focus on benefits and solutions for the user.",
+      "Maintain a supportive and encouraging tone.",
+      "Be direct and objective when presenting comparisons.",
+      "Translate complex information into easy-to-understand formats.",
+      "Maintain a formal yet approachable tone."
+    ],
+    "example_headlines": [
+      "Trouvez la formation qui vous propulse.",
+      "Votre futur commence ici : des choix éclairés.",
+      "Comparez, choisissez, réussissez : votre parcours pro sur mesure."
+    ],
+    "personality_adjectives": [
+      "Informatif",
+      "Fiable",
+      "Clair",
+      "Moderne",
+      "Soutien",
+      "Objectif"
+    ]
+  },
+  "project_name": "QuelleFormation",
+  "css_variables": ":root {\n  --primary: #006C71;\n  --primary-foreground: #FFFFFF;\n  --secondary: #E0F2F1;\n  --accent: #FF7E6B;\n  --background: #F9FAFC;\n  --foreground: #1E293B;\n  --surface: #F1F5F9;\n  --muted: #CBD5E1;\n  --muted-foreground: #64748B;\n  --border: #E2E8F0;\n  --destructive: #EF4444;\n  --success: #22C55E;\n  --warning: #FBBF24;\n  --info: #3B82F6;\n\n  --font-heading: 'Urbanist', sans-serif;\n  --font-body: 'DM Sans', sans-serif;\n  --font-mono: 'Source Code Pro', monospace;\n\n  --radius-sm: 2px;\n  --radius-default: 6px;\n  --radius-md: 8px;\n  --radius-lg: 12px;\n  --radius-xl: 16px;\n\n  --shadow-default: 0px 2px 4px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.02);\n  --shadow-md: 0px 4px 8px rgba(0, 0, 0, 0.06), 0px 8px 16px rgba(0, 0, 0, 0.04);\n  --shadow-lg: 0px 8px 16px rgba(0, 0, 0, 0.08), 0px 16px 32px rgba(0, 0, 0, 0.06);\n}\n",
+  "graphic_system": {
+    "divider": {
+      "css": "border-bottom: 1px solid var(--border);",
+      "style": "thin-line",
+      "usage": "Separating content sections, list items, or within tables to maintain a clean visual hierarchy."
+    },
+    "philosophy": "The graphic system supports the 'Modern & Minimal' aesthetic with subtle, geometric elements that enhance navigation and structure without overwhelming the content. It uses refined patterns and clear dividers.",
+    "accent_shape": {
+      "type": "corner-brackets",
+      "usage": "Highlighting quotes, statistics, or featured course listings. Can use primary or accent color for emphasis.",
+      "description": "Minimalist corner brackets (e.g., '┌' and '┐') used as decorative elements for callout sections or key information blocks. Created with 1px lines."
+    },
+    "background_pattern": {
+      "css": "linear-gradient(to top right, #F8F9FB, #F9FAFC)",
+      "type": "subtle-linear-gradient",
+      "usage": "Applied sparingly on larger sections or hero banners to add subtle texture.",
+      "description": "A very faint, almost imperceptible linear gradient from bottom-left to top-right, transitioning from a slightly darker background shade to the main background color. Adds depth without visual noise."
+    }
+  },
+  "generated_logos": [
+    {
+      "style": "primary",
+      "generatedAt": "2026-03-03T10:49:05.846Z"
+    }
+  ],
+  "suggested_names": [
+    {
+      "name": "PathFinder",
+      "tagline": "Naviguez vers votre avenir professionnel.",
+      "rationale": "A compound word suggesting clear guidance and exploration, directly aligning with the app's purpose of helping users find their educational path.",
+      "domain_ideas": [
+        "getpathfinder.com",
+        "pathfinderhq.com",
+        "pathfinderapp.com",
+        "trypathfinder.com"
+      ]
+    },
+    {
+      "name": "Beacon",
+      "tagline": "Illuminez votre parcours de formation.",
+      "rationale": "A single, existing English word used as a metaphor for guidance, clarity, and hope. It evokes a sense of direction and reliable assistance in a complex landscape.",
+      "domain_ideas": [
+        "getbeacon.com",
+        "beaconhq.com",
+        "beaconapp.com",
+        "trybeacon.com"
+      ]
+    },
+    {
+      "name": "Envo",
+      "tagline": "Votre formation, simplifiée.",
+      "rationale": "An invented, short word (4 letters) that is easy to pronounce. It has a modern, approachable sound, suggesting 'envoyer' (to send) or 'envision', fitting the idea of professional advancement.",
+      "domain_ideas": [
+        "getenvo.com",
+        "envohq.com",
+        "envoapp.com",
+        "tryenvo.com"
+      ]
+    }
+  ],
+  "tailwind_config": {
+    "colors": "{ primary: 'var(--primary)', primary-foreground: 'var(--primary-foreground)', secondary: 'var(--secondary)', accent: 'var(--accent)', background: 'var(--background)', foreground: 'var(--foreground)', surface: 'var(--surface)', muted: 'var(--muted)', muted-foreground: 'var(--muted-foreground)', border: 'var(--border)', destructive: 'var(--destructive)', success: 'var(--success)', warning: 'var(--warning)', info: 'var(--info)' }",
+    "boxShadow": "{ DEFAULT: '0px 2px 4px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.02)', md: '0px 4px 8px rgba(0, 0, 0, 0.06), 0px 8px 16px rgba(0, 0, 0, 0.04)', lg: '0px 8px 16px rgba(0, 0, 0, 0.08), 0px 16px 32px rgba(0, 0, 0, 0.06)', none: 'none' }",
+    "fontFamily": "{ heading: ['Urbanist', 'sans-serif'], body: ['DM Sans', 'sans-serif'], mono: ['Source Code Pro', 'monospace'] }",
+    "borderRadius": "{ none: '0px', sm: '2px', DEFAULT: '6px', md: '8px', lg: '12px', xl: '16px', full: '9999px' }"
+  },
+  "visual_identity": {
+    "approach": "combination",
+    "logo_concepts": [
+      {
+        "name": "QuelleFormation Logomark",
+        "style": "Abstract geometric symbol + wordmark",
+        "symbolism": "Guidance, choice, progression, convergence, clarity, growth.",
+        "description": "The wordmark 'QuelleFormation' in Urbanist font, paired with an abstract symbol resembling two upward-converging paths or arrows forming a subtle 'greater than' sign. This symbolizes guidance, multiple choices leading to a single goal, and forward progression. The paths are sleek and modern.",
+        "scalability_notes": "The simple geometric shape ensures excellent scalability from small app icons to large banners. The wordmark is legible at various sizes."
+      }
+    ],
+    "approach_rationale": "A 'combination' approach allows for a versatile brand mark. A clean wordmark for strong typographic identity is paired with an abstract symbol, subtly representing guidance, choice, and progression without using a literal 'Q' letterform.",
+    "illustration_style": "Minimalist line art illustrations with a limited color palette derived from the brand's primary and accent colors. Focus on abstract concepts related to learning, paths, and decision-making, using clean lines and open space.",
+    "imagery_guidelines": "High-quality, authentic photography focusing on people engaged in learning or professional development. Images should convey aspiration, achievement, and diversity. Use natural light and a clean, uncluttered aesthetic. Overlays can use subtle gradients of the primary color."
+  }
+}

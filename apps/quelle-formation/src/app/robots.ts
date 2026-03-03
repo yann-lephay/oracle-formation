@@ -30,6 +30,6 @@ export default function robots(): MetadataRoute.Robots {
                 allow: "/",
             },
         ],
-        sitemap: "https://quelle-formation.fr/sitemap.xml",
+        sitemap: "https://quelleformationpro.fr/sitemap.xml",
     };
 }

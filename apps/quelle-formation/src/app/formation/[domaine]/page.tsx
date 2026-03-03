@@ -2,12 +2,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import {
-    Star,
     Clock,
     Euro,
     MapPin,
-    ArrowRight,
-    CheckCircle2,
     BookOpen,
     TrendingUp,
     Award,
@@ -18,6 +15,8 @@ import { getOrganismesByDomaine } from "@/lib/data/organismes";
 import { topVilles } from "@/lib/data/villes";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { DevisForm } from "@/components/DevisForm";
+import { OrganismeFilters } from "@/components/OrganismeFilters";
 
 interface PageProps {
     params: Promise<{ domaine: string }>;
@@ -175,90 +174,7 @@ export default async function FormationDomainePage({ params }: PageProps) {
                     </h2>
 
                     {organismes.length > 0 ? (
-                        <div className="space-y-6">
-                            {organismes.map((org, index) => (
-                                <div key={org.slug} className="glass-card p-6 md:p-8">
-                                    <div className="flex flex-col md:flex-row md:items-start gap-6">
-                                        {/* Rank */}
-                                        <div className="flex items-center gap-4 md:flex-col md:items-center shrink-0">
-                                            <div className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center">
-                                                <span className="text-lg font-bold text-primary-600">
-                                                    {index + 1}
-                                                </span>
-                                            </div>
-                                            <div className="flex items-center gap-1">
-                                                <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                                                <span className="text-sm font-semibold">{org.rating}</span>
-                                            </div>
-                                        </div>
-
-                                        {/* Content */}
-                                        <div className="flex-1 min-w-0">
-                                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
-                                                <div>
-                                                    <h3 className="text-xl font-bold text-surface-900">
-                                                        {org.name}
-                                                    </h3>
-                                                    <p className="text-sm text-surface-500">{org.tagline}</p>
-                                                </div>
-                                                <div className="text-right">
-                                                    <p className="text-lg font-bold text-primary-600">
-                                                        {org.priceRange}
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <p className="text-sm text-surface-600 mb-4 line-clamp-3">
-                                                {org.description.slice(0, 250)}…
-                                            </p>
-
-                                            {/* Pros */}
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-4">
-                                                {org.prosAndCons.pros.slice(0, 4).map((pro) => (
-                                                    <div
-                                                        key={pro}
-                                                        className="flex items-start gap-2 text-sm text-surface-600"
-                                                    >
-                                                        <CheckCircle2 className="w-4 h-4 text-accent-500 shrink-0 mt-0.5" />
-                                                        <span>{pro}</span>
-                                                    </div>
-                                                ))}
-                                            </div>
-
-                                            {/* Badges + CTA */}
-                                            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 border-t border-surface-100">
-                                                <div className="flex flex-wrap gap-1.5">
-                                                    {org.certifications.map((c) => (
-                                                        <span key={c} className="badge badge-qualiopi text-[10px]">
-                                                            {c}
-                                                        </span>
-                                                    ))}
-                                                    {org.cpfEligible && (
-                                                        <span className="badge badge-cpf text-[10px]">CPF</span>
-                                                    )}
-                                                    {org.formats.map((f) => (
-                                                        <span
-                                                            key={f}
-                                                            className="badge text-[10px] bg-surface-100 text-surface-600"
-                                                        >
-                                                            {f}
-                                                        </span>
-                                                    ))}
-                                                </div>
-
-                                                <Link
-                                                    href={`/organisme/${org.slug}`}
-                                                    className="btn-primary text-sm"
-                                                >
-                                                    Voir l&apos;avis complet
-                                                    <ArrowRight className="w-4 h-4" />
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                        <OrganismeFilters organismes={organismes} />
                     ) : (
                         <div className="glass-card p-8 text-center">
                             <GraduationCap className="w-12 h-12 text-surface-300 mx-auto mb-4" />
@@ -267,6 +183,22 @@ export default async function FormationDomainePage({ params }: PageProps) {
                             </p>
                         </div>
                     )}
+                </div>
+            </section>
+
+            {/* DevisForm */}
+            <section className="section-padding bg-primary-950" id="devis">
+                <div className="container-narrow mx-auto px-4">
+                    <div className="text-center mb-10">
+                        <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
+                            Besoin d&apos;aide pour choisir votre formation {domaine.name} ?
+                        </h2>
+                        <p className="text-white/70 max-w-2xl mx-auto">
+                            Recevez un devis personnalisé de plusieurs organismes en une seule demande.
+                            Gratuit et sans engagement.
+                        </p>
+                    </div>
+                    <DevisForm defaultDomaine={slug} />
                 </div>
             </section>
 

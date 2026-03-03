@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
-import { GraduationCap, Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const navLinks = [
     {
@@ -24,7 +25,9 @@ const navLinks = [
             { label: "OpenClassrooms", href: "/organisme/openclassrooms" },
             { label: "Jedha", href: "/organisme/jedha" },
             { label: "Le Wagon", href: "/organisme/le-wagon" },
-            { label: "LiveMentor", href: "/organisme/livementor" },
+            { label: "AFPA", href: "/organisme/afpa" },
+            { label: "CNAM", href: "/organisme/cnam" },
+            { label: "Simplon", href: "/organisme/simplon" },
             { label: "Tous les organismes →", href: "/#organismes" },
         ],
     },
@@ -38,6 +41,7 @@ const navLinks = [
             { label: "Tous les comparatifs →", href: "/#comparatifs" },
         ],
     },
+    { label: "Blog", href: "/blog" },
     { label: "Méthodologie", href: "/methodologie" },
 ];
 
@@ -50,10 +54,14 @@ export function Header() {
             <div className="container-narrow mx-auto flex items-center justify-between px-4 h-16 md:h-18">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group" aria-label="QuelleFormation.fr — Accueil">
-                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-600 to-primary-500 flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                        <GraduationCap className="w-5 h-5 text-white" />
-                    </div>
-                    <span className="text-lg font-bold text-surface-900 hidden sm:inline">
+                    <Image
+                        src="/quelleformation-logo.png"
+                        alt="QuelleFormation"
+                        width={36}
+                        height={36}
+                        className="group-hover:opacity-80 transition-opacity"
+                    />
+                    <span className="text-lg font-bold font-heading text-surface-900 hidden sm:inline">
                         Quelle<span className="gradient-text">Formation</span>
                     </span>
                 </Link>

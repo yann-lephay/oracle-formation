@@ -1,12 +1,34 @@
 import type { Metadata } from "next";
+import { Urbanist, DM_Sans, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+const urbanist = Urbanist({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-urbanist",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-source-code-pro",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://quelle-formation.fr"),
+  metadataBase: new URL("https://quelleformationpro.fr"),
   title: {
     template: "%s | QuelleFormation.fr",
     default: "QuelleFormation.fr — Comparateur de Formations Professionnelles 2026",
@@ -23,6 +45,15 @@ export const metadata: Metadata = {
     "formation certifiante",
     "Qualiopi",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -30,12 +61,21 @@ export const metadata: Metadata = {
     title: "QuelleFormation.fr — Comparateur de Formations Professionnelles 2026",
     description:
       "Comparez les meilleures formations professionnelles en France. Prix, avis, CPF, organismes certifiés Qualiopi.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "QuelleFormation.fr — Comparateur de Formations Professionnelles",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "QuelleFormation.fr — Comparateur de Formations Professionnelles 2026",
     description:
       "Comparez les meilleures formations professionnelles en France.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -49,7 +89,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://quelle-formation.fr",
+    canonical: "https://quelleformationpro.fr",
   },
 };
 
@@ -59,15 +99,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="fr" className={`${urbanist.variable} ${dmSans.variable} ${sourceCodePro.variable}`}>
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>

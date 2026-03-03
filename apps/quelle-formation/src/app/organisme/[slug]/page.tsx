@@ -18,6 +18,7 @@ import { organismes, getOrganismeBySlug } from "@/lib/data/organismes";
 import { domaines } from "@/lib/data/domaines";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { DevisForm } from "@/components/DevisForm";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -149,7 +150,7 @@ export default async function OrganismePage({ params }: PageProps) {
                                 </a>
                             )}
                             <Link
-                                href="/#devis"
+                                href="#devis"
                                 className="btn-secondary text-sm !bg-transparent !text-white !border-white/30 hover:!bg-white/10"
                             >
                                 Demander un devis
@@ -249,34 +250,29 @@ export default async function OrganismePage({ params }: PageProps) {
                 </div>
             </section>
 
-            {/* CTA */}
-            <section className="section-padding bg-primary-950">
-                <div className="container-narrow mx-auto px-4 text-center">
-                    <h2 className="text-2xl font-extrabold text-white mb-4">
-                        Intéressé par {org.name} ?
-                    </h2>
-                    <p className="text-white/60 mb-6">
-                        Comparez avec d&apos;autres organismes et demandez un devis personnalisé.
-                    </p>
-                    <div className="flex justify-center gap-3">
+            {/* CTA + DevisForm */}
+            <section className="section-padding bg-primary-950" id="devis">
+                <div className="container-narrow mx-auto px-4">
+                    <div className="text-center mb-8">
+                        <h2 className="text-2xl font-extrabold text-white mb-4">
+                            Intéressé par {org.name} ?
+                        </h2>
+                        <p className="text-white/60 mb-4">
+                            Comparez avec d&apos;autres organismes et demandez un devis personnalisé.
+                        </p>
                         {org.affiliateUrl && (
                             <a
                                 href={org.affiliateUrl}
                                 target="_blank"
                                 rel="noopener noreferrer nofollow"
-                                className="btn-primary"
+                                className="btn-primary inline-flex"
                             >
                                 Visiter {org.name}
                                 <ExternalLink className="w-4 h-4" />
                             </a>
                         )}
-                        <Link
-                            href="/#devis"
-                            className="btn-secondary !bg-transparent !text-white !border-white/30 hover:!bg-white/10"
-                        >
-                            Demander un devis
-                        </Link>
                     </div>
+                    <DevisForm defaultDomaine={org.domaines[0]} />
                 </div>
             </section>
         </>

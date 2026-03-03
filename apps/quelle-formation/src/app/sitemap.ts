@@ -3,8 +3,9 @@ import { domaines } from "@/lib/data/domaines";
 import { topVilles } from "@/lib/data/villes";
 import { organismes } from "@/lib/data/organismes";
 import { comparisons } from "@/lib/data/comparisons";
+import { blogArticles } from "@/lib/data/blog";
 
-const BASE_URL = "https://quelle-formation.fr";
+const BASE_URL = "https://quelleformationpro.fr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const now = new Date();
@@ -50,11 +51,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
     }));
 
+    // blog + blog/[slug]
+    const blogPages: MetadataRoute.Sitemap = [
+        { url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 },
+        ...blogArticles.map((a) => ({
+            url: `${BASE_URL}/blog/${a.slug}`,
+            lastModified: new Date(a.updatedAt),
+            changeFrequency: "monthly" as const,
+            priority: 0.6,
+        })),
+    ];
+
     return [
         ...staticPages,
         ...domainePages,
         ...villePages,
         ...organismePages,
         ...comparisonPages,
+        ...blogPages,
     ];
 }

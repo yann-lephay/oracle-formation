@@ -413,6 +413,332 @@ export const organismes: Organisme[] = [
         ],
         logoPath: "/logos/wild-code-school.png",
     },
+    {
+        slug: "afpa",
+        name: "AFPA",
+        website: "https://www.afpa.fr",
+        tagline: "Le premier organisme de formation professionnelle en France",
+        description:
+            "L'AFPA (Agence nationale pour la Formation Professionnelle des Adultes) est le premier organisme de formation professionnelle en France, avec plus de 70 ans d'expérience. Elle forme chaque année plus de 100 000 personnes dans 200+ métiers, principalement en présentiel dans ses 115 centres répartis sur tout le territoire. L'AFPA est spécialisée dans les formations qualifiantes et les reconversions professionnelles, avec un fort ancrage dans les métiers du bâtiment, de l'industrie, du tertiaire et du numérique.",
+        prosAndCons: {
+            pros: [
+                "115 centres de formation partout en France",
+                "70 ans d'expertise en formation professionnelle",
+                "Hébergement possible sur les campus pour les formations longues",
+                "Formations très orientées pratique et métier",
+                "Partenariats solides avec les entreprises locales",
+            ],
+            cons: [
+                "Plateformes numériques moins modernes que la concurrence",
+                "Délais d'inscription parfois longs",
+                "Qualité variable selon les centres et formateurs",
+            ],
+        },
+        foundedYear: 1949,
+        headquarters: "Montreuil",
+        certifications: ["Qualiopi", "RNCP"],
+        domaines: [
+            "developpeur-web",
+            "comptabilite",
+            "ressources-humaines",
+            "gestion-de-projet",
+            "commerce-vente",
+        ],
+        formats: ["présentiel", "hybride"],
+        cpfEligible: true,
+        priceRange: "0 € – 8 000 € (financements publics)",
+        studentsCount: "100 000+/an",
+        rating: 3.8,
+        reviewCount: 5600,
+        affiliateUrl: "https://www.afpa.fr",
+        metaTitle: "AFPA Avis 2026 : Prix, Formations et Test Complet",
+        metaDescription:
+            "Avis sur l'AFPA en 2026. Formations professionnelles qualifiantes, 115 centres en France. Prix, CPF, avis et comparatif. Notre analyse complète.",
+        faq: [
+            {
+                question: "Les formations AFPA sont-elles gratuites ?",
+                answer:
+                    "De nombreuses formations AFPA sont financées par les Régions ou France Travail et sont donc gratuites pour les demandeurs d'emploi. Pour les salariés, le financement est possible via le CPF, les OPCO ou le plan de développement des compétences de l'entreprise.",
+            },
+            {
+                question: "L'AFPA propose-t-elle un hébergement ?",
+                answer:
+                    "Oui, l'AFPA dispose de résidences sur la plupart de ses centres, avec hébergement et restauration inclus pour les stagiaires en formation longue. C'est un avantage unique parmi les organismes de formation.",
+            },
+        ],
+        logoPath: "/logos/afpa.png",
+    },
+    {
+        slug: "cnam",
+        name: "CNAM",
+        website: "https://www.cnam.fr",
+        tagline: "Le Conservatoire national des arts et métiers",
+        description:
+            "Le CNAM (Conservatoire National des Arts et Métiers) est un grand établissement public d'enseignement supérieur fondé en 1794. Il propose des formations du Bac+1 au doctorat, accessibles en cours du soir, en ligne ou en alternance. Avec 150 centres en France et à l'international, le CNAM est l'institution de référence pour la formation continue des adultes en activité. Les diplômes CNAM sont des diplômes d'État reconnus.",
+        prosAndCons: {
+            pros: [
+                "Diplômes d'État reconnus (Licence, Master, diplôme d'ingénieur)",
+                "Cours du soir et en ligne compatibles avec un emploi",
+                "Tarifs très compétitifs (établissement public)",
+                "150 centres en France et à l'international",
+                "230 ans d'histoire et de prestige",
+            ],
+            cons: [
+                "Parcours longs (2-5 ans pour un diplôme complet)",
+                "Pédagogie parfois académique et moins pratique",
+                "Interface numérique datée par rapport aux EdTech",
+            ],
+        },
+        foundedYear: 1794,
+        headquarters: "Paris",
+        certifications: ["Qualiopi", "RNCP"],
+        domaines: [
+            "developpeur-web",
+            "data-analyst",
+            "comptabilite",
+            "gestion-de-projet",
+            "management",
+            "ressources-humaines",
+        ],
+        formats: ["présentiel", "distanciel", "hybride"],
+        cpfEligible: true,
+        priceRange: "150 € – 300 €/UE (public)",
+        studentsCount: "80 000+",
+        rating: 4.0,
+        reviewCount: 3200,
+        affiliateUrl: "https://www.cnam.fr",
+        metaTitle: "CNAM Avis 2026 : Prix, Formations et Diplômes",
+        metaDescription:
+            "Avis sur le CNAM en 2026. Formations diplômantes en cours du soir et en ligne. Prix publics, CPF, diplômes d'État. Notre analyse complète.",
+        faq: [
+            {
+                question: "Le CNAM est-il reconnu par l'État ?",
+                answer:
+                    "Oui, le CNAM est un grand établissement public d'enseignement supérieur. Ses diplômes (Licence, Master, diplôme d'ingénieur) sont des diplômes d'État reconnus au même titre que ceux des universités.",
+            },
+            {
+                question: "Combien coûtent les formations au CNAM ?",
+                answer:
+                    "Les tarifs du CNAM sont très compétitifs car c'est un établissement public. Comptez 150 € à 300 € par unité d'enseignement (UE). Un diplôme complet coûte entre 2 000 € et 8 000 €, finançable par le CPF.",
+            },
+        ],
+        logoPath: "/logos/cnam.png",
+    },
+    {
+        slug: "m2i-formation",
+        name: "M2i Formation",
+        website: "https://www.m2iformation.fr",
+        tagline: "Le leader de la formation IT en France",
+        description:
+            "M2i Formation est le premier organisme de formation IT en France, avec plus de 35 ans d'expérience. L'entreprise propose un catalogue de 2 400+ formations dans le numérique, la bureautique, la PAO, le management et la cybersécurité. M2i se distingue par ses formations courtes (1-5 jours) destinées aux professionnels en poste et une présence dans 35 villes.",
+        prosAndCons: {
+            pros: [
+                "2 400+ formations IT et numériques",
+                "35 centres en France — proximité garantie",
+                "Formations courtes (1-5 jours) adaptées aux salariés",
+                "35 ans d'expertise reconnue dans l'IT",
+                "Certifications éditeurs (Microsoft, AWS, Cisco, VMware)",
+            ],
+            cons: [
+                "Orienté upskilling pro, moins adapté aux reconversions complètes",
+                "Pas de formations diplômantes longues (RNCP)",
+                "Prix élevés pour les particuliers (tarifs entreprises)",
+            ],
+        },
+        foundedYear: 1989,
+        headquarters: "Paris",
+        certifications: ["Qualiopi"],
+        domaines: [
+            "developpeur-web",
+            "cybersecurite",
+            "devops-cloud",
+            "data-analyst",
+            "gestion-de-projet",
+        ],
+        formats: ["présentiel", "distanciel", "hybride"],
+        cpfEligible: true,
+        priceRange: "800 € – 3 500 €/session",
+        studentsCount: "50 000+/an",
+        rating: 4.3,
+        reviewCount: 1800,
+        affiliateUrl: "https://www.m2iformation.fr",
+        metaTitle: "M2i Formation Avis 2026 : Prix, Catalogue IT et Test",
+        metaDescription:
+            "Avis sur M2i Formation en 2026. Leader de la formation IT en France. 2 400+ formations, 35 centres. Prix, CPF, certifications. Notre analyse.",
+        faq: [
+            {
+                question: "M2i Formation est-il éligible au CPF ?",
+                answer:
+                    "Oui, de nombreuses formations M2i sont éligibles au CPF, notamment les certifications éditeurs (Microsoft, AWS, Cisco). Le financement est aussi possible via les OPCO et le plan de formation des entreprises.",
+            },
+            {
+                question: "M2i Formation convient-il pour une reconversion ?",
+                answer:
+                    "M2i est davantage orienté vers le upskilling des professionnels en poste avec des formations courtes (1-5 jours). Pour une reconversion complète, un bootcamp ou une formation longue (OpenClassrooms, Le Wagon) sera plus adapté.",
+            },
+        ],
+        logoPath: "/logos/m2i-formation.png",
+    },
+    {
+        slug: "demos",
+        name: "Demos",
+        website: "https://www.demos.fr",
+        tagline: "L'expert de la formation professionnelle depuis 1972",
+        description:
+            "Demos est l'un des plus anciens organismes de formation professionnelle en France, fondé en 1972. Avec un catalogue de 1 500+ formations inter et intra-entreprises, Demos couvre un large spectre de domaines : management, RH, comptabilité, commerce, digital et bureautique. L'organisme est reconnu pour ses formations courtes orientées compétences immédiatement applicables en entreprise.",
+        prosAndCons: {
+            pros: [
+                "1 500+ formations dans tous les domaines métiers",
+                "50 ans d'expérience en formation professionnelle",
+                "Formations inter et intra-entreprises flexibles",
+                "Accompagnement personnalisé pour les entreprises",
+            ],
+            cons: [
+                "Image parfois perçue comme traditionnelle",
+                "Moins de formations tech/IA que les pure players",
+                "Tarifs élevés pour les particuliers",
+            ],
+        },
+        foundedYear: 1972,
+        headquarters: "Paris",
+        certifications: ["Qualiopi"],
+        domaines: [
+            "management",
+            "ressources-humaines",
+            "comptabilite",
+            "commerce-vente",
+            "marketing-digital",
+            "gestion-de-projet",
+        ],
+        formats: ["présentiel", "distanciel", "hybride"],
+        cpfEligible: true,
+        priceRange: "700 € – 3 000 €/session",
+        studentsCount: "40 000+/an",
+        rating: 4.0,
+        reviewCount: 1200,
+        affiliateUrl: "https://www.demos.fr",
+        metaTitle: "Demos Avis 2026 : Prix, Formations et Test Complet",
+        metaDescription:
+            "Avis sur Demos en 2026. 1 500+ formations professionnelles. Management, RH, comptabilité, digital. Prix, CPF et avis. Notre analyse.",
+        faq: [
+            {
+                question: "Demos est-il certifié Qualiopi ?",
+                answer:
+                    "Oui, Demos est certifié Qualiopi, ce qui garantit la qualité des processus de formation et permet le financement par le CPF, les OPCO et France Travail.",
+            },
+        ],
+        logoPath: "/logos/demos.png",
+    },
+    {
+        slug: "simplon",
+        name: "Simplon",
+        website: "https://simplon.co",
+        tagline: "L'école du numérique inclusif et solidaire",
+        description:
+            "Simplon est un réseau de fabriques du numérique solidaires qui forme gratuitement aux métiers du numérique les personnes éloignées de l'emploi. Fondé en 2013, Simplon est présent dans 100+ lieux en France et à l'international. Les formations (développement web, data, IA, cybersécurité) sont gratuites et qualifiantes, ciblant les demandeurs d'emploi, les femmes, et les publics sous-représentés dans le numérique.",
+        prosAndCons: {
+            pros: [
+                "Formations gratuites pour les apprenants",
+                "Mission sociale : inclusion et diversité dans le numérique",
+                "100+ fabriques en France — forte couverture territoriale",
+                "Taux d'insertion professionnelle élevé (80 %+)",
+                "Pédagogie active et projets concrets",
+            ],
+            cons: [
+                "Processus de sélection exigeant (motivation, tests)",
+                "Rythme intensif sur campus uniquement",
+                "Pas de formation en e-learning asynchrone",
+            ],
+        },
+        foundedYear: 2013,
+        headquarters: "Montreuil",
+        certifications: ["Qualiopi", "RNCP"],
+        domaines: [
+            "developpeur-web",
+            "data-analyst",
+            "intelligence-artificielle",
+            "cybersecurite",
+        ],
+        formats: ["présentiel"],
+        cpfEligible: true,
+        priceRange: "Gratuit (financé par partenaires)",
+        studentsCount: "15 000+",
+        rating: 4.4,
+        reviewCount: 980,
+        affiliateUrl: "https://simplon.co",
+        metaTitle: "Simplon Avis 2026 : Formations Gratuites au Numérique",
+        metaDescription:
+            "Avis sur Simplon en 2026. Formations gratuites au numérique (dev web, data, IA). Processus de sélection, avis et insertion. Notre test complet.",
+        faq: [
+            {
+                question: "Les formations Simplon sont-elles vraiment gratuites ?",
+                answer:
+                    "Oui, les formations Simplon sont gratuites pour les apprenants. Elles sont financées par des partenaires publics (Régions, France Travail) et privés (entreprises). En contrepartie, un processus de sélection sur motivation est requis.",
+            },
+            {
+                question: "Comment être sélectionné chez Simplon ?",
+                answer:
+                    "La sélection Simplon se fait sur la motivation, pas sur le niveau de diplôme. Le processus comprend une session d'information, un parcours de préparation en ligne et un entretien. Aucun prérequis technique n'est nécessaire.",
+            },
+        ],
+        logoPath: "/logos/simplon.png",
+    },
+    {
+        slug: "ynov-campus",
+        name: "Ynov Campus",
+        website: "https://www.ynov.com",
+        tagline: "Le campus des métiers du numérique et de la créativité",
+        description:
+            "Ynov Campus est un réseau d'écoles supérieures spécialisées dans les métiers du numérique et de la créativité, avec 12 campus en France. Fondé en 2011, Ynov propose des formations du Bac+1 au Bac+5 en informatique, marketing digital, audiovisuel, design, 3D et jeux vidéo. L'alternance est fortement encouragée dès la 3e année, avec un réseau de 5 000+ entreprises partenaires.",
+        prosAndCons: {
+            pros: [
+                "12 campus en France dans les grandes villes",
+                "Formations du Bac+1 au Bac+5 avec diplômes RNCP",
+                "Forte orientation alternance (dès la 3e année)",
+                "Large éventail de spécialisations numériques et créatives",
+                "Réseau de 5 000+ entreprises partenaires",
+            ],
+            cons: [
+                "Frais de scolarité élevés hors alternance",
+                "Principalement destiné aux jeunes (post-bac et poursuite d'études)",
+                "Moins adapté aux reconversions professionnelles d'adultes",
+            ],
+        },
+        foundedYear: 2011,
+        headquarters: "Bordeaux",
+        certifications: ["Qualiopi", "RNCP"],
+        domaines: [
+            "developpeur-web",
+            "marketing-digital",
+            "design-ux-ui",
+            "graphisme",
+            "intelligence-artificielle",
+            "cybersecurite",
+        ],
+        formats: ["présentiel", "hybride"],
+        cpfEligible: true,
+        priceRange: "5 500 € – 9 800 €/an",
+        studentsCount: "10 000+",
+        rating: 4.1,
+        reviewCount: 1500,
+        affiliateUrl: "https://www.ynov.com",
+        metaTitle: "Ynov Campus Avis 2026 : Prix, Formations et Campus",
+        metaDescription:
+            "Avis sur Ynov Campus en 2026. Formations numériques et créatives du Bac+1 au Bac+5. 12 campus, alternance, prix. Notre analyse complète.",
+        faq: [
+            {
+                question: "Ynov Campus est-il reconnu ?",
+                answer:
+                    "Oui, Ynov Campus est certifié Qualiopi et délivre des titres RNCP reconnus par l'État du Bac+2 au Bac+5. Les diplômes sont inscrits au Répertoire National des Certifications Professionnelles.",
+            },
+            {
+                question: "Peut-on faire de l'alternance chez Ynov ?",
+                answer:
+                    "Oui, l'alternance est possible dès la 3e année chez Ynov Campus. L'école dispose d'un réseau de 5 000+ entreprises partenaires et les frais de scolarité sont pris en charge par l'entreprise en alternance.",
+            },
+        ],
+        logoPath: "/logos/ynov-campus.png",
+    },
 ];
 
 export function getOrganismeBySlug(slug: string): Organisme | undefined {

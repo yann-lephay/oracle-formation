@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { GraduationCap, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
+import { Mail, MapPin } from "lucide-react";
 import { domaines } from "@/lib/data/domaines";
 
 export function Footer() {
@@ -12,10 +13,14 @@ export function Footer() {
                     {/* Brand */}
                     <div className="space-y-4">
                         <Link href="/" className="flex items-center gap-2">
-                            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-primary-400 flex items-center justify-center">
-                                <GraduationCap className="w-5 h-5 text-white" />
-                            </div>
-                            <span className="text-lg font-bold text-white">
+                            <Image
+                                src="/quelleformation-logo.png"
+                                alt="QuelleFormation"
+                                width={36}
+                                height={36}
+                                className="rounded-xl"
+                            />
+                            <span className="text-lg font-bold font-heading text-white">
                                 Quelle<span className="text-primary-400">Formation</span>
                             </span>
                         </Link>
@@ -64,6 +69,12 @@ export function Footer() {
                                 { name: "Studi", slug: "studi" },
                                 { name: "Ironhack", slug: "ironhack" },
                                 { name: "Wild Code School", slug: "wild-code-school" },
+                                { name: "AFPA", slug: "afpa" },
+                                { name: "CNAM", slug: "cnam" },
+                                { name: "M2i Formation", slug: "m2i-formation" },
+                                { name: "Demos", slug: "demos" },
+                                { name: "Simplon", slug: "simplon" },
+                                { name: "Ynov Campus", slug: "ynov-campus" },
                             ].map((org) => (
                                 <li key={org.slug}>
                                     <Link
@@ -83,6 +94,14 @@ export function Footer() {
                             Informations
                         </h3>
                         <ul className="space-y-2.5">
+                            <li>
+                                <Link
+                                    href="/blog"
+                                    className="text-sm text-surface-400 hover:text-primary-400 transition-colors"
+                                >
+                                    Blog
+                                </Link>
+                            </li>
                             <li>
                                 <Link
                                     href="/methodologie"
@@ -109,7 +128,7 @@ export function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="mailto:contact@quelle-formation.fr"
+                                    href="mailto:contact@quelleformationpro.fr"
                                     className="text-sm text-surface-400 hover:text-primary-400 transition-colors flex items-center gap-1.5"
                                 >
                                     <Mail className="w-3.5 h-3.5" />
