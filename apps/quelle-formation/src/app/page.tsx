@@ -295,17 +295,25 @@ export default function HomePage() {
                 >
                   <div className="flex items-center justify-center gap-4 mb-4">
                     <div className="text-center">
-                      <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mx-auto mb-2">
-                        <GraduationCap className="w-6 h-6 text-accent" />
+                      <div className="w-12 h-12 rounded-lg bg-white border border-border flex items-center justify-center mx-auto mb-2 overflow-hidden">
+                        {org1?.logoPath ? (
+                          <Image src={org1.logoPath} alt={org1.name} width={32} height={32} className="object-contain" />
+                        ) : (
+                          <GraduationCap className="w-6 h-6 text-accent" />
+                        )}
                       </div>
                       <p className="text-xs font-semibold text-foreground">
                         {org1?.name || comp.organisme1}
                       </p>
                     </div>
-                    <span className="text-lg font-bold text-border">VS</span>
+                    <span className="text-sm font-bold text-muted-foreground uppercase">vs</span>
                     <div className="text-center">
-                      <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-2">
-                        <GraduationCap className="w-6 h-6 text-accent" />
+                      <div className="w-12 h-12 rounded-lg bg-white border border-border flex items-center justify-center mx-auto mb-2 overflow-hidden">
+                        {org2?.logoPath ? (
+                          <Image src={org2.logoPath} alt={org2.name} width={32} height={32} className="object-contain" />
+                        ) : (
+                          <GraduationCap className="w-6 h-6 text-accent" />
+                        )}
                       </div>
                       <p className="text-xs font-semibold text-foreground">
                         {org2?.name || comp.organisme2}
@@ -335,13 +343,13 @@ export default function HomePage() {
       </section>
 
       {/* ============ DEVIS FORMULAIRE ============ */}
-      <section className="section-padding bg-primary" id="devis">
+      <section className="section-padding bg-accent" id="devis">
         <div className="container-narrow mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-3">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-accent-foreground mb-3">
               Besoin d&apos;aide pour choisir ?
             </h2>
-            <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto">
+            <p className="text-accent-foreground/70 text-lg max-w-2xl mx-auto">
               Recevez un devis personnalisé de plusieurs organismes en une seule demande.
               Gratuit et sans engagement.
             </p>
