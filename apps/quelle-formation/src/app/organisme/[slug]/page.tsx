@@ -259,13 +259,13 @@ export default async function OrganismePage({ params }: PageProps) {
             </section>
 
             {/* CTA + DevisForm */}
-            <section className="section-padding bg-primary" id="devis">
+            <section className="section-padding bg-accent" id="devis">
                 <div className="container-narrow mx-auto px-4">
                     <div className="text-center mb-8">
-                        <h2 className="text-2xl font-extrabold text-primary-foreground mb-4">
+                        <h2 className="text-2xl font-extrabold text-accent-foreground mb-4">
                             Intéressé par {org.name} ?
                         </h2>
-                        <p className="text-primary-foreground/60 mb-4">
+                        <p className="text-accent-foreground/60 mb-4">
                             Comparez avec d&apos;autres organismes et demandez un devis personnalisé.
                         </p>
                         {org.affiliateUrl && (

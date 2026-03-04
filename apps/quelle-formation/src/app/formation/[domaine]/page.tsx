@@ -203,13 +203,13 @@ export default async function FormationDomainePage({ params }: PageProps) {
             </section>
 
             {/* DevisForm */}
-            <section className="section-padding bg-primary" id="devis">
+            <section className="section-padding bg-accent" id="devis">
                 <div className="container-narrow mx-auto px-4">
                     <div className="text-center mb-10">
-                        <h2 className="text-2xl md:text-3xl font-extrabold text-primary-foreground mb-3">
+                        <h2 className="text-2xl md:text-3xl font-extrabold text-accent-foreground mb-3">
                             Besoin d&apos;aide pour choisir votre formation {domaine.name} ?
                         </h2>
-                        <p className="text-primary-foreground/70 max-w-2xl mx-auto">
+                        <p className="text-accent-foreground/70 max-w-2xl mx-auto">
                             Recevez un devis personnalisé de plusieurs organismes en une seule demande.
                             Gratuit et sans engagement.
                         </p>
