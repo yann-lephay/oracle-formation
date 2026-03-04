@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
 import { domaines } from "@/lib/data/domaines";
+import { topVilles } from "@/lib/data/villes";
 
 export function Footer() {
     const topDomaines = domaines.slice(0, 8);
@@ -9,7 +10,7 @@ export function Footer() {
     return (
         <footer className="bg-foreground text-muted" id="footer">
             <div className="container-narrow mx-auto px-4 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
                     {/* Brand */}
                     <div className="space-y-4">
                         <Link href="/" className="flex items-center gap-2">
@@ -88,12 +89,50 @@ export function Footer() {
                         </ul>
                     </div>
 
+                    {/* Villes */}
+                    <div className="md:hidden lg:block">
+                        <h3 className="text-sm font-semibold text-primary-foreground uppercase tracking-wider mb-4">
+                            Villes
+                        </h3>
+                        <ul className="space-y-2.5">
+                            {topVilles.map((v, i) => {
+                                const domaine = topDomaines[i % topDomaines.length];
+                                return (
+                                    <li key={v.slug}>
+                                        <Link
+                                            href={`/formation/${domaine.slug}/${v.slug}`}
+                                            className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
+                                        >
+                                            Formation {domaine.shortName} {v.name}
+                                        </Link>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+
                     {/* Infos */}
                     <div>
                         <h3 className="text-sm font-semibold text-primary-foreground uppercase tracking-wider mb-4">
                             Informations
                         </h3>
                         <ul className="space-y-2.5">
+                            <li>
+                                <Link
+                                    href="/organismes"
+                                    className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
+                                >
+                                    Tous les organismes
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/comparer"
+                                    className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
+                                >
+                                    Comparatifs
+                                </Link>
+                            </li>
                             <li>
                                 <Link
                                     href="/blog"

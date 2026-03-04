@@ -13,14 +13,6 @@ export function generateWebsiteSchema() {
     url: seoConfig.siteUrl,
     description: seoConfig.description,
     inLanguage: "fr-FR",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${seoConfig.siteUrl}/?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 
@@ -32,7 +24,6 @@ export function generateOrganizationSchema() {
     url: seoConfig.siteUrl,
     logo: `${seoConfig.siteUrl}/deplacement-pro-logo.png`,
     description: seoConfig.description,
-    sameAs: [],
     contactPoint: {
       "@type": "ContactPoint",
       email: "contact@deplacement-pro.fr",
@@ -51,20 +42,19 @@ export function generateSolutionSchema(solution: Solution) {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     url: `${seoConfig.siteUrl}/solution/${solution.slug}`,
-    ...(solution.priceRange !== "Sur devis" && {
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "EUR",
-        description: solution.priceRange,
-      },
-    }),
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: solution.rating,
       bestRating: 5,
       worstRating: 1,
       ratingCount: solution.reviewCount,
+    },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "EUR",
+      description: solution.priceRange,
+      category: solution.pricingModel,
     },
   };
 }
@@ -108,6 +98,14 @@ export function generateComparisonSchema(comparison: Comparison) {
     headline: comparison.title,
     description: comparison.intro,
     url: `${seoConfig.siteUrl}/comparer/${comparison.slug}`,
+    datePublished: "2026-03-01",
+    dateModified: "2026-03-04",
+    image: `${seoConfig.siteUrl}/og-image.png`,
+    author: {
+      "@type": "Organization",
+      name: seoConfig.siteName,
+      url: seoConfig.siteUrl,
+    },
     publisher: {
       "@type": "Organization",
       name: seoConfig.siteName,
@@ -125,6 +123,12 @@ export function generateGuideSchema(guide: Guide) {
     datePublished: guide.publishedAt,
     dateModified: guide.updatedAt,
     url: `${seoConfig.siteUrl}/guides/${guide.slug}`,
+    image: `${seoConfig.siteUrl}/og-image.png`,
+    author: {
+      "@type": "Organization",
+      name: seoConfig.siteName,
+      url: seoConfig.siteUrl,
+    },
     publisher: {
       "@type": "Organization",
       name: seoConfig.siteName,
@@ -156,9 +160,11 @@ export function generateBlogPostSchema(post: BlogPost) {
     description: post.excerpt,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
+    image: `${seoConfig.siteUrl}/og-image.png`,
     author: {
       "@type": "Organization",
-      name: post.author,
+      name: seoConfig.siteName,
+      url: seoConfig.siteUrl,
     },
     publisher: {
       "@type": "Organization",

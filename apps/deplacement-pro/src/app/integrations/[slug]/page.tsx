@@ -34,11 +34,16 @@ export async function generateMetadata({
   const { slug } = await params;
   const integration = getIntegrationBySlug(slug);
   if (!integration) return {};
+  const url = `${seoConfig.siteUrl}/integrations/${integration.slug}`;
   return {
     title: integration.metaTitle,
     description: integration.metaDescription,
-    alternates: {
-      canonical: `${seoConfig.siteUrl}/integrations/${integration.slug}`,
+    alternates: { canonical: url },
+    openGraph: {
+      title: integration.metaTitle,
+      description: integration.metaDescription,
+      url,
+      type: "website",
     },
   };
 }

@@ -79,6 +79,22 @@ export function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <Link
+                  href="/comparer"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Comparatifs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Guides
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/pour"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >

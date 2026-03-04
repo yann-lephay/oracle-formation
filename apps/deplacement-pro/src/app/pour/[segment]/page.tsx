@@ -49,10 +49,17 @@ export async function generateMetadata({
   const { segment } = await params;
   const persona = getPersonaBySlug(segment);
   if (!persona) return {};
+  const url = `${seoConfig.siteUrl}/pour/${persona.slug}`;
   return {
     title: persona.metaTitle,
     description: persona.metaDescription,
-    alternates: { canonical: `${seoConfig.siteUrl}/pour/${persona.slug}` },
+    alternates: { canonical: url },
+    openGraph: {
+      title: persona.metaTitle,
+      description: persona.metaDescription,
+      url,
+      type: "website",
+    },
   };
 }
 

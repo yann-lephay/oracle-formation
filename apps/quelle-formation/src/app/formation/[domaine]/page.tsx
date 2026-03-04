@@ -13,7 +13,7 @@ import {
 import { domaines, getDomaineBySlug } from "@/lib/data/domaines";
 import { getOrganismesByDomaine } from "@/lib/data/organismes";
 import { topVilles } from "@/lib/data/villes";
-import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
+import { generateFAQSchema, generateBreadcrumbSchema, generateItemListSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 import { DevisForm } from "@/components/DevisForm";
 import { OrganismeFilters } from "@/components/OrganismeFilters";
@@ -79,6 +79,22 @@ export default async function FormationDomainePage({ params }: PageProps) {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(
+                        generateItemListSchema({
+                            name: `Organismes de formation ${domaine.name}`,
+                            description: domaine.description,
+                            url: `${seoConfig.siteUrl}/formation/${slug}`,
+                            items: organismes.map((o) => ({
+                                name: o.name,
+                                url: `${seoConfig.siteUrl}/organisme/${o.slug}`,
+                            })),
+                        })
+                    ),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
                     __html: JSON.stringify(generateFAQSchema(faqItems)),
                 }}
             />
@@ -88,7 +104,7 @@ export default async function FormationDomainePage({ params }: PageProps) {
                     __html: JSON.stringify(
                         generateBreadcrumbSchema([
                             { name: "Accueil", url: seoConfig.siteUrl },
-                            { name: "Formations", url: `${seoConfig.siteUrl}/#domaines` },
+                            { name: "Formations", url: `${seoConfig.siteUrl}/formations` },
                             {
                                 name: `Formation ${domaine.name}`,
                                 url: `${seoConfig.siteUrl}/formation/${slug}`,
@@ -121,7 +137,7 @@ export default async function FormationDomainePage({ params }: PageProps) {
                         </div>
 
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 text-foreground">
-                            Formation {domaine.name} en 2026
+                            Formation {domaine.name} en {new Date().getFullYear()}
                         </h1>
 
                         <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed mb-8">

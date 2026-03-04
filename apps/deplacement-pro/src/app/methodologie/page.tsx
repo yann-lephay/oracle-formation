@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Méthodologie — Nos critères de notation",
   description:
     "Découvrez comment DeplacementPro.fr évalue et compare les solutions de déplacement professionnel : critères, pondération, sources.",
+  alternates: { canonical: "https://deplacement-pro.fr/methodologie" },
 };
 
 export default function MethodologiePage() {

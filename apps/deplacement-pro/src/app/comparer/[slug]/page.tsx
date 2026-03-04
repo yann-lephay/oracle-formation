@@ -23,10 +23,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const comp = getComparisonBySlug(slug);
   if (!comp) return {};
+  const url = `${seoConfig.siteUrl}/comparer/${comp.slug}`;
   return {
     title: comp.metaTitle,
     description: comp.metaDescription,
-    alternates: { canonical: `${seoConfig.siteUrl}/comparer/${comp.slug}` },
+    alternates: { canonical: url },
+    openGraph: {
+      title: comp.metaTitle,
+      description: comp.metaDescription,
+      url,
+      type: "article",
+    },
   };
 }
 
@@ -62,7 +69,7 @@ export default async function ComparerPage({
           __html: JSON.stringify(
             generateBreadcrumbSchema([
               { name: "Accueil", url: "/" },
-              { name: "Comparer", url: "/#comparatifs" },
+              { name: "Comparer", url: "/comparer" },
               { name: comp.title, url: `/comparer/${comp.slug}` },
             ])
           ),

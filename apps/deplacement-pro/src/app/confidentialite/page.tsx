@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
   description: "Politique de confidentialité et protection des données personnelles de DeplacementPro.fr.",
+  alternates: { canonical: "https://deplacement-pro.fr/confidentialite" },
 };
 
 export default function ConfidentialitePage() {

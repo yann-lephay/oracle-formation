@@ -2,15 +2,18 @@
  * SEO Configuration for quelleformationpro.fr
  */
 
+const currentYear = new Date().getFullYear();
+
 export const seoConfig = {
     siteName: "QuelleFormation.fr",
     siteUrl: "https://quelleformationpro.fr",
-    defaultTitle: "QuelleFormation.fr — Comparateur de Formations Professionnelles 2026",
+    defaultTitle: `QuelleFormation.fr — Comparateur de Formations Professionnelles ${currentYear}`,
     defaultDescription:
         "Comparez les meilleures formations professionnelles en France. Prix, avis, CPF, organismes certifiés Qualiopi. Trouvez la formation qui vous correspond.",
     locale: "fr_FR",
     twitterHandle: "@quelleformation",
     ogImage: "/og-image.png",
+    currentYear,
 };
 
 export function buildTitle(title: string): string {

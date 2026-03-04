@@ -69,7 +69,7 @@ export default async function OrganismePage({ params }: PageProps) {
                     __html: JSON.stringify(
                         generateBreadcrumbSchema([
                             { name: "Accueil", url: seoConfig.siteUrl },
-                            { name: "Organismes", url: `${seoConfig.siteUrl}/#organismes` },
+                            { name: "Organismes", url: `${seoConfig.siteUrl}/organismes` },
                             { name: org.name, url: `${seoConfig.siteUrl}/organisme/${slug}` },
                         ])
                     ),
@@ -83,7 +83,7 @@ export default async function OrganismePage({ params }: PageProps) {
                         <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
                             <Link href="/" className="hover:text-foreground">Accueil</Link>
                             <span>/</span>
-                            <Link href="/#organismes" className="hover:text-foreground">Organismes</Link>
+                            <Link href="/organismes" className="hover:text-foreground">Organismes</Link>
                             <span>/</span>
                             <span className="text-foreground">{org.name}</span>
                         </nav>

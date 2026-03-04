@@ -23,10 +23,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const term = getGlossaryTermBySlug(slug);
   if (!term) return {};
+  const url = `${seoConfig.siteUrl}/glossaire/${term.slug}`;
   return {
     title: term.metaTitle,
     description: term.metaDescription,
-    alternates: { canonical: `${seoConfig.siteUrl}/glossaire/${term.slug}` },
+    alternates: { canonical: url },
+    openGraph: {
+      title: term.metaTitle,
+      description: term.metaDescription,
+      url,
+      type: "website",
+    },
   };
 }
 

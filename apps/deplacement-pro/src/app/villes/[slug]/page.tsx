@@ -1,7 +1,10 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import type { Metadata } from "next";
-import { MapPin } from "lucide-react";
+import { MapPin, ArrowRight, Star } from "lucide-react";
 import { villes, getVilleBySlug } from "@/lib/data/villes";
+import { solutions } from "@/lib/data/solutions";
+import { comparisons } from "@/lib/data/comparisons";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
@@ -17,10 +20,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const ville = getVilleBySlug(slug);
   if (!ville) return {};
+  const url = `${seoConfig.siteUrl}/villes/${ville.slug}`;
   return {
     title: ville.metaTitle,
     description: ville.metaDescription,
-    alternates: { canonical: `${seoConfig.siteUrl}/villes/${ville.slug}` },
+    alternates: { canonical: url },
+    openGraph: {
+      title: ville.metaTitle,
+      description: ville.metaDescription,
+      url,
+      type: "website",
+    },
   };
 }
 
@@ -109,6 +119,70 @@ export default async function VillePage({
           </div>
         </div>
       </section>
+
+      {/* Solutions recommandées */}
+      <section className="section-padding bg-muted">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-2xl font-bold font-heading text-foreground mb-6">
+            Solutions recommandées pour {ville.name}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {solutions.slice(0, 3).map((sol) => (
+              <Link
+                key={sol.slug}
+                href={`/solution/${sol.slug}`}
+                className="card p-5 group bg-surface"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-bold font-heading text-foreground group-hover:text-primary transition-colors">
+                    {sol.name}
+                  </h3>
+                  <div className="flex items-center gap-1 shrink-0">
+                    <Star className="w-4 h-4 text-accent fill-accent" strokeWidth={1.5} />
+                    <span className="font-mono text-sm font-semibold">{sol.rating}</span>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground mb-3">{sol.tagline}</p>
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs text-muted-foreground">{sol.priceRange}</span>
+                  <span className="text-xs text-primary font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Voir l&apos;avis
+                    <ArrowRight className="w-3.5 h-3.5" strokeWidth={1.5} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Comparatifs */}
+      {comparisons.length > 0 && (
+        <section className="section-padding">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-2xl font-bold font-heading text-foreground mb-6">
+              Comparatifs de solutions
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {comparisons.slice(0, 3).map((comp) => (
+                <Link
+                  key={comp.slug}
+                  href={`/comparer/${comp.slug}`}
+                  className="card p-5 text-center group"
+                >
+                  <h3 className="font-bold font-heading text-foreground group-hover:text-primary transition-colors mb-2">
+                    {comp.title}
+                  </h3>
+                  <span className="text-xs text-primary font-medium flex items-center justify-center gap-1 group-hover:gap-2 transition-all">
+                    Lire le comparatif
+                    <ArrowRight className="w-3.5 h-3.5" strokeWidth={1.5} />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="section-padding bg-muted">

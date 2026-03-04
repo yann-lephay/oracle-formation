@@ -7,9 +7,11 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "TMC", href: "/tmc" },
+  { label: "Self-booking", href: "/self-booking-tool" },
   { label: "Cartes Corporate", href: "/carte-corporate" },
   { label: "Notes de Frais", href: "/notes-de-frais" },
-  { label: "Guides", href: "/guides/bareme-kilometrique-2026" },
+  { label: "Comparer", href: "/comparer" },
+  { label: "Guides", href: "/guides" },
   { label: "Glossaire", href: "/glossaire" },
   { label: "Blog", href: "/blog" },
 ];

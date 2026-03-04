@@ -2,8 +2,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { Star, ExternalLink, Check, X as XIcon } from "lucide-react";
+import { Star, ExternalLink, Check, X as XIcon, ArrowRight } from "lucide-react";
 import { solutions, getSolutionBySlug } from "@/lib/data/solutions";
+import { comparisons } from "@/lib/data/comparisons";
 import { categories } from "@/lib/data/categories";
 import {
   generateSolutionSchema,
@@ -24,10 +25,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const sol = getSolutionBySlug(slug);
   if (!sol) return {};
+  const url = `${seoConfig.siteUrl}/solution/${sol.slug}`;
   return {
     title: sol.metaTitle,
     description: sol.metaDescription,
-    alternates: { canonical: `${seoConfig.siteUrl}/solution/${sol.slug}` },
+    alternates: { canonical: url },
+    openGraph: {
+      title: sol.metaTitle,
+      description: sol.metaDescription,
+      url,
+      type: "website",
+    },
   };
 }
 
@@ -60,7 +68,6 @@ export default async function SolutionPage({
           __html: JSON.stringify(
             generateBreadcrumbSchema([
               { name: "Accueil", url: "/" },
-              { name: "Solutions", url: "/#solutions" },
               { name: sol.name, url: `/solution/${sol.slug}` },
             ])
           ),
@@ -228,6 +235,43 @@ export default async function SolutionPage({
           </div>
         </div>
       </section>
+
+      {/* Related comparisons */}
+      {(() => {
+        const related = comparisons.filter(
+          (c) => c.solution1 === sol.slug || c.solution2 === sol.slug
+        );
+        if (related.length === 0) return null;
+        return (
+          <section className="section-padding bg-muted">
+            <div className="max-w-6xl mx-auto px-4">
+              <h2 className="text-2xl font-bold font-heading text-foreground mb-6">
+                Comparatifs avec {sol.name}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {related.map((comp) => (
+                  <Link
+                    key={comp.slug}
+                    href={`/comparer/${comp.slug}`}
+                    className="card p-5 text-center group"
+                  >
+                    <h3 className="font-bold font-heading text-foreground group-hover:text-primary transition-colors mb-2">
+                      {comp.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground line-clamp-2 mb-4">
+                      {comp.intro.slice(0, 120)}…
+                    </p>
+                    <span className="text-xs text-primary font-medium flex items-center justify-center gap-1 group-hover:gap-2 transition-all">
+                      Lire le comparatif
+                      <ArrowRight className="w-3.5 h-3.5" strokeWidth={1.5} />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
     </>
   );
 }

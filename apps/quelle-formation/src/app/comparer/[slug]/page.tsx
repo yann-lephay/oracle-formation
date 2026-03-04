@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { Trophy, ArrowRight, Award, CheckCircle2, Minus } from "lucide-react";
 import { comparisons, getComparisonBySlug } from "@/lib/data/comparisons";
 import { getOrganismeBySlug } from "@/lib/data/organismes";
-import { generateBreadcrumbSchema } from "@/lib/structured-data";
+import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
 interface PageProps {
@@ -43,16 +43,40 @@ export default async function ComparerPage({ params }: PageProps) {
     const org1 = getOrganismeBySlug(comp.organisme1);
     const org2 = getOrganismeBySlug(comp.organisme2);
 
+    const name1 = org1?.name || comp.organisme1;
+    const name2 = org2?.name || comp.organisme2;
+
+    const faqItems = [
+        {
+            question: `Quel organisme choisir entre ${name1} et ${name2} ?`,
+            answer: comp.verdict,
+        },
+        {
+            question: `${name1} est-il moins cher que ${name2} ?`,
+            answer: `${name1} propose des tarifs ${org1?.priceRange || "sur devis"}, tandis que ${name2} affiche ${org2?.priceRange || "sur devis"}. Le meilleur rapport qualité-prix dépend de votre profil et de vos objectifs de formation.`,
+        },
+        {
+            question: `${name1} et ${name2} sont-ils éligibles au CPF ?`,
+            answer: `${org1?.cpfEligible ? `Oui, ${name1} est éligible au CPF.` : `${name1} : vérifiez l'éligibilité CPF.`} ${org2?.cpfEligible ? `${name2} est également éligible au CPF.` : `${name2} : vérifiez l'éligibilité CPF.`} Les deux sont certifiés Qualiopi.`,
+        },
+    ];
+
     return (
         <>
             {/* JSON-LD */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(generateFAQSchema(faqItems)),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
                     __html: JSON.stringify(
                         generateBreadcrumbSchema([
                             { name: "Accueil", url: seoConfig.siteUrl },
-                            { name: "Comparatifs", url: `${seoConfig.siteUrl}/#comparatifs` },
+                            { name: "Comparatifs", url: `${seoConfig.siteUrl}/comparer` },
                             { name: comp.title, url: `${seoConfig.siteUrl}/comparer/${slug}` },
                         ])
                     ),
@@ -65,7 +89,7 @@ export default async function ComparerPage({ params }: PageProps) {
                     <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
                         <Link href="/" className="hover:text-foreground">Accueil</Link>
                         <span>/</span>
-                        <Link href="/#comparatifs" className="hover:text-foreground">Comparatifs</Link>
+                        <Link href="/comparer" className="hover:text-foreground">Comparatifs</Link>
                         <span>/</span>
                         <span className="text-foreground">{comp.title}</span>
                     </nav>
@@ -236,6 +260,28 @@ export default async function ComparerPage({ params }: PageProps) {
                                 )}
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ */}
+            <section className="section-padding">
+                <div className="container-narrow mx-auto px-4">
+                    <h2 className="text-xl font-extrabold text-foreground mb-6">
+                        Questions fréquentes
+                    </h2>
+                    <div className="max-w-3xl space-y-3">
+                        {faqItems.map((faq) => (
+                            <details key={faq.question} className="glass-card p-4 group">
+                                <summary className="cursor-pointer list-none flex items-center justify-between font-semibold text-sm text-foreground">
+                                    {faq.question}
+                                    <Award className="w-4 h-4 text-muted-foreground group-open:rotate-180 transition-transform" />
+                                </summary>
+                                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                                    {faq.answer}
+                                </p>
+                            </details>
+                        ))}
                     </div>
                 </div>
             </section>

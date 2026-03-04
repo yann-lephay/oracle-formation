@@ -23,6 +23,7 @@ export interface Organisme {
     affiliateUrl?: string;
     affiliateNetwork?: string;
     affiliateCommission?: string;
+    campusVilles: string[]; // slugs des villes avec campus/présence physique
     metaTitle: string;
     metaDescription: string;
     faq: { question: string; answer: string }[];
@@ -95,6 +96,7 @@ export const organismes: Organisme[] = [
                     "Les abonnements OpenClassrooms vont de 200 € à 600 €/mois selon le parcours choisi. Un parcours complet coûte entre 4 000 € et 10 000 €. Le CPF, les OPCO et Pôle Emploi peuvent financer jusqu'à 100 % du coût.",
             },
         ],
+        campusVilles: [],
         logoPath: "/logos/openclassrooms.png",
     },
     {
@@ -146,6 +148,7 @@ export const organismes: Organisme[] = [
                     "Oui, les formations Jedha sont éligibles au CPF. L'organisme est certifié Qualiopi et les parcours sont inscrits au RNCP. Le financement est possible via CPF, OPCO, France Travail et facilités de paiement.",
             },
         ],
+        campusVilles: ["paris", "lyon", "marseille", "bordeaux", "lille", "toulouse"],
         logoPath: "/logos/jedha.png",
     },
     {
@@ -191,6 +194,7 @@ export const organismes: Organisme[] = [
                     "Oui, les formations LiveMentor sont éligibles au CPF. L'organisme est certifié Qualiopi. Vous pouvez utiliser votre solde CPF sur MonCompteFormation.gouv.fr.",
             },
         ],
+        campusVilles: [],
         logoPath: "/logos/livementor.png",
     },
     {
@@ -234,6 +238,7 @@ export const organismes: Organisme[] = [
                     "Oui, Le Wagon est considéré comme le meilleur bootcamp tech en Europe avec un taux d'insertion de 93 % dans les 6 mois suivant la formation. Le réseau alumni de 25 000+ personnes est un véritable atout pour la carrière.",
             },
         ],
+        campusVilles: ["paris", "lyon", "marseille", "bordeaux", "nantes", "lille"],
         logoPath: "/logos/le-wagon.png",
     },
     {
@@ -276,6 +281,7 @@ export const organismes: Organisme[] = [
                     "DataScientest est meilleur si vous travaillez en parallèle (format continu 70/30 %). Jedha est plus adapté si vous préférez un bootcamp intensif sur campus. Les deux sont certifiés Qualiopi et éligibles CPF.",
             },
         ],
+        campusVilles: ["paris"],
         logoPath: "/logos/datascientest.png",
     },
     {
@@ -327,6 +333,7 @@ export const organismes: Organisme[] = [
                     "Oui, Studi est certifié Qualiopi et délivre des diplômes inscrits au RNCP. C'est le plus grand organisme de formation en ligne en France avec 70 000+ étudiants. La qualité varie selon les parcours.",
             },
         ],
+        campusVilles: [],
         logoPath: "/logos/studi.svg",
     },
     {
@@ -369,6 +376,7 @@ export const organismes: Organisme[] = [
                     "Les deux sont d'excellents bootcamps. Le Wagon est plus fort en dev web et a un réseau alumni plus large en France. Ironhack excelle en UX/UI design et data analytics. Les deux sont éligibles CPF.",
             },
         ],
+        campusVilles: ["paris", "bordeaux"],
         logoPath: "/logos/ironhack.png",
     },
     {
@@ -411,6 +419,7 @@ export const organismes: Organisme[] = [
                     "Les formations Wild Code School coûtent entre 3 000 € et 7 000 € selon le parcours. Le financement est possible via CPF, OPCO et France Travail. Des facilités de paiement sont disponibles.",
             },
         ],
+        campusVilles: ["paris", "lyon", "bordeaux", "toulouse", "nantes", "strasbourg"],
         logoPath: "/logos/wild-code-school.png",
     },
     {
@@ -466,6 +475,7 @@ export const organismes: Organisme[] = [
                     "Oui, l'AFPA dispose de résidences sur la plupart de ses centres, avec hébergement et restauration inclus pour les stagiaires en formation longue. C'est un avantage unique parmi les organismes de formation.",
             },
         ],
+        campusVilles: ["paris", "lyon", "marseille", "toulouse", "bordeaux", "lille", "nantes", "strasbourg"],
         logoPath: "/logos/afpa.jpg",
     },
     {
@@ -522,6 +532,7 @@ export const organismes: Organisme[] = [
                     "Les tarifs du CNAM sont très compétitifs car c'est un établissement public. Comptez 150 € à 300 € par unité d'enseignement (UE). Un diplôme complet coûte entre 2 000 € et 8 000 €, finançable par le CPF.",
             },
         ],
+        campusVilles: ["paris", "lyon", "marseille", "toulouse", "bordeaux", "lille", "nantes", "strasbourg"],
         logoPath: "/logos/cnam.svg",
     },
     {
@@ -577,6 +588,7 @@ export const organismes: Organisme[] = [
                     "M2i est davantage orienté vers le upskilling des professionnels en poste avec des formations courtes (1-5 jours). Pour une reconversion complète, un bootcamp ou une formation longue (OpenClassrooms, Le Wagon) sera plus adapté.",
             },
         ],
+        campusVilles: ["paris", "lyon", "lille", "nantes", "bordeaux", "toulouse", "strasbourg"],
         logoPath: "/logos/m2i-formation.png",
     },
     {
@@ -627,6 +639,7 @@ export const organismes: Organisme[] = [
                     "Oui, Demos est certifié Qualiopi, ce qui garantit la qualité des processus de formation et permet le financement par le CPF, les OPCO et France Travail.",
             },
         ],
+        campusVilles: ["paris", "lyon", "marseille"],
         logoPath: "/logos/demos.svg",
     },
     {
@@ -681,6 +694,7 @@ export const organismes: Organisme[] = [
                     "La sélection Simplon se fait sur la motivation, pas sur le niveau de diplôme. Le processus comprend une session d'information, un parcours de préparation en ligne et un entretien. Aucun prérequis technique n'est nécessaire.",
             },
         ],
+        campusVilles: ["paris", "lyon", "toulouse", "lille", "marseille", "bordeaux", "nantes", "strasbourg"],
         logoPath: "/logos/simplon.png",
     },
     {
@@ -737,6 +751,7 @@ export const organismes: Organisme[] = [
                     "Oui, l'alternance est possible dès la 3e année chez Ynov Campus. L'école dispose d'un réseau de 5 000+ entreprises partenaires et les frais de scolarité sont pris en charge par l'entreprise en alternance.",
             },
         ],
+        campusVilles: ["paris", "lyon", "toulouse", "bordeaux", "nantes", "lille", "marseille", "strasbourg"],
         logoPath: "/logos/ynov-campus.png",
     },
 ];
@@ -747,4 +762,22 @@ export function getOrganismeBySlug(slug: string): Organisme | undefined {
 
 export function getOrganismesByDomaine(domaineSlug: string): Organisme[] {
     return organismes.filter((o) => o.domaines.includes(domaineSlug));
+}
+
+export function getOrganismesByDomaineAndVille(
+    domaineSlug: string,
+    villeSlug: string
+): { local: Organisme[]; remote: Organisme[] } {
+    const domainOrganismes = organismes.filter((o) =>
+        o.domaines.includes(domaineSlug)
+    );
+    const local = domainOrganismes.filter(
+        (o) => o.campusVilles.includes(villeSlug)
+    );
+    const remote = domainOrganismes.filter(
+        (o) =>
+            !o.campusVilles.includes(villeSlug) &&
+            o.formats.some((f) => f === "e-learning" || f === "distanciel")
+    );
+    return { local, remote };
 }

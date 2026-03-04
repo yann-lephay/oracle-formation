@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { ArrowRight, Star } from "lucide-react";
 import { categories, getCategoryBySlug } from "@/lib/data/categories";
 import { getSolutionsByCategory } from "@/lib/data/solutions";
+import { guides } from "@/lib/data/guides";
 import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
@@ -20,10 +21,17 @@ export async function generateMetadata({
   const { categorie } = await params;
   const cat = getCategoryBySlug(categorie);
   if (!cat) return {};
+  const url = `${seoConfig.siteUrl}/${cat.slug}`;
   return {
     title: cat.metaTitle,
     description: cat.metaDescription,
-    alternates: { canonical: `${seoConfig.siteUrl}/${cat.slug}` },
+    alternates: { canonical: url },
+    openGraph: {
+      title: cat.metaTitle,
+      description: cat.metaDescription,
+      url,
+      type: "website",
+    },
   };
 }
 
@@ -146,6 +154,50 @@ export default async function CategoriePage({
           </ul>
         </div>
       </section>
+
+      {/* Related guides */}
+      {(() => {
+        const guidesByCategory: Record<string, string[]> = {
+          tmc: ["politique-voyage-modele", "bareme-kilometrique-2026"],
+          "self-booking-tool": ["politique-voyage-modele", "bareme-kilometrique-2026"],
+          "carte-corporate": ["indemnites-repas-2026", "bareme-kilometrique-2026"],
+          "notes-de-frais": ["indemnites-repas-2026", "bareme-kilometrique-2026", "politique-voyage-modele"],
+        };
+        const relevantSlugs = guidesByCategory[cat.slug] || [];
+        const relevantGuides = relevantSlugs
+          .map((s) => guides.find((g) => g.slug === s))
+          .filter(Boolean) as typeof guides;
+        if (relevantGuides.length === 0) return null;
+        return (
+          <section className="section-padding">
+            <div className="max-w-6xl mx-auto px-4">
+              <h2 className="text-2xl font-bold font-heading text-foreground mb-6">
+                Guides pratiques
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {relevantGuides.map((guide) => (
+                  <Link
+                    key={guide.slug}
+                    href={`/guides/${guide.slug}`}
+                    className="card p-5 group"
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="badge text-[10px]">{guide.category}</span>
+                      <span className="text-xs text-muted-foreground">{guide.readingTime}</span>
+                    </div>
+                    <h3 className="font-bold font-heading text-foreground group-hover:text-primary transition-colors text-sm mb-2">
+                      {guide.shortTitle}
+                    </h3>
+                    <p className="text-xs text-muted-foreground line-clamp-2">
+                      {guide.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* FAQ */}
       {(() => {

@@ -22,11 +22,6 @@ export function generateWebsiteSchema() {
         name: seoConfig.siteName,
         url: seoConfig.siteUrl,
         description: seoConfig.defaultDescription,
-        potentialAction: {
-            "@type": "SearchAction",
-            target: `${seoConfig.siteUrl}/formation/{search_term_string}`,
-            "query-input": "required name=search_term_string",
-        },
     };
 }
 
@@ -124,7 +119,7 @@ export function generateComparisonSchema(params: {
     name: string;
     description: string;
     url: string;
-    items: { name: string; rating: number }[];
+    items: { name: string; rating: number; ratingCount: number }[];
 }) {
     return {
         "@context": "https://schema.org",
@@ -144,9 +139,32 @@ export function generateComparisonSchema(params: {
                         "@type": "AggregateRating",
                         ratingValue: item.rating,
                         bestRating: 5,
+                        ratingCount: item.ratingCount,
                     },
                 },
             }),
+        })),
+    };
+}
+
+export function generateItemListSchema(params: {
+    name: string;
+    description: string;
+    url: string;
+    items: { name: string; url: string }[];
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: params.name,
+        description: params.description,
+        url: params.url,
+        numberOfItems: params.items.length,
+        itemListElement: params.items.map((item, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: item.name,
+            url: item.url,
         })),
     };
 }

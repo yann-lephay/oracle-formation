@@ -15,7 +15,8 @@ const navLinks = [
             { label: "Marketing Digital", href: "/formation/marketing-digital" },
             { label: "Cybersécurité", href: "/formation/cybersecurite" },
             { label: "Intelligence Artificielle", href: "/formation/intelligence-artificielle" },
-            { label: "Toutes les formations", href: "/#domaines" },
+            { label: "Toutes les formations", href: "/formations" },
+            { label: "Par ville", href: "/formations#villes" },
         ],
     },
     {
@@ -28,7 +29,7 @@ const navLinks = [
             { label: "AFPA", href: "/organisme/afpa" },
             { label: "CNAM", href: "/organisme/cnam" },
             { label: "Simplon", href: "/organisme/simplon" },
-            { label: "Tous les organismes", href: "/#organismes" },
+            { label: "Tous les organismes", href: "/organismes" },
         ],
     },
     {
@@ -38,7 +39,7 @@ const navLinks = [
             { label: "OpenClassrooms vs Jedha", href: "/comparer/openclassrooms-vs-jedha" },
             { label: "Le Wagon vs Ironhack", href: "/comparer/le-wagon-vs-ironhack" },
             { label: "Jedha vs DataScientest", href: "/comparer/jedha-vs-datascientest" },
-            { label: "Tous les comparatifs", href: "/#comparatifs" },
+            { label: "Tous les comparatifs", href: "/comparer" },
         ],
     },
     { label: "Blog", href: "/blog" },

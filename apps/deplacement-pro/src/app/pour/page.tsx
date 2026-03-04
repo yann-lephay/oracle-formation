@@ -32,6 +32,13 @@ export const metadata: Metadata = {
   description:
     "Trouvez la solution de déplacement professionnel adaptée à votre profil : PME, ETI, grands comptes, startups, cabinets de conseil, ESN, associations, secteur public.",
   alternates: { canonical: `${seoConfig.siteUrl}/pour` },
+  openGraph: {
+    title: "Solutions par profil d'entreprise — DeplacementPro.fr",
+    description:
+      "Trouvez la solution de déplacement professionnel adaptée à votre profil.",
+    url: `${seoConfig.siteUrl}/pour`,
+    type: "website",
+  },
 };
 
 export default function PersonasListingPage() {
