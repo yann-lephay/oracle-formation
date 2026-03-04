@@ -7,6 +7,7 @@ import { villes } from "@/lib/data/villes";
 import { blogPosts } from "@/lib/data/blog";
 import { personas } from "@/lib/data/personas";
 import { integrations } from "@/lib/data/integrations";
+import { glossaryTerms } from "@/lib/data/glossaire";
 
 const BASE_URL = "https://deplacement-pro.fr";
 
@@ -22,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/pour`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/villes`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/integrations`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/glossaire`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
   ];
 
   const categoryPages: MetadataRoute.Sitemap = categories.map((c) => ({
@@ -73,6 +75,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const glossairePages: MetadataRoute.Sitemap = glossaryTerms.map((t) => ({
+    url: `${BASE_URL}/glossaire/${t.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   const integrationPages: MetadataRoute.Sitemap = integrations.map((i) => ({
     url: `${BASE_URL}/integrations/${i.slug}`,
     lastModified: now,
@@ -90,5 +99,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...personaPages,
     ...blogPages,
     ...integrationPages,
+    ...glossairePages,
   ];
 }
