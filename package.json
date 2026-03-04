@@ -9,7 +9,11 @@
     "dev:dp": "npm run dev --workspace=apps/deplacement-pro",
     "build:dp": "npm run build --workspace=apps/deplacement-pro",
     "start:dp": "npm run start --workspace=apps/deplacement-pro",
-    "lint:dp": "npm run lint --workspace=apps/deplacement-pro"
+    "lint:dp": "npm run lint --workspace=apps/deplacement-pro",
+    "dev:dec": "npm run dev --workspace=apps/declaration-pro",
+    "build:dec": "npm run build --workspace=apps/declaration-pro",
+    "start:dec": "npm run start --workspace=apps/declaration-pro",
+    "lint:dec": "npm run lint --workspace=apps/declaration-pro"
   },
   "workspaces": [
     "apps/*"
