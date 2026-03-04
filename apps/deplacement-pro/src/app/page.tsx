@@ -11,11 +11,23 @@ import {
   Shield,
   Clock,
   CheckCircle2,
+  Building2,
+  Building,
+  Landmark,
+  Rocket,
+  Briefcase,
+  Heart,
+  Scale,
 } from "lucide-react";
 import { categories } from "@/lib/data/categories";
 import { solutions, getSolutionCountByCategory } from "@/lib/data/solutions";
 import { comparisons } from "@/lib/data/comparisons";
 import { guides } from "@/lib/data/guides";
+import { glossaryTerms } from "@/lib/data/glossaire";
+import { personas } from "@/lib/data/personas";
+import { villes } from "@/lib/data/villes";
+import { integrations } from "@/lib/data/integrations";
+import { solutions as solutionsList } from "@/lib/data/solutions";
 import { generateWebsiteSchema, generateOrganizationSchema } from "@/lib/structured-data";
 import { DevisForm } from "@/components/DevisForm";
 import { SearchBar, type SearchItem } from "@/components/SearchBar";
@@ -24,6 +36,13 @@ const searchItems: SearchItem[] = [
   ...solutions.map((s) => ({ label: s.name, href: `/solution/${s.slug}`, type: "Solutions" })),
   ...categories.map((c) => ({ label: c.name, href: `/${c.slug}`, type: "Catégories" })),
   ...guides.map((g) => ({ label: g.shortTitle, href: `/guides/${g.slug}`, type: "Guides" })),
+  ...glossaryTerms.map((t) => ({ label: t.term, href: `/glossaire/${t.slug}`, type: "Glossaire" })),
+  ...personas.map((p) => ({ label: p.name, href: `/pour/${p.slug}`, type: "Profils" })),
+  ...villes.map((v) => ({ label: v.name, href: `/villes/${v.slug}`, type: "Villes" })),
+  ...integrations.map((i) => {
+    const sol = solutionsList.find((s) => s.slug === i.solutionSlug);
+    return { label: `${sol?.name ?? i.solutionSlug} + ${i.toolName}`, href: `/integrations/${i.slug}`, type: "Intégrations" };
+  }),
 ];
 
 const iconMap: Record<string, React.ElementType> = {
@@ -31,6 +50,17 @@ const iconMap: Record<string, React.ElementType> = {
   Monitor,
   CreditCard,
   Receipt,
+};
+
+const personaIconMap: Record<string, React.ElementType> = {
+  Building2,
+  Building,
+  Landmark,
+  Rocket,
+  Briefcase,
+  Monitor,
+  Heart,
+  Scale,
 };
 
 export default function HomePage() {
@@ -293,6 +323,45 @@ export default function HomePage() {
                 </p>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ PROFILS ============ */}
+      <section className="section-padding" id="profils">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-foreground mb-3">
+              Solutions par profil d&apos;entreprise
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              PME, ETI, grands comptes, startups… trouvez les solutions adaptées à votre type d&apos;entreprise.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {personas.map((persona) => {
+              const PIcon = personaIconMap[persona.icon] || Building2;
+              return (
+                <Link
+                  key={persona.slug}
+                  href={`/pour/${persona.slug}`}
+                  className="card p-5 group"
+                >
+                  <PIcon className="w-5 h-5 text-primary mb-3" strokeWidth={1.5} />
+                  <h3 className="font-semibold font-heading text-foreground group-hover:text-primary transition-colors text-sm mb-1">
+                    {persona.name}
+                  </h3>
+                  <p className="text-xs text-muted-foreground mb-3">
+                    {persona.employeeRange}
+                  </p>
+                  <span className="text-xs text-primary font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Voir les solutions
+                    <ArrowRight className="w-3.5 h-3.5" strokeWidth={1.5} />
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -5,6 +5,8 @@ import { comparisons } from "@/lib/data/comparisons";
 import { guides } from "@/lib/data/guides";
 import { villes } from "@/lib/data/villes";
 import { blogPosts } from "@/lib/data/blog";
+import { personas } from "@/lib/data/personas";
+import { integrations } from "@/lib/data/integrations";
 
 const BASE_URL = "https://deplacement-pro.fr";
 
@@ -17,6 +19,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/mentions-legales`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE_URL}/confidentialite`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${BASE_URL}/pour`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/villes`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/integrations`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
   ];
 
   const categoryPages: MetadataRoute.Sitemap = categories.map((c) => ({
@@ -54,9 +59,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const personaPages: MetadataRoute.Sitemap = personas.map((p) => ({
+    url: `${BASE_URL}/pour/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: `${BASE_URL}/blog/${p.slug}`,
     lastModified: p.updatedAt,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  const integrationPages: MetadataRoute.Sitemap = integrations.map((i) => ({
+    url: `${BASE_URL}/integrations/${i.slug}`,
+    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
@@ -68,6 +87,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...comparisonPages,
     ...guidePages,
     ...villePages,
+    ...personaPages,
     ...blogPages,
+    ...integrationPages,
   ];
 }

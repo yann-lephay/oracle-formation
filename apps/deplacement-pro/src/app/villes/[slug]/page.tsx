@@ -47,7 +47,7 @@ export default async function VillePage({
           __html: JSON.stringify(
             generateBreadcrumbSchema([
               { name: "Accueil", url: "/" },
-              { name: "Villes", url: "/#villes" },
+              { name: "Villes", url: "/villes" },
               { name: ville.name, url: `/villes/${ville.slug}` },
             ])
           ),

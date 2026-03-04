@@ -3,6 +3,7 @@ import type { Solution } from "./data/solutions";
 import type { Comparison } from "./data/comparisons";
 import type { Guide } from "./data/guides";
 import type { BlogPost } from "./data/blog";
+import type { GlossaryTerm } from "./data/glossaire";
 
 export function generateWebsiteSchema() {
   return {
@@ -128,6 +129,21 @@ export function generateGuideSchema(guide: Guide) {
       "@type": "Organization",
       name: seoConfig.siteName,
       url: seoConfig.siteUrl,
+    },
+  };
+}
+
+export function generateGlossarySchema(term: GlossaryTerm) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: term.term,
+    description: term.definition,
+    url: `${seoConfig.siteUrl}/glossaire/${term.slug}`,
+    inDefinedTermSet: {
+      "@type": "DefinedTermSet",
+      name: "Glossaire du déplacement professionnel",
+      url: `${seoConfig.siteUrl}/glossaire`,
     },
   };
 }

@@ -79,10 +79,42 @@ export function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <Link
+                  href="/pour"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Solutions par profil
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/villes"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Villes
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/integrations"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Intégrations
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/blog"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/glossaire"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Glossaire
                 </Link>
               </li>
               <li>

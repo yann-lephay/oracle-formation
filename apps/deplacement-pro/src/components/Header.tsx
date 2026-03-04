@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Cartes Corporate", href: "/carte-corporate" },
   { label: "Notes de Frais", href: "/notes-de-frais" },
   { label: "Guides", href: "/guides/bareme-kilometrique-2026" },
+  { label: "Glossaire", href: "/glossaire" },
   { label: "Blog", href: "/blog" },
 ];
 
