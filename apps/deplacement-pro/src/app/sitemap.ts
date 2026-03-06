@@ -8,6 +8,7 @@ import { blogPosts } from "@/lib/data/blog";
 import { personas } from "@/lib/data/personas";
 import { integrations } from "@/lib/data/integrations";
 import { glossaryTerms } from "@/lib/data/glossaire";
+import { secteurs } from "@/lib/data/secteurs";
 
 const BASE_URL = "https://deplacement-pro.fr";
 
@@ -26,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/villes`, lastModified: lastBuild, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/integrations`, lastModified: lastBuild, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/glossaire`, lastModified: lastBuild, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/secteurs`, lastModified: lastBuild, changeFrequency: "monthly", priority: 0.7 },
   ];
 
   const categoryPages: MetadataRoute.Sitemap = categories.map((c) => ({
@@ -91,6 +93,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const secteurPages: MetadataRoute.Sitemap = secteurs.map((s) => ({
+    url: `${BASE_URL}/secteurs/${s.slug}`,
+    lastModified: lastBuild,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     ...staticPages,
     ...categoryPages,
@@ -102,5 +111,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogPages,
     ...integrationPages,
     ...glossairePages,
+    ...secteurPages,
   ];
 }

@@ -111,18 +111,42 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    {/* Infos */}
+                    {/* Ressources */}
                     <div>
                         <h3 className="text-sm font-semibold text-primary-foreground uppercase tracking-wider mb-4">
-                            Informations
+                            Ressources
                         </h3>
                         <ul className="space-y-2.5">
                             <li>
                                 <Link
-                                    href="/organismes"
+                                    href="/guide"
                                     className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
                                 >
-                                    Tous les organismes
+                                    Guides pratiques
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/metier"
+                                    className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
+                                >
+                                    Fiches métier
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/glossaire"
+                                    className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
+                                >
+                                    Glossaire
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/pour"
+                                    className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
+                                >
+                                    Pour qui ?
                                 </Link>
                             </li>
                             <li>
@@ -155,14 +179,6 @@ export function Footer() {
                                     className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
                                 >
                                     Mentions légales
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/confidentialite"
-                                    className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
-                                >
-                                    Politique de confidentialité
                                 </Link>
                             </li>
                             <li>

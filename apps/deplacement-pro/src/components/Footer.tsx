@@ -111,6 +111,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/secteurs"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Par secteur
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/integrations"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >

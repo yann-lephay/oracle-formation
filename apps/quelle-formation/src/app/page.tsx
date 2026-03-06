@@ -24,6 +24,9 @@ import {
 import { domaines } from "@/lib/data/domaines";
 import { organismes } from "@/lib/data/organismes";
 import { comparisons } from "@/lib/data/comparisons";
+import { guides } from "@/lib/data/guides";
+import { personas } from "@/lib/data/personas";
+import { metiers } from "@/lib/data/metiers";
 import { generateWebsiteSchema, generateOrganizationSchema } from "@/lib/structured-data";
 import { DevisForm } from "@/components/DevisForm";
 import { SearchBar } from "@/components/SearchBar";
@@ -342,6 +345,119 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ============ GUIDES ============ */}
+      <section className="section-padding bg-surface" id="guides">
+        <div className="container-narrow mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">
+              Guides pratiques
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              CPF, Qualiopi, reconversion : tout ce qu&apos;il faut savoir pour choisir et financer sa formation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {guides.slice(0, 3).map((guide) => (
+              <Link
+                key={guide.slug}
+                href={`/guide/${guide.slug}`}
+                className="glass-card p-6 group"
+              >
+                <span className="badge text-[10px] mb-3">{guide.category}</span>
+                <h3 className="font-bold text-foreground group-hover:text-accent transition-colors mb-2">
+                  {guide.shortTitle}
+                </h3>
+                <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
+                  {guide.description}
+                </p>
+                <span className="text-xs text-accent font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                  Lire le guide
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link href="/guide" className="btn-secondary text-sm">
+              Tous les guides
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ PAR PROFIL ============ */}
+      <section className="section-padding" id="profils">
+        <div className="container-narrow mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">
+              Formations par profil
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Reconversion, recherche d&apos;emploi, freelancing : trouvez les formations adaptées à votre situation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {personas.map((persona) => (
+              <Link
+                key={persona.slug}
+                href={`/pour/${persona.slug}`}
+                className="glass-card p-5 text-center group"
+              >
+                <h3 className="font-bold text-foreground group-hover:text-accent transition-colors mb-2 text-sm">
+                  {persona.name}
+                </h3>
+                <p className="text-xs text-muted-foreground line-clamp-2">
+                  {persona.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ MÉTIERS ============ */}
+      <section className="section-padding bg-surface" id="metiers">
+        <div className="container-narrow mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">
+              Fiches métier — Salaires et débouchés
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Découvrez les salaires, compétences et formations pour accéder aux métiers les plus demandés.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {metiers.map((metier) => (
+              <Link
+                key={metier.slug}
+                href={`/metier/${metier.slug}`}
+                className="glass-card p-5 group"
+              >
+                <h3 className="font-bold text-foreground group-hover:text-accent transition-colors mb-1 text-sm">
+                  {metier.name}
+                </h3>
+                <p className="text-xs text-muted-foreground mb-2">{metier.salaryRange}</p>
+                <span className={`badge text-[10px] ${metier.demandLevel === "très forte" ? "bg-success/10 text-success" : "bg-accent/10 text-accent"}`}>
+                  Demande {metier.demandLevel}
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link href="/metier" className="btn-secondary text-sm">
+              Toutes les fiches métier
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ============ DEVIS FORMULAIRE ============ */}
       <section className="section-padding bg-accent" id="devis">
         <div className="container-narrow mx-auto px-4">
@@ -388,6 +504,33 @@ export default function HomePage() {
               </Link>
               , notre comparateur indépendant vous permet de trouver la formation idéale au
               meilleur prix.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Consultez nos{" "}
+              <Link href="/guide" className="text-accent hover:underline">
+                guides pratiques
+              </Link>{" "}
+              pour tout savoir sur le{" "}
+              <Link href="/guide/financement-cpf" className="text-accent hover:underline">
+                financement CPF
+              </Link>
+              , la{" "}
+              <Link href="/guide/certification-qualiopi" className="text-accent hover:underline">
+                certification Qualiopi
+              </Link>{" "}
+              et la{" "}
+              <Link href="/guide/reconversion-professionnelle" className="text-accent hover:underline">
+                reconversion professionnelle
+              </Link>
+              . Nos{" "}
+              <Link href="/metier" className="text-accent hover:underline">
+                fiches métier
+              </Link>{" "}
+              détaillent les salaires et débouchés de chaque filière. Et notre{" "}
+              <Link href="/glossaire" className="text-accent hover:underline">
+                glossaire
+              </Link>{" "}
+              vous aide à décrypter les termes clés : RNCP, VAE, OPCO, bootcamp.
             </p>
           </div>
         </div>

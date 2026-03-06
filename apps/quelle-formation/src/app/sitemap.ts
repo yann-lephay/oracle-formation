@@ -4,6 +4,10 @@ import { topVilles } from "@/lib/data/villes";
 import { organismes } from "@/lib/data/organismes";
 import { comparisons } from "@/lib/data/comparisons";
 import { blogArticles } from "@/lib/data/blog";
+import { guides } from "@/lib/data/guides";
+import { personas } from "@/lib/data/personas";
+import { metiers } from "@/lib/data/metiers";
+import { glossaryTerms } from "@/lib/data/glossaire";
 
 const BASE_URL = "https://quelleformationpro.fr";
 
@@ -15,6 +19,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${BASE_URL}/formations`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
         { url: `${BASE_URL}/organismes`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
         { url: `${BASE_URL}/comparer`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+        { url: `${BASE_URL}/guide`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+        { url: `${BASE_URL}/pour`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+        { url: `${BASE_URL}/metier`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+        { url: `${BASE_URL}/glossaire`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
         { url: `${BASE_URL}/methodologie`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
         { url: `${BASE_URL}/mentions-legales`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
         { url: `${BASE_URL}/confidentialite`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
@@ -65,6 +73,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
         })),
     ];
 
+    // guide/[slug]
+    const guidePages: MetadataRoute.Sitemap = guides.map((g) => ({
+        url: `${BASE_URL}/guide/${g.slug}`,
+        lastModified: new Date(g.updatedAt),
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+    }));
+
+    // pour/[segment]
+    const personaPages: MetadataRoute.Sitemap = personas.map((p) => ({
+        url: `${BASE_URL}/pour/${p.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+    }));
+
+    // metier/[slug]
+    const metierPages: MetadataRoute.Sitemap = metiers.map((m) => ({
+        url: `${BASE_URL}/metier/${m.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+    }));
+
+    // glossaire/[slug]
+    const glossairePages: MetadataRoute.Sitemap = glossaryTerms.map((t) => ({
+        url: `${BASE_URL}/glossaire/${t.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+    }));
+
     return [
         ...staticPages,
         ...domainePages,
@@ -72,5 +112,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...organismePages,
         ...comparisonPages,
         ...blogPages,
+        ...guidePages,
+        ...personaPages,
+        ...metierPages,
+        ...glossairePages,
     ];
 }

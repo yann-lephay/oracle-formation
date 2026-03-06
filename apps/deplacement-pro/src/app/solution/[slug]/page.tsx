@@ -114,6 +114,19 @@ export default async function SolutionPage({
         </div>
       </section>
 
+      {/* Verdict */}
+      <section className="section-padding pb-0" aria-label="Verdict">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="card p-6 border-l-4 border-primary">
+            <p className="text-lg leading-relaxed text-foreground">
+              <strong>{sol.name}</strong> est noté <strong>{sol.rating}/5</strong> sur la base de {sol.reviewCount} avis.
+              {" "}Tarification : {sol.priceRange}.
+              {" "}{sol.tagline}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Content */}
       <section className="section-padding">
         <div className="max-w-6xl mx-auto px-4">

@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { organismes, getOrganismeBySlug } from "@/lib/data/organismes";
 import { domaines } from "@/lib/data/domaines";
-import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
+import { generateFAQSchema, generateBreadcrumbSchema, generateOrganismeSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 import { DevisForm } from "@/components/DevisForm";
 
@@ -72,6 +72,20 @@ export default async function OrganismePage({ params }: PageProps) {
                             { name: "Organismes", url: `${seoConfig.siteUrl}/organismes` },
                             { name: org.name, url: `${seoConfig.siteUrl}/organisme/${slug}` },
                         ])
+                    ),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(
+                        generateOrganismeSchema({
+                            name: org.name,
+                            url: org.website,
+                            description: org.tagline,
+                            rating: org.rating,
+                            reviewCount: org.reviewCount,
+                        })
                     ),
                 }}
             />
@@ -164,6 +178,19 @@ export default async function OrganismePage({ params }: PageProps) {
                                 Demander un devis
                             </Link>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Verdict */}
+            <section className="section-padding pb-0" aria-label="Verdict">
+                <div className="container-narrow mx-auto px-4">
+                    <div className="max-w-3xl glass-card p-6 border-l-4 border-accent">
+                        <p className="text-lg leading-relaxed text-foreground">
+                            <strong>{org.name}</strong> est un organisme noté <strong>{org.rating}/5</strong> basé sur {org.reviewCount} avis.
+                            {" "}{org.cpfEligible ? "Formations éligibles au CPF." : ""} {org.certifications.length > 0 ? `Certifié ${org.certifications.join(", ")}.` : ""}
+                            {" "}Prix : {org.priceRange}. Formats : {org.formats.join(", ")}.
+                        </p>
                     </div>
                 </div>
             </section>

@@ -6,7 +6,7 @@ import { MapPin, ArrowRight, Star, CheckCircle2, Clock, Euro, Award, Monitor, Bu
 import { domaines, getDomaineBySlug } from "@/lib/data/domaines";
 import { getOrganismesByDomaineAndVille } from "@/lib/data/organismes";
 import { topVilles, getVilleBySlug } from "@/lib/data/villes";
-import { generateBreadcrumbSchema, generateFAQSchema, generateItemListSchema } from "@/lib/structured-data";
+import { generateBreadcrumbSchema, generateFAQSchema, generateItemListSchema, generateCourseSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 import type { Organisme } from "@/lib/data/organismes";
 
@@ -190,6 +190,20 @@ export default async function FormationVillePage({ params }: PageProps) {
                                 url: `${seoConfig.siteUrl}/formation/${dSlug}/${vSlug}`,
                             },
                         ])
+                    ),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(
+                        generateCourseSchema({
+                            name: `Formation ${domaine.name} ${ville.metaSuffix}`,
+                            description: `Comparatif des ${totalCount} formations ${domaine.name.toLowerCase()} ${ville.metaSuffix} en 2026. Prix : ${domaine.priceRange}. Durée : ${domaine.averageDuration}.`,
+                            provider: seoConfig.siteName,
+                            providerUrl: seoConfig.siteUrl,
+                            url: `${seoConfig.siteUrl}/formation/${dSlug}/${vSlug}`,
+                        })
                     ),
                 }}
             />

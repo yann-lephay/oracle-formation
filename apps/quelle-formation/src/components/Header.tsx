@@ -42,7 +42,17 @@ const navLinks = [
             { label: "Tous les comparatifs", href: "/comparer" },
         ],
     },
-    { label: "Blog", href: "/blog" },
+    {
+        label: "Ressources",
+        href: "/guide",
+        children: [
+            { label: "Guides pratiques", href: "/guide" },
+            { label: "Fiches métier", href: "/metier" },
+            { label: "Glossaire", href: "/glossaire" },
+            { label: "Pour qui ?", href: "/pour" },
+            { label: "Blog", href: "/blog" },
+        ],
+    },
     { label: "Méthodologie", href: "/methodologie" },
 ];
 
