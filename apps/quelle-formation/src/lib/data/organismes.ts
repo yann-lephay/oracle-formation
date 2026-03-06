@@ -181,8 +181,8 @@ export const organismes: Organisme[] = [
         studentsCount: "30 000+",
         rating: 4.5,
         reviewCount: 2800,
-        affiliateUrl: "https://www.livementor.com",
-        affiliateNetwork: "Affilae",
+        affiliateUrl: "https://www.livementor.com/rencontrez-un-conseiller-livementor/?last_funnel=Funnel%20partenaire&last_source_level_3=yann_lephay&last_source_level_2=Affili%C3%A9",
+        affiliateNetwork: "direct",
         affiliateCommission: "80 € par inscription",
         metaTitle: "LiveMentor Avis 2026 : Prix, Formations et Test",
         metaDescription:
