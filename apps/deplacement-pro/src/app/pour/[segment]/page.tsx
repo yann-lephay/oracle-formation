@@ -37,6 +37,7 @@ const iconMap: Record<string, React.ElementType> = {
   Scale,
 };
 
+export const revalidate = false;
 export function generateStaticParams() {
   return personas.map((p) => ({ segment: p.slug }));
 }

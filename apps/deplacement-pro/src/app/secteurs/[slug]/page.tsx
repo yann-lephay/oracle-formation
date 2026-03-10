@@ -22,6 +22,7 @@ const iconMap: Record<string, React.ElementType> = {
   HardHat, Briefcase, Car, Target,
 };
 
+export const revalidate = false;
 export function generateStaticParams() {
   return secteurs.map((s) => ({ slug: s.slug }));
 }

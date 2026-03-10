@@ -13,6 +13,7 @@ import {
 } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
+export const revalidate = false;
 export function generateStaticParams() {
   return solutions.map((s) => ({ slug: s.slug }));
 }

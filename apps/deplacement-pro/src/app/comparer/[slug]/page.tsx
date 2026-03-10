@@ -11,6 +11,7 @@ import {
 } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
+export const revalidate = false;
 export function generateStaticParams() {
   return comparisons.map((c) => ({ slug: c.slug }));
 }

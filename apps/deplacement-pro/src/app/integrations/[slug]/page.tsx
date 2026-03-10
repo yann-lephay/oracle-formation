@@ -22,6 +22,7 @@ import {
 import { seoConfig } from "@/lib/seo-config";
 import { DevisForm } from "@/components/DevisForm";
 
+export const revalidate = false;
 export function generateStaticParams() {
   return integrations.map((i) => ({ slug: i.slug }));
 }

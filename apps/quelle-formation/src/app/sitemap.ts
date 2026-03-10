@@ -11,6 +11,8 @@ import { glossaryTerms } from "@/lib/data/glossaire";
 
 const BASE_URL = "https://quelleformationpro.fr";
 
+export const revalidate = 86400;
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const now = new Date();
 
