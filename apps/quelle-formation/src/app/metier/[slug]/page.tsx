@@ -13,6 +13,7 @@ interface PageProps {
     params: Promise<{ slug: string }>;
 }
 
+export const revalidate = false;
 export async function generateStaticParams() {
     return metiers.map((m) => ({ slug: m.slug }));
 }

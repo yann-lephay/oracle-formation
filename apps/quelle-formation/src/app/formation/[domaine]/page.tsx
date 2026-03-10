@@ -22,6 +22,7 @@ interface PageProps {
     params: Promise<{ domaine: string }>;
 }
 
+export const revalidate = false;
 export async function generateStaticParams() {
     return domaines.map((d) => ({ domaine: d.slug }));
 }

@@ -12,6 +12,7 @@ import {
 } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
+export const revalidate = false;
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
 }

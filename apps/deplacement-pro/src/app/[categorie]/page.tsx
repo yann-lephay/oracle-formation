@@ -9,6 +9,7 @@ import { guides } from "@/lib/data/guides";
 import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
+export const revalidate = false;
 export function generateStaticParams() {
   return categories.map((c) => ({ categorie: c.slug }));
 }

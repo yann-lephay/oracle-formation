@@ -11,6 +11,7 @@ import {
 } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
+export const revalidate = false;
 export function generateStaticParams() {
   return glossaryTerms.map((t) => ({ slug: t.slug }));
 }

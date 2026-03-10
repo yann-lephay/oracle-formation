@@ -14,6 +14,7 @@ interface PageProps {
     params: Promise<{ domaine: string; ville: string }>;
 }
 
+export const revalidate = false;
 export async function generateStaticParams() {
     const params: { domaine: string; ville: string }[] = [];
     for (const d of domaines) {

@@ -8,6 +8,7 @@ import { comparisons } from "@/lib/data/comparisons";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
+export const revalidate = false;
 export function generateStaticParams() {
   return villes.map((v) => ({ slug: v.slug }));
 }

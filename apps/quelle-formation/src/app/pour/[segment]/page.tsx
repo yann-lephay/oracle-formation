@@ -17,6 +17,7 @@ interface PageProps {
     params: Promise<{ segment: string }>;
 }
 
+export const revalidate = false;
 export async function generateStaticParams() {
     return personas.map((p) => ({ segment: p.slug }));
 }
