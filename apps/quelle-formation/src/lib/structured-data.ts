@@ -8,10 +8,26 @@ export function generateOrganizationSchema() {
     return {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": `${seoConfig.siteUrl}/#organization`,
         name: seoConfig.siteName,
         url: seoConfig.siteUrl,
         description: seoConfig.defaultDescription,
-        logo: `${seoConfig.siteUrl}/logo.png`,
+        logo: {
+            "@type": "ImageObject",
+            url: `${seoConfig.siteUrl}${seoConfig.logo}`,
+            width: 512,
+            height: 512,
+        },
+        contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "customer service",
+            availableLanguage: "French",
+            url: seoConfig.siteUrl,
+        },
+        areaServed: {
+            "@type": "Country",
+            name: "France",
+        },
     };
 }
 
@@ -22,6 +38,39 @@ export function generateWebsiteSchema() {
         name: seoConfig.siteName,
         url: seoConfig.siteUrl,
         description: seoConfig.defaultDescription,
+        inLanguage: seoConfig.language,
+        isPartOf: { "@id": `${seoConfig.siteUrl}/#organization` },
+    };
+}
+
+// ============================================
+// WEB PAGE (primaryImageOfPage for Google Discover)
+// ============================================
+export function generateWebPageSchema(url: string, imageUrl?: string) {
+    const ogImageUrl = imageUrl ?? `${seoConfig.siteUrl}${seoConfig.ogImage}`;
+    return {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url,
+        primaryImageOfPage: {
+            "@type": "ImageObject",
+            contentUrl: ogImageUrl,
+            url: ogImageUrl,
+            width: 1200,
+            height: 630,
+        },
+        speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: [
+                "h1",
+                ".verdict",
+                ".verdict-detail",
+                ".faq-answer",
+                "[data-speakable]",
+            ],
+        },
+        isPartOf: { "@id": `${seoConfig.siteUrl}/#website` },
+        inLanguage: seoConfig.language,
     };
 }
 
@@ -93,13 +142,21 @@ export function generateArticleSchema(params: {
     publishedAt: string;
     updatedAt: string;
     author: string;
+    imageUrl?: string;
 }) {
+    const ogImageUrl = params.imageUrl ?? `${seoConfig.siteUrl}${seoConfig.ogImage}`;
     return {
         "@context": "https://schema.org",
         "@type": "Article",
         headline: params.title,
         description: params.description,
         url: params.url,
+        image: {
+            "@type": "ImageObject",
+            url: ogImageUrl,
+            width: 1200,
+            height: 630,
+        },
         datePublished: params.publishedAt,
         dateModified: params.updatedAt,
         author: {
@@ -111,6 +168,10 @@ export function generateArticleSchema(params: {
             "@type": "Organization",
             name: seoConfig.siteName,
             url: seoConfig.siteUrl,
+            logo: {
+                "@type": "ImageObject",
+                url: `${seoConfig.siteUrl}${seoConfig.logo}`,
+            },
         },
     };
 }
@@ -121,6 +182,7 @@ export function generateOrganismeSchema(org: {
     description: string;
     rating: number;
     reviewCount: number;
+    logoPath?: string;
 }) {
     return {
         "@context": "https://schema.org",
@@ -128,6 +190,9 @@ export function generateOrganismeSchema(org: {
         name: org.name,
         url: org.url,
         description: org.description,
+        ...(org.logoPath && {
+            image: `${seoConfig.siteUrl}${org.logoPath}`,
+        }),
         aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: org.rating,
@@ -175,13 +240,21 @@ export function generateGuideSchema(params: {
     url: string;
     publishedAt: string;
     updatedAt: string;
+    imageUrl?: string;
 }) {
+    const ogImageUrl = params.imageUrl ?? `${seoConfig.siteUrl}${seoConfig.ogImage}`;
     return {
         "@context": "https://schema.org",
         "@type": "Article",
         headline: params.title,
         description: params.description,
         url: params.url,
+        image: {
+            "@type": "ImageObject",
+            url: ogImageUrl,
+            width: 1200,
+            height: 630,
+        },
         datePublished: params.publishedAt,
         dateModified: params.updatedAt,
         author: {
@@ -193,6 +266,10 @@ export function generateGuideSchema(params: {
             "@type": "Organization",
             name: seoConfig.siteName,
             url: seoConfig.siteUrl,
+            logo: {
+                "@type": "ImageObject",
+                url: `${seoConfig.siteUrl}${seoConfig.logo}`,
+            },
         },
     };
 }

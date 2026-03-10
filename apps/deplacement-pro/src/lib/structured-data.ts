@@ -12,7 +12,8 @@ export function generateWebsiteSchema() {
     name: seoConfig.siteName,
     url: seoConfig.siteUrl,
     description: seoConfig.description,
-    inLanguage: "fr-FR",
+    inLanguage: seoConfig.language,
+    isPartOf: { "@id": `${seoConfig.siteUrl}/#organization` },
   };
 }
 
@@ -20,9 +21,15 @@ export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${seoConfig.siteUrl}/#organization`,
     name: seoConfig.siteName,
     url: seoConfig.siteUrl,
-    logo: `${seoConfig.siteUrl}/deplacement-pro-logo.png`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${seoConfig.siteUrl}${seoConfig.logo}`,
+      width: 512,
+      height: 512,
+    },
     description: seoConfig.description,
     contactPoint: {
       "@type": "ContactPoint",
@@ -30,6 +37,41 @@ export function generateOrganizationSchema() {
       contactType: "customer service",
       availableLanguage: "French",
     },
+    areaServed: {
+      "@type": "Country",
+      name: "France",
+    },
+  };
+}
+
+// ============================================
+// WEB PAGE (primaryImageOfPage for Google Discover)
+// ============================================
+export function generateWebPageSchema(url: string, imageUrl?: string) {
+  const ogImageUrl = imageUrl ?? `${seoConfig.siteUrl}${seoConfig.ogImage}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    url,
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      contentUrl: ogImageUrl,
+      url: ogImageUrl,
+      width: 1200,
+      height: 630,
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: [
+        "h1",
+        ".verdict",
+        ".verdict-detail",
+        ".faq-answer",
+        "[data-speakable]",
+      ],
+    },
+    isPartOf: { "@id": `${seoConfig.siteUrl}/#website` },
+    inLanguage: seoConfig.language,
   };
 }
 
@@ -42,6 +84,9 @@ export function generateSolutionSchema(solution: Solution) {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     url: `${seoConfig.siteUrl}/solution/${solution.slug}`,
+    ...(solution.logo && {
+      image: `${seoConfig.siteUrl}${solution.logo}`,
+    }),
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: solution.rating,
@@ -92,6 +137,7 @@ export function generateBreadcrumbSchema(
 }
 
 export function generateComparisonSchema(comparison: Comparison) {
+  const ogImageUrl = `${seoConfig.siteUrl}${seoConfig.ogImage}`;
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -100,7 +146,12 @@ export function generateComparisonSchema(comparison: Comparison) {
     url: `${seoConfig.siteUrl}/comparer/${comparison.slug}`,
     datePublished: "2026-03-01",
     dateModified: "2026-03-04",
-    image: `${seoConfig.siteUrl}/og-image.png`,
+    image: {
+      "@type": "ImageObject",
+      url: ogImageUrl,
+      width: 1200,
+      height: 630,
+    },
     author: {
       "@type": "Organization",
       name: seoConfig.siteName,
@@ -110,11 +161,16 @@ export function generateComparisonSchema(comparison: Comparison) {
       "@type": "Organization",
       name: seoConfig.siteName,
       url: seoConfig.siteUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${seoConfig.siteUrl}${seoConfig.logo}`,
+      },
     },
   };
 }
 
 export function generateGuideSchema(guide: Guide) {
+  const ogImageUrl = `${seoConfig.siteUrl}${seoConfig.ogImage}`;
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -123,7 +179,12 @@ export function generateGuideSchema(guide: Guide) {
     datePublished: guide.publishedAt,
     dateModified: guide.updatedAt,
     url: `${seoConfig.siteUrl}/guides/${guide.slug}`,
-    image: `${seoConfig.siteUrl}/og-image.png`,
+    image: {
+      "@type": "ImageObject",
+      url: ogImageUrl,
+      width: 1200,
+      height: 630,
+    },
     author: {
       "@type": "Organization",
       name: seoConfig.siteName,
@@ -133,6 +194,10 @@ export function generateGuideSchema(guide: Guide) {
       "@type": "Organization",
       name: seoConfig.siteName,
       url: seoConfig.siteUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${seoConfig.siteUrl}${seoConfig.logo}`,
+      },
     },
   };
 }
@@ -153,6 +218,7 @@ export function generateGlossarySchema(term: GlossaryTerm) {
 }
 
 export function generateBlogPostSchema(post: BlogPost) {
+  const ogImageUrl = `${seoConfig.siteUrl}${seoConfig.ogImage}`;
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -160,7 +226,12 @@ export function generateBlogPostSchema(post: BlogPost) {
     description: post.excerpt,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
-    image: `${seoConfig.siteUrl}/og-image.png`,
+    image: {
+      "@type": "ImageObject",
+      url: ogImageUrl,
+      width: 1200,
+      height: 630,
+    },
     author: {
       "@type": "Organization",
       name: seoConfig.siteName,
@@ -170,6 +241,10 @@ export function generateBlogPostSchema(post: BlogPost) {
       "@type": "Organization",
       name: seoConfig.siteName,
       url: seoConfig.siteUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${seoConfig.siteUrl}${seoConfig.logo}`,
+      },
     },
     url: `${seoConfig.siteUrl}/blog/${post.slug}`,
   };
