@@ -4,3 +4,12 @@ node_modules
 *.env
 *.env.local
 .DS_Store
+
+# Temp/cache
+.indxel/
+scripts/.batch-*
+scripts/generated/
+
+# Temp/cache
+scripts/.generated/
+*.textClipping
