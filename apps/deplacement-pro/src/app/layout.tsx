@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://deplacement-pro.fr"),
   title: {
     template: "%s | DeplacementPro.fr",
-    default: "DeplacementPro.fr — Comparateur de Solutions de Déplacement Professionnel 2026",
+    default: "Comparateur Déplacements Professionnels 2026",
   },
   description:
     "Comparez les meilleures solutions de déplacement professionnel : TMC, cartes corporate, notes de frais. Prix, avis, fonctionnalités. Indépendant et gratuit.",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "DeplacementPro.fr",
-    title: "DeplacementPro.fr — Comparateur de Solutions de Déplacement Professionnel 2026",
+    title: "Comparateur Déplacements Professionnels 2026",
     description:
       "Comparez les meilleures solutions de déplacement professionnel : TMC, cartes corporate, notes de frais.",
     images: [
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "DeplacementPro.fr — Comparateur de Solutions de Déplacement Professionnel 2026",
+    title: "Comparateur Déplacements Professionnels 2026",
     description:
       "Comparez les meilleures solutions de déplacement professionnel en France.",
     images: ["/og-image.png"],

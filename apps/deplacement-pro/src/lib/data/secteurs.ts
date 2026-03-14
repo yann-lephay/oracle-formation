@@ -82,7 +82,7 @@ export const secteurs: Secteur[] = [
       { slug: "sap-concur", reason: "Solution enterprise avec refacturation par projet et intégration ERP" },
     ],
     relevantGuides: ["politique-voyage-modele", "indemnites-repas-2026", "tva-deplacement-professionnel"],
-    metaTitle: "Voyage d'Affaires Cabinet de Conseil 2026 — Solutions & Optimisation",
+    metaTitle: "Voyage d'Affaires Conseil 2026 — Solutions",
     metaDescription:
       "Gestion des voyages d'affaires en cabinet de conseil : refacturation client, politique voyage, outils de self-booking. Solutions optimisées pour consultants.",
     faq: [

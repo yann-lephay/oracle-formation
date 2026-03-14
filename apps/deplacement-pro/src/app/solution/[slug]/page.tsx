@@ -255,7 +255,7 @@ export default async function SolutionPage({
       <div className="max-w-6xl mx-auto px-4">
         <SourceCitations
           sources={[
-            { label: "URSSAF — Barèmes frais professionnels", url: "https://www.urssaf.fr/accueil/employeur/calculer-les-cotisations/les-elements-a-prendre-en-compte/les-frais-professionnels.html", date: "2026" },
+            { label: "URSSAF — Barèmes frais professionnels", url: "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/frais-professionnels.html", date: "2026" },
             { label: "Légifrance — Code du travail", url: "https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006072050/", date: "2026" },
             { label: "DGCCRF — Marchés publics", url: "https://www.economie.gouv.fr/daj/marches-publics", date: "2025" },
           ]}
