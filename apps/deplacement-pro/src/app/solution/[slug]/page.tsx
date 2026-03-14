@@ -12,6 +12,7 @@ import {
   generateBreadcrumbSchema,
 } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { SourceCitations } from "@/components/SourceCitations";
 
 export const revalidate = false;
 export function generateStaticParams() {
@@ -98,7 +99,7 @@ export default async function SolutionPage({
               className="rounded mb-4"
             />
 
-            <h1 className="text-3xl md:text-4xl font-extrabold font-heading text-foreground mb-2">
+            <h1 className="text-3xl md:text-4xl font-extrabold font-heading text-foreground mb-2" data-speakable>
               Avis {sol.name} — {new Date().getFullYear()}
             </h1>
             <p className="text-lg text-muted-foreground mb-4">{sol.tagline}</p>
@@ -118,8 +119,8 @@ export default async function SolutionPage({
       {/* Verdict */}
       <section className="section-padding pb-0" aria-label="Verdict">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="card p-6 border-l-4 border-primary">
-            <p className="text-lg leading-relaxed text-foreground">
+          <div className="card p-6 border-l-4 border-primary verdict">
+            <p className="text-lg leading-relaxed text-foreground" data-speakable>
               <strong>{sol.name}</strong> est noté <strong>{sol.rating}/5</strong> sur la base de {sol.reviewCount} avis.
               {" "}Tarification : {sol.priceRange}.
               {" "}{sol.tagline}
@@ -191,7 +192,7 @@ export default async function SolutionPage({
                   {sol.faq.map((item) => (
                     <div key={item.question} className="card p-5">
                       <h3 className="font-semibold text-foreground mb-2">{item.question}</h3>
-                      <p className="text-sm text-muted-foreground">{item.answer}</p>
+                      <p className="text-sm text-muted-foreground faq-answer" data-speakable>{item.answer}</p>
                     </div>
                   ))}
                 </div>
@@ -249,6 +250,17 @@ export default async function SolutionPage({
           </div>
         </div>
       </section>
+
+      {/* SourceCitations */}
+      <div className="max-w-6xl mx-auto px-4">
+        <SourceCitations
+          sources={[
+            { label: "URSSAF — Barèmes frais professionnels", url: "https://www.urssaf.fr/accueil/employeur/calculer-les-cotisations/les-elements-a-prendre-en-compte/les-frais-professionnels.html", date: "2026" },
+            { label: "Légifrance — Code du travail", url: "https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006072050/", date: "2026" },
+            { label: "DGCCRF — Marchés publics", url: "https://www.economie.gouv.fr/daj/marches-publics", date: "2025" },
+          ]}
+        />
+      </div>
 
       {/* Related comparisons */}
       {(() => {

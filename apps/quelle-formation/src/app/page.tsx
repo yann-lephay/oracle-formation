@@ -87,7 +87,7 @@ export default function HomePage() {
             </div>
 
             {/* H1 */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-foreground">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-foreground" data-speakable>
               Trouvez la{" "}
               <span className="text-accent">
                 formation professionnelle

@@ -88,7 +88,7 @@ export default function HomePage() {
               Comparateur indépendant — mis à jour en mars 2026
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-extrabold font-heading leading-tight tracking-tight text-foreground">
+            <h1 className="text-4xl md:text-5xl font-extrabold font-heading leading-tight tracking-tight text-foreground" data-speakable>
               Optimisez vos{" "}
               <span className="text-primary">déplacements professionnels</span>
             </h1>

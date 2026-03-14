@@ -19,6 +19,7 @@ import { domaines } from "@/lib/data/domaines";
 import { generateFAQSchema, generateBreadcrumbSchema, generateOrganismeSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 import { DevisForm } from "@/components/DevisForm";
+import { SourceCitations } from "@/components/SourceCitations";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -118,7 +119,7 @@ export default async function OrganismePage({ params }: PageProps) {
                             className="rounded mb-4"
                         />
 
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-2 text-foreground">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-2 text-foreground" data-speakable>
                             {org.name} — Avis 2026
                         </h1>
 
@@ -186,8 +187,8 @@ export default async function OrganismePage({ params }: PageProps) {
             {/* Verdict */}
             <section className="section-padding pb-0" aria-label="Verdict">
                 <div className="container-narrow mx-auto px-4">
-                    <div className="max-w-3xl glass-card p-6 border-l-4 border-accent">
-                        <p className="text-lg leading-relaxed text-foreground">
+                    <div className="max-w-3xl glass-card p-6 border-l-4 border-accent verdict">
+                        <p className="text-lg leading-relaxed text-foreground" data-speakable>
                             <strong>{org.name}</strong> est un organisme noté <strong>{org.rating}/5</strong> basé sur {org.reviewCount} avis.
                             {" "}{org.cpfEligible ? "Formations éligibles au CPF." : ""} {org.certifications.length > 0 ? `Certifié ${org.certifications.join(", ")}.` : ""}
                             {" "}Prix : {org.priceRange}. Formats : {org.formats.join(", ")}.
@@ -277,7 +278,7 @@ export default async function OrganismePage({ params }: PageProps) {
                                     {faq.question}
                                     <Award className="w-4 h-4 text-muted-foreground group-open:rotate-180 transition-transform" />
                                 </summary>
-                                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                                <p className="mt-2 text-sm text-muted-foreground leading-relaxed faq-answer" data-speakable>
                                     {faq.answer}
                                 </p>
                             </details>
@@ -285,6 +286,17 @@ export default async function OrganismePage({ params }: PageProps) {
                     </div>
                 </div>
             </section>
+
+            {/* SourceCitations */}
+            <div className="container-narrow mx-auto px-4">
+                <SourceCitations
+                    sources={[
+                        { label: "France Compétences — RNCP", url: "https://www.francecompetences.fr", date: "2026" },
+                        { label: "Mon Compte Formation", url: "https://www.moncompteformation.gouv.fr", date: "2026" },
+                        { label: "Certification Qualiopi — Ministère du Travail", url: "https://travail-emploi.gouv.fr/formation-professionnelle/acteurs-cadre-et-qualite-de-la-formation-professionnelle/article/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation", date: "2025" },
+                    ]}
+                />
+            </div>
 
             {/* CTA + DevisForm */}
             <section className="section-padding bg-accent" id="devis">
