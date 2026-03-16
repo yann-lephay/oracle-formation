@@ -7,7 +7,7 @@ import { generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
-    title: "Tous les Organismes de Formation — Comparatif 2026",
+    title: "Organismes de Formation — Comparatif 2026",
     description:
         "Comparez les 14 meilleurs organismes de formation professionnelle en France. Avis, prix, certifications Qualiopi, CPF. Trouvez le bon organisme.",
     alternates: { canonical: `${seoConfig.siteUrl}/organismes` },

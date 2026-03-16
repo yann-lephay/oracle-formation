@@ -9,7 +9,7 @@ const THEME = {
   accent: "#A04E6D",
   siteName: "DeplacementPro.fr",
   domain: "deplacement-pro.fr",
-  tagline: "Comparateur de solutions de deplacement professionnel",
+  tagline: "Comparateur de solutions de déplacement professionnel",
 };
 
 export function generateGenericOgImage({
@@ -121,7 +121,7 @@ export function generateGenericOgImage({
               fontWeight: 600,
             }}
           >
-            Comparateur independant
+            Comparateur indépendant
           </div>
         </div>
       </div>

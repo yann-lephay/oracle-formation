@@ -192,6 +192,13 @@ interface GenerationItem {
 }
 
 const QF_BLOG_ITEMS: GenerationItem[] = [
+  // 5 articles originaux à regénérer (actuellement < 2000 mots)
+  { slug: "financer-formation-cpf-2026", title: "Comment financer sa formation avec le CPF en 2026", context: "Guide complet CPF 2026 : reste à charge 100€, FranceConnect+, solde moyen 2400€, démarches MonCompteFormation.gouv.fr, alternatives si CPF insuffisant, co-financement OPCO, abondements employeur." },
+  { slug: "reconversion-professionnelle-guide", title: "Reconversion professionnelle en 2026 : le guide complet", context: "Étapes clés pour réussir sa reconversion. Bilan de compétences, PTP (Projet de Transition Professionnelle), démission-reconversion, VAE, financement. Témoignages et chiffres France Travail." },
+  { slug: "formations-plus-demandees-2026", title: "Les formations les plus demandées en 2026", context: "Top formations CPF et hors CPF en 2026 : dev web, data, cybersécurité, IA, marketing digital, comptabilité, langues. Chiffres France Compétences, DARES, taux d'insertion." },
+  { slug: "formation-en-ligne-vs-presentiel", title: "Formation en ligne ou en présentiel : comment choisir ?", context: "Comparatif objectif : taux de complétion, engagement, coût, flexibilité, reconnaissance employeur. E-learning, blended, bootcamp présentiel. Avantages et limites de chaque format." },
+  { slug: "choisir-organisme-formation", title: "Comment choisir son organisme de formation en 2026", context: "Critères de sélection : Qualiopi, RNCP, taux d'insertion, avis apprenants, accompagnement, prix. Red flags à éviter. Comparaison grands organismes vs bootcamps vs universités." },
+  // 10 articles déjà générés à 2500+ mots
   { slug: "top-bootcamps-france-2026", title: "Les meilleurs bootcamps en France en 2026", context: "Comparatif des bootcamps tech (Le Wagon, Jedha, Ironhack, Wild Code School). Prix, durée, taux d'insertion, spécialités." },
   { slug: "formation-ia-intelligence-artificielle-2026", title: "Se former à l'intelligence artificielle en 2026", context: "Formations IA/ML accessibles (bootcamps, masters, certifs). Prérequis, débouchés, salaires. GPT, prompt engineering, data science." },
   { slug: "reconversion-developpeur-web-guide", title: "Reconversion développeur web : le guide complet", context: "Étapes pour devenir dev web en reconversion. Bootcamp vs autodidacte vs alternance. Stack à apprendre. Salaires réalistes." },
@@ -284,12 +291,13 @@ Les ContentBlock sont :
 - { "type": "callout", "text": "...", "variant": "info" | "tip" | "warning" }
 - { "type": "cta", "text": "...", "href": "/#domaines", "label": "..." }
 
-## RÈGLES
-- Au moins 1500 mots de contenu (répartis dans les ContentBlock)
-- 15-25 ContentBlocks
+## RÈGLES CRITIQUES
+- **MINIMUM ABSOLU : 2500 mots de contenu** dans les ContentBlocks (les articles sous 2000 mots sont rejetés automatiquement)
+- Chaque paragraphe doit faire 80-150 mots (pas de paragraphes courts de 2 phrases)
+- 25-35 ContentBlocks au total
 - Formule les H2 comme des questions quand c'est naturel
 - 2-4 callouts, 1 CTA vers QuelleFormation
-- 4-5 FAQ avec réponses directes (< 40 mots la première phrase)
+- 4-5 FAQ avec réponses détaillées de 50-80 mots chacune
 - Chiffres concrets : prix en EUR, durée, taux d'insertion
 - Accent sur TOUS les mots français (éligible, présentation, métier, etc.)
 - Retourne UNIQUEMENT le JSON, sans code fence, sans explication`;
@@ -378,7 +386,7 @@ interface BlogPost {
 \`\`\`
 
 ## RÈGLES
-- 7-10 sections avec 100-200 mots chacune (total ~1500 mots)
+- 10-15 sections avec 150-250 mots chacune (total minimum 2000 mots, vise 2500)
 - Chiffres concrets : barèmes URSSAF, prix outils, ROI
 - Formule les titres de section comme des questions quand c'est naturel
 - Chaque section commence par une phrase directe < 40 mots
@@ -450,6 +458,32 @@ function buildPrompt(app: string, type: string, item: GenerationItem): string {
   throw new Error(`Unknown app/type: ${app}/${type}`);
 }
 
+// ─── Word count validation ───────────────────────────────────────────────
+
+const MIN_WORDS = 2000;
+
+function countWords(json: any): number {
+  let words = 0;
+  // ContentBlock format (QF blog)
+  if (json.content && Array.isArray(json.content)) {
+    for (const block of json.content) {
+      if (block.text) words += block.text.split(/\s+/).filter((w: string) => w.length > 0).length;
+      if (block.items) for (const i of block.items) words += i.split(/\s+/).filter((w: string) => w.length > 0).length;
+    }
+  }
+  // Sections format (DP blog)
+  if (json.sections && Array.isArray(json.sections)) {
+    for (const s of json.sections) {
+      if (s.content) words += s.content.split(/\s+/).filter((w: string) => w.length > 0).length;
+    }
+  }
+  // FAQ
+  if (json.faq) for (const q of json.faq) {
+    words += (q.question + " " + q.answer).split(/\s+/).filter((w: string) => w.length > 0).length;
+  }
+  return words;
+}
+
 // ─── JSON cleanup ────────────────────────────────────────────────────────
 
 function extractJSON(text: string): string {
@@ -485,36 +519,58 @@ async function generateSync(app: string, type: string) {
     }
 
     const prompt = buildPrompt(app, type, item);
+    const MAX_RETRIES = 3;
 
-    try {
-      const result = await ai.models.generateContent({
-        model: MODEL,
-        contents: prompt,
-        config: {
-          temperature: 0.8,
-          maxOutputTokens: 16384,
-          responseMimeType: "application/json",
-        },
-      });
+    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+      try {
+        const result = await ai.models.generateContent({
+          model: MODEL,
+          contents: prompt,
+          config: {
+            temperature: 0.8,
+            maxOutputTokens: 32768,
+            responseMimeType: "application/json",
+          },
+        });
 
-      const raw = result.text ?? "";
-      const jsonStr = extractJSON(raw);
+        const raw = result.text ?? "";
+        const jsonStr = extractJSON(raw);
 
-      // Validate JSON
-      JSON.parse(jsonStr);
+        // Validate JSON
+        const parsed = JSON.parse(jsonStr);
 
-      ensureDir(out);
-      fs.writeFileSync(out, jsonStr, "utf-8");
-      process.stdout.write("✓");
-      generated++;
-    } catch (e: any) {
-      process.stdout.write("✗");
-      console.error(`\n  ✗ ${item.slug}: ${e?.message ?? e}`);
-      errors++;
+        // Validate word count
+        const wc = countWords(parsed);
+        if (wc < MIN_WORDS && attempt < MAX_RETRIES) {
+          process.stdout.write(`⚡(${wc}w)`);
+          continue; // retry without backoff
+        }
+
+        ensureDir(out);
+        fs.writeFileSync(out, jsonStr, "utf-8");
+        process.stdout.write(`✓(${wc}w)`);
+        generated++;
+        break;
+      } catch (e: any) {
+        const isRateLimit = e?.message?.includes("429") || e?.message?.includes("RESOURCE_EXHAUSTED");
+        const isFetchFailed = e?.message?.includes("fetch failed");
+
+        if ((isRateLimit || isFetchFailed) && attempt < MAX_RETRIES) {
+          const backoff = 30000 * Math.pow(2, attempt);
+          process.stdout.write(`⏳(${Math.round(backoff / 1000)}s)`);
+          await new Promise((r) => setTimeout(r, backoff));
+          continue;
+        }
+
+        process.stdout.write("✗");
+        console.error(`\n  ✗ ${item.slug}: ${e?.message ?? e}`);
+        errors++;
+        break;
+      }
     }
 
-    // Rate limiting (600ms between requests)
-    await new Promise((r) => setTimeout(r, 600));
+    // Rate limiting (10s between requests to avoid 429)
+    await new Promise((r) => setTimeout(r, 10000));
   }
 
   console.log(
