@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-03-14",
     readingTime: "14 min",
     category: "Gestion",
-    metaTitle: "Optimiser son Budget Déplacement Pro 2026 — 14 Leviers Concrets",
+    metaTitle: "Budget Déplacement Pro — 14 Leviers",
     metaDescription:
       "14 leviers concrets pour réduire votre budget déplacement professionnel de 20-35 % en 2026 : TMC, NDC, Forfait Mobilités Durables, cartes corporate, audit.",
     sections: [
@@ -120,7 +120,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-03-14",
     readingTime: "13 min",
     category: "Réglementation",
-    metaTitle: "Barème kilométrique 2026 : Montants, Calcul et Guide Complet",
+    metaTitle: "Barème Kilométrique 2026 : Calcul",
     metaDescription:
       "Barème URSSAF 2026 complet : voitures, motos, vélos. Calcul des IK, frais réels vs forfait, véhicules électriques et erreurs qui déclenchent un contrôle.",
     sections: [
@@ -198,7 +198,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-03-14",
     readingTime: "12 min",
     category: "Comparatif",
-    metaTitle: "Comparatif 2026 : Mooncard vs Spendesk vs Qonto — Guide Complet",
+    metaTitle: "Mooncard vs Spendesk vs Qonto 2026",
     metaDescription:
       "Mooncard, Spendesk ou Qonto en 2026 ? Comparatif complet des prix, plafonds, intégrations comptables, cartes virtuelles et critères de migration.",
     sections: [
@@ -277,7 +277,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-03-14",
     readingTime: "13 min",
     category: "Réglementation",
-    metaTitle: "Duty of Care 2026 : Obligations légales et responsabilité pénale",
+    metaTitle: "Duty of Care 2026 : Obligations",
     metaDescription:
       "Article L4121-1 du Code du travail : obligations de sécurité, responsabilité pénale du dirigeant, classification des zones à risque et formation des voyageurs.",
     sections: [
@@ -363,7 +363,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-03-14",
     readingTime: "13 min",
     category: "Réglementation",
-    metaTitle: "Indemnités repas déplacement 2026 : Barèmes URSSAF Complets",
+    metaTitle: "Indemnités Repas 2026 : URSSAF",
     metaDescription:
       "Barèmes URSSAF 2026 complets : repas en déplacement (21,50 €), grand déplacement, étranger, travailleurs itinérants et dernières jurisprudences.",
     sections: [
@@ -447,7 +447,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-03-14",
     readingTime: "14 min",
     category: "Comparatif",
-    metaTitle: "Automatiser ses notes de frais en 2026 : le guide chiffré",
+    metaTitle: "Automatiser ses Notes de Frais 2026",
     metaDescription:
       "Oubliez la saisie manuelle. Mooncard, Expensya ou Spendesk ? Comparatif chiffré, ROI et avis tranchés pour automatiser vos notes de frais en 2026.",
     sections: [
@@ -535,7 +535,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-03-14",
     readingTime: "13 min",
     category: "Guide",
-    metaTitle: "Créer une politique voyage d'entreprise : guide et modèle",
+    metaTitle: "Politique Voyage : Guide & Modèle",
     metaDescription:
       "Découvrez comment rédiger une politique voyage efficace. Plafonds URSSAF, choix de la TMC, gestion des notes de frais et modèle à copier.",
     sections: [
@@ -614,7 +614,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-03-14",
     readingTime: "13 min",
     category: "Guide",
-    metaTitle: "Self-Booking Tool (SBT) : avantages, prix et comparatif",
+    metaTitle: "Self-Booking Tool — Prix & Avis",
     metaDescription:
       "Faut-il passer au Self-Booking Tool ? Comparatif Navan, TravelPerk et Amex GBT. Découvrez comment réduire vos frais de déplacement professionnels de 30 %.",
     sections: [
@@ -689,7 +689,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-03-14",
     readingTime: "14 min",
     category: "Comparatif",
-    metaTitle: "TMC ou SBT en 2026 : faut-il garder son agence de voyage ?",
+    metaTitle: "TMC ou SBT 2026 : Que Choisir ?",
     metaDescription:
       "Comparatif sans filtre entre agence de voyage d'affaires (TMC) et SBT (Navan, TravelPerk). Coûts réels, frais cachés, autonomie : prenez la bonne décision.",
     sections: [
@@ -769,7 +769,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-03-14",
     readingTime: "15 min",
     category: "Guide",
-    metaTitle: "Réduire l'empreinte carbone des voyages pro : le guide",
+    metaTitle: "Empreinte Carbone Voyages Pro",
     metaDescription:
       "Train vs avion, reporting RSE, outils TMC green. Découvrez comment réduire concrètement l'empreinte carbone de vos déplacements professionnels.",
     sections: [

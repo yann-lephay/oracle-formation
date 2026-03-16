@@ -33,7 +33,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "très forte",
     salaryRange: "32 000 € – 55 000 €/an",
-    metaTitle: "Formation Développeur Web 2026 : Comparatif et Prix",
+    metaTitle: "Formation Développeur Web 2026 : Prix",
     metaDescription:
       "Comparez les meilleures formations développeur web en 2026. Prix, durée, avis et éligibilité CPF. OpenClassrooms, Jedha, Le Wagon… Trouvez votre formation.",
   },
@@ -50,7 +50,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "très forte",
     salaryRange: "35 000 € – 50 000 €/an",
-    metaTitle: "Formation Data Analyst 2026 : Comparatif, Prix et Avis",
+    metaTitle: "Formation Data Analyst 2026 : Prix",
     metaDescription:
       "Comparez les formations data analyst en 2026. Python, SQL, Power BI. Prix, durée, avis et CPF. Jedha, DataScientest, OpenClassrooms… Le guide complet.",
   },
@@ -67,7 +67,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "très forte",
     salaryRange: "28 000 € – 45 000 €/an",
-    metaTitle: "Formation Marketing Digital 2026 : Comparatif et Prix",
+    metaTitle: "Formation Marketing Digital 2026 : Prix",
     metaDescription:
       "Comparez les meilleures formations marketing digital en 2026. SEO, SEA, Social Media. Prix, avis et éligibilité CPF. Trouvez votre formation.",
   },
@@ -84,7 +84,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "très forte",
     salaryRange: "38 000 € – 65 000 €/an",
-    metaTitle: "Formation Cybersécurité 2026 : Comparatif, Prix et Avis",
+    metaTitle: "Formation Cybersécurité 2026 : Prix",
     metaDescription:
       "Comparez les formations cybersécurité en 2026. Pentesting, sécurité réseau. Prix, durée et CPF. Jedha, Guardia, DataScientest… Guide complet.",
   },
@@ -101,7 +101,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "très forte",
     salaryRange: "40 000 € – 70 000 €/an",
-    metaTitle: "Formation Intelligence Artificielle 2026 : Comparatif et Prix",
+    metaTitle: "Formation IA 2026 : Comparatif & Prix",
     metaDescription:
       "Comparez les formations IA en 2026. Machine Learning, Deep Learning, NLP. Prix, avis et éligibilité CPF. Trouvez la meilleure formation IA.",
   },
@@ -118,7 +118,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "forte",
     salaryRange: "35 000 € – 55 000 €/an",
-    metaTitle: "Formation Gestion de Projet 2026 : PMP, Scrum, Agile",
+    metaTitle: "Formation Gestion de Projet 2026 : Prix",
     metaDescription:
       "Comparez les formations gestion de projet en 2026. PMP, PRINCE2, Scrum Master. Prix, durée et CPF. Trouvez la certification qu'il vous faut.",
   },
@@ -135,7 +135,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "forte",
     salaryRange: "28 000 € – 50 000 €/an",
-    metaTitle: "Formation Comptabilité 2026 : DCG, Prix et Avis",
+    metaTitle: "Formation Comptabilité 2026 : Prix",
     metaDescription:
       "Comparez les formations comptabilité en 2026. DCG, DSCG, gestion de paie. Prix, durée et éligibilité CPF. Trouvez votre formation comptable.",
   },
@@ -152,7 +152,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "forte",
     salaryRange: "32 000 € – 50 000 €/an",
-    metaTitle: "Formation UX/UI Design 2026 : Comparatif et Prix",
+    metaTitle: "Formation UX/UI Design 2026 : Prix",
     metaDescription:
       "Comparez les formations UX/UI design en 2026. Figma, prototypage, recherche utilisateur. Prix, avis et CPF. Ironhack, OpenClassrooms, Uxer School…",
   },
@@ -169,7 +169,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "forte",
     salaryRange: "30 000 € – 50 000 €/an",
-    metaTitle: "Formation Ressources Humaines 2026 : Comparatif et Prix",
+    metaTitle: "Formation RH 2026 : Comparatif & Prix",
     metaDescription:
       "Comparez les formations RH en 2026. Gestion du personnel, droit social, recrutement. Prix, durée et CPF. Trouvez votre formation ressources humaines.",
   },
@@ -186,7 +186,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "forte",
     salaryRange: "25 000 € – 50 000 €/an (+ variable)",
-    metaTitle: "Formation Commerce et Vente 2026 : Comparatif et Prix",
+    metaTitle: "Formation Commerce & Vente 2026 : Prix",
     metaDescription:
       "Comparez les formations commerciales en 2026. Vente, négociation, CRM. Prix, durée et CPF. Boostez votre carrière commerciale.",
   },
@@ -203,7 +203,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "très forte",
     salaryRange: "+15-25% sur le salaire moyen",
-    metaTitle: "Formation Anglais Professionnel 2026 : TOEIC, Prix et CPF",
+    metaTitle: "Formation Anglais Pro 2026 : Prix & CPF",
     metaDescription:
       "Comparez les formations anglais professionnel en 2026. TOEIC, anglais des affaires. Prix, avis et CPF. Wall Street English, EF, Babbel…",
   },
@@ -220,7 +220,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "forte",
     salaryRange: "Variable",
-    metaTitle: "Formation Création d'Entreprise 2026 : Prix et CPF",
+    metaTitle: "Formation Création d'Entreprise 2026",
     metaDescription:
       "Comparez les formations création d'entreprise en 2026. Business plan, statut juridique, comptabilité. Prix et CPF. LiveMentor, CCI, BGE…",
   },
@@ -237,7 +237,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "très forte",
     salaryRange: "+10-15% valorisation CV",
-    metaTitle: "Formation Excel & Bureautique 2026 : TOSA, Prix et CPF",
+    metaTitle: "Formation Excel 2026 : TOSA, Prix & CPF",
     metaDescription:
       "Comparez les formations Excel et bureautique en 2026. TOSA, ICDL, Excel avancé. Prix, avis et CPF. Trouvez votre formation bureautique.",
   },
@@ -254,7 +254,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "forte",
     salaryRange: "25 000 € – 60 000 €/an (+ commissions)",
-    metaTitle: "Formation Immobilier 2026 : Agent, Loi Alur, Prix et CPF",
+    metaTitle: "Formation Immobilier 2026 : Prix & CPF",
     metaDescription:
       "Comparez les formations immobilier en 2026. Agent immobilier, loi Alur, gestion locative. Prix, durée et CPF. Trouvez votre formation immobilier.",
   },
@@ -271,7 +271,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "moyenne",
     salaryRange: "22 000 € – 40 000 €/an",
-    metaTitle: "Formation Photographie 2026 : Comparatif, Prix et CPF",
+    metaTitle: "Formation Photographie 2026 : Prix & CPF",
     metaDescription:
       "Comparez les formations photographie en 2026. Prise de vue, Lightroom, Photoshop. Prix, avis et CPF. Devenez photographe professionnel.",
   },
@@ -288,7 +288,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "forte",
     salaryRange: "25 000 € – 42 000 €/an",
-    metaTitle: "Formation Graphisme 2026 : Photoshop, Illustrator, Prix et CPF",
+    metaTitle: "Formation Graphisme 2026 : Prix & CPF",
     metaDescription:
       "Comparez les formations graphisme en 2026. Photoshop, Illustrator, InDesign. Prix, avis et CPF. Devenez graphiste professionnel.",
   },
@@ -305,7 +305,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "forte",
     salaryRange: "40 000 € – 65 000 €/an",
-    metaTitle: "Formation Management 2026 : Leadership, Prix et CPF",
+    metaTitle: "Formation Management 2026 : Prix & CPF",
     metaDescription:
       "Comparez les formations management en 2026. Leadership, gestion d'équipe, conduite du changement. Prix et CPF. Montez en compétences.",
   },
@@ -322,7 +322,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "très forte",
     salaryRange: "42 000 € – 70 000 €/an",
-    metaTitle: "Formation DevOps & Cloud 2026 : AWS, Docker, Prix et CPF",
+    metaTitle: "Formation DevOps & Cloud 2026 : Prix",
     metaDescription:
       "Comparez les formations DevOps et Cloud en 2026. AWS, Azure, Docker, Kubernetes. Prix, certifications et CPF. Boostez votre carrière.",
   },
@@ -339,7 +339,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "forte",
     salaryRange: "40 000 € – 65 000 €/an",
-    metaTitle: "Formation Product Management 2026 : Comparatif et Prix",
+    metaTitle: "Formation Product Management 2026 : Prix",
     metaDescription:
       "Comparez les formations product management en 2026. Roadmap, discovery, métriques. Prix, avis et CPF. Devenez product manager.",
   },
@@ -356,7 +356,7 @@ export const domaines: Domaine[] = [
     cpfEligible: true,
     demandLevel: "très forte",
     salaryRange: "Variable (obligation légale)",
-    metaTitle: "Formation SST 2026 : Sécurité au Travail, Prix et CPF",
+    metaTitle: "Formation SST 2026 : Prix & CPF",
     metaDescription:
       "Comparez les formations santé sécurité au travail en 2026. SST, PRAP, habilitation électrique. Prix et financement. Formations obligatoires.",
   },

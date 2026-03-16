@@ -6,12 +6,12 @@ import { generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
-  title: "Guides Pratiques — Barèmes, Modèles et Réglementation 2026",
+  title: "Guides — Barèmes & Réglementation",
   description:
     "Guides pratiques pour gérer vos déplacements professionnels : barème kilométrique 2026, indemnités repas, politique voyage modèle. Conseils et réglementation.",
   alternates: { canonical: `${seoConfig.siteUrl}/guides` },
   openGraph: {
-    title: "Guides Pratiques — Barèmes, Modèles et Réglementation 2026",
+    title: "Guides — Barèmes & Réglementation",
     description:
       "Guides pratiques pour gérer vos déplacements professionnels : barèmes, modèles, réglementation.",
     url: `${seoConfig.siteUrl}/guides`,

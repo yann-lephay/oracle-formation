@@ -7,12 +7,12 @@ import { generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
-  title: "Comparatifs — Solutions de Déplacement Professionnel 2026",
+  title: "Comparatifs Déplacement Pro 2026",
   description:
     "Comparatifs détaillés des solutions de déplacement professionnel : Navan vs TravelPerk, Mooncard vs Spendesk, SAP Concur vs Expensya. Prix, fonctionnalités, verdict.",
   alternates: { canonical: `${seoConfig.siteUrl}/comparer` },
   openGraph: {
-    title: "Comparatifs — Solutions de Déplacement Professionnel 2026",
+    title: "Comparatifs Déplacement Pro 2026",
     description:
       "Comparatifs détaillés des solutions de déplacement professionnel.",
     url: `${seoConfig.siteUrl}/comparer`,

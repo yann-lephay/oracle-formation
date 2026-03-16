@@ -6,12 +6,12 @@ import { generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
-  title: "Glossaire du Déplacement Professionnel — 20 Définitions Clés",
+  title: "Glossaire Déplacement Pro — A à Z",
   description:
     "Glossaire complet du voyage d'affaires : TMC, GDS, NDC, per diem, duty of care, carte corporate. Toutes les définitions pour comprendre le déplacement professionnel.",
   alternates: { canonical: `${seoConfig.siteUrl}/glossaire` },
   openGraph: {
-    title: "Glossaire du Déplacement Professionnel — 20 Définitions Clés",
+    title: "Glossaire Déplacement Pro — A à Z",
     description:
       "Glossaire complet du voyage d'affaires : TMC, GDS, NDC, per diem, duty of care, carte corporate.",
     url: `${seoConfig.siteUrl}/glossaire`,

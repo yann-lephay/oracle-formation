@@ -6,12 +6,12 @@ import { generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
-  title: "Blog — Déplacement Professionnel, TMC, Notes de Frais",
+  title: "Blog — TMC, Cartes & Notes de Frais",
   description:
     "Articles et conseils pour optimiser vos déplacements professionnels : TMC, cartes corporate, notes de frais, barèmes, bonnes pratiques.",
   alternates: { canonical: `${seoConfig.siteUrl}/blog` },
   openGraph: {
-    title: "Blog — Déplacement Professionnel, TMC, Notes de Frais",
+    title: "Blog — TMC, Cartes & Notes de Frais",
     description:
       "Articles et conseils pour optimiser vos déplacements professionnels.",
     url: `${seoConfig.siteUrl}/blog`,

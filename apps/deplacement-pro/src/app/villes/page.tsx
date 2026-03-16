@@ -6,12 +6,12 @@ import { generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
-  title: "Déplacements professionnels par ville — Guide 2026",
+  title: "Déplacements Pro par Ville 2026",
   description:
     "Guides pratiques pour vos déplacements professionnels dans 28 villes françaises : transports, hébergement, quartiers d'affaires, budget. Conseils et tarifs 2026.",
   alternates: { canonical: `${seoConfig.siteUrl}/villes` },
   openGraph: {
-    title: "Déplacements professionnels par ville — Guide 2026",
+    title: "Déplacements Pro par Ville 2026",
     description:
       "Guides pratiques pour vos déplacements professionnels dans 28 villes françaises.",
     url: `${seoConfig.siteUrl}/villes`,

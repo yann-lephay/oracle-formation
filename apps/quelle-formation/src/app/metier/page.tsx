@@ -6,7 +6,7 @@ import { generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
-    title: "Fiches Métier 2026 — Salaires, Formations et Débouchés",
+    title: "Fiches Métier 2026 : Salaires & Formation",
     description:
         "Fiches métier complètes : data analyst, cybersécurité, UX designer, product manager. Salaires, compétences, formations et évolution de carrière en 2026.",
     alternates: { canonical: `${seoConfig.siteUrl}/metier` },

@@ -10,7 +10,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export const metadata: Metadata = {
-  title: "Déplacements Pro par Secteur 2026 — BTP, Conseil",
+  title: "Déplacements Pro par Secteur 2026",
   description:
     "Solutions de gestion des déplacements professionnels adaptées à votre secteur : BTP, cabinets de conseil, forces de vente. Enjeux et outils recommandés.",
   alternates: { canonical: `${seoConfig.siteUrl}/secteurs` },

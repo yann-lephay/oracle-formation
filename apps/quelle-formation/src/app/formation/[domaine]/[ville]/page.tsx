@@ -34,7 +34,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const { local, remote } = getOrganismesByDomaineAndVille(dSlug, vSlug);
     const totalCount = local.length + remote.length;
 
-    const title = `Formation ${domaine.name} ${ville.metaSuffix} 2026 : ${totalCount} Organismes Comparés`;
+    // Keep metaTitle under 42 chars (suffix " | QuelleFormation.fr" = 23 chars → total < 65)
+    const MAX_TITLE = 42;
+    let title = `Formation ${domaine.shortName} ${ville.metaSuffix} 2026`;
+    if (title.length > MAX_TITLE) {
+        title = `Formation ${domaine.shortName} ${ville.metaSuffix}`;
+    }
+    if (title.length > MAX_TITLE) {
+        title = `${domaine.shortName} ${ville.metaSuffix} 2026`;
+    }
+    if (title.length > MAX_TITLE) {
+        title = `${domaine.shortName} ${ville.metaSuffix}`;
+    }
     const description = `Comparez ${totalCount} formations ${domaine.name.toLowerCase()} ${ville.metaSuffix} en 2026.${local.length > 0 ? ` ${local.length} organismes avec campus ${ville.metaSuffix}.` : ""} Prix, avis, CPF. Trouvez la meilleure formation.`;
 
     return {

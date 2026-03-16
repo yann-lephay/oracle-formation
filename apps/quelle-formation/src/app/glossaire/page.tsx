@@ -6,7 +6,7 @@ import { generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
-    title: "Glossaire de la Formation Professionnelle 2026",
+    title: "Glossaire Formation Pro 2026",
     description:
         "CPF, Qualiopi, RNCP, VAE, OPCO, bootcamp : définitions et explications de tous les termes de la formation professionnelle en France.",
     alternates: { canonical: `${seoConfig.siteUrl}/glossaire` },

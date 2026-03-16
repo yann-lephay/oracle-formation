@@ -68,7 +68,7 @@ export const comparisons: Comparison[] = [
                 analysis: "Jedha a un meilleur réseau entreprises dans la Data/IA. OpenClassrooms a la garantie emploi ou remboursé.",
             },
         ],
-        metaTitle: "OpenClassrooms vs Jedha 2026 : Quel Organisme Choisir ?",
+        metaTitle: "OpenClassrooms vs Jedha 2026 : Avis",
         metaDescription:
             "Comparatif détaillé OpenClassrooms vs Jedha en 2026. Prix, formations, avis, CPF. Lequel choisir pour se former en Data, IA ou Développement Web ?",
     },
@@ -118,7 +118,7 @@ export const comparisons: Comparison[] = [
                 analysis: "Le Wagon a plus de campus en France. Ironhack a un seul campus physique à Paris mais propose le remote.",
             },
         ],
-        metaTitle: "Le Wagon vs Ironhack 2026 : Quel Bootcamp Choisir ?",
+        metaTitle: "Le Wagon vs Ironhack 2026 : Avis",
         metaDescription:
             "Comparatif Le Wagon vs Ironhack en 2026. Bootcamp dev web, data, UX/UI. Prix, campus, avis et CPF. Quel bootcamp est fait pour vous ?",
     },
@@ -161,7 +161,7 @@ export const comparisons: Comparison[] = [
                 analysis: "OpenClassrooms bénéficie d'une notoriété et d'une réputation supérieures.",
             },
         ],
-        metaTitle: "OpenClassrooms vs Studi 2026 : Quelle Formation en Ligne ?",
+        metaTitle: "OpenClassrooms vs Studi 2026 : Avis",
         metaDescription:
             "Comparatif OpenClassrooms vs Studi en 2026. Prix, qualité, catalogue, CPF. Quelle formation en ligne choisir ? Notre analyse détaillée.",
     },
@@ -204,7 +204,7 @@ export const comparisons: Comparison[] = [
                 analysis: "Jedha a des campus physiques dans les grandes villes. DataScientest est majoritairement en ligne.",
             },
         ],
-        metaTitle: "Jedha vs DataScientest 2026 : Quelle Formation Data/IA ?",
+        metaTitle: "Jedha vs DataScientest 2026 : Avis",
         metaDescription:
             "Comparatif Jedha vs DataScientest en 2026. Data, IA, Cybersécurité. Prix, format, CPF. Bootcamp ou formation continue ? Notre verdict.",
     },
@@ -240,7 +240,7 @@ export const comparisons: Comparison[] = [
                 analysis: "Le Wagon a un taux d'insertion exceptionnel et un réseau alumni très actif.",
             },
         ],
-        metaTitle: "OpenClassrooms vs Le Wagon 2026 : Quel Choix de Formation ?",
+        metaTitle: "OpenClassrooms vs Le Wagon 2026 : Avis",
         metaDescription:
             "Comparatif OpenClassrooms vs Le Wagon en 2026. E-learning vs bootcamp. Prix, diplôme, insertion pro. Lequel choisir pour se lancer dans le dev ?",
     },
@@ -290,7 +290,7 @@ export const comparisons: Comparison[] = [
                 analysis: "Le Wagon affiche un meilleur taux d'insertion, porté par son réseau et sa réputation.",
             },
         ],
-        metaTitle: "Le Wagon vs Wild Code School 2026 : Quel Bootcamp Choisir ?",
+        metaTitle: "Le Wagon vs Wild Code School 2026",
         metaDescription:
             "Comparatif Le Wagon vs Wild Code School en 2026. Bootcamp dev web, prix, campus, insertion pro. 9 semaines vs 5 mois. Notre verdict détaillé.",
     },
@@ -333,7 +333,7 @@ export const comparisons: Comparison[] = [
                 analysis: "Jedha offre plus de flexibilité avec 3 niveaux. On peut commencer par l'Essentials avant de s'engager sur le Fullstack.",
             },
         ],
-        metaTitle: "Jedha vs Le Wagon 2026 : Quelle Formation Data Choisir ?",
+        metaTitle: "Jedha vs Le Wagon 2026 : Avis & Prix",
         metaDescription:
             "Comparatif Jedha vs Le Wagon en 2026. Data science, IA, bootcamp. Prix, parcours, réseau alumni. Quel bootcamp data choisir ? Notre analyse.",
     },
@@ -383,7 +383,7 @@ export const comparisons: Comparison[] = [
                 analysis: "Les deux sont compatibles avec un emploi. Le CNAM propose en plus des cours du soir en présentiel.",
             },
         ],
-        metaTitle: "Studi vs CNAM 2026 : Quelle Formation Diplômante ?",
+        metaTitle: "Studi vs CNAM 2026 : Avis & Prix",
         metaDescription:
             "Comparatif Studi vs CNAM en 2026. Formations diplômantes en ligne. Prix, diplômes, catalogue. EdTech vs institution publique. Notre verdict.",
     },
@@ -426,7 +426,7 @@ export const comparisons: Comparison[] = [
                 analysis: "M2i propose un éventail plus large de certifications éditeurs reconnues sur le marché.",
             },
         ],
-        metaTitle: "M2i Formation vs DataScientest 2026 : Quelle Formation IT ?",
+        metaTitle: "M2i vs DataScientest 2026 : Avis",
         metaDescription:
             "Comparatif M2i Formation vs DataScientest en 2026. Formation IT courte vs parcours Data/IA. Prix, format, certifications. Notre analyse.",
     },
@@ -476,7 +476,7 @@ export const comparisons: Comparison[] = [
                 analysis: "L'AFPA cible davantage les demandeurs d'emploi. Studi s'adresse à tous les profils.",
             },
         ],
-        metaTitle: "AFPA vs Studi 2026 : Quelle Formation Choisir ?",
+        metaTitle: "AFPA vs Studi 2026 : Avis & Prix",
         metaDescription:
             "Comparatif AFPA vs Studi en 2026. Présentiel vs en ligne, prix, catalogue, financements. Quelle formation professionnelle choisir ? Notre verdict.",
     },

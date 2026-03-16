@@ -27,7 +27,7 @@ export const guides: Guide[] = [
     publishedAt: "2026-01-15",
     updatedAt: "2026-03-01",
     readingTime: "8 min",
-    metaTitle: "Barème Kilométrique 2026 — Tableau Officiel & Calcul",
+    metaTitle: "Barème Kilométrique 2026 — Calcul",
     metaDescription:
       "Barème kilométrique 2026 officiel : tableau complet, calcul des indemnités, majoration véhicules électriques (+20 %). Guide pratique avec exemples.",
     sections: [
@@ -85,7 +85,7 @@ export const guides: Guide[] = [
     publishedAt: "2026-01-20",
     updatedAt: "2026-03-01",
     readingTime: "6 min",
-    metaTitle: "Indemnités Repas 2026 — Barèmes URSSAF & Calcul",
+    metaTitle: "Indemnités Repas 2026 — URSSAF",
     metaDescription:
       "Indemnités repas 2026 : barèmes URSSAF mis à jour, panier repas, restaurant, grand déplacement. Guide pratique avec exemples et automatisation.",
     sections: [
@@ -138,7 +138,7 @@ export const guides: Guide[] = [
     publishedAt: "2026-02-01",
     updatedAt: "2026-03-01",
     readingTime: "10 min",
-    metaTitle: "Politique Voyage Entreprise 2026 — Modèle & Template Gratuit",
+    metaTitle: "Politique Voyage 2026 — Modèle",
     metaDescription:
       "Modèle de politique voyage entreprise 2026 : classes de transport, hébergement, validation, outils. Template gratuit prêt à l'emploi.",
     sections: [
@@ -201,7 +201,7 @@ export const guides: Guide[] = [
     publishedAt: "2026-02-15",
     updatedAt: "2026-03-01",
     readingTime: "8 min",
-    metaTitle: "TVA Déplacements Professionnels 2026 — Récupération & Taux",
+    metaTitle: "TVA Déplacements Pro 2026 — Taux",
     metaDescription:
       "Comment récupérer la TVA sur les déplacements professionnels en 2026 ? Taux par type de frais, justificatifs, cas pratiques et erreurs courantes.",
     sections: [
@@ -259,7 +259,7 @@ export const guides: Guide[] = [
     publishedAt: "2026-02-20",
     updatedAt: "2026-03-01",
     readingTime: "7 min",
-    metaTitle: "Notes de Frais — Obligations Légales 2026 & Bonnes Pratiques",
+    metaTitle: "Notes de Frais — Obligations 2026",
     metaDescription:
       "Obligations légales employeur sur les notes de frais 2026 : remboursement, délais, justificatifs, contrôle URSSAF. Guide complet avec bonnes pratiques.",
     sections: [
@@ -317,7 +317,7 @@ export const guides: Guide[] = [
     publishedAt: "2026-02-25",
     updatedAt: "2026-03-01",
     readingTime: "9 min",
-    metaTitle: "URSSAF Déplacements Professionnels 2026 — Règles & Exonérations",
+    metaTitle: "URSSAF Déplacements Pro 2026",
     metaDescription:
       "Règles URSSAF pour les déplacements professionnels 2026 : barèmes d'exonération, grand déplacement, petit déplacement, contrôles. Guide complet employeur.",
     sections: [
@@ -375,7 +375,7 @@ export const guides: Guide[] = [
     publishedAt: "2026-03-01",
     updatedAt: "2026-03-05",
     readingTime: "6 min",
-    metaTitle: "Plafond Indemnités Kilométriques 2026 — Barème Officiel",
+    metaTitle: "Plafond IK 2026 — Barème Officiel",
     metaDescription:
       "Plafonds indemnités kilométriques 2026 : barème fiscal officiel, calcul, exonération URSSAF, véhicules électriques (+20 %). Tableau complet.",
     sections: [

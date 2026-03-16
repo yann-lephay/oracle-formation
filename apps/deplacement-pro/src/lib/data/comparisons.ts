@@ -30,7 +30,7 @@ export const comparisons: Comparison[] = [
       "Navan et TravelPerk sont les deux leaders européens de la gestion des voyages d'affaires. Ce comparatif analyse en détail leurs différences pour vous aider à choisir la meilleure TMC pour votre entreprise en 2026.",
     verdict:
       "TravelPerk est idéal pour les PME grâce à son offre gratuite et sa tarification transparente. Navan convient mieux aux ETI et grands comptes qui recherchent une solution tout-en-un (TMC + carte + notes de frais).",
-    metaTitle: "Navan vs TravelPerk 2026 — Comparatif Détaillé TMC",
+    metaTitle: "Navan vs TravelPerk — Comparatif TMC",
     metaDescription:
       "Comparatif Navan vs TravelPerk : prix, fonctionnalités, inventaire, support. Quelle TMC choisir pour votre entreprise en 2026 ?",
     criteria: [
@@ -107,7 +107,7 @@ export const comparisons: Comparison[] = [
       "Mooncard et Spendesk sont les deux leaders français de la carte corporate nouvelle génération. Ce comparatif détaille leurs différences pour vous aider à choisir la solution la plus adaptée à votre entreprise.",
     verdict:
       "Mooncard est idéal pour les TPE/PME qui cherchent une carte corporate simple et abordable. Spendesk convient mieux aux PME/ETI qui veulent centraliser cartes, factures et workflow d'achat en une seule plateforme.",
-    metaTitle: "Mooncard vs Spendesk 2026 — Comparatif Carte Corporate",
+    metaTitle: "Mooncard vs Spendesk — Comparatif",
     metaDescription:
       "Comparatif Mooncard vs Spendesk : tarifs, cartes, fonctionnalités, intégrations. Quelle carte corporate choisir en 2026 ?",
     criteria: [
@@ -184,7 +184,7 @@ export const comparisons: Comparison[] = [
       "Navan et Mooncard répondent à deux besoins complémentaires : la gestion des voyages et celle des dépenses. Ce comparatif analyse dans quelle mesure ces solutions se recoupent et quand il vaut mieux les combiner.",
     verdict:
       "Navan est un choix tout-en-un pour les entreprises qui veulent centraliser voyages et dépenses. Mooncard est idéal pour les entreprises qui veulent d'abord résoudre le problème des notes de frais avec un outil simple et abordable.",
-    metaTitle: "Navan vs Mooncard 2026 — Comparatif TMC et Carte Corporate",
+    metaTitle: "Navan vs Mooncard — TMC vs Carte",
     metaDescription:
       "Comparatif Navan vs Mooncard : faut-il une TMC tout-en-un ou une carte corporate spécialisée ? Prix, fonctionnalités et verdict 2026.",
     criteria: [
@@ -261,7 +261,7 @@ export const comparisons: Comparison[] = [
       "Navan et Spendesk adoptent la même ambition — centraliser les dépenses d'entreprise — mais avec des approches différentes. Ce comparatif analyse leurs points forts respectifs pour vous aider à choisir.",
     verdict:
       "Navan est le meilleur choix pour les entreprises dont les voyages sont le principal poste de dépenses. Spendesk est idéal pour centraliser toutes les dépenses (cartes, factures, achats) au-delà des seuls voyages.",
-    metaTitle: "Navan vs Spendesk 2026 — Comparatif Dépenses d'Entreprise",
+    metaTitle: "Navan vs Spendesk — Comparatif 2026",
     metaDescription:
       "Comparatif Navan vs Spendesk : TMC tout-en-un ou plateforme de dépenses complète ? Analyse détaillée des prix et fonctionnalités 2026.",
     criteria: [
@@ -338,7 +338,7 @@ export const comparisons: Comparison[] = [
       "Navan et SAP Concur représentent deux générations de TMC. Ce comparatif oppose la néo-TMC la plus en vue au leader historique mondial pour vous aider à choisir la bonne solution en 2026.",
     verdict:
       "Navan est idéal pour les entreprises qui veulent une expérience utilisateur moderne et un déploiement rapide. SAP Concur reste incontournable pour les grands comptes dans l'écosystème SAP qui ont besoin d'intégrations ERP profondes.",
-    metaTitle: "Navan vs SAP Concur 2026 — Comparatif TMC Moderne vs Historique",
+    metaTitle: "Navan vs SAP Concur — Comparatif TMC",
     metaDescription:
       "Comparatif Navan vs SAP Concur : néo-TMC vs leader mondial. Prix, UX, intégrations ERP, fonctionnalités. Quel outil choisir en 2026 ?",
     criteria: [
@@ -415,7 +415,7 @@ export const comparisons: Comparison[] = [
       "Navan et Expensya s'adressent à des besoins différents : TMC complète vs gestion des notes de frais. Ce comparatif vous aide à comprendre quand choisir l'un plutôt que l'autre.",
     verdict:
       "Expensya est le choix évident pour les PME qui cherchent uniquement à digitaliser leurs notes de frais. Navan est fait pour les entreprises qui veulent centraliser voyages et dépenses dans une seule plateforme.",
-    metaTitle: "Navan vs Expensya 2026 — TMC ou Logiciel de Notes de Frais ?",
+    metaTitle: "Navan vs Expensya — TMC ou NDF ?",
     metaDescription:
       "Comparatif Navan vs Expensya : faut-il une TMC tout-en-un ou un spécialiste des notes de frais ? Analyse complète 2026.",
     criteria: [
@@ -492,7 +492,7 @@ export const comparisons: Comparison[] = [
       "TravelPerk et Mooncard sont complémentaires : le premier gère les voyages, le second les dépenses. Ce comparatif analyse leurs périmètres respectifs pour savoir s'il faut choisir ou combiner.",
     verdict:
       "TravelPerk et Mooncard sont rarement en concurrence directe — ils sont plutôt complémentaires. Combinés, ils offrent une couverture complète voyages + dépenses à un coût maîtrisé, surtout pour les PME.",
-    metaTitle: "TravelPerk vs Mooncard 2026 — TMC ou Carte Corporate ?",
+    metaTitle: "TravelPerk vs Mooncard — Comparatif",
     metaDescription:
       "Comparatif TravelPerk vs Mooncard : peut-on les combiner ? Analyse des périmètres, prix et synergies pour les PME en 2026.",
     criteria: [
@@ -569,7 +569,7 @@ export const comparisons: Comparison[] = [
       "TravelPerk et Spendesk couvrent deux pans complémentaires de la gestion des dépenses d'entreprise. Ce comparatif analyse s'il faut choisir ou combiner ces deux plateformes françaises de référence.",
     verdict:
       "TravelPerk est le meilleur choix pour les entreprises avec beaucoup de déplacements. Spendesk convient mieux aux entreprises qui veulent centraliser toutes les dépenses (pas seulement les voyages). Les combiner est une option solide.",
-    metaTitle: "TravelPerk vs Spendesk 2026 — Voyages ou Dépenses Globales ?",
+    metaTitle: "TravelPerk vs Spendesk — Comparatif",
     metaDescription:
       "Comparatif TravelPerk vs Spendesk : TMC flexible ou plateforme de dépenses tout-en-un ? Analyse détaillée et verdict 2026.",
     criteria: [
@@ -646,7 +646,7 @@ export const comparisons: Comparison[] = [
       "TravelPerk et SAP Concur incarnent deux visions de la TMC : l'agilité européenne vs la puissance du leader mondial. Ce comparatif détaille leurs forces et faiblesses pour vous aider à trancher.",
     verdict:
       "TravelPerk est le choix idéal pour les PME et ETI qui veulent une TMC moderne, flexible et abordable. SAP Concur reste incontournable pour les grands comptes intégrés à l'écosystème SAP.",
-    metaTitle: "TravelPerk vs SAP Concur 2026 — Comparatif TMC Complet",
+    metaTitle: "TravelPerk vs SAP Concur — TMC 2026",
     metaDescription:
       "Comparatif TravelPerk vs SAP Concur : néo-TMC européenne vs leader mondial. UX, prix, fonctionnalités, intégrations. Guide 2026.",
     criteria: [
@@ -723,7 +723,7 @@ export const comparisons: Comparison[] = [
       "TravelPerk et Expensya sont deux outils complémentaires : l'un gère les voyages, l'autre les notes de frais. Ce comparatif analyse leurs périmètres pour savoir s'il faut choisir ou combiner.",
     verdict:
       "TravelPerk et Expensya sont complémentaires, pas concurrents. TravelPerk gère les réservations et Expensya gère les notes de frais. Les combiner est la meilleure option pour les PME.",
-    metaTitle: "TravelPerk vs Expensya 2026 — TMC ou Notes de Frais ?",
+    metaTitle: "TravelPerk vs Expensya — Comparatif",
     metaDescription:
       "Comparatif TravelPerk vs Expensya : réservation de voyages ou gestion des notes de frais ? Analyse et verdict 2026.",
     criteria: [
@@ -800,7 +800,7 @@ export const comparisons: Comparison[] = [
       "Mooncard et SAP Concur s'attaquent au même problème — la gestion des dépenses professionnelles — mais avec des philosophies radicalement différentes. Simplicité française vs suite mondiale intégrée.",
     verdict:
       "Mooncard est le choix évident pour les PME qui cherchent une solution simple et abordable. SAP Concur reste pertinent pour les ETI et grands comptes qui ont besoin d'une suite complète et d'intégrations ERP profondes.",
-    metaTitle: "Mooncard vs SAP Concur 2026 — Carte Corporate vs Suite Mondiale",
+    metaTitle: "Mooncard vs SAP Concur — Comparatif",
     metaDescription:
       "Comparatif Mooncard vs SAP Concur : carte corporate française ou suite de gestion des frais mondiale ? Analyse prix et fonctionnalités 2026.",
     criteria: [
@@ -877,7 +877,7 @@ export const comparisons: Comparison[] = [
       "Mooncard et Expensya sont deux solutions françaises qui digitalisent les dépenses professionnelles, mais avec des approches différentes : carte corporate vs gestion des notes de frais. Ce comparatif vous aide à choisir.",
     verdict:
       "Mooncard est idéal si vous voulez éliminer les notes de frais en fournissant une carte à chaque collaborateur. Expensya est parfait pour digitaliser les notes de frais existantes à un coût accessible.",
-    metaTitle: "Mooncard vs Expensya 2026 — Carte Corporate ou Notes de Frais ?",
+    metaTitle: "Mooncard vs Expensya — Comparatif",
     metaDescription:
       "Comparatif Mooncard vs Expensya : carte corporate automatisée ou gestion des notes de frais intelligente ? Analyse complète 2026.",
     criteria: [
@@ -954,7 +954,7 @@ export const comparisons: Comparison[] = [
       "Spendesk et SAP Concur partagent l'ambition de centraliser les dépenses d'entreprise, mais avec des approches très différentes. Néo-fintech française vs leader mondial historique : lequel choisir ?",
     verdict:
       "Spendesk est le choix moderne pour les PME et ETI qui veulent une plateforme agile et complète. SAP Concur reste incontournable pour les grands comptes internationaux intégrés à SAP.",
-    metaTitle: "Spendesk vs SAP Concur 2026 — Néo-Fintech vs Leader Mondial",
+    metaTitle: "Spendesk vs SAP Concur — Comparatif",
     metaDescription:
       "Comparatif Spendesk vs SAP Concur : plateforme de dépenses moderne ou suite mondiale historique ? Prix, UX, fonctionnalités 2026.",
     criteria: [
@@ -1031,7 +1031,7 @@ export const comparisons: Comparison[] = [
       "Spendesk et Expensya sont deux solutions françaises de gestion des dépenses professionnelles avec des périmètres différents. Ce comparatif vous aide à choisir la plus adaptée à votre entreprise.",
     verdict:
       "Expensya est idéal pour les PME qui cherchent une solution de notes de frais simple et abordable. Spendesk convient mieux aux entreprises qui veulent une plateforme complète de gestion des dépenses (cartes + factures + NDF).",
-    metaTitle: "Spendesk vs Expensya 2026 — Comparatif Gestion des Dépenses",
+    metaTitle: "Spendesk vs Expensya — Comparatif",
     metaDescription:
       "Comparatif Spendesk vs Expensya : plateforme de dépenses complète ou spécialiste notes de frais ? Prix et fonctionnalités 2026.",
     criteria: [
@@ -1108,7 +1108,7 @@ export const comparisons: Comparison[] = [
       "SAP Concur et Expensya sont deux solutions de gestion des notes de frais aux profils très différents. Ce comparatif vous aide à choisir entre le leader mondial et l'alternative française agile.",
     verdict:
       "Expensya est idéal pour les PME qui cherchent une solution simple, rapide à déployer et abordable. SAP Concur convient aux ETI et grands comptes qui ont besoin d'une suite complète (voyages + frais + factures) et d'une intégration ERP profonde.",
-    metaTitle: "SAP Concur vs Expensya 2026 — Comparatif Notes de Frais",
+    metaTitle: "SAP Concur vs Expensya — Comparatif",
     metaDescription:
       "Comparatif SAP Concur vs Expensya : prix, OCR, intégrations, déploiement. Quel logiciel de notes de frais choisir en 2026 ?",
     criteria: [

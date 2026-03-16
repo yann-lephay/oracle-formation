@@ -48,11 +48,11 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export const metadata: Metadata = {
-    title: `Toutes les Formations Professionnelles ${currentYear} : 20 Domaines Comparés`,
+    title: `Formations Pro ${currentYear} : 20 Domaines`,
     description: `Explorez 20 domaines de formation professionnelle en ${currentYear}. Prix, durée, CPF, organismes certifiés Qualiopi. Trouvez la formation qui correspond à votre projet.`,
     alternates: { canonical: `${seoConfig.siteUrl}/formations` },
     openGraph: {
-        title: `Toutes les Formations Professionnelles ${currentYear}`,
+        title: `Formations Pro ${currentYear} — QuelleFormation.fr`,
         description: `Explorez 20 domaines de formation professionnelle en ${currentYear}. Prix, durée, CPF, organismes certifiés Qualiopi.`,
         url: `${seoConfig.siteUrl}/formations`,
         type: "website",

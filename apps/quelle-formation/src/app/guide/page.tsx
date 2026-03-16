@@ -6,7 +6,7 @@ import { generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
-    title: "Guides Formation Professionnelle 2026 — CPF, Qualiopi, Reconversion",
+    title: "Guides Formation Pro 2026 : CPF & Plus",
     description:
         "Guides pratiques sur la formation professionnelle : financement CPF, certification Qualiopi, reconversion, bootcamp vs formation longue, RNCP et VAE.",
     alternates: { canonical: `${seoConfig.siteUrl}/guide` },

@@ -72,7 +72,7 @@ export const solutions: Solution[] = [
       "BambooHR",
       "Workday",
     ],
-    metaTitle: "Avis Navan 2026 — Prix, Fonctionnalités, Alternatives",
+    metaTitle: "Avis Navan 2026 — Prix & Alternatives",
     metaDescription:
       "Avis complet sur Navan (ex-TripActions) : tarifs, fonctionnalités, avantages et inconvénients. Comparatif avec TravelPerk et SAP Concur.",
     faq: [
@@ -141,7 +141,7 @@ export const solutions: Solution[] = [
       "Personio",
       "Expensify",
     ],
-    metaTitle: "Avis TravelPerk 2026 — Prix, Fonctionnalités, Alternatives",
+    metaTitle: "Avis TravelPerk 2026 — Prix & Avis",
     metaDescription:
       "Avis complet sur TravelPerk : tarifs transparents, FlexiPerk, GreenPerk. Comparatif avec Navan et SAP Concur. Guide 2026.",
     faq: [
@@ -210,7 +210,7 @@ export const solutions: Solution[] = [
       "ACD",
       "Pennylane",
     ],
-    metaTitle: "Avis Mooncard 2026 — Prix, Fonctionnalités, Alternatives",
+    metaTitle: "Avis Mooncard 2026 — Prix & Avis",
     metaDescription:
       "Avis complet sur Mooncard : carte corporate française, tarifs, OCR, récupération TVA. Comparatif avec Spendesk. Guide 2026.",
     faq: [
@@ -279,7 +279,7 @@ export const solutions: Solution[] = [
       "Datev",
       "Slack",
     ],
-    metaTitle: "Avis Spendesk 2026 — Prix, Fonctionnalités, Alternatives",
+    metaTitle: "Avis Spendesk 2026 — Prix & Avis",
     metaDescription:
       "Avis complet sur Spendesk : cartes corporate, gestion des dépenses, pré-comptabilité. Comparatif avec Mooncard. Guide 2026.",
     faq: [
@@ -348,7 +348,7 @@ export const solutions: Solution[] = [
       "Salesforce",
       "ServiceNow",
     ],
-    metaTitle: "Avis SAP Concur 2026 — Prix, Fonctionnalités, Alternatives",
+    metaTitle: "Avis SAP Concur 2026 — Prix & Avis",
     metaDescription:
       "Avis complet sur SAP Concur : Travel, Expense, Invoice. Tarifs, déploiement, avantages et inconvénients. Comparatif avec Expensya et Navan.",
     faq: [
@@ -417,7 +417,7 @@ export const solutions: Solution[] = [
       "Pennylane",
       "Dynamics 365",
     ],
-    metaTitle: "Avis Expensya 2026 — Prix, Fonctionnalités, Alternatives",
+    metaTitle: "Avis Expensya 2026 — Prix & Avis",
     metaDescription:
       "Avis complet sur Expensya : OCR intelligent, indemnités kilométriques, tarifs. Comparatif avec SAP Concur. Guide notes de frais 2026.",
     faq: [

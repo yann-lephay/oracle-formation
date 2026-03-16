@@ -21,7 +21,7 @@ export const categories: Categorie[] = [
     description:
       "Les TMC nouvelle génération combinent plateforme de réservation, négociation tarifaire et accompagnement humain pour optimiser vos déplacements professionnels.",
     icon: "Globe",
-    metaTitle: "Meilleure TMC 2026 — Comparatif Travel Management Company",
+    metaTitle: "Meilleure TMC 2026 — Comparatif",
     metaDescription:
       "Comparez les meilleures TMC en France : Navan, TravelPerk, SAP Concur. Tarifs, fonctionnalités, avis clients. Guide complet pour choisir votre TMC.",
     keywords: [
@@ -48,7 +48,7 @@ export const categories: Categorie[] = [
     description:
       "Les outils de self-booking permettent aux collaborateurs de réserver eux-mêmes leurs déplacements tout en respectant la politique voyage de l'entreprise.",
     icon: "Monitor",
-    metaTitle: "Meilleur Self-Booking Tool 2026 — Comparatif SBT entreprise",
+    metaTitle: "Meilleur Self-Booking Tool 2026",
     metaDescription:
       "Comparez les meilleurs outils de self-booking pour entreprise. Navan, TravelPerk : fonctionnalités, prix, intégrations. Guide complet SBT 2026.",
     keywords: [
@@ -75,7 +75,7 @@ export const categories: Categorie[] = [
     description:
       "Les cartes corporate nouvelle génération offrent des plafonds personnalisés, une catégorisation automatique des dépenses et une visibilité en temps réel sur les frais professionnels.",
     icon: "CreditCard",
-    metaTitle: "Meilleure Carte Corporate 2026 — Comparatif Cartes Entreprise",
+    metaTitle: "Meilleure Carte Corporate 2026",
     metaDescription:
       "Comparez les meilleures cartes corporate : Mooncard, Spendesk. Plafonds, cashback, intégration comptable. Guide complet cartes entreprise 2026.",
     keywords: [
@@ -102,7 +102,7 @@ export const categories: Categorie[] = [
     description:
       "Les solutions de gestion des notes de frais automatisent la collecte, la validation et le remboursement des dépenses professionnelles.",
     icon: "Receipt",
-    metaTitle: "Meilleur Logiciel Notes de Frais 2026 — Comparatif & Avis",
+    metaTitle: "Logiciel Notes de Frais 2026",
     metaDescription:
       "Comparez les meilleurs logiciels de notes de frais : SAP Concur, Expensya. OCR, validation automatique, export comptable. Guide complet 2026.",
     keywords: [

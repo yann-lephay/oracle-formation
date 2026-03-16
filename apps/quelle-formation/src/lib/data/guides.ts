@@ -28,7 +28,7 @@ export const guides: Guide[] = [
         publishedAt: "2026-01-10",
         updatedAt: "2026-03-01",
         readingTime: "10 min",
-        metaTitle: "Financer sa Formation avec le CPF en 2026 — Guide Complet",
+        metaTitle: "Financer sa Formation CPF 2026 : Guide",
         metaDescription:
             "Comment utiliser le CPF pour financer sa formation en 2026 ? Solde, éligibilité, démarches, alternatives. Guide complet avec exemples concrets.",
         relatedDomaines: ["developpeur-web", "data-analyst", "marketing-digital"],
@@ -92,7 +92,7 @@ export const guides: Guide[] = [
         publishedAt: "2026-01-20",
         updatedAt: "2026-03-01",
         readingTime: "7 min",
-        metaTitle: "Certification Qualiopi — Tout Comprendre en 2026",
+        metaTitle: "Certification Qualiopi 2026 : Guide",
         metaDescription:
             "Qu'est-ce que la certification Qualiopi ? Pourquoi est-elle importante pour choisir sa formation ? Guide complet : critères, vérification, garanties.",
         relatedDomaines: ["developpeur-web", "data-analyst", "cybersecurite"],
@@ -148,7 +148,7 @@ export const guides: Guide[] = [
         publishedAt: "2026-02-01",
         updatedAt: "2026-03-01",
         readingTime: "12 min",
-        metaTitle: "Reconversion Professionnelle 2026 — Guide Complet par Étapes",
+        metaTitle: "Reconversion Professionnelle 2026 : Guide",
         metaDescription:
             "Comment réussir sa reconversion professionnelle en 2026 ? Bilan de compétences, choix de formation, financement CPF, insertion. Guide complet étape par étape.",
         relatedDomaines: ["developpeur-web", "data-analyst", "design-ux-ui", "marketing-digital"],
@@ -208,7 +208,7 @@ export const guides: Guide[] = [
         publishedAt: "2026-02-10",
         updatedAt: "2026-03-01",
         readingTime: "8 min",
-        metaTitle: "Bootcamp vs Formation Longue — Comparatif Complet 2026",
+        metaTitle: "Bootcamp vs Formation Longue 2026",
         metaDescription:
             "Bootcamp ou formation longue ? Comparatif complet 2026 : durée, prix, pédagogie, diplôme, insertion. Quel format choisir selon votre profil ?",
         relatedDomaines: ["developpeur-web", "data-analyst", "cybersecurite"],
@@ -264,7 +264,7 @@ export const guides: Guide[] = [
         publishedAt: "2026-02-15",
         updatedAt: "2026-03-01",
         readingTime: "9 min",
-        metaTitle: "RNCP et VAE Expliqués Simplement — Guide 2026",
+        metaTitle: "RNCP et VAE 2026 : Guide Pratique",
         metaDescription:
             "RNCP, VAE, RS : que signifient ces certifications ? Comment les utiliser ? Guide complet 2026 avec exemples concrets pour bien choisir sa formation.",
         relatedDomaines: ["developpeur-web", "data-analyst", "comptabilite", "ressources-humaines"],

@@ -8,7 +8,7 @@ import { generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
-    title: "Comparatifs Organismes de Formation — Tous les VS 2026",
+    title: "Comparatifs Formations 2026 : Tous les VS",
     description:
         "Comparez les organismes de formation tête-à-tête : OpenClassrooms vs Jedha, Le Wagon vs Ironhack, et 13 autres comparatifs détaillés. Prix, avis, verdict.",
     alternates: { canonical: `${seoConfig.siteUrl}/comparer` },
