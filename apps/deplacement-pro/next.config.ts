@@ -18,6 +18,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   experimental: {
+    inlineCss: true,
     optimizePackageImports: ["lucide-react", "framer-motion"],
   },
   async headers() {
