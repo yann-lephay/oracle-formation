@@ -12,6 +12,8 @@ import { secteurs } from "@/lib/data/secteurs";
 
 const BASE_URL = "https://deplacement-pro.fr";
 
+export const dynamic = "force-static";
+
 export const revalidate = false;
 
 export default function sitemap(): MetadataRoute.Sitemap {
