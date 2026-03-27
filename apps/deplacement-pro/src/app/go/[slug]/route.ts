@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 import { redirect } from "next/navigation";
 import { solutions } from "@/lib/data/solutions";
 
