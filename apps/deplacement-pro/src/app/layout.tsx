@@ -89,6 +89,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://deplacement-pro.fr",
+    types: {
+      "application/rss+xml": "https://deplacement-pro.fr/feed.xml",
+    },
   },
 };
 

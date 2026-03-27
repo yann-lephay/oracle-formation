@@ -90,6 +90,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://quelleformationpro.fr",
+    types: {
+      "application/rss+xml": "https://quelleformationpro.fr/feed.xml",
+    },
   },
 };
 
