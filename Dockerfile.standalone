@@ -1,0 +1,45 @@
+# Multi-stage Dockerfile for standalone Next.js formation/B2B sites
+# Usage: docker build --build-arg BUILD_APP=deplacement-pro -f Dockerfile.standalone -t formation-dp .
+
+# --- Stage 1: Build ---
+FROM node:22-alpine AS builder
+
+ARG BUILD_APP
+RUN test -n "$BUILD_APP" || (echo "ERROR: BUILD_APP arg is required" && exit 1)
+
+WORKDIR /app
+
+# Copy the entire monorepo (needed for workspace resolution)
+COPY package.json package-lock.json ./
+COPY apps/ apps/
+
+# Install dependencies at monorepo root (resolves workspaces)
+RUN npm ci
+
+# Build the target app (standalone → produces apps/$BUILD_APP/.next/standalone/)
+RUN cd apps/$BUILD_APP && npm run build
+
+# --- Stage 2: Run with Node.js ---
+FROM node:22-alpine AS runner
+
+ARG BUILD_APP
+RUN test -n "$BUILD_APP" || (echo "ERROR: BUILD_APP arg is required" && exit 1)
+
+# Persist BUILD_APP as ENV so it's available at runtime
+ENV APP_NAME=$BUILD_APP
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV PORT=3000
+
+# Standalone output mirrors the monorepo structure
+COPY --from=builder /app/apps/$BUILD_APP/.next/standalone ./
+# Static assets and public files must be copied separately
+COPY --from=builder /app/apps/$BUILD_APP/.next/static ./apps/$BUILD_APP/.next/static
+COPY --from=builder /app/apps/$BUILD_APP/public ./apps/$BUILD_APP/public
+
+EXPOSE 3000
+
+# Shell form so $APP_NAME is expanded at runtime
+CMD node apps/$APP_NAME/server.js
