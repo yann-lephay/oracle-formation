@@ -91,7 +91,7 @@ export default function MentionsLegalesPage() {
                 détaillées dans notre{" "}
                 <a
                   href="/confidentialite"
-                  className="text-accent hover:underline"
+                  className="text-accent underline decoration-accent/30 hover:decoration-accent"
                 >
                   Politique de confidentialité
                 </a>

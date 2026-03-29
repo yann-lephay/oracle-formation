@@ -491,15 +491,15 @@ export default function HomePage() {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Que vous cherchiez une{" "}
-              <Link href="/formation/developpeur-web" className="text-accent hover:underline">
+              <Link href="/formation/developpeur-web" className="text-accent underline decoration-accent/30 hover:decoration-accent">
                 formation développeur web
               </Link>
               , une{" "}
-              <Link href="/formation/data-analyst" className="text-accent hover:underline">
+              <Link href="/formation/data-analyst" className="text-accent underline decoration-accent/30 hover:decoration-accent">
                 formation data analyst
               </Link>{" "}
               ou une{" "}
-              <Link href="/formation/marketing-digital" className="text-accent hover:underline">
+              <Link href="/formation/marketing-digital" className="text-accent underline decoration-accent/30 hover:decoration-accent">
                 formation marketing digital
               </Link>
               , notre comparateur indépendant vous permet de trouver la formation idéale au
@@ -507,27 +507,27 @@ export default function HomePage() {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Consultez nos{" "}
-              <Link href="/guide" className="text-accent hover:underline">
+              <Link href="/guide" className="text-accent underline decoration-accent/30 hover:decoration-accent">
                 guides pratiques
               </Link>{" "}
               pour tout savoir sur le{" "}
-              <Link href="/guide/financement-cpf" className="text-accent hover:underline">
+              <Link href="/guide/financement-cpf" className="text-accent underline decoration-accent/30 hover:decoration-accent">
                 financement CPF
               </Link>
               , la{" "}
-              <Link href="/guide/certification-qualiopi" className="text-accent hover:underline">
+              <Link href="/guide/certification-qualiopi" className="text-accent underline decoration-accent/30 hover:decoration-accent">
                 certification Qualiopi
               </Link>{" "}
               et la{" "}
-              <Link href="/guide/reconversion-professionnelle" className="text-accent hover:underline">
+              <Link href="/guide/reconversion-professionnelle" className="text-accent underline decoration-accent/30 hover:decoration-accent">
                 reconversion professionnelle
               </Link>
               . Nos{" "}
-              <Link href="/metier" className="text-accent hover:underline">
+              <Link href="/metier" className="text-accent underline decoration-accent/30 hover:decoration-accent">
                 fiches métier
               </Link>{" "}
               détaillent les salaires et débouchés de chaque filière. Et notre{" "}
-              <Link href="/glossaire" className="text-accent hover:underline">
+              <Link href="/glossaire" className="text-accent underline decoration-accent/30 hover:decoration-accent">
                 glossaire
               </Link>{" "}
               vous aide à décrypter les termes clés : RNCP, VAE, OPCO, bootcamp.

@@ -179,7 +179,7 @@ export default function ConfidentialitePage() {
                 Pour exercer ces droits, contactez-nous à{" "}
                 <a
                   href="mailto:contact@quelle-telephonie-pro.fr"
-                  className="text-accent hover:underline"
+                  className="text-accent underline decoration-accent/30 hover:decoration-accent"
                 >
                   contact@quelle-telephonie-pro.fr
                 </a>
@@ -213,7 +213,7 @@ export default function ConfidentialitePage() {
                 Pour toute question relative à la protection de vos données :{" "}
                 <a
                   href="mailto:contact@quelle-telephonie-pro.fr"
-                  className="text-accent hover:underline"
+                  className="text-accent underline decoration-accent/30 hover:decoration-accent"
                 >
                   contact@quelle-telephonie-pro.fr
                 </a>
