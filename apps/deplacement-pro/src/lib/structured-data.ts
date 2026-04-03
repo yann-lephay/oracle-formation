@@ -5,6 +5,14 @@ import type { Guide } from "./data/guides";
 import type { BlogPost } from "./data/blog";
 import type { GlossaryTerm } from "./data/glossaire";
 
+export const BUILD_DATE = new Date().toISOString().split("T")[0];
+/** Date de build formatée pour affichage (ex: "3 avril 2026") */
+export const BUILD_DATE_FR = new Date().toLocaleDateString("fr-FR", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
 export function generateWebsiteSchema() {
   return {
     "@context": "https://schema.org",
@@ -247,5 +255,48 @@ export function generateBlogPostSchema(post: BlogPost) {
       },
     },
     url: `${seoConfig.siteUrl}/blog/${post.slug}`,
+  };
+}
+
+// --- Article (pour comparatifs/solutions — GEO) ---
+
+export function getArticleSchema(article: {
+  title: string;
+  description: string;
+  slug: string;
+  datePublished?: string;
+  dateModified?: string;
+  imageUrl?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.description,
+    url: `${seoConfig.siteUrl}/${article.slug}`,
+    image: {
+      "@type": "ImageObject",
+      url: article.imageUrl ?? `${seoConfig.siteUrl}${seoConfig.ogImage}`,
+      width: 1200,
+      height: 630,
+    },
+    datePublished: article.datePublished ?? "2026-03-01",
+    dateModified: article.dateModified ?? BUILD_DATE,
+    author: {
+      "@type": "Organization",
+      name: seoConfig.siteName,
+      url: seoConfig.siteUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: seoConfig.siteName,
+      url: seoConfig.siteUrl,
+    },
+    inLanguage: "fr-FR",
+    isPartOf: { "@id": `${seoConfig.siteUrl}/#website` },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: [".verdict", ".verdict-detail", "h1", ".faq-answer"],
+    },
   };
 }

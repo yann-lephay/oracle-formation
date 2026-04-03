@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { organismes, getOrganismeBySlug } from "@/lib/data/organismes";
 import { domaines } from "@/lib/data/domaines";
-import { generateFAQSchema, generateBreadcrumbSchema, generateOrganismeSchema } from "@/lib/structured-data";
+import { generateFAQSchema, generateBreadcrumbSchema, generateOrganismeSchema, getArticleSchema, BUILD_DATE_FR } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 import { DevisForm } from "@/components/DevisForm";
 import { SourceCitations } from "@/components/SourceCitations";
@@ -87,6 +87,18 @@ export default async function OrganismePage({ params }: PageProps) {
                             description: org.tagline,
                             rating: org.rating,
                             reviewCount: org.reviewCount,
+                        })
+                    ),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(
+                        getArticleSchema({
+                            title: org.metaTitle,
+                            description: org.metaDescription,
+                            slug: `organisme/${slug}`,
                         })
                     ),
                 }}
@@ -289,6 +301,9 @@ export default async function OrganismePage({ params }: PageProps) {
 
             {/* SourceCitations */}
             <div className="container-narrow mx-auto px-4">
+                <p className="text-xs text-muted-foreground mt-8 mb-2">
+                    Dernière mise à jour : {BUILD_DATE_FR}
+                </p>
                 <SourceCitations
                     sources={[
                         { label: "France Compétences — RNCP", url: "https://www.francecompetences.fr", date: "2026" },

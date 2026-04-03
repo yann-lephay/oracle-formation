@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { Trophy, ArrowRight, Award, CheckCircle2, Minus } from "lucide-react";
 import { comparisons, getComparisonBySlug } from "@/lib/data/comparisons";
 import { getOrganismeBySlug } from "@/lib/data/organismes";
-import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/structured-data";
+import { generateBreadcrumbSchema, generateFAQSchema, getArticleSchema, BUILD_DATE_FR } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
 interface PageProps {
@@ -80,6 +80,18 @@ export default async function ComparerPage({ params }: PageProps) {
                             { name: "Comparatifs", url: `${seoConfig.siteUrl}/comparer` },
                             { name: comp.title, url: `${seoConfig.siteUrl}/comparer/${slug}` },
                         ])
+                    ),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(
+                        getArticleSchema({
+                            title: comp.metaTitle,
+                            description: comp.metaDescription,
+                            slug: `comparer/${slug}`,
+                        })
                     ),
                 }}
             />
@@ -286,6 +298,12 @@ export default async function ComparerPage({ params }: PageProps) {
                     </div>
                 </div>
             </section>
+
+            <div className="container-narrow mx-auto px-4">
+                <p className="text-xs text-muted-foreground mt-8 mb-2">
+                    Dernière mise à jour : {BUILD_DATE_FR}
+                </p>
+            </div>
 
             {/* Other comparisons */}
             <section className="section-padding">

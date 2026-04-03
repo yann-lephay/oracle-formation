@@ -8,6 +8,8 @@ import {
   generateComparisonSchema,
   generateFAQSchema,
   generateBreadcrumbSchema,
+  getArticleSchema,
+  BUILD_DATE_FR,
 } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
@@ -62,6 +64,18 @@ export default async function ComparerPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(generateFAQSchema(comp.faq)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            getArticleSchema({
+              title: comp.metaTitle,
+              description: comp.metaDescription,
+              slug: `comparer/${slug}`,
+            })
+          ),
         }}
       />
       <script
@@ -208,6 +222,9 @@ export default async function ComparerPage({
               </div>
             ))}
           </div>
+          <p className="text-xs text-muted-foreground mt-8 mb-2">
+            Dernière mise à jour : {BUILD_DATE_FR}
+          </p>
         </div>
       </section>
     </>

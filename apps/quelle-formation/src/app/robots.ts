@@ -24,7 +24,15 @@ export default function robots(): MetadataRoute.Robots {
                 allow: "/",
             },
             {
+                userAgent: "Perplexity-User",
+                allow: "/",
+            },
+            {
                 userAgent: "ClaudeBot",
+                allow: "/",
+            },
+            {
+                userAgent: "Claude-SearchBot",
                 allow: "/",
             },
             {

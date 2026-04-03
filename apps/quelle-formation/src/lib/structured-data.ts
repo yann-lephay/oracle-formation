@@ -4,6 +4,16 @@
 
 import { seoConfig } from "./seo-config";
 
+/** Date ISO du build (ex: "2026-04-03") */
+export const BUILD_DATE = new Date().toISOString().split("T")[0];
+
+/** Date de build formatée pour affichage (ex: "3 avril 2026") */
+export const BUILD_DATE_FR = new Date().toLocaleDateString("fr-FR", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
 export function generateOrganizationSchema() {
     return {
         "@context": "https://schema.org",
@@ -312,5 +322,44 @@ export function generateItemListSchema(params: {
             name: item.name,
             url: item.url,
         })),
+    };
+}
+
+// --- Article (pour pages guides/comparatifs — Google Discover + GEO) ---
+
+export function getArticleSchema(article: {
+    title: string;
+    description: string;
+    slug: string;
+    datePublished?: string;
+    dateModified?: string;
+    imageUrl?: string;
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: article.title,
+        description: article.description,
+        url: `${seoConfig.siteUrl}/${article.slug}`,
+        image: {
+            "@type": "ImageObject",
+            url: article.imageUrl ?? `${seoConfig.siteUrl}${seoConfig.ogImage}`,
+            width: 1200,
+            height: 630,
+        },
+        datePublished: article.datePublished ?? "2026-02-23",
+        dateModified: article.dateModified ?? BUILD_DATE,
+        author: {
+            "@type": "Organization",
+            name: seoConfig.siteName,
+            url: seoConfig.siteUrl,
+        },
+        publisher: {
+            "@type": "Organization",
+            name: seoConfig.siteName,
+            url: seoConfig.siteUrl,
+        },
+        inLanguage: seoConfig.language,
+        isPartOf: { "@id": `${seoConfig.siteUrl}/#website` },
     };
 }

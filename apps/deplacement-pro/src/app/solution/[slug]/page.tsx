@@ -10,6 +10,8 @@ import {
   generateSolutionSchema,
   generateFAQSchema,
   generateBreadcrumbSchema,
+  getArticleSchema,
+  BUILD_DATE_FR,
 } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 import { SourceCitations } from "@/components/SourceCitations";
@@ -72,6 +74,18 @@ export default async function SolutionPage({
               { name: "Accueil", url: "/" },
               { name: sol.name, url: `/solution/${sol.slug}` },
             ])
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            getArticleSchema({
+              title: sol.metaTitle,
+              description: sol.metaDescription,
+              slug: `solution/${slug}`,
+            })
           ),
         }}
       />
@@ -251,8 +265,11 @@ export default async function SolutionPage({
         </div>
       </section>
 
-      {/* SourceCitations */}
+      {/* Date + SourceCitations */}
       <div className="max-w-6xl mx-auto px-4">
+        <p className="text-xs text-muted-foreground mt-8 mb-2">
+          Dernière mise à jour : {BUILD_DATE_FR}
+        </p>
         <SourceCitations
           sources={[
             { label: "URSSAF — Barèmes frais professionnels", url: "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/frais-professionnels.html", date: "2026" },
