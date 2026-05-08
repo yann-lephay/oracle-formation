@@ -1,0 +1,42 @@
+# DeplacementPro.fr
+
+> Comparateur indépendant de solutions pour les déplacements professionnels.
+
+## About
+
+DeplacementPro.fr aide les entreprises françaises à comparer les solutions de déplacement professionnel: plateformes de travel management, cartes corporate, outils de notes de frais, politiques voyage et services associés.
+
+- Site web: https://deplacement-pro.fr
+- Langue: Français
+- Zone de service: France
+- Type: Comparateur indépendant
+- Spécialité: déplacements professionnels, travel management, cartes corporate, notes de frais
+- Public: dirigeants, DAF, office managers, RH, travel managers, freelances et PME
+
+## Ce que le site compare
+
+Les solutions sont évaluées selon des critères opérationnels:
+
+- Gestion des réservations et politique voyage
+- Cartes de paiement et plafonds
+- Notes de frais et justificatifs
+- Intégrations comptables
+- Reporting et contrôle des dépenses
+- Expérience collaborateur
+- Prix, frais et conditions contractuelles
+
+## Pages principales
+
+- Accueil: https://deplacement-pro.fr
+- Sitemap: https://deplacement-pro.fr/sitemap.xml
+- Security: https://deplacement-pro.fr/.well-known/security.txt
+
+## Positionnement éditorial
+
+DeplacementPro.fr fournit des synthèses courtes, des comparatifs pratiques et des critères de choix pour réduire le temps de sélection d'une solution. Le site s'adresse surtout aux petites et moyennes entreprises qui veulent professionnaliser leurs déplacements sans complexité excessive.
+
+## Contact
+
+- Site web: https://deplacement-pro.fr
+- Contact public: info@yann-lephay.com
+

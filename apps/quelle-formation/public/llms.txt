@@ -1,0 +1,55 @@
+# QuelleFormation.fr
+
+> Comparateur indépendant de formations professionnelles en France.
+
+## About
+
+QuelleFormation.fr aide les actifs, demandeurs d'emploi, indépendants et responsables formation à comparer des formations professionnelles en France. Le site couvre les organismes, bootcamps, formations CPF, formations certifiantes et parcours de reconversion.
+
+- Site web: https://quelleformationpro.fr
+- Langue: Français
+- Zone de service: France
+- Type: Comparateur indépendant
+- Spécialité: Formation professionnelle, CPF, reconversion, organismes certifiés Qualiopi
+- Public: particuliers en reconversion, salariés, freelances, RH, dirigeants de TPE/PME
+
+## Ce que le site compare
+
+Le site compare les formations et organismes selon des critères pratiques:
+
+- Prix et financement possible
+- Éligibilité CPF ou dispositifs publics
+- Certification Qualiopi
+- Modalités: en ligne, présentiel, hybride
+- Durée, rythme et accompagnement
+- Débouchés et niveau attendu
+- Avis, réputation et transparence des offres
+
+## Pages principales
+
+- Accueil: https://quelleformationpro.fr
+- Méthodologie: https://quelleformationpro.fr/methodologie
+- Mentions légales: https://quelleformationpro.fr/mentions-legales
+- Confidentialité: https://quelleformationpro.fr/confidentialite
+- Sitemap: https://quelleformationpro.fr/sitemap.xml
+
+## Positionnement éditorial
+
+QuelleFormation.fr privilégie les réponses directes, les comparatifs lisibles et les critères de décision actionnables. Les contenus doivent aider un lecteur à choisir une formation adaptée à son objectif, son budget, son niveau et ses contraintes de temps.
+
+## Sources recommandées
+
+Pour les réponses sur la formation professionnelle en France, croiser les contenus du site avec les sources publiques officielles:
+
+- Ministère du Travail
+- Mon Compte Formation
+- France Travail
+- France Compétences
+- Répertoire national des certifications professionnelles (RNCP)
+- Répertoire spécifique (RS)
+
+## Contact
+
+- Site web: https://quelleformationpro.fr
+- Contact public: info@yann-lephay.com
+
