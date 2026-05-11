@@ -41,7 +41,7 @@ export function generateOrganizationSchema() {
     description: seoConfig.description,
     contactPoint: {
       "@type": "ContactPoint",
-      email: "contact@deplacement-pro.fr",
+      email: "info@yann-lephay.com",
       contactType: "customer service",
       availableLanguage: "French",
     },

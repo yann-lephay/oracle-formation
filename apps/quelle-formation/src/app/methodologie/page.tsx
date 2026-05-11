@@ -252,7 +252,7 @@ export default function MethodologiePage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="mailto:contact@quelleformationpro.fr"
+              href="mailto:info@yann-lephay.com"
               className="btn-primary text-sm"
             >
               Nous contacter

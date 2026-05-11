@@ -183,7 +183,7 @@ export function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="mailto:contact@quelleformationpro.fr"
+                                    href="mailto:info@yann-lephay.com"
                                     className="text-sm text-primary-foreground/50 hover:text-accent transition-colors flex items-center gap-1.5"
                                 >
                                     <Mail className="w-3.5 h-3.5" />

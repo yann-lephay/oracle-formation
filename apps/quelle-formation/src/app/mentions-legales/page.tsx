@@ -50,7 +50,7 @@ export default function MentionsLegalesPage() {
                 <p><strong>Statut :</strong> Entrepreneur individuel (Auto-entrepreneur)</p>
                 <p><strong>SIRET :</strong> 899 650 204 00022</p>
                 <p><strong>Adresse :</strong> 53 Avenue Charles de Gaulle, 57530 Courcelles-Chaussy, France</p>
-                <p><strong>Email :</strong> contact@quelle-telephonie-pro.fr</p>
+                <p><strong>Email :</strong> info@yann-lephay.com</p>
                 <p><strong>Directeur de la publication :</strong> LEPHAY Yann</p>
               </div>
             </div>

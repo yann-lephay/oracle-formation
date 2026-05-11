@@ -178,10 +178,10 @@ export default function ConfidentialitePage() {
               <p className="text-muted-foreground leading-relaxed">
                 Pour exercer ces droits, contactez-nous à{" "}
                 <a
-                  href="mailto:contact@quelle-telephonie-pro.fr"
+                  href="mailto:info@yann-lephay.com"
                   className="text-accent underline decoration-accent/30 hover:decoration-accent"
                 >
-                  contact@quelle-telephonie-pro.fr
+                  info@yann-lephay.com
                 </a>
                 . Nous répondrons dans un délai de 30 jours.
               </p>
@@ -212,10 +212,10 @@ export default function ConfidentialitePage() {
               <p className="text-muted-foreground leading-relaxed">
                 Pour toute question relative à la protection de vos données :{" "}
                 <a
-                  href="mailto:contact@quelle-telephonie-pro.fr"
+                  href="mailto:info@yann-lephay.com"
                   className="text-accent underline decoration-accent/30 hover:decoration-accent"
                 >
-                  contact@quelle-telephonie-pro.fr
+                  info@yann-lephay.com
                 </a>
               </p>
             </div>

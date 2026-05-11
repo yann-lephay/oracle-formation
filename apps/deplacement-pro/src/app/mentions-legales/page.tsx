@@ -24,7 +24,7 @@ export default function MentionsLegalesPage() {
               RCS : [Ville] [Numéro]<br />
               Numéro de TVA : [Numéro]<br />
               Directeur de la publication : [Nom]<br />
-              Contact : contact@deplacement-pro.fr
+              Contact : info@yann-lephay.com
             </p>
           </div>
 
