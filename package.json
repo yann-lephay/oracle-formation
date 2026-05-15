@@ -22,5 +22,11 @@
     "@google-cloud/storage": "^7.19.0",
     "@google/genai": "^1.45.0",
     "tsx": "^4.21.0"
+  },
+  "overrides": {
+    "postcss": "^8.5.10",
+    "next": {
+      "postcss": "^8.5.10"
+    }
   }
 }
