@@ -9,7 +9,6 @@ import {
   Car,
   Target,
   CheckCircle2,
-  Lightbulb,
 } from "lucide-react";
 import { secteurs, getSecteurBySlug } from "@/lib/data/secteurs";
 import { getSolutionBySlug } from "@/lib/data/solutions";
