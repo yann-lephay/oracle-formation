@@ -129,6 +129,7 @@ export default async function OrganismePage({ params }: PageProps) {
                             width={80}
                             height={80}
                             className="rounded mb-4"
+                            unoptimized
                         />
 
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-2 text-foreground" data-speakable>

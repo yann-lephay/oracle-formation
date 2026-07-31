@@ -71,6 +71,7 @@ export default function ComparerPage() {
                                                 width={32}
                                                 height={32}
                                                 className="rounded"
+                                                unoptimized
                                             />
                                         )}
                                         <span className="text-xs font-extrabold text-border">VS</span>
@@ -81,6 +82,7 @@ export default function ComparerPage() {
                                                 width={32}
                                                 height={32}
                                                 className="rounded"
+                                                unoptimized
                                             />
                                         )}
                                     </div>

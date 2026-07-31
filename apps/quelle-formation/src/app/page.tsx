@@ -216,6 +216,7 @@ export default function HomePage() {
                     width={40}
                     height={40}
                     className="rounded shrink-0"
+                    unoptimized
                   />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
@@ -300,7 +301,7 @@ export default function HomePage() {
                     <div className="text-center">
                       <div className="w-12 h-12 rounded-lg bg-white border border-border flex items-center justify-center mx-auto mb-2 overflow-hidden">
                         {org1?.logoPath ? (
-                          <Image src={org1.logoPath} alt={org1.name} width={32} height={32} className="object-contain" />
+                          <Image src={org1.logoPath} alt={org1.name} width={32} height={32} className="object-contain" unoptimized />
                         ) : (
                           <GraduationCap className="w-6 h-6 text-accent" />
                         )}
@@ -313,7 +314,7 @@ export default function HomePage() {
                     <div className="text-center">
                       <div className="w-12 h-12 rounded-lg bg-white border border-border flex items-center justify-center mx-auto mb-2 overflow-hidden">
                         {org2?.logoPath ? (
-                          <Image src={org2.logoPath} alt={org2.name} width={32} height={32} className="object-contain" />
+                          <Image src={org2.logoPath} alt={org2.name} width={32} height={32} className="object-contain" unoptimized />
                         ) : (
                           <GraduationCap className="w-6 h-6 text-accent" />
                         )}

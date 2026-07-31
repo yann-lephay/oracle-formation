@@ -70,6 +70,7 @@ export function Header() {
                         alt="QuelleFormation"
                         width={28}
                         height={28}
+                        unoptimized
                     />
                     <span className="text-base font-bold font-heading text-foreground hidden sm:inline">
                         Quelle<span className="text-accent">Formation</span>

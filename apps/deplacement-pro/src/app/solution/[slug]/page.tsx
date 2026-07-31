@@ -111,6 +111,7 @@ export default async function SolutionPage({
               width={120}
               height={40}
               className="rounded mb-4"
+              unoptimized
             />
 
             <h1 className="text-3xl md:text-4xl font-extrabold font-heading text-foreground mb-2" data-speakable>

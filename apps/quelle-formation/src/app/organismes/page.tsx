@@ -65,6 +65,7 @@ export default function OrganismesPage() {
                                     width={44}
                                     height={44}
                                     className="rounded shrink-0"
+                                    unoptimized
                                 />
                                 <div className="flex-1 min-w-0">
                                     <div className="flex items-center justify-between gap-2 mb-1">

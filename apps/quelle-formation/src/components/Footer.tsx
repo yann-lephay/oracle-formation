@@ -20,6 +20,7 @@ export function Footer() {
                                 width={36}
                                 height={36}
                                 className="rounded-lg"
+                                unoptimized
                             />
                             <span className="text-lg font-bold font-heading text-primary-foreground">
                                 Quelle<span className="text-accent">Formation</span>

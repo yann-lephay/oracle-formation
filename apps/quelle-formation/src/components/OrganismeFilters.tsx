@@ -171,6 +171,7 @@ export function OrganismeFilters({ organismes }: OrganismeFiltersProps) {
                                             width={48}
                                             height={48}
                                             className="rounded shrink-0"
+                                            unoptimized
                                         />
                                         <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center">
                                             {index + 1}

@@ -29,6 +29,7 @@ export function Header() {
             width={28}
             height={28}
             className="rounded"
+            unoptimized
           />
           <span className="text-base font-bold font-heading text-foreground">
             Deplacement<span className="text-primary">Pro</span>

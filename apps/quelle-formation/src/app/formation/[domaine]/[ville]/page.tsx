@@ -76,6 +76,7 @@ function OrganismeCard({ org, rank, villeSlug }: { org: Organisme; rank: number;
                         width={36}
                         height={36}
                         className="rounded"
+                        unoptimized
                     />
                     <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary text-primary-foreground text-[9px] font-bold flex items-center justify-center">
                         {rank}

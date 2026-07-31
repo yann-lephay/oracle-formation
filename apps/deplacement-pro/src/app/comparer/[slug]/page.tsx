@@ -118,6 +118,7 @@ export default async function ComparerPage({
                       width={48}
                       height={48}
                       className="rounded shrink-0"
+                      unoptimized
                     />
                     <div className="flex-1">
                       <h3 className="font-bold font-heading text-foreground">{sol.name}</h3>

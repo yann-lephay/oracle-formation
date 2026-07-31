@@ -116,6 +116,7 @@ export default async function ComparerPage({ params }: PageProps) {
                                     width={64}
                                     height={64}
                                     className="rounded-lg mx-auto mb-3"
+                                    unoptimized
                                 />
                             ) : (
                                 <div className="w-16 h-16 rounded-lg glass-card flex items-center justify-center mx-auto mb-3">
@@ -142,6 +143,7 @@ export default async function ComparerPage({ params }: PageProps) {
                                     width={64}
                                     height={64}
                                     className="rounded-lg mx-auto mb-3"
+                                    unoptimized
                                 />
                             ) : (
                                 <div className="w-16 h-16 rounded-lg glass-card flex items-center justify-center mx-auto mb-3">
