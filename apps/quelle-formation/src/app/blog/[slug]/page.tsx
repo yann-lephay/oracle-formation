@@ -7,7 +7,7 @@ import { domaines } from "@/lib/data/domaines";
 import { organismes } from "@/lib/data/organismes";
 import { generateFAQSchema, generateBreadcrumbSchema, generateArticleSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
-import { DevisForm } from "@/components/DevisForm";
+import { ComparisonCta } from "@/components/ComparisonCta";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -266,19 +266,19 @@ export default async function BlogArticlePage({ params }: PageProps) {
                 </div>
             </section>
 
-            {/* DevisForm */}
-            <section className="section-padding bg-accent" id="devis">
+            {/* Aide à la comparaison */}
+            <section className="section-padding bg-accent" id="comparer">
                 <div className="container-narrow mx-auto px-4">
                     <div className="text-center mb-10">
                         <h2 className="text-2xl md:text-3xl font-extrabold text-accent-foreground mb-3">
                             Besoin d&apos;aide pour choisir votre formation ?
                         </h2>
                         <p className="text-accent-foreground/70 max-w-2xl mx-auto">
-                            Recevez un devis personnalisé de plusieurs organismes en une seule demande.
-                            Gratuit et sans engagement.
+                            Comparez les organismes, leurs prix et leurs formats sans
+                            transmettre vos coordonnées.
                         </p>
                     </div>
-                    <DevisForm />
+                    <ComparisonCta />
                 </div>
             </section>
         </>

@@ -11,9 +11,11 @@ import {
     RotateCcw,
 } from "lucide-react";
 import type { Organisme } from "@/lib/data/organismes";
+import { OrganismeOutboundLink } from "@/components/OrganismeOutboundLink";
 
 interface OrganismeFiltersProps {
     organismes: Organisme[];
+    pageSlug: string;
 }
 
 const FORMAT_OPTIONS = ["présentiel", "distanciel", "hybride", "e-learning"] as const;
@@ -34,7 +36,7 @@ function extractMaxPrice(priceRange: string): number {
     return numbers.length > 0 ? Math.max(...numbers) : 0;
 }
 
-export function OrganismeFilters({ organismes }: OrganismeFiltersProps) {
+export function OrganismeFilters({ organismes, pageSlug }: OrganismeFiltersProps) {
     const [cpfOnly, setCpfOnly] = useState(false);
     const [selectedFormats, setSelectedFormats] = useState<Set<string>>(new Set());
     const [selectedBudget, setSelectedBudget] = useState<number | null>(null);
@@ -237,13 +239,35 @@ export function OrganismeFilters({ organismes }: OrganismeFiltersProps) {
                                             ))}
                                         </div>
 
-                                        <Link
-                                            href={`/organisme/${org.slug}`}
-                                            className="btn-primary text-sm"
-                                        >
-                                            Voir l&apos;avis complet
-                                            <ArrowRight className="w-4 h-4" />
-                                        </Link>
+                                        <div className="sm:text-right">
+                                            <div className="flex flex-wrap gap-2">
+                                                <Link
+                                                    href={`/organisme/${org.slug}`}
+                                                    className="btn-secondary text-sm"
+                                                >
+                                                    Voir l&apos;avis
+                                                </Link>
+                                                {org.affiliateUrl && (
+                                                    <OrganismeOutboundLink
+                                                        href={org.affiliateUrl}
+                                                        isAffiliate
+                                                        organismeSlug={org.slug}
+                                                        pageType="formation"
+                                                        pageSlug={pageSlug}
+                                                        position="listing"
+                                                        className="btn-primary text-sm"
+                                                    >
+                                                        Voir les formations
+                                                        <ArrowRight className="w-4 h-4" />
+                                                    </OrganismeOutboundLink>
+                                                )}
+                                            </div>
+                                            {org.affiliateUrl && (
+                                                <p className="mt-2 max-w-xs text-left text-xs text-muted-foreground sm:text-right">
+                                                    Lien affilié : commission possible, sans surcoût pour vous.
+                                                </p>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -122,8 +122,8 @@ export function Header() {
 
                 {/* CTA */}
                 <div className="hidden md:block">
-                    <Link href="/#devis" className="btn-primary text-sm">
-                        Demander un devis
+                    <Link href="/#comparer" className="btn-primary text-sm">
+                        Comparer les formations
                     </Link>
                 </div>
 
@@ -168,11 +168,11 @@ export function Header() {
                         ))}
                         <div className="pt-3">
                             <Link
-                                href="/#devis"
+                                href="/#comparer"
                                 className="btn-primary text-sm w-full text-center"
                                 onClick={() => setMobileOpen(false)}
                             >
-                                Demander un devis
+                                Comparer les formations
                             </Link>
                         </div>
                     </nav>

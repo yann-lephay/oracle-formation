@@ -28,7 +28,7 @@ import { guides } from "@/lib/data/guides";
 import { personas } from "@/lib/data/personas";
 import { metiers } from "@/lib/data/metiers";
 import { generateWebsiteSchema, generateOrganizationSchema } from "@/lib/structured-data";
-import { DevisForm } from "@/components/DevisForm";
+import { ComparisonCta } from "@/components/ComparisonCta";
 import { SearchBar } from "@/components/SearchBar";
 
 const iconMap: Record<string, React.ElementType> = {
@@ -459,19 +459,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============ DEVIS FORMULAIRE ============ */}
-      <section className="section-padding bg-accent" id="devis">
+      {/* ============ AIDE A LA COMPARAISON ============ */}
+      <section className="section-padding bg-accent" id="comparer">
         <div className="container-narrow mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-accent-foreground mb-3">
               Besoin d&apos;aide pour choisir ?
             </h2>
             <p className="text-accent-foreground/70 text-lg max-w-2xl mx-auto">
-              Recevez un devis personnalisé de plusieurs organismes en une seule demande.
-              Gratuit et sans engagement.
+              Comparez les organismes, leurs prix et leurs formats sans transmettre
+              vos coordonnées.
             </p>
           </div>
-          <DevisForm />
+          <ComparisonCta />
         </div>
       </section>
 

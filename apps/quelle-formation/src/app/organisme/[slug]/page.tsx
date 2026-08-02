@@ -18,7 +18,8 @@ import { organismes, getOrganismeBySlug } from "@/lib/data/organismes";
 import { domaines } from "@/lib/data/domaines";
 import { generateFAQSchema, generateBreadcrumbSchema, generateOrganismeSchema, getArticleSchema, BUILD_DATE_FR } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
-import { DevisForm } from "@/components/DevisForm";
+import { ComparisonCta } from "@/components/ComparisonCta";
+import { OrganismeOutboundLink } from "@/components/OrganismeOutboundLink";
 import { SourceCitations } from "@/components/SourceCitations";
 
 interface PageProps {
@@ -175,23 +176,29 @@ export default async function OrganismePage({ params }: PageProps) {
 
                         {/* CTA */}
                         <div className="flex flex-wrap gap-3 mt-6">
-                            {org.affiliateUrl && (
-                                <a
-                                    href={org.affiliateUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                            <OrganismeOutboundLink
+                                    href={org.affiliateUrl ?? org.website}
+                                    isAffiliate={Boolean(org.affiliateUrl)}
+                                    organismeSlug={org.slug}
+                                    pageType="organisme"
+                                    pageSlug={org.slug}
+                                    position="hero"
                                     className="btn-primary text-sm"
                                 >
                                     Visiter {org.name}
                                     <ExternalLink className="w-4 h-4" />
-                                </a>
-                            )}
+                            </OrganismeOutboundLink>
                             <Link
-                                href="#devis"
+                                href="#comparer"
                                 className="btn-secondary text-sm"
                             >
-                                Demander un devis
+                                Comparer les organismes
                             </Link>
+                            {org.affiliateUrl && (
+                                <p className="w-full text-xs text-muted-foreground">
+                                    Lien affilié : nous pouvons percevoir une commission, sans coût supplémentaire pour vous.
+                                </p>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -314,29 +321,35 @@ export default async function OrganismePage({ params }: PageProps) {
                 />
             </div>
 
-            {/* CTA + DevisForm */}
-            <section className="section-padding bg-accent" id="devis">
+            {/* Aide à la comparaison */}
+            <section className="section-padding bg-accent" id="comparer">
                 <div className="container-narrow mx-auto px-4">
                     <div className="text-center mb-8">
                         <h2 className="text-2xl font-extrabold text-accent-foreground mb-4">
                             Intéressé par {org.name} ?
                         </h2>
                         <p className="text-accent-foreground/60 mb-4">
-                            Comparez avec d&apos;autres organismes et demandez un devis personnalisé.
+                            Comparez avec d&apos;autres organismes avant de faire votre choix.
                         </p>
-                        {org.affiliateUrl && (
-                            <a
-                                href={org.affiliateUrl}
-                                target="_blank"
-                                rel="noopener noreferrer nofollow"
+                        <OrganismeOutboundLink
+                                href={org.affiliateUrl ?? org.website}
+                                isAffiliate={Boolean(org.affiliateUrl)}
+                                organismeSlug={org.slug}
+                                pageType="organisme"
+                                pageSlug={org.slug}
+                                position="bottom"
                                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-surface text-foreground font-medium text-sm rounded transition-colors hover:bg-muted"
                             >
                                 Visiter {org.name}
                                 <ExternalLink className="w-4 h-4" />
-                            </a>
+                        </OrganismeOutboundLink>
+                        {org.affiliateUrl && (
+                            <p className="mt-2 text-xs text-accent-foreground/70">
+                                Lien affilié : nous pouvons percevoir une commission, sans coût supplémentaire pour vous.
+                            </p>
                         )}
                     </div>
-                    <DevisForm defaultDomaine={org.domaines[0]} />
+                    <ComparisonCta />
                 </div>
             </section>
         </>

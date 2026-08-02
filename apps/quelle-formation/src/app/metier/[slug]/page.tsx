@@ -7,7 +7,7 @@ import { domaines } from "@/lib/data/domaines";
 import { getOrganismeBySlug } from "@/lib/data/organismes";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
-import { DevisForm } from "@/components/DevisForm";
+import { ComparisonCta } from "@/components/ComparisonCta";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -272,18 +272,18 @@ export default async function MetierPage({ params }: PageProps) {
                 </section>
             )}
 
-            {/* CTA + DevisForm */}
-            <section className="section-padding bg-accent" id="devis">
+            {/* Aide à la comparaison */}
+            <section className="section-padding bg-accent" id="comparer">
                 <div className="container-narrow mx-auto px-4">
                     <div className="text-center mb-8">
                         <h2 className="text-2xl font-extrabold text-accent-foreground mb-4">
                             Lancez votre formation
                         </h2>
                         <p className="text-accent-foreground/60">
-                            Comparez les organismes et demandez un devis personnalisé.
+                            Comparez les organismes, leurs prix et leurs formats.
                         </p>
                     </div>
-                    <DevisForm defaultDomaine={metier.relatedDomaines[0]} />
+                    <ComparisonCta />
                 </div>
             </section>
         </>

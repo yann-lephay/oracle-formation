@@ -3,7 +3,23 @@
  * Données réalistes pour le marché français 2026
  */
 
-export interface Organisme {
+type AffiliateProgram =
+    | {
+        affiliateUrl: string;
+        affiliateNetwork: string;
+        affiliateCommission: string;
+        affiliateVerifiedAt: string;
+        affiliateSourceUrl: string;
+    }
+    | {
+        affiliateUrl?: undefined;
+        affiliateNetwork?: undefined;
+        affiliateCommission?: undefined;
+        affiliateVerifiedAt?: undefined;
+        affiliateSourceUrl?: undefined;
+    };
+
+export type Organisme = {
     slug: string;
     name: string;
     website: string;
@@ -20,15 +36,12 @@ export interface Organisme {
     studentsCount: string;
     rating: number;
     reviewCount: number;
-    affiliateUrl?: string;
-    affiliateNetwork?: string;
-    affiliateCommission?: string;
     campusVilles: string[]; // slugs des villes avec campus/présence physique
     metaTitle: string;
     metaDescription: string;
     faq: { question: string; answer: string }[];
     logoPath: string;
-}
+} & AffiliateProgram;
 
 export const organismes: Organisme[] = [
     {
@@ -73,9 +86,6 @@ export const organismes: Organisme[] = [
         studentsCount: "3 000 000+",
         rating: 4.2,
         reviewCount: 8500,
-        affiliateUrl: "https://openclassrooms.com",
-        affiliateNetwork: "Affilae",
-        affiliateCommission: "40 € par inscription + 15 % récurrent",
         metaTitle: "OpenClassrooms Avis 2026 : Prix, Formations et Test Complet",
         metaDescription:
             "Avis sur OpenClassrooms en 2026. Formations diplômantes en ligne, CPF, mentorat. Prix, avis d'anciens étudiants et comparatif. Notre test complet.",
@@ -130,9 +140,6 @@ export const organismes: Organisme[] = [
         studentsCount: "5 000+",
         rating: 4.7,
         reviewCount: 1200,
-        affiliateUrl: "https://www.jedha.co",
-        affiliateNetwork: "Affilae",
-        affiliateCommission: "100 € par inscription payante",
         metaTitle: "Jedha Avis 2026 : Prix, Bootcamps Data/IA et Test",
         metaDescription:
             "Avis sur Jedha en 2026. Bootcamps Data, IA et Cybersécurité. Prix, campus, CPF et avis alumni. OpenClassrooms vs Jedha : notre comparatif.",
@@ -183,7 +190,9 @@ export const organismes: Organisme[] = [
         reviewCount: 2800,
         affiliateUrl: "https://www.livementor.com/rencontrez-un-conseiller-livementor/?last_funnel=Funnel%20partenaire&last_source_level_3=yann_lephay&last_source_level_2=Affili%C3%A9",
         affiliateNetwork: "direct",
-        affiliateCommission: "80 € par inscription",
+        affiliateCommission: "15 % TTC par commande",
+        affiliateVerifiedAt: "2026-08-02",
+        affiliateSourceUrl: "https://www.livementor.com/devenir-affilie-livementor/",
         metaTitle: "LiveMentor Avis 2026 : Prix, Formations et Test",
         metaDescription:
             "Avis sur LiveMentor en 2026. Formations entrepreneuriat et freelance avec mentorat. Prix, CPF et avis. Comparatif avec OpenClassrooms.",
@@ -196,6 +205,71 @@ export const organismes: Organisme[] = [
         ],
         campusVilles: [],
         logoPath: "/logos/livementor.png",
+    },
+    {
+        slug: "creactifs",
+        name: "CréActifs",
+        website: "https://creactifs.com",
+        tagline: "Les formations conçues par des entrepreneurs, pour les entrepreneurs",
+        description:
+            "CréActifs est un organisme français spécialisé dans la création, la reprise et le développement d'entreprise. Depuis 2010, il accompagne les entrepreneurs avec des formations à distance, des ateliers en petit groupe et des rendez-vous individuels. Son catalogue couvre notamment la création d'entreprise, le marketing digital, la vente, la comptabilité et l'intelligence artificielle.",
+        prosAndCons: {
+            pros: [
+                "Plus de 35 000 entrepreneurs accompagnés depuis 2010",
+                "Formateurs eux-mêmes entrepreneurs",
+                "Accompagnement individuel et ateliers en petit groupe",
+                "Formations certifiantes et éligibles au CPF selon le parcours",
+                "Accès à vie à la communauté CréActifs sur les formules concernées",
+            ],
+            cons: [
+                "Tarifs élevés sans prise en charge ou financement",
+                "Catalogue principalement destiné aux entrepreneurs et dirigeants de TPE",
+                "Le contenu et la durée varient sensiblement selon la formule choisie",
+            ],
+        },
+        foundedYear: 2010,
+        headquarters: "Paris",
+        certifications: ["Qualiopi", "Répertoire spécifique"],
+        domaines: [
+            "creation-entreprise",
+            "marketing-digital",
+            "commerce-vente",
+            "comptabilite",
+            "intelligence-artificielle",
+        ],
+        formats: ["distanciel", "e-learning", "hybride"],
+        cpfEligible: true,
+        priceRange: "1 500 € – 3 500 €",
+        studentsCount: "35 000+",
+        rating: 5,
+        reviewCount: 1300,
+        affiliateUrl: "https://lb.affilae.com/r/?p=66ea961280385454e9869531&af=262&lp=https%3A%2F%2Fcreactifs.com%2F%3Futm_source%3Daffiliation%26utm_campaign%3DYannBuilds",
+        affiliateNetwork: "Affilae",
+        affiliateCommission: "15 % par vente validée",
+        affiliateVerifiedAt: "2026-08-02",
+        affiliateSourceUrl: "https://app.affilae.com/en/publisher/marketplace/programme-affiliation-creactifs-formation-pour-entrepreneur",
+        metaTitle: "CréActifs Avis 2026 : Prix, Formations et CPF",
+        metaDescription:
+            "Avis sur CréActifs en 2026 : formations pour entrepreneurs, prix, accompagnement, CPF, avantages et limites. Comparez avant de vous inscrire.",
+        faq: [
+            {
+                question: "Les formations CréActifs sont-elles éligibles au CPF ?",
+                answer:
+                    "Les parcours certifiants indiqués comme éligibles peuvent être financés avec le CPF. Il faut vérifier l'éligibilité et les conditions du parcours choisi avant l'inscription.",
+            },
+            {
+                question: "Combien coûte une formation CréActifs ?",
+                answer:
+                    "Les tarifs observés vont généralement de 1 500 € pour une formation seule à 3 500 € pour certains parcours composés de plusieurs formations. Le prix dépend du thème, de la durée et du niveau d'accompagnement.",
+            },
+            {
+                question: "À qui s'adressent les formations CréActifs ?",
+                answer:
+                    "CréActifs s'adresse principalement aux porteurs de projet, indépendants, créateurs ou repreneurs d'entreprise et dirigeants de TPE qui veulent développer des compétences directement applicables à leur activité.",
+            },
+        ],
+        campusVilles: ["paris"],
+        logoPath: "/logos/creactifs.svg",
     },
     {
         slug: "le-wagon",
@@ -459,7 +533,6 @@ export const organismes: Organisme[] = [
         studentsCount: "100 000+/an",
         rating: 3.8,
         reviewCount: 5600,
-        affiliateUrl: "https://www.afpa.fr",
         metaTitle: "AFPA Avis 2026 : Prix, Formations et Test Complet",
         metaDescription:
             "Avis sur l'AFPA en 2026. Formations professionnelles qualifiantes, 115 centres en France. Prix, CPF, avis et comparatif. Notre analyse complète.",
@@ -516,7 +589,6 @@ export const organismes: Organisme[] = [
         studentsCount: "80 000+",
         rating: 4.0,
         reviewCount: 3200,
-        affiliateUrl: "https://www.cnam.fr",
         metaTitle: "CNAM Avis 2026 : Prix, Formations et Diplômes",
         metaDescription:
             "Avis sur le CNAM en 2026. Formations diplômantes en cours du soir et en ligne. Prix publics, CPF, diplômes d'État. Notre analyse complète.",
@@ -572,7 +644,6 @@ export const organismes: Organisme[] = [
         studentsCount: "50 000+/an",
         rating: 4.3,
         reviewCount: 1800,
-        affiliateUrl: "https://www.m2iformation.fr",
         metaTitle: "M2i Formation Avis 2026 : Prix, Catalogue IT et Test",
         metaDescription:
             "Avis sur M2i Formation en 2026. Leader de la formation IT en France. 2 400+ formations, 35 centres. Prix, CPF, certifications. Notre analyse.",
@@ -628,7 +699,6 @@ export const organismes: Organisme[] = [
         studentsCount: "40 000+/an",
         rating: 4.0,
         reviewCount: 1200,
-        affiliateUrl: "https://www.demos.fr",
         metaTitle: "Demos Avis 2026 : Prix, Formations et Test Complet",
         metaDescription:
             "Avis sur Demos en 2026. 1 500+ formations professionnelles. Management, RH, comptabilité, digital. Prix, CPF et avis. Notre analyse.",
@@ -678,7 +748,6 @@ export const organismes: Organisme[] = [
         studentsCount: "15 000+",
         rating: 4.4,
         reviewCount: 980,
-        affiliateUrl: "https://simplon.co",
         metaTitle: "Simplon Avis 2026 : Formations Gratuites au Numérique",
         metaDescription:
             "Avis sur Simplon en 2026. Formations gratuites au numérique (dev web, data, IA). Processus de sélection, avis et insertion. Notre test complet.",
@@ -735,7 +804,6 @@ export const organismes: Organisme[] = [
         studentsCount: "10 000+",
         rating: 4.1,
         reviewCount: 1500,
-        affiliateUrl: "https://www.ynov.com",
         metaTitle: "Ynov Campus Avis 2026 : Prix, Formations et Campus",
         metaDescription:
             "Avis sur Ynov Campus en 2026. Formations numériques et créatives du Bac+1 au Bac+5. 12 campus, alternance, prix. Notre analyse complète.",

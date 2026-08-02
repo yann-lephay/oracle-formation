@@ -56,18 +56,13 @@ export default function ConfidentialitePage() {
                 1. Données collectées
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Nous collectons les données suivantes :
+                Nous collectons uniquement des données de navigation anonymisées :
               </p>
               <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
                 <li>
                   <strong>Données de navigation :</strong> pages visitées, durée de visite,
-                  type de navigateur, résolution d&apos;écran (collectées de manière anonyme
-                  via Vercel Analytics).
-                </li>
-                <li>
-                  <strong>Données de formulaire :</strong> si vous utilisez le formulaire de
-                  demande de devis, nous collectons votre nom, adresse email, domaine de
-                  formation recherché et message.
+                  type de navigateur et clics sur les liens sortants rémunérés (collectés de
+                  manière anonyme via Vercel Analytics).
                 </li>
               </ul>
             </div>
@@ -80,8 +75,7 @@ export default function ConfidentialitePage() {
               <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
                 <li>Amélioration de l&apos;expérience utilisateur et du contenu du site</li>
                 <li>Mesure d&apos;audience anonyme (Vercel Analytics)</li>
-                <li>Traitement des demandes de devis et mise en relation avec les organismes</li>
-                <li>Envoi d&apos;informations sollicitées par l&apos;utilisateur</li>
+                <li>Mesure de l&apos;utilité des liens sortants vers les organismes</li>
               </ul>
             </div>
 
@@ -94,9 +88,6 @@ export default function ConfidentialitePage() {
                 Le traitement de vos données repose sur :
               </p>
               <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
-                <li>
-                  <strong>Votre consentement</strong> pour l&apos;envoi du formulaire de devis
-                </li>
                 <li>
                   <strong>L&apos;intérêt légitime</strong> de l&apos;éditeur pour les données
                   de navigation anonymes visant à améliorer le site
@@ -113,10 +104,6 @@ export default function ConfidentialitePage() {
                 <li>
                   <strong>Données de navigation :</strong> 26 mois maximum (anonymisées)
                 </li>
-                <li>
-                  <strong>Données de formulaire :</strong> 12 mois après le dernier contact,
-                  puis supprimées
-                </li>
               </ul>
             </div>
 
@@ -126,17 +113,13 @@ export default function ConfidentialitePage() {
                 5. Partage des données
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Vos données personnelles ne sont jamais vendues. Elles peuvent être partagées
-                avec :
+                Vos données personnelles ne sont jamais vendues. Les données de navigation
+                anonymisées peuvent être traitées par :
               </p>
               <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
                 <li>
                   <strong>Vercel Inc.</strong> (hébergement et analytics) — données anonymes
                   uniquement
-                </li>
-                <li>
-                  <strong>Organismes de formation partenaires</strong> — uniquement dans le
-                  cadre d&apos;une demande de devis initiée par vous
                 </li>
               </ul>
             </div>

@@ -6,7 +6,7 @@ import { guides, getGuideBySlug } from "@/lib/data/guides";
 import { domaines } from "@/lib/data/domaines";
 import { generateFAQSchema, generateBreadcrumbSchema, generateGuideSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
-import { DevisForm } from "@/components/DevisForm";
+import { ComparisonCta } from "@/components/ComparisonCta";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -216,18 +216,18 @@ export default async function GuidePage({ params }: PageProps) {
                 </section>
             )}
 
-            {/* CTA + DevisForm */}
-            <section className="section-padding bg-accent" id="devis">
+            {/* Aide à la comparaison */}
+            <section className="section-padding bg-accent" id="comparer">
                 <div className="container-narrow mx-auto px-4">
                     <div className="text-center mb-8">
                         <h2 className="text-2xl font-extrabold text-accent-foreground mb-4">
                             Trouvez votre formation
                         </h2>
                         <p className="text-accent-foreground/60">
-                            Comparez les organismes et demandez un devis personnalisé.
+                            Comparez les organismes, leurs prix et leurs formats.
                         </p>
                     </div>
-                    <DevisForm />
+                    <ComparisonCta />
                 </div>
             </section>
         </>

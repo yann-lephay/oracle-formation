@@ -7,7 +7,7 @@ import { domaines } from "@/lib/data/domaines";
 import { getOrganismeBySlug } from "@/lib/data/organismes";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
-import { DevisForm } from "@/components/DevisForm";
+import { ComparisonCta } from "@/components/ComparisonCta";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
     RefreshCw, Search, Rocket, Lightbulb, Target,
@@ -224,8 +224,8 @@ export default async function PersonaPage({ params }: PageProps) {
                 </div>
             </section>
 
-            {/* CTA + DevisForm */}
-            <section className="section-padding bg-accent" id="devis">
+            {/* Aide à la comparaison */}
+            <section className="section-padding bg-accent" id="comparer">
                 <div className="container-narrow mx-auto px-4">
                     <div className="text-center mb-8">
                         <h2 className="text-2xl font-extrabold text-accent-foreground mb-4">
@@ -235,7 +235,7 @@ export default async function PersonaPage({ params }: PageProps) {
                             Comparez les organismes adaptés à votre profil.
                         </p>
                     </div>
-                    <DevisForm />
+                    <ComparisonCta />
                 </div>
             </section>
         </>

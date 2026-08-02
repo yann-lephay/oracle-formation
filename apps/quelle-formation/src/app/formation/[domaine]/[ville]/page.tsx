@@ -9,6 +9,7 @@ import { topVilles, getVilleBySlug } from "@/lib/data/villes";
 import { generateBreadcrumbSchema, generateFAQSchema, generateItemListSchema, generateCourseSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 import type { Organisme } from "@/lib/data/organismes";
+import { OrganismeOutboundLink } from "@/components/OrganismeOutboundLink";
 
 interface PageProps {
     params: Promise<{ domaine: string; ville: string }>;
@@ -64,7 +65,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
 }
 
-function OrganismeCard({ org, rank, villeSlug }: { org: Organisme; rank: number; villeSlug: string }) {
+function OrganismeCard({
+    org,
+    rank,
+    domaineSlug,
+    villeSlug,
+}: {
+    org: Organisme;
+    rank: number;
+    domaineSlug: string;
+    villeSlug: string;
+}) {
     const hasLocalCampus = org.campusVilles.includes(villeSlug);
     return (
         <div className="glass-card p-5 md:p-6">
@@ -121,12 +132,30 @@ function OrganismeCard({ org, rank, villeSlug }: { org: Organisme; rank: number;
                             </div>
                         ))}
                     </div>
-                    <div className="mt-4">
-                        <Link href={`/organisme/${org.slug}`} className="text-sm text-accent font-medium flex items-center gap-1 hover:gap-2 transition-all">
-                            Voir l&apos;avis complet
-                            <ArrowRight className="w-3.5 h-3.5" />
+                    <div className="mt-4 flex flex-wrap gap-2">
+                        <Link href={`/organisme/${org.slug}`} className="btn-secondary text-sm">
+                            Voir l&apos;avis
                         </Link>
+                        {org.affiliateUrl && (
+                            <OrganismeOutboundLink
+                                href={org.affiliateUrl}
+                                isAffiliate
+                                organismeSlug={org.slug}
+                                pageType="formation_ville"
+                                pageSlug={`${domaineSlug}/${villeSlug}`}
+                                position="listing"
+                                className="btn-primary text-sm"
+                            >
+                                Voir les formations
+                                <ArrowRight className="w-3.5 h-3.5" />
+                            </OrganismeOutboundLink>
+                        )}
                     </div>
+                    {org.affiliateUrl && (
+                        <p className="mt-2 text-xs text-muted-foreground">
+                            Lien affilié : commission possible, sans surcoût pour vous.
+                        </p>
+                    )}
                 </div>
             </div>
         </div>
@@ -296,7 +325,7 @@ export default async function FormationVillePage({ params }: PageProps) {
                         </p>
                         <div className="space-y-5">
                             {local.map((org, i) => (
-                                <OrganismeCard key={org.slug} org={org} rank={i + 1} villeSlug={vSlug} />
+                                <OrganismeCard key={org.slug} org={org} rank={i + 1} domaineSlug={dSlug} villeSlug={vSlug} />
                             ))}
                         </div>
                     </div>
@@ -316,7 +345,7 @@ export default async function FormationVillePage({ params }: PageProps) {
                         </p>
                         <div className="space-y-5">
                             {remote.map((org, i) => (
-                                <OrganismeCard key={org.slug} org={org} rank={local.length + i + 1} villeSlug={vSlug} />
+                                <OrganismeCard key={org.slug} org={org} rank={local.length + i + 1} domaineSlug={dSlug} villeSlug={vSlug} />
                             ))}
                         </div>
                     </div>
