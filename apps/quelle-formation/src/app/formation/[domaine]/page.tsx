@@ -203,12 +203,9 @@ export default async function FormationDomainePage({ params }: PageProps) {
                         <div className="glass-card overflow-hidden border-accent/20 bg-background">
                             <div className="grid gap-8 p-6 md:grid-cols-[1fr_auto] md:items-center md:p-8">
                                 <div>
-                                    <div className="mb-4 flex flex-wrap items-center gap-2">
-                                        <span className="badge badge-qualiopi">Partenaire</span>
-                                        <span className="text-sm font-semibold text-accent">
-                                            Clic Campus
-                                        </span>
-                                    </div>
+                                    <p className="mb-4 text-sm font-semibold text-accent">
+                                        Clic Campus
+                                    </p>
 
                                     <h2 className="mb-3 text-2xl font-extrabold text-foreground md:text-3xl">
                                         Une formation d&apos;anglais personnalisée et à distance
@@ -238,15 +235,12 @@ export default async function FormationDomainePage({ params }: PageProps) {
                                     <a
                                         href="https://clic-campus.fr/formation-anglais-en-ligne-cpf/"
                                         target="_blank"
-                                        rel="sponsored noopener noreferrer"
+                                        rel="noopener noreferrer"
                                         className="btn-primary w-full"
                                     >
                                         Découvrir Clic Campus
                                         <ArrowRight className="h-4 w-4" />
                                     </a>
-                                    <p className="mt-2 text-center text-xs text-muted-foreground">
-                                        Partenariat commercial
-                                    </p>
                                 </div>
                             </div>
                         </div>
