@@ -9,6 +9,8 @@ import {
     TrendingUp,
     Award,
     GraduationCap,
+    ArrowRight,
+    CheckCircle2,
 } from "lucide-react";
 import { domaines, getDomaineBySlug } from "@/lib/data/domaines";
 import { getOrganismesByDomaine } from "@/lib/data/organismes";
@@ -52,6 +54,8 @@ export default async function FormationDomainePage({ params }: PageProps) {
     if (!domaine) notFound();
 
     const organismes = getOrganismesByDomaine(slug);
+    const hasClicCampusSpotlight = slug === "langues-anglais";
+    const presentedOrganismeCount = organismes.length + (hasClicCampusSpotlight ? 1 : 0);
 
     const faqItems = [
         {
@@ -85,10 +89,18 @@ export default async function FormationDomainePage({ params }: PageProps) {
                             name: `Organismes de formation ${domaine.name}`,
                             description: domaine.description,
                             url: `${seoConfig.siteUrl}/formation/${slug}`,
-                            items: organismes.map((o) => ({
-                                name: o.name,
-                                url: `${seoConfig.siteUrl}/organisme/${o.slug}`,
-                            })),
+                            items: [
+                                ...organismes.map((o) => ({
+                                    name: o.name,
+                                    url: `${seoConfig.siteUrl}/organisme/${o.slug}`,
+                                })),
+                                ...(hasClicCampusSpotlight
+                                    ? [{
+                                        name: "Clic Campus",
+                                        url: "https://clic-campus.fr/formation-anglais-en-ligne-cpf/",
+                                    }]
+                                    : []),
+                            ],
                         })
                     ),
                 }}
@@ -166,7 +178,9 @@ export default async function FormationDomainePage({ params }: PageProps) {
                                 {
                                     icon: BookOpen,
                                     label: "Organismes",
-                                    value: `${organismes.length} comparés`,
+                                    value: hasClicCampusSpotlight
+                                        ? `${presentedOrganismeCount} présenté`
+                                        : `${presentedOrganismeCount} comparés`,
                                 },
                             ].map((metric) => (
                                 <div
@@ -183,25 +197,88 @@ export default async function FormationDomainePage({ params }: PageProps) {
                 </div>
             </section>
 
-            {/* Organismes */}
-            <section className="section-padding">
-                <div className="container-narrow mx-auto px-4">
-                    <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-8">
-                        {organismes.length} organismes pour se former en {domaine.name}
-                    </h2>
+            {hasClicCampusSpotlight && (
+                <section className="border-b border-border bg-surface/50">
+                    <div className="container-narrow mx-auto px-4 py-10 md:py-12">
+                        <div className="glass-card overflow-hidden border-accent/20 bg-background">
+                            <div className="grid gap-8 p-6 md:grid-cols-[1fr_auto] md:items-center md:p-8">
+                                <div>
+                                    <div className="mb-4 flex flex-wrap items-center gap-2">
+                                        <span className="badge badge-qualiopi">Partenaire</span>
+                                        <span className="text-sm font-semibold text-accent">
+                                            Clic Campus
+                                        </span>
+                                    </div>
 
-                    {organismes.length > 0 ? (
+                                    <h2 className="mb-3 text-2xl font-extrabold text-foreground md:text-3xl">
+                                        Une formation d&apos;anglais personnalisée et à distance
+                                    </h2>
+                                    <p className="max-w-3xl leading-relaxed text-muted-foreground">
+                                        Clic Campus propose des parcours d&apos;anglais adaptés au niveau,
+                                        aux objectifs professionnels et aux disponibilités de chaque
+                                        apprenant. La formation associe des cours individuels en
+                                        visioconférence avec un formateur dédié et des ressources en ligne.
+                                    </p>
+
+                                    <div className="mt-5 flex flex-col gap-2 text-sm text-foreground sm:flex-row sm:flex-wrap sm:gap-x-6">
+                                        {[
+                                            "Parcours personnalisé",
+                                            "Cours individuels à distance",
+                                            "Financement CPF selon éligibilité",
+                                        ].map((item) => (
+                                            <span key={item} className="flex items-center gap-2">
+                                                <CheckCircle2 className="h-4 w-4 shrink-0 text-success" />
+                                                {item}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="md:w-64">
+                                    <a
+                                        href="https://clic-campus.fr/formation-anglais-en-ligne-cpf/"
+                                        target="_blank"
+                                        rel="sponsored noopener noreferrer"
+                                        className="btn-primary w-full"
+                                    >
+                                        Découvrir Clic Campus
+                                        <ArrowRight className="h-4 w-4" />
+                                    </a>
+                                    <p className="mt-2 text-center text-xs text-muted-foreground">
+                                        Partenariat commercial
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Organismes */}
+            {organismes.length > 0 && (
+                <section className="section-padding">
+                    <div className="container-narrow mx-auto px-4">
+                        <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-8">
+                            {organismes.length} organismes pour se former en {domaine.name}
+                        </h2>
+
                         <OrganismeFilters organismes={organismes} pageSlug={slug} />
-                    ) : (
+                    </div>
+                </section>
+            )}
+
+            {organismes.length === 0 && !hasClicCampusSpotlight && (
+                <section className="section-padding">
+                    <div className="container-narrow mx-auto px-4">
                         <div className="glass-card p-8 text-center">
                             <GraduationCap className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
                             <p className="text-muted-foreground">
                                 Nous travaillons à ajouter des organismes pour ce domaine. Revenez bientôt !
                             </p>
                         </div>
-                    )}
-                </div>
-            </section>
+                    </div>
+                </section>
+            )}
 
             {/* Aide à la comparaison */}
             <section className="section-padding bg-accent" id="comparer">
