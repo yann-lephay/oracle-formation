@@ -13,7 +13,8 @@
     "dev:dec": "npm run dev --workspace=apps/declaration-pro",
     "build:dec": "npm run build --workspace=apps/declaration-pro",
     "start:dec": "npm run start --workspace=apps/declaration-pro",
-    "lint:dec": "npm run lint --workspace=apps/declaration-pro"
+    "lint:dec": "npm run lint --workspace=apps/declaration-pro",
+    "qc:internal-links": "node scripts/validate-internal-links.mjs"
   },
   "workspaces": [
     "apps/*"

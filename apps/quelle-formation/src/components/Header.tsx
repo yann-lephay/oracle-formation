@@ -8,7 +8,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 const navLinks = [
     {
         label: "Formations",
-        href: "/formation/developpeur-web",
+        href: "/formations",
         children: [
             { label: "Développeur Web", href: "/formation/developpeur-web" },
             { label: "Data Analyst", href: "/formation/data-analyst" },
@@ -21,7 +21,7 @@ const navLinks = [
     },
     {
         label: "Organismes",
-        href: "/organisme/openclassrooms",
+        href: "/organismes",
         children: [
             { label: "OpenClassrooms", href: "/organisme/openclassrooms" },
             { label: "Jedha", href: "/organisme/jedha" },
@@ -34,7 +34,7 @@ const navLinks = [
     },
     {
         label: "Comparer",
-        href: "/comparer/openclassrooms-vs-jedha",
+        href: "/comparer",
         children: [
             { label: "OpenClassrooms vs Jedha", href: "/comparer/openclassrooms-vs-jedha" },
             { label: "Le Wagon vs Ironhack", href: "/comparer/le-wagon-vs-ironhack" },
@@ -87,13 +87,14 @@ export function Header() {
                                 onMouseEnter={() => setOpenDropdown(link.label)}
                                 onMouseLeave={() => setOpenDropdown(null)}
                             >
-                                <button
+                                <Link
+                                    href={link.href}
                                     className="flex items-center gap-1 px-3 py-2 rounded text-sm font-medium text-foreground hover:text-accent hover:bg-muted transition-colors"
                                     aria-expanded={openDropdown === link.label}
                                 >
                                     {link.label}
                                     <ChevronDown className="w-3.5 h-3.5" />
-                                </button>
+                                </Link>
                                 {openDropdown === link.label && (
                                     <div className="absolute top-full left-0 mt-1 w-56 bg-surface rounded border border-border py-1 shadow-sm animate-fade-in-up">
                                         {link.children.map((child) => (
