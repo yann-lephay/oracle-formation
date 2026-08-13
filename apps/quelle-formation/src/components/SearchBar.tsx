@@ -169,8 +169,8 @@ export function SearchBar() {
 
     return (
         <div className="max-w-xl mx-auto relative">
-            <div className="flex items-center bg-surface rounded border border-border overflow-hidden">
-                <div className="flex items-center gap-2 pl-4 text-muted-foreground">
+            <div className="flex min-w-0 items-center overflow-hidden rounded border border-border bg-surface">
+                <div className="flex shrink-0 items-center gap-2 pl-3 text-muted-foreground sm:pl-4">
                     <Search className="w-5 h-5" />
                 </div>
                 <input
@@ -187,7 +187,7 @@ export function SearchBar() {
                     }}
                     onKeyDown={handleKeyDown}
                     placeholder="Ex : formation développeur web, data analyst, marketing digital…"
-                    className="flex-1 px-3 py-3.5 text-foreground placeholder:text-muted-foreground text-sm outline-none bg-transparent"
+                    className="min-w-0 flex-1 bg-transparent px-2 py-3.5 text-sm text-foreground outline-none placeholder:text-muted-foreground sm:px-3"
                     aria-label="Rechercher une formation"
                     role="combobox"
                     aria-expanded={showDropdown}
@@ -206,7 +206,7 @@ export function SearchBar() {
                             router.push("/#domaines");
                         }
                     }}
-                    className="bg-primary hover:bg-primary/80 text-primary-foreground px-6 py-3.5 text-sm font-medium transition-colors"
+                    className="shrink-0 bg-primary px-4 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/80 sm:px-6"
                 >
                     Chercher
                 </button>

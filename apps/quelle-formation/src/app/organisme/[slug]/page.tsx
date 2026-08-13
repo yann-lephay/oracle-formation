@@ -140,8 +140,8 @@ export default async function OrganismePage({ params }: PageProps) {
                         <p className="text-lg text-muted-foreground mb-2">{org.tagline}</p>
 
                         {/* Rating */}
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="flex items-center gap-1">
+                        <div className="mb-6 flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
+                            <div className="flex shrink-0 items-center gap-1">
                                 {[1, 2, 3, 4, 5].map((s) => (
                                     <Star
                                         key={s}
