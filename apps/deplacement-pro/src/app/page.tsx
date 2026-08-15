@@ -29,7 +29,6 @@ import { villes } from "@/lib/data/villes";
 import { integrations } from "@/lib/data/integrations";
 import { solutions as solutionsList } from "@/lib/data/solutions";
 import { generateWebsiteSchema, generateOrganizationSchema } from "@/lib/structured-data";
-import { DevisForm } from "@/components/DevisForm";
 import { SearchBar, type SearchItem } from "@/components/SearchBar";
 
 const searchItems: SearchItem[] = [
@@ -364,22 +363,6 @@ export default function HomePage() {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      {/* ============ DEVIS ============ */}
-      <section className="section-padding" id="devis">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-foreground mb-3">
-              Besoin d&apos;aide pour choisir ?
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Recevez des propositions personnalisées de plusieurs éditeurs en une seule demande.
-              Gratuit et sans engagement.
-            </p>
-          </div>
-          <DevisForm />
         </div>
       </section>
 

@@ -16,7 +16,7 @@ export default function ConfidentialitePage() {
           </h1>
 
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Dernière mise à jour : mars 2026. Cette politique décrit comment
+            Dernière mise à jour : août 2026. Cette politique décrit comment
             DeplacementPro.fr collecte, utilise et protège vos données personnelles,
             conformément au RGPD.
           </p>
@@ -26,11 +26,12 @@ export default function ConfidentialitePage() {
               Données collectées
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Nous collectons les données suivantes :<br />
-              • <strong>Formulaire de devis</strong> : prénom, email, téléphone,
-              poste, taille d&apos;entreprise, message (base légale : consentement).<br />
-              • <strong>Navigation</strong> : données anonymisées via Vercel Analytics
-              (pas de cookies tiers, conforme RGPD sans bandeau).
+              DeplacementPro.fr ne propose pas de formulaire de devis et ne collecte
+              aucune coordonnée depuis ses pages. La mesure de navigation transmet
+              uniquement la page consultée et, lors d&apos;un clic pertinent, la cible,
+              l&apos;emplacement et la nature éditoriale ou commerciale du lien. Ces
+              événements sont conservés sous forme de totaux quotidiens, sans contenu
+              saisi ni identifiant visiteur.
             </p>
           </div>
 
@@ -39,10 +40,10 @@ export default function ConfidentialitePage() {
               Finalités
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Les données du formulaire sont utilisées exclusivement pour transmettre
-              votre demande aux éditeurs de solutions sélectionnés. Les données de
-              navigation servent à améliorer le site (pages les plus consultées,
-              parcours utilisateur).
+              Ces mesures servent à comprendre les contenus consultés et les passages
+              vers les fiches ou sites éditeurs, sans reconstituer de parcours
+              individuel. Si vous nous contactez directement par email, votre adresse
+              et le contenu du message servent uniquement à traiter votre demande.
             </p>
           </div>
 
@@ -51,8 +52,9 @@ export default function ConfidentialitePage() {
               Durée de conservation
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Les données du formulaire sont conservées 12 mois maximum. Les données
-              de navigation anonymisées sont conservées 26 mois.
+              Les compteurs quotidiens ne contiennent ni identifiant visiteur, ni
+              contenu saisi. Les emails reçus directement sont conservés uniquement le
+              temps nécessaire à leur traitement et au suivi de l&apos;échange.
             </p>
           </div>
 
@@ -73,10 +75,9 @@ export default function ConfidentialitePage() {
               Cookies
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              DeplacementPro.fr utilise Vercel Analytics, une solution d&apos;analyse
-              respectueuse de la vie privée qui ne dépose aucun cookie et ne collecte
-              aucune donnée personnelle identifiable. Aucun bandeau cookie n&apos;est
-              nécessaire.
+              La mesure d&apos;audience et d&apos;interaction n&apos;utilise ni cookie, ni
+              stockage local, ni identifiant persistant. Aucun bandeau cookie n&apos;est
+              nécessaire pour cette mesure.
             </p>
           </div>
 
@@ -85,8 +86,8 @@ export default function ConfidentialitePage() {
               Sous-traitants
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              • Vercel Inc. (hébergement, analytics) — États-Unis, clauses contractuelles types<br />
-              • Les éditeurs de solutions auxquels vos demandes de devis sont transmises
+              • Vercel Inc. (hébergement) — États-Unis, clauses contractuelles types<br />
+              • Notre prestataire de messagerie, uniquement si vous nous contactez par email
             </p>
           </div>
 

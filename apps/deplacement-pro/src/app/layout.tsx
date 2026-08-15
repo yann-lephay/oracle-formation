@@ -3,6 +3,7 @@ import { Urbanist, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { CookieFreeEvents } from "@/components/CookieFreeEvents";
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -101,6 +102,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${urbanist.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}>
       <body className="antialiased min-h-screen flex flex-col">
+        <CookieFreeEvents />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -1,6 +1,5 @@
 "use client";
 
-import { track } from "@vercel/analytics";
 import type { ReactNode } from "react";
 
 interface OrganismeOutboundLinkProps {
@@ -19,30 +18,20 @@ export function OrganismeOutboundLink({
   isAffiliate,
   organismeSlug,
   pageType,
-  pageSlug,
   position,
   className,
   children,
 }: OrganismeOutboundLinkProps) {
-  function handleClick() {
-    if (!isAffiliate) return;
-
-    track("affiliate_outbound", {
-      program: organismeSlug,
-      page_type: pageType,
-      page_slug: pageSlug,
-      position,
-      destination: new URL(href).hostname,
-    });
-  }
-
   return (
     <a
       href={href}
       target="_blank"
       rel={isAffiliate ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
+      data-usine-event="vendor_outbound"
+      data-usine-relationship={isAffiliate ? "affiliate" : "editorial"}
+      data-usine-target={organismeSlug}
+      data-usine-placement={`${pageType}-${position}`}
       className={className}
-      onClick={handleClick}
     >
       {children}
     </a>

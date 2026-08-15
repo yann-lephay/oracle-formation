@@ -50,7 +50,7 @@ oracle-formation/
 ### Metriques
 - **~150 pages**
 - 4 categories, 6 solutions, 15 comparaisons, 7 guides, 1 blog, 31 personas, 18 integrations, 19 glossaire, 28 villes, 11 secteurs
-- Monetisation : **affiliation** (affiliateUrl dans solutions.ts) + lead gen (DevisForm)
+- Monetisation : **affiliation** (affiliateUrl dans solutions.ts), sans collecte de leads
 
 ### Routes dynamiques
 - `/[categorie]` — TMC, self-booking, carte-corporate, notes-de-frais

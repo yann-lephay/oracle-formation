@@ -15,7 +15,6 @@ import { getSolutionBySlug } from "@/lib/data/solutions";
 import { getGuideBySlug } from "@/lib/data/guides";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
-import { DevisForm } from "@/components/DevisForm";
 
 const iconMap: Record<string, React.ElementType> = {
   HardHat, Briefcase, Car, Target,
@@ -258,20 +257,6 @@ export default async function SecteurPage({
         </section>
       )}
 
-      {/* CTA */}
-      <section className="section-padding bg-foreground" id="devis">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-extrabold font-heading text-background mb-4">
-              Trouvez la solution adaptée à votre secteur
-            </h2>
-            <p className="text-background/60">
-              Comparez les outils et demandez un devis personnalisé.
-            </p>
-          </div>
-          <DevisForm />
-        </div>
-      </section>
     </>
   );
 }

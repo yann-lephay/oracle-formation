@@ -20,7 +20,6 @@ import {
   generateBreadcrumbSchema,
 } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
-import { DevisForm } from "@/components/DevisForm";
 
 export const revalidate = false;
 export function generateStaticParams() {
@@ -320,21 +319,6 @@ export default async function IntegrationPage({
         </section>
       )}
 
-      {/* CTA DevisForm */}
-      <section className="section-padding bg-muted" id="devis">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-foreground mb-3">
-              Besoin d&apos;aide pour choisir ?
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Recevez des propositions personnalisées de plusieurs éditeurs en
-              une seule demande. Gratuit et sans engagement.
-            </p>
-          </div>
-          <DevisForm />
-        </div>
-      </section>
     </>
   );
 }

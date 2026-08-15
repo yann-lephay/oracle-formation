@@ -56,13 +56,13 @@ export default function ConfidentialitePage() {
                 1. Données collectées
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Nous collectons uniquement des données de navigation anonymisées :
+                Nous conservons uniquement des compteurs d&apos;audience et d&apos;interaction agrégés :
               </p>
               <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
                 <li>
-                  <strong>Données de navigation :</strong> pages visitées, durée de visite,
-                  type de navigateur et clics sur les liens sortants rémunérés (collectés de
-                  manière anonyme via Vercel Analytics).
+                  <strong>Compteurs quotidiens :</strong> site, page, type d&apos;interaction,
+                  cible, emplacement et relation éditoriale ou commerciale. Aucun identifiant
+                  visiteur, navigateur, référent, paramètre d&apos;URL ou contenu saisi n&apos;est conservé.
                 </li>
               </ul>
             </div>
@@ -74,7 +74,7 @@ export default function ConfidentialitePage() {
               </h2>
               <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
                 <li>Amélioration de l&apos;expérience utilisateur et du contenu du site</li>
-                <li>Mesure d&apos;audience anonyme (Vercel Analytics)</li>
+                <li>Mesure agrégée des pages consultées, sans suivi individuel</li>
                 <li>Mesure de l&apos;utilité des liens sortants vers les organismes</li>
               </ul>
             </div>
@@ -89,8 +89,8 @@ export default function ConfidentialitePage() {
               </p>
               <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
                 <li>
-                  <strong>L&apos;intérêt légitime</strong> de l&apos;éditeur pour les données
-                  de navigation anonymes visant à améliorer le site
+                  <strong>L&apos;intérêt légitime</strong> de l&apos;éditeur à évaluer l&apos;utilité
+                  de ses pages et liens avec une mesure strictement minimisée
                 </li>
               </ul>
             </div>
@@ -102,7 +102,7 @@ export default function ConfidentialitePage() {
               </h2>
               <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
                 <li>
-                  <strong>Données de navigation :</strong> 26 mois maximum (anonymisées)
+                  <strong>Compteurs quotidiens :</strong> conservés sans profil ni parcours individuel
                 </li>
               </ul>
             </div>
@@ -113,13 +113,12 @@ export default function ConfidentialitePage() {
                 5. Partage des données
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Vos données personnelles ne sont jamais vendues. Les données de navigation
-                anonymisées peuvent être traitées par :
+                Vos données personnelles ne sont jamais vendues. L&apos;hébergeur traite les
+                requêtes nécessaires à la diffusion du site :
               </p>
               <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
                 <li>
-                  <strong>Vercel Inc.</strong> (hébergement et analytics) — données anonymes
-                  uniquement
+                  <strong>Vercel Inc.</strong> (hébergement)
                 </li>
               </ul>
             </div>
@@ -130,15 +129,9 @@ export default function ConfidentialitePage() {
                 6. Cookies
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                QuelleFormation.fr utilise des cookies strictement nécessaires au
-                fonctionnement du site et des cookies de mesure d&apos;audience anonyme
-                (Vercel Analytics, Vercel Speed Insights). Aucun cookie publicitaire ou de
-                pistage n&apos;est utilisé.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Vous pouvez configurer votre navigateur pour refuser tout ou partie des
-                cookies. Le refus des cookies de mesure d&apos;audience n&apos;affectera pas
-                votre expérience de navigation.
+                La mesure agrégée n&apos;utilise ni cookie, ni stockage local, ni identifiant
+                persistant. Aucun cookie publicitaire, analytique ou de pistage n&apos;est déposé
+                par le site pour cette mesure.
               </p>
             </div>
 

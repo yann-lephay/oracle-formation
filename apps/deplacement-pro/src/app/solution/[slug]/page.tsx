@@ -243,7 +243,11 @@ export default async function SolutionPage({
                 <a
                   href={sol.affiliateUrl}
                   target="_blank"
-                  rel="noopener noreferrer nofollow"
+                  rel={sol.affiliateUrl !== sol.website ? "noopener noreferrer nofollow sponsored" : "noopener noreferrer"}
+                  data-usine-event="vendor_outbound"
+                  data-usine-relationship={sol.affiliateUrl !== sol.website ? "affiliate" : "editorial"}
+                  data-usine-target={sol.slug}
+                  data-usine-placement="solution-detail"
                   className="btn-primary w-full text-center"
                 >
                   <ExternalLink className="w-4 h-4" strokeWidth={1.5} />

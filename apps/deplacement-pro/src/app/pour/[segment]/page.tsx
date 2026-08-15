@@ -24,7 +24,6 @@ import { comparisons } from "@/lib/data/comparisons";
 import { guides } from "@/lib/data/guides";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
-import { DevisForm } from "@/components/DevisForm";
 
 const iconMap: Record<string, React.ElementType> = {
   Building2,
@@ -353,21 +352,6 @@ export default async function PersonaPage({
         </div>
       </section>
 
-      {/* CTA Devis */}
-      <section className="section-padding bg-muted">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold font-heading text-foreground mb-3">
-              Trouvez la solution adaptée à votre {persona.name}
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Recevez des propositions personnalisées de plusieurs éditeurs en
-              une seule demande. Gratuit et sans engagement.
-            </p>
-          </div>
-          <DevisForm />
-        </div>
-      </section>
     </>
   );
 }

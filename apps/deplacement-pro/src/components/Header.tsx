@@ -47,9 +47,6 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Link href="/#devis" className="btn-primary text-sm">
-            Demander un devis
-          </Link>
         </nav>
 
         {/* Mobile toggle */}
@@ -76,13 +73,6 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/#devis"
-              className="btn-primary text-sm text-center mt-2"
-              onClick={() => setMobileOpen(false)}
-            >
-              Demander un devis
-            </Link>
           </div>
         </nav>
       )}
