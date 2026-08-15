@@ -1278,6 +1278,12 @@ export const blogArticles: BlogArticle[] = [
     },
 ];
 
+const consolidatedBlogSlugs = new Set(["avis-openclassrooms-2026"]);
+
+export const indexableBlogArticles = blogArticles.filter(
+    (article) => !consolidatedBlogSlugs.has(article.slug)
+);
+
 export function getBlogArticleBySlug(slug: string): BlogArticle | undefined {
     return blogArticles.find((a) => a.slug === slug);
 }

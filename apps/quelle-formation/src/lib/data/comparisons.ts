@@ -35,7 +35,7 @@ export const comparisons: Comparison[] = [
             {
                 name: "Prix",
                 winner: 1,
-                org1Score: "200-600 €/mois (total 4-10k€)",
+                org1Score: "300-1 200 €/mois en paiement direct",
                 org2Score: "1 500 – 7 995 €",
                 analysis: "OpenClassrooms est souvent plus abordable au total, surtout avec un rythme rapide. Jedha a un coût fixe par bootcamp.",
             },
@@ -63,14 +63,14 @@ export const comparisons: Comparison[] = [
             {
                 name: "Insertion pro",
                 winner: 2,
-                org1Score: "Garantie emploi sur certains parcours",
+                org1Score: "Portfolio et accompagnement post-parcours",
                 org2Score: "Réseau entreprises fort, career services",
-                analysis: "Jedha a un meilleur réseau entreprises dans la Data/IA. OpenClassrooms a la garantie emploi ou remboursé.",
+                analysis: "Jedha met en avant son réseau spécialisé Data/IA. OpenClassrooms accompagne la constitution d'un portfolio et peut proposer un coaching de recherche d'emploi après le parcours.",
             },
         ],
-        metaTitle: "OpenClassrooms vs Jedha 2026 : Avis",
+        metaTitle: "OpenClassrooms ou Jedha ? Comparatif 2026",
         metaDescription:
-            "Comparatif détaillé OpenClassrooms vs Jedha en 2026. Prix, formations, avis, CPF. Lequel choisir pour se former en Data, IA ou Développement Web ?",
+            "Comparatif OpenClassrooms–Jedha en 2026 : prix, format, diplômes et spécialités. E-learning flexible ou bootcamp Data, IA et Cyber ?",
     },
     {
         slug: "le-wagon-vs-ironhack",
@@ -135,7 +135,7 @@ export const comparisons: Comparison[] = [
             {
                 name: "Prix",
                 winner: 2,
-                org1Score: "200-600 €/mois",
+                org1Score: "300-1 200 €/mois en paiement direct",
                 org2Score: "150-500 €/mois",
                 analysis: "Studi est globalement 20-30 % moins cher qu'OpenClassrooms.",
             },
@@ -161,9 +161,9 @@ export const comparisons: Comparison[] = [
                 analysis: "OpenClassrooms bénéficie d'une notoriété et d'une réputation supérieures.",
             },
         ],
-        metaTitle: "OpenClassrooms vs Studi 2026 : Avis",
+        metaTitle: "OpenClassrooms ou Studi ? Comparatif 2026",
         metaDescription:
-            "Comparatif OpenClassrooms vs Studi en 2026. Prix, qualité, catalogue, CPF. Quelle formation en ligne choisir ? Notre analyse détaillée.",
+            "Comparatif OpenClassrooms–Studi en 2026 : prix, accompagnement, catalogue et CPF. Quelle plateforme de formation en ligne choisir ?",
     },
     {
         slug: "jedha-vs-datascientest",
@@ -235,14 +235,14 @@ export const comparisons: Comparison[] = [
             {
                 name: "Insertion pro",
                 winner: 2,
-                org1Score: "Garantie emploi (certains parcours)",
+                org1Score: "Portfolio et accompagnement post-parcours",
                 org2Score: "93 % d'insertion, demo day, réseau alumni",
                 analysis: "Le Wagon a un taux d'insertion exceptionnel et un réseau alumni très actif.",
             },
         ],
-        metaTitle: "OpenClassrooms vs Le Wagon 2026 : Avis",
+        metaTitle: "OpenClassrooms ou Le Wagon ? Comparatif 2026",
         metaDescription:
-            "Comparatif OpenClassrooms vs Le Wagon en 2026. E-learning vs bootcamp. Prix, diplôme, insertion pro. Lequel choisir pour se lancer dans le dev ?",
+            "Comparatif OpenClassrooms–Le Wagon en 2026 : e-learning ou bootcamp, durée, prix et diplôme. Quel format choisir pour apprendre le développement ?",
     },
     {
         slug: "le-wagon-vs-wild-code-school",

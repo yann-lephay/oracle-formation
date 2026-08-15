@@ -3,7 +3,7 @@ import { domaines } from "@/lib/data/domaines";
 import { topVilles } from "@/lib/data/villes";
 import { organismes } from "@/lib/data/organismes";
 import { comparisons } from "@/lib/data/comparisons";
-import { blogArticles } from "@/lib/data/blog";
+import { indexableBlogArticles } from "@/lib/data/blog";
 import { guides } from "@/lib/data/guides";
 import { personas } from "@/lib/data/personas";
 import { metiers } from "@/lib/data/metiers";
@@ -69,7 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // blog + blog/[slug]
     const blogPages: MetadataRoute.Sitemap = [
         { url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 },
-        ...blogArticles.map((a) => ({
+        ...indexableBlogArticles.map((a) => ({
             url: `${BASE_URL}/blog/${a.slug}`,
             lastModified: new Date(a.updatedAt),
             changeFrequency: "monthly" as const,

@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Calendar, Clock, ArrowRight, Award, Info, Lightbulb, AlertTriangle } from "lucide-react";
-import { blogArticles, getBlogArticleBySlug, type ContentBlock } from "@/lib/data/blog";
+import { indexableBlogArticles, getBlogArticleBySlug, type ContentBlock } from "@/lib/data/blog";
 import { domaines } from "@/lib/data/domaines";
 import { organismes } from "@/lib/data/organismes";
 import { generateFAQSchema, generateBreadcrumbSchema, generateArticleSchema } from "@/lib/structured-data";
@@ -15,7 +15,7 @@ interface PageProps {
 
 export const revalidate = false;
 export async function generateStaticParams() {
-    return blogArticles.map((a) => ({ slug: a.slug }));
+    return indexableBlogArticles.map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
-import { blogArticles } from "@/lib/data/blog";
+import { indexableBlogArticles } from "@/lib/data/blog";
 import { generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 
@@ -62,7 +62,7 @@ export default function BlogIndexPage() {
             <section className="section-padding">
                 <div className="container-narrow mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {blogArticles.map((article) => (
+                        {indexableBlogArticles.map((article) => (
                             <Link
                                 key={article.slug}
                                 href={`/blog/${article.slug}`}

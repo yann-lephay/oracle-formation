@@ -29,6 +29,16 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
+
+  async redirects() {
+    return [
+      {
+        source: "/blog/avis-openclassrooms-2026",
+        destination: "/organisme/openclassrooms",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

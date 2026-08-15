@@ -41,6 +41,15 @@ export type Organisme = {
     metaDescription: string;
     faq: { question: string; answer: string }[];
     logoPath: string;
+    decisionGuide?: {
+        title: string;
+        text: string;
+    }[];
+    sources?: {
+        label: string;
+        url: string;
+        date: string;
+    }[];
 } & AffiliateProgram;
 
 export const organismes: Organisme[] = [
@@ -48,21 +57,21 @@ export const organismes: Organisme[] = [
         slug: "openclassrooms",
         name: "OpenClassrooms",
         website: "https://openclassrooms.com",
-        tagline: "La plateforme de formation en ligne leader en Europe",
+        tagline: "Des parcours en ligne par projets avec mentorat individuel",
         description:
-            "OpenClassrooms est la plateforme de formation en ligne leader en Europe, avec plus de 3 millions d'étudiants. Fondée en 1999 sous le nom de Site du Zéro, elle propose des parcours diplômants (Bac+2 à Bac+5) reconnus par l'État. La pédagogie repose sur des projets concrets et un mentorat hebdomadaire avec un expert du métier. Les formations sont 100 % en ligne et éligibles au CPF.",
+            "OpenClassrooms propose des parcours entièrement en ligne, organisés autour de projets professionnels et d'une séance de mentorat individuelle chaque semaine. Ce format convient surtout aux personnes capables d'avancer en autonomie entre deux rendez-vous. Avant de s'inscrire, il faut vérifier la certification visée, la durée recommandée du parcours et le budget total selon son rythme : l'éligibilité au CPF et les autres financements varient selon la formation et la situation du candidat.",
         prosAndCons: {
             pros: [
                 "Diplômes reconnus par l'État (RNCP Bac+2 à Bac+5)",
                 "Mentorat individuel hebdomadaire avec un professionnel",
                 "Apprentissage par projets concrets (portfolio à la sortie)",
                 "100 % en ligne, rythme flexible",
-                "Garantie emploi ou remboursé sur certains parcours",
+                "Portfolio construit au fil des projets évalués",
             ],
             cons: [
                 "Nécessite de l'autodiscipline (pas de cours en présentiel)",
                 "Certains parcours sont longs (12-18 mois)",
-                "Le mentorat de 30 minutes par semaine peut sembler court",
+                "Peu adapté aux personnes qui ont besoin d'un cadre présentiel quotidien",
             ],
         },
         foundedYear: 1999,
@@ -82,13 +91,49 @@ export const organismes: Organisme[] = [
         ],
         formats: ["e-learning"],
         cpfEligible: true,
-        priceRange: "200 € – 600 €/mois",
-        studentsCount: "3 000 000+",
-        rating: 4.2,
-        reviewCount: 8500,
-        metaTitle: "OpenClassrooms Avis 2026 : Prix, Formations et Test Complet",
+        priceRange: "300 € – 1 200 €/mois",
+        studentsCount: "300 000/mois",
+        rating: 4.0,
+        reviewCount: 1386,
+        metaTitle: "OpenClassrooms : avis, prix et format en 2026",
         metaDescription:
-            "Avis sur OpenClassrooms en 2026. Formations diplômantes en ligne, CPF, mentorat. Prix, avis d'anciens étudiants et comparatif. Notre test complet.",
+            "Notre avis sur OpenClassrooms en 2026 : format par projets, mentorat hebdomadaire, prix, financements et profils auxquels la plateforme convient.",
+        decisionGuide: [
+            {
+                title: "À choisir si…",
+                text: "vous cherchez une formation à distance structurée par des projets, avec un rendez-vous individuel hebdomadaire pour faire le point et débloquer votre progression.",
+            },
+            {
+                title: "À comparer si…",
+                text: "vous avez besoin de cours collectifs fréquents, d'un campus ou d'un calendrier de promotion très cadré : un bootcamp ou une école hybride peut mieux correspondre à votre façon d'apprendre.",
+            },
+            {
+                title: "Point à vérifier avant de payer",
+                text: "le titre ou diplôme préparé, la durée réaliste à votre rythme et le reste à financer. OpenClassrooms affiche un abonnement direct de 300 à 1 200 € par mois selon la formation ; le CPF, l'alternance et les autres prises en charge obéissent à leurs propres conditions.",
+            },
+        ],
+        sources: [
+            {
+                label: "OpenClassrooms — expérience de formation et mentorat",
+                url: "https://openclassrooms.com/fr/learning-experience",
+                date: "consulté en août 2026",
+            },
+            {
+                label: "OpenClassrooms — financements et tarifs",
+                url: "https://openclassrooms.com/fr/funding/student",
+                date: "consulté en août 2026",
+            },
+            {
+                label: "Trustpilot — avis OpenClassrooms",
+                url: "https://fr.trustpilot.com/review/openclassrooms.com",
+                date: "consulté en août 2026",
+            },
+            {
+                label: "France Compétences — Répertoire national des certifications professionnelles",
+                url: "https://www.francecompetences.fr/recherche_certificationprofessionnelle/",
+                date: "consulté en août 2026",
+            },
+        ],
         faq: [
             {
                 question: "OpenClassrooms est-il reconnu par l'État ?",
@@ -103,7 +148,7 @@ export const organismes: Organisme[] = [
             {
                 question: "Combien coûte une formation OpenClassrooms ?",
                 answer:
-                    "Les abonnements OpenClassrooms vont de 200 € à 600 €/mois selon le parcours choisi. Un parcours complet coûte entre 4 000 € et 10 000 €. Le CPF, les OPCO et Pôle Emploi peuvent financer jusqu'à 100 % du coût.",
+                    "Pour un paiement direct, OpenClassrooms affiche des abonnements de 300 € à 1 200 € par mois selon la formation. Le coût total dépend donc du parcours et de votre durée réelle. Selon votre situation et l'éligibilité de la formation, le CPF, l'alternance ou un autre financeur peuvent couvrir tout ou partie du montant.",
             },
         ],
         campusVilles: [],

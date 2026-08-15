@@ -1,4 +1,4 @@
-import { blogArticles } from "@/lib/data/blog";
+import { indexableBlogArticles } from "@/lib/data/blog";
 import {
   generateGenericOgImage,
   generateFallbackOgImage,
@@ -13,7 +13,7 @@ export const contentType = OG_CONTENT_TYPE;
 export const revalidate = false;
 
 export function generateStaticParams() {
-  return blogArticles.map((a) => ({ slug: a.slug }));
+  return indexableBlogArticles.map((a) => ({ slug: a.slug }));
 }
 
 export default async function OGImage({
@@ -22,7 +22,7 @@ export default async function OGImage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = blogArticles.find((a) => a.slug === slug);
+  const article = indexableBlogArticles.find((a) => a.slug === slug);
   if (!article) return generateFallbackOgImage();
   return generateGenericOgImage({
     title: article.title,

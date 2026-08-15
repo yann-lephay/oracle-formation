@@ -226,6 +226,19 @@ export default async function OrganismePage({ params }: PageProps) {
                         </h2>
                         <p className="text-muted-foreground leading-relaxed mb-8">{org.description}</p>
 
+                        {org.decisionGuide && (
+                            <div className="grid grid-cols-1 gap-3 mb-8">
+                                {org.decisionGuide.map((item) => (
+                                    <div key={item.title} className="glass-card p-5">
+                                        <h3 className="font-bold text-foreground mb-2">{item.title}</h3>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                            {item.text}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
                         {/* Pros & Cons */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="glass-card p-6">
@@ -313,7 +326,7 @@ export default async function OrganismePage({ params }: PageProps) {
                     Dernière mise à jour : {BUILD_DATE_FR}
                 </p>
                 <SourceCitations
-                    sources={[
+                    sources={org.sources ?? [
                         { label: "France Compétences — RNCP", url: "https://www.francecompetences.fr", date: "2026" },
                         { label: "Mon Compte Formation", url: "https://www.moncompteformation.gouv.fr", date: "2026" },
                         { label: "Certification Qualiopi — Ministère du Travail", url: "https://travail-emploi.gouv.fr/formation-professionnelle/acteurs-cadre-et-qualite-de-la-formation-professionnelle/article/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation", date: "2025" },
