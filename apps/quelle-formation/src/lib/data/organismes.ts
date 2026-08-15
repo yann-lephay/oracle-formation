@@ -761,21 +761,21 @@ export const organismes: Organisme[] = [
         slug: "simplon",
         name: "Simplon",
         website: "https://simplon.co",
-        tagline: "L'école du numérique inclusif et solidaire",
+        tagline: "Bootcamps et formations aux métiers du numérique",
         description:
-            "Simplon est un réseau de fabriques du numérique solidaires qui forme gratuitement aux métiers du numérique les personnes éloignées de l'emploi. Fondé en 2013, Simplon est présent dans 100+ lieux en France et à l'international. Les formations (développement web, data, IA, cybersécurité) sont gratuites et qualifiantes, ciblant les demandeurs d'emploi, les femmes, et les publics sous-représentés dans le numérique.",
+            "Simplon propose des formations intensives, certifiantes ou en alternance en développement, data, IA et cybersécurité. Le format, la durée, les prérequis et le financement changent selon chaque session : la fiche de session, et non la marque seule, doit guider la décision. Le réseau convient surtout aux candidats prêts à suivre un rythme soutenu et un processus pouvant inclure dossier, auto-apprentissage, mini-projet et entretien.",
         prosAndCons: {
             pros: [
-                "Formations gratuites pour les apprenants",
+                "De nombreuses sessions entièrement financées pour les apprenants éligibles",
                 "Mission sociale : inclusion et diversité dans le numérique",
-                "100+ fabriques en France — forte couverture territoriale",
-                "Taux d'insertion professionnelle élevé (80 %+)",
+                "120 campus annoncés dans le monde et 8 régions en France",
+                "70 % de sorties positives annoncées au 31 décembre 2025",
                 "Pédagogie active et projets concrets",
             ],
             cons: [
-                "Processus de sélection exigeant (motivation, tests)",
-                "Rythme intensif sur campus uniquement",
-                "Pas de formation en e-learning asynchrone",
+                "Conditions et calendrier propres à chaque session",
+                "Rythme intensif qui demande une disponibilité réelle",
+                "Financement ou gratuité à confirmer session par session",
             ],
         },
         foundedYear: 2013,
@@ -787,25 +787,65 @@ export const organismes: Organisme[] = [
             "intelligence-artificielle",
             "cybersecurite",
         ],
-        formats: ["présentiel"],
+        formats: ["présentiel", "distanciel", "hybride"],
         cpfEligible: true,
-        priceRange: "Gratuit (financé par partenaires)",
-        studentsCount: "15 000+",
-        rating: 4.4,
-        reviewCount: 980,
-        metaTitle: "Simplon Avis 2026 : Formations Gratuites au Numérique",
+        priceRange: "Selon la session et le financement",
+        studentsCount: "56 772+ depuis 2013",
+        rating: 2.9,
+        reviewCount: 2,
+        metaTitle: "Simplon : avis sur les bootcamps et formations en 2026",
         metaDescription:
-            "Avis sur Simplon en 2026. Formations gratuites au numérique (dev web, data, IA). Processus de sélection, avis et insertion. Notre test complet.",
+            "Notre avis sur Simplon en 2026 : bootcamps, formations intensives et alternance, sélection, financement, rythme et points à vérifier avant de candidater.",
+        decisionGuide: [
+            {
+                title: "À choisir si…",
+                text: "vous cherchez une formation professionnalisante au numérique, souvent intensive, et qu'une session proche de chez vous correspond précisément à votre métier, votre niveau et votre situation de financement.",
+            },
+            {
+                title: "À comparer si…",
+                text: "vous avez besoin d'un calendrier libre, d'un parcours entièrement asynchrone ou d'une admission garantie. Chez Simplon, les modalités varient et la candidature peut comporter dossier, auto-apprentissage, mini-projet et entretien.",
+            },
+            {
+                title: "Point à vérifier avant de candidater",
+                text: "la certification préparée, la durée intensive, le lieu ou le distanciel, les conditions particulières, le financement effectif et l'accompagnement vers l'alternance ou l'emploi. Une formation Simplon ne se résume pas à un bootcamp unique.",
+            },
+            {
+                title: "Comment lire les avis",
+                text: "Trustpilot n'affiche que 2 avis au 15 août 2026 : ce volume est insuffisant pour juger l'ensemble des campus et formations. Cherchez des retours sur la session, le métier, le campus et l'année qui vous concernent.",
+            },
+        ],
+        sources: [
+            {
+                label: "Simplon — mission, formats et chiffres clés 2025",
+                url: "https://www.simplon.co/a-propos/qui-sommes-nous",
+                date: "consulté en août 2026",
+            },
+            {
+                label: "Simplon — étapes de candidature d'une session",
+                url: "https://www.simplon.co/session/om-gua-ifacom-ia-207355-int-emp",
+                date: "consulté en août 2026",
+            },
+            {
+                label: "Simplon — campus à distance",
+                url: "https://www.simplon.co/region/a-distance",
+                date: "consulté en août 2026",
+            },
+            {
+                label: "Trustpilot — avis Simplon.co (échantillon très faible)",
+                url: "https://fr.trustpilot.com/review/simplon.co",
+                date: "consulté en août 2026",
+            },
+        ],
         faq: [
             {
                 question: "Les formations Simplon sont-elles vraiment gratuites ?",
                 answer:
-                    "Oui, les formations Simplon sont gratuites pour les apprenants. Elles sont financées par des partenaires publics (Régions, France Travail) et privés (entreprises). En contrepartie, un processus de sélection sur motivation est requis.",
+                    "De nombreuses sessions sont entièrement financées pour les candidats éligibles, mais il faut vérifier la fiche de la session. Le financement, les conditions particulières et une éventuelle rémunération dépendent du dispositif et du profil.",
             },
             {
                 question: "Comment être sélectionné chez Simplon ?",
                 answer:
-                    "La sélection Simplon se fait sur la motivation, pas sur le niveau de diplôme. Le processus comprend une session d'information, un parcours de préparation en ligne et un entretien. Aucun prérequis technique n'est nécessaire.",
+                    "Le processus dépend de la session. Simplon décrit généralement une prise de contact, un dossier pouvant inclure auto-apprentissage ou mini-projet, puis des entretiens. Certaines sessions ont des conditions particulières ou des prérequis.",
             },
         ],
         campusVilles: ["paris", "lyon", "toulouse", "lille", "marseille", "bordeaux", "nantes", "strasbourg"],
