@@ -130,7 +130,7 @@ export const organismes: Organisme[] = [
             },
             {
                 label: "France Compétences — Répertoire national des certifications professionnelles",
-                url: "https://www.francecompetences.fr/recherche_certificationprofessionnelle/",
+                url: "https://www.francecompetences.fr/recherche-resultats/?types=certification&search=&pageType=certification&active=1",
                 date: "consulté en août 2026",
             },
         ],
