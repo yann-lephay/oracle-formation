@@ -14,7 +14,7 @@
     "build:dec": "npm run build --workspace=apps/declaration-pro",
     "start:dec": "npm run start --workspace=apps/declaration-pro",
     "lint:dec": "npm run lint --workspace=apps/declaration-pro",
-    "qc:internal-links": "node scripts/validate-internal-links.mjs"
+    "qc:internal-links": "node scripts/validate-internal-links.mjs quelle-formation deplacement-pro"
   },
   "workspaces": [
     "apps/*"
