@@ -16,7 +16,7 @@ Monorepo pour les comparateurs B2B : **QuelleFormation.fr** et **DeplacementPro.
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
 - **Analytics**: Vercel Analytics + Speed Insights
-- **Hosting**: Vercel
+- **Hosting**: Coolify sur infrastructure netcup en Allemagne, avec Cloudflare en frontal
 
 ## Commandes
 

@@ -31,8 +31,13 @@ export default function MentionsLegalesPage() {
           <div>
             <h2 className="text-xl font-bold font-heading text-foreground mb-3">Hébergement</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Ce site est hébergé par Vercel Inc., 440 N Barranca Ave #4133,
-              Covina, CA 91723, États-Unis.
+              Ce site est hébergé en Allemagne par netcup GmbH, Emmy-Noether-Straße 10,
+              D-76131 Karlsruhe, Allemagne. Téléphone : +49 721 7540755-0.<br />
+              Site web : https://www.netcup.com
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed mt-2">
+              Cloudflare agit comme réseau de diffusion de contenu (CDN) et service de
+              protection du trafic ; il n&apos;est pas l&apos;hébergeur d&apos;origine.
             </p>
           </div>
 
