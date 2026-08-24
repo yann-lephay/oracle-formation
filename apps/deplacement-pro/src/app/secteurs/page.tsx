@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "Solutions de gestion des déplacements professionnels adaptées à votre secteur : BTP, cabinets de conseil, forces de vente. Enjeux et outils recommandés.",
   alternates: { canonical: `${seoConfig.siteUrl}/secteurs` },
   openGraph: {
+    images: [seoConfig.ogImage],
     title: "Déplacements pro par secteur — DeplacementPro.fr",
     description: "Solutions adaptées par secteur d'activité.",
     url: `${seoConfig.siteUrl}/secteurs`,

@@ -18,6 +18,7 @@ import { organismes, getOrganismeBySlug } from "@/lib/data/organismes";
 import { domaines } from "@/lib/data/domaines";
 import { generateFAQSchema, generateBreadcrumbSchema, generateOrganismeSchema, getArticleSchema, BUILD_DATE_FR } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { fitSeoDescription, fitSeoTitle } from "@/lib/metadata";
 import { ComparisonCta } from "@/components/ComparisonCta";
 import { OrganismeOutboundLink } from "@/components/OrganismeOutboundLink";
 import { SourceCitations } from "@/components/SourceCitations";
@@ -36,13 +37,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const org = getOrganismeBySlug(slug);
     if (!org) return {};
 
+    const seoTitle = fitSeoTitle(org.metaTitle);
+    const seoDescription = fitSeoDescription(org.metaDescription);
+
     return {
-        title: org.metaTitle,
-        description: org.metaDescription,
+        title: { absolute: seoTitle },
+        description: seoDescription,
         alternates: { canonical: `${seoConfig.siteUrl}/organisme/${slug}` },
         openGraph: {
-            title: org.metaTitle,
-            description: org.metaDescription,
+            title: seoTitle,
+            description: seoDescription,
+            images: [seoConfig.ogImage],
             url: `${seoConfig.siteUrl}/organisme/${slug}`,
             type: "website",
             locale: "fr_FR",

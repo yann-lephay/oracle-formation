@@ -52,6 +52,7 @@ export const metadata: Metadata = {
     description: `Explorez 20 domaines de formation professionnelle en ${currentYear}. Prix, durée, CPF, organismes certifiés Qualiopi. Trouvez la formation qui correspond à votre projet.`,
     alternates: { canonical: `${seoConfig.siteUrl}/formations` },
     openGraph: {
+        images: [seoConfig.ogImage],
         title: `Formations Pro ${currentYear} — QuelleFormation.fr`,
         description: `Explorez 20 domaines de formation professionnelle en ${currentYear}. Prix, durée, CPF, organismes certifiés Qualiopi.`,
         url: `${seoConfig.siteUrl}/formations`,

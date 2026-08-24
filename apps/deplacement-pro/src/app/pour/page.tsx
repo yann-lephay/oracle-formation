@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     "Trouvez la solution de déplacement professionnel adaptée à votre profil : PME, ETI, grands comptes, startups, cabinets de conseil, ESN, associations, secteur public.",
   alternates: { canonical: `${seoConfig.siteUrl}/pour` },
   openGraph: {
+    images: [seoConfig.ogImage],
     title: "Solutions par Profil d'Entreprise",
     description:
       "Trouvez la solution de déplacement professionnel adaptée à votre profil.",

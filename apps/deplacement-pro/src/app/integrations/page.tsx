@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     "Découvrez comment les solutions de déplacement professionnel s'intègrent avec Sage, Cegid, Pennylane, SAP, Workday, Slack et Xero. Guides de configuration détaillés.",
   alternates: { canonical: `${seoConfig.siteUrl}/integrations` },
   openGraph: {
+    images: [seoConfig.ogImage],
     title: "Intégrations — Outils Compatibles",
     description:
       "Découvrez comment les solutions de déplacement professionnel s'intègrent avec vos outils.",

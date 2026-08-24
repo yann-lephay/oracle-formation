@@ -11,6 +11,7 @@ export const metadata: Metadata = {
         "Fiches métier complètes : data analyst, cybersécurité, UX designer, product manager. Salaires, compétences, formations et évolution de carrière en 2026.",
     alternates: { canonical: `${seoConfig.siteUrl}/metier` },
     openGraph: {
+        images: [seoConfig.ogImage],
         title: "Fiches métier — QuelleFormation.fr",
         description: "Fiches métier complètes avec salaires et formations recommandées.",
         url: `${seoConfig.siteUrl}/metier`,

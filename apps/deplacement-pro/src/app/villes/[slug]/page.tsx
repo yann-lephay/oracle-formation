@@ -7,6 +7,7 @@ import { solutions } from "@/lib/data/solutions";
 import { comparisons } from "@/lib/data/comparisons";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { fitSeoDescription, fitSeoTitle } from "@/lib/metadata";
 
 export const revalidate = false;
 export function generateStaticParams() {
@@ -22,13 +23,17 @@ export async function generateMetadata({
   const ville = getVilleBySlug(slug);
   if (!ville) return {};
   const url = `${seoConfig.siteUrl}/villes/${ville.slug}`;
+  const seoTitle = fitSeoTitle(ville.metaTitle);
+  const seoDescription = fitSeoDescription(ville.metaDescription);
+
   return {
-    title: ville.metaTitle,
-    description: ville.metaDescription,
+    title: { absolute: seoTitle },
+    description: seoDescription,
     alternates: { canonical: url },
     openGraph: {
-      title: ville.metaTitle,
-      description: ville.metaDescription,
+      title: seoTitle,
+      description: seoDescription,
+      images: [seoConfig.ogImage],
       url,
       type: "website",
     },

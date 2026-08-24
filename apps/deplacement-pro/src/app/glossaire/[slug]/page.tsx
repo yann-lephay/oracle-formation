@@ -10,6 +10,7 @@ import {
   generateGlossarySchema,
 } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { fitSeoDescription, fitSeoTitle } from "@/lib/metadata";
 
 export const revalidate = false;
 export function generateStaticParams() {
@@ -25,13 +26,17 @@ export async function generateMetadata({
   const term = getGlossaryTermBySlug(slug);
   if (!term) return {};
   const url = `${seoConfig.siteUrl}/glossaire/${term.slug}`;
+  const seoTitle = fitSeoTitle(term.metaTitle);
+  const seoDescription = fitSeoDescription(term.metaDescription);
+
   return {
-    title: term.metaTitle,
-    description: term.metaDescription,
+    title: { absolute: seoTitle },
+    description: seoDescription,
     alternates: { canonical: url },
     openGraph: {
-      title: term.metaTitle,
-      description: term.metaDescription,
+      title: seoTitle,
+      description: seoDescription,
+      images: [seoConfig.ogImage],
       url,
       type: "website",
     },

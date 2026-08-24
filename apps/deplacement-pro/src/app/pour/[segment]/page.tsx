@@ -24,6 +24,7 @@ import { comparisons } from "@/lib/data/comparisons";
 import { guides } from "@/lib/data/guides";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { fitSeoDescription, fitSeoTitle } from "@/lib/metadata";
 
 const iconMap: Record<string, React.ElementType> = {
   Building2,
@@ -50,13 +51,17 @@ export async function generateMetadata({
   const persona = getPersonaBySlug(segment);
   if (!persona) return {};
   const url = `${seoConfig.siteUrl}/pour/${persona.slug}`;
+  const seoTitle = fitSeoTitle(persona.metaTitle);
+  const seoDescription = fitSeoDescription(persona.metaDescription);
+
   return {
-    title: persona.metaTitle,
-    description: persona.metaDescription,
+    title: { absolute: seoTitle },
+    description: seoDescription,
     alternates: { canonical: url },
     openGraph: {
-      title: persona.metaTitle,
-      description: persona.metaDescription,
+      title: seoTitle,
+      description: seoDescription,
+      images: [seoConfig.ogImage],
       url,
       type: "website",
     },

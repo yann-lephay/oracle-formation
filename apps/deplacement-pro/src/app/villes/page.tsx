@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     "Guides pratiques pour vos déplacements professionnels dans 28 villes françaises : transports, hébergement, quartiers d'affaires, budget. Conseils et tarifs 2026.",
   alternates: { canonical: `${seoConfig.siteUrl}/villes` },
   openGraph: {
+    images: [seoConfig.ogImage],
     title: "Déplacements Pro par Ville 2026",
     description:
       "Guides pratiques pour vos déplacements professionnels dans 28 villes françaises.",

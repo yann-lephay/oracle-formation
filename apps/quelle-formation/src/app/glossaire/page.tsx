@@ -11,6 +11,7 @@ export const metadata: Metadata = {
         "CPF, Qualiopi, RNCP, VAE, OPCO, bootcamp : définitions et explications de tous les termes de la formation professionnelle en France.",
     alternates: { canonical: `${seoConfig.siteUrl}/glossaire` },
     openGraph: {
+        images: [seoConfig.ogImage],
         title: "Glossaire — QuelleFormation.fr",
         description: "Tous les termes de la formation professionnelle expliqués simplement.",
         url: `${seoConfig.siteUrl}/glossaire`,

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     "Glossaire complet du voyage d'affaires : TMC, GDS, NDC, per diem, duty of care, carte corporate. Toutes les définitions pour comprendre le déplacement professionnel.",
   alternates: { canonical: `${seoConfig.siteUrl}/glossaire` },
   openGraph: {
+    images: [seoConfig.ogImage],
     title: "Glossaire Déplacement Pro — A à Z",
     description:
       "Glossaire complet du voyage d'affaires : TMC, GDS, NDC, per diem, duty of care, carte corporate.",

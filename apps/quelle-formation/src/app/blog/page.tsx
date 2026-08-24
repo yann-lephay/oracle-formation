@@ -4,13 +4,15 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { indexableBlogArticles } from "@/lib/data/blog";
 import { generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { fitSeoTitle } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-    title: "Blog Formation Professionnelle — Guides et Conseils 2026",
+    title: { absolute: fitSeoTitle("Blog Formation Professionnelle — Guides et Conseils 2026") },
     description:
         "Guides et conseils pour choisir sa formation professionnelle. CPF, reconversion, comparatifs d'organismes, métiers porteurs. Blog QuelleFormation.fr.",
     alternates: { canonical: `${seoConfig.siteUrl}/blog` },
     openGraph: {
+        images: [seoConfig.ogImage],
         title: "Blog Formation Professionnelle — Guides et Conseils 2026",
         description:
             "Guides et conseils pour choisir sa formation professionnelle en 2026.",

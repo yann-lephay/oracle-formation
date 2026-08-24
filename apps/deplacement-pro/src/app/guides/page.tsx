@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     "Guides pratiques pour gérer vos déplacements professionnels : barème kilométrique 2026, indemnités repas, politique voyage modèle. Conseils et réglementation.",
   alternates: { canonical: `${seoConfig.siteUrl}/guides` },
   openGraph: {
+    images: [seoConfig.ogImage],
     title: "Guides — Barèmes & Réglementation",
     description:
       "Guides pratiques pour gérer vos déplacements professionnels : barèmes, modèles, réglementation.",

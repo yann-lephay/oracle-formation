@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     "Comparatifs détaillés des solutions de déplacement professionnel : Navan vs TravelPerk, Mooncard vs Spendesk, SAP Concur vs Expensya. Prix, fonctionnalités, verdict.",
   alternates: { canonical: `${seoConfig.siteUrl}/comparer` },
   openGraph: {
+    images: [seoConfig.ogImage],
     title: "Comparatifs Déplacement Pro 2026",
     description:
       "Comparatifs détaillés des solutions de déplacement professionnel.",

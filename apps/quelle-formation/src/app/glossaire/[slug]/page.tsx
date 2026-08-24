@@ -6,6 +6,7 @@ import { glossaryTerms, getGlossaryTermBySlug } from "@/lib/data/glossaire";
 import { domaines } from "@/lib/data/domaines";
 import { generateFAQSchema, generateBreadcrumbSchema, generateGlossarySchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { fitSeoDescription, fitSeoTitle } from "@/lib/metadata";
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -22,13 +23,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     if (!term) return {};
 
     const url = `${seoConfig.siteUrl}/glossaire/${term.slug}`;
+    const seoTitle = fitSeoTitle(term.metaTitle);
+    const seoDescription = fitSeoDescription(term.metaDescription);
+
     return {
-        title: term.metaTitle,
-        description: term.metaDescription,
+        title: { absolute: seoTitle },
+        description: seoDescription,
         alternates: { canonical: url },
         openGraph: {
-            title: term.metaTitle,
-            description: term.metaDescription,
+            title: seoTitle,
+            description: seoDescription,
+            images: [seoConfig.ogImage],
             url,
             type: "website",
             locale: "fr_FR",

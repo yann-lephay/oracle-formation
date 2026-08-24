@@ -15,6 +15,7 @@ import { getSolutionBySlug } from "@/lib/data/solutions";
 import { getGuideBySlug } from "@/lib/data/guides";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { fitSeoDescription, fitSeoTitle } from "@/lib/metadata";
 
 const iconMap: Record<string, React.ElementType> = {
   HardHat, Briefcase, Car, Target,
@@ -34,13 +35,17 @@ export async function generateMetadata({
   const secteur = getSecteurBySlug(slug);
   if (!secteur) return {};
   const url = `${seoConfig.siteUrl}/secteurs/${secteur.slug}`;
+  const seoTitle = fitSeoTitle(secteur.metaTitle);
+  const seoDescription = fitSeoDescription(secteur.metaDescription);
+
   return {
-    title: secteur.metaTitle,
-    description: secteur.metaDescription,
+    title: { absolute: seoTitle },
+    description: seoDescription,
     alternates: { canonical: url },
     openGraph: {
-      title: secteur.metaTitle,
-      description: secteur.metaDescription,
+      title: seoTitle,
+      description: seoDescription,
+      images: [seoConfig.ogImage],
       url,
       type: "website",
     },

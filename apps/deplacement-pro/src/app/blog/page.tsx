@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     "Articles et conseils pour optimiser vos déplacements professionnels : TMC, cartes corporate, notes de frais, barèmes, bonnes pratiques.",
   alternates: { canonical: `${seoConfig.siteUrl}/blog` },
   openGraph: {
+    images: [seoConfig.ogImage],
     title: "Blog — TMC, Cartes & Notes de Frais",
     description:
       "Articles et conseils pour optimiser vos déplacements professionnels.",

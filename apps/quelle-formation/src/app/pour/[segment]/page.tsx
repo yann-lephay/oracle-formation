@@ -7,6 +7,7 @@ import { domaines } from "@/lib/data/domaines";
 import { getOrganismeBySlug } from "@/lib/data/organismes";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { fitSeoDescription, fitSeoTitle } from "@/lib/metadata";
 import { ComparisonCta } from "@/components/ComparisonCta";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -28,13 +29,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     if (!persona) return {};
 
     const url = `${seoConfig.siteUrl}/pour/${persona.slug}`;
+    const seoTitle = fitSeoTitle(persona.metaTitle);
+    const seoDescription = fitSeoDescription(persona.metaDescription);
+
     return {
-        title: persona.metaTitle,
-        description: persona.metaDescription,
+        title: { absolute: seoTitle },
+        description: seoDescription,
         alternates: { canonical: url },
         openGraph: {
-            title: persona.metaTitle,
-            description: persona.metaDescription,
+            title: seoTitle,
+            description: seoDescription,
+            images: [seoConfig.ogImage],
             url,
             type: "website",
             locale: "fr_FR",

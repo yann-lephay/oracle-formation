@@ -11,6 +11,7 @@ export const metadata: Metadata = {
         "Guides pratiques sur la formation professionnelle : financement CPF, certification Qualiopi, reconversion, bootcamp vs formation longue, RNCP et VAE.",
     alternates: { canonical: `${seoConfig.siteUrl}/guide` },
     openGraph: {
+        images: [seoConfig.ogImage],
         title: "Guides Formation Professionnelle 2026",
         description: "Guides pratiques sur la formation professionnelle en France.",
         url: `${seoConfig.siteUrl}/guide`,

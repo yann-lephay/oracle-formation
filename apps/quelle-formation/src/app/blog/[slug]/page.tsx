@@ -7,6 +7,7 @@ import { domaines } from "@/lib/data/domaines";
 import { organismes } from "@/lib/data/organismes";
 import { generateFAQSchema, generateBreadcrumbSchema, generateArticleSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { fitSeoDescription, fitSeoTitle } from "@/lib/metadata";
 import { ComparisonCta } from "@/components/ComparisonCta";
 
 interface PageProps {
@@ -23,13 +24,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const article = getBlogArticleBySlug(slug);
     if (!article) return {};
 
+    const seoTitle = fitSeoTitle(article.metaTitle);
+    const seoDescription = fitSeoDescription(article.metaDescription);
+
     return {
-        title: article.metaTitle,
-        description: article.metaDescription,
+        title: { absolute: seoTitle },
+        description: seoDescription,
         alternates: { canonical: `${seoConfig.siteUrl}/blog/${slug}` },
         openGraph: {
-            title: article.metaTitle,
-            description: article.metaDescription,
+            title: seoTitle,
+            description: seoDescription,
+            images: [seoConfig.ogImage],
             url: `${seoConfig.siteUrl}/blog/${slug}`,
             type: "article",
             locale: "fr_FR",

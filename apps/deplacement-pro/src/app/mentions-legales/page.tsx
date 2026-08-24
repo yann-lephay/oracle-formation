@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
-  description: "Mentions légales du site DeplacementPro.fr.",
+  description:
+    "Identité de l’éditeur, hébergement, propriété intellectuelle, données personnelles et conditions d’utilisation de DeplacementPro.fr.",
   alternates: { canonical: "https://deplacement-pro.fr/mentions-legales" },
 };
 
@@ -18,12 +19,10 @@ export default function MentionsLegalesPage() {
           <div>
             <h2 className="text-xl font-bold font-heading text-foreground mb-3">Éditeur du site</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              DeplacementPro.fr est édité par [Nom de la société], [forme juridique],
-              au capital de [montant] €.<br />
-              Siège social : [Adresse]<br />
-              RCS : [Ville] [Numéro]<br />
-              Numéro de TVA : [Numéro]<br />
-              Directeur de la publication : [Nom]<br />
+              DeplacementPro.fr est édité par Yann LEPHAY, entrepreneur individuel.<br />
+              SIRET : 899 650 204 00022<br />
+              Adresse : 53 Avenue Charles de Gaulle, 57530 Courcelles-Chaussy, France<br />
+              Directeur de la publication : Yann LEPHAY<br />
               Contact : info@yann-lephay.com
             </p>
           </div>

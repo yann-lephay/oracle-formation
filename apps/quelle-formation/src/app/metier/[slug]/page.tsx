@@ -7,6 +7,7 @@ import { domaines } from "@/lib/data/domaines";
 import { getOrganismeBySlug } from "@/lib/data/organismes";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { fitSeoDescription, fitSeoTitle } from "@/lib/metadata";
 import { ComparisonCta } from "@/components/ComparisonCta";
 
 interface PageProps {
@@ -24,13 +25,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     if (!metier) return {};
 
     const url = `${seoConfig.siteUrl}/metier/${metier.slug}`;
+    const seoTitle = fitSeoTitle(metier.metaTitle);
+    const seoDescription = fitSeoDescription(metier.metaDescription);
+
     return {
-        title: metier.metaTitle,
-        description: metier.metaDescription,
+        title: { absolute: seoTitle },
+        description: seoDescription,
         alternates: { canonical: url },
         openGraph: {
-            title: metier.metaTitle,
-            description: metier.metaDescription,
+            title: seoTitle,
+            description: seoDescription,
+            images: [seoConfig.ogImage],
             url,
             type: "article",
             locale: "fr_FR",

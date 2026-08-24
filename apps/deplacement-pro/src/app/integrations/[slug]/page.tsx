@@ -20,6 +20,7 @@ import {
   generateBreadcrumbSchema,
 } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { fitSeoDescription, fitSeoTitle } from "@/lib/metadata";
 
 export const revalidate = false;
 export function generateStaticParams() {
@@ -35,13 +36,17 @@ export async function generateMetadata({
   const integration = getIntegrationBySlug(slug);
   if (!integration) return {};
   const url = `${seoConfig.siteUrl}/integrations/${integration.slug}`;
+  const seoTitle = fitSeoTitle(integration.metaTitle);
+  const seoDescription = fitSeoDescription(integration.metaDescription);
+
   return {
-    title: integration.metaTitle,
-    description: integration.metaDescription,
+    title: { absolute: seoTitle },
+    description: seoDescription,
     alternates: { canonical: url },
     openGraph: {
-      title: integration.metaTitle,
-      description: integration.metaDescription,
+      title: seoTitle,
+      description: seoDescription,
+      images: [seoConfig.ogImage],
       url,
       type: "website",
     },

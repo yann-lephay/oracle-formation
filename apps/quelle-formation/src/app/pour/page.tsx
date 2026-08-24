@@ -15,6 +15,7 @@ export const metadata: Metadata = {
         "Trouvez la formation adaptée à votre profil : reconversion, demandeur d'emploi, freelance ou profil non technique. Conseils personnalisés et financement.",
     alternates: { canonical: `${seoConfig.siteUrl}/pour` },
     openGraph: {
+        images: [seoConfig.ogImage],
         title: "Formations par profil — QuelleFormation.fr",
         description: "Trouvez la formation adaptée à votre profil en 2026.",
         url: `${seoConfig.siteUrl}/pour`,
