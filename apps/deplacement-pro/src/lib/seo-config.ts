@@ -4,7 +4,7 @@ export const seoConfig = {
   locale: "fr_FR",
   language: "fr",
   description:
-    "Comparez les meilleures solutions de déplacement professionnel : TMC, cartes corporate, notes de frais. Indépendant et gratuit.",
+    "Distinguez votre besoin — réservation, paiement, notes de frais ou contrôle — puis comparez les solutions de déplacement professionnel dans le bon périmètre.",
   twitter: "@deplacementpro",
   ogImage: "/og-image.png",
   logo: "/deplacement-pro-logo.png",

@@ -11,10 +11,11 @@ import {
   generateBreadcrumbSchema,
 } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { isRedirectedBlogSlug } from "@/lib/content-owner-policy";
 
 export const revalidate = false;
 export function generateStaticParams() {
-  return blogPosts.map((p) => ({ slug: p.slug }));
+  return blogPosts.filter((p) => !isRedirectedBlogSlug(p.slug)).map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -23,7 +24,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = isRedirectedBlogSlug(slug) ? undefined : getBlogPostBySlug(slug);
   if (!post) return {};
   const url = `${seoConfig.siteUrl}/blog/${post.slug}`;
   return {
@@ -45,7 +46,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = isRedirectedBlogSlug(slug) ? undefined : getBlogPostBySlug(slug);
   if (!post) notFound();
 
   return (
@@ -192,7 +193,7 @@ export default async function BlogPostPage({
 
       {/* Autres articles */}
       {(() => {
-        const otherPosts = blogPosts.filter((p) => p.slug !== post.slug);
+        const otherPosts = blogPosts.filter((p) => p.slug !== post.slug && !isRedirectedBlogSlug(p.slug));
         if (otherPosts.length === 0) return null;
         return (
           <section className="section-padding">

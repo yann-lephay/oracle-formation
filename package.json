@@ -14,7 +14,10 @@
     "build:dec": "npm run build --workspace=apps/declaration-pro",
     "start:dec": "npm run start --workspace=apps/declaration-pro",
     "lint:dec": "npm run lint --workspace=apps/declaration-pro",
-    "qc:internal-links": "node scripts/validate-internal-links.mjs quelle-formation deplacement-pro"
+    "qc:internal-links": "node scripts/validate-internal-links.mjs quelle-formation deplacement-pro",
+    "qc:gap14-formation": "node --import tsx scripts/validate-gap14-formation.ts",
+    "qc:gap14-formation:mutations": "node --import tsx scripts/validate-gap14-formation.ts --mutations",
+    "qc:gap14-formation:served": "node scripts/validate-gap14-formation-served.mjs"
   },
   "workspaces": [
     "apps/*"

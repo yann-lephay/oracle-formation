@@ -15,6 +15,7 @@ import {
 import { domaines, getDomaineBySlug } from "@/lib/data/domaines";
 import { getOrganismesByDomaine } from "@/lib/data/organismes";
 import { topVilles } from "@/lib/data/villes";
+import { isNoindexFormationVille } from "@/lib/formation-ville-index-policy";
 import { generateFAQSchema, generateBreadcrumbSchema, generateItemListSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 import { ComparisonCta } from "@/components/ComparisonCta";
@@ -56,6 +57,9 @@ export default async function FormationDomainePage({ params }: PageProps) {
     const organismes = getOrganismesByDomaine(slug);
     const hasClicCampusSpotlight = slug === "langues-anglais";
     const presentedOrganismeCount = organismes.length + (hasClicCampusSpotlight ? 1 : 0);
+    const indexableVilles = topVilles.filter(
+        (ville) => !isNoindexFormationVille(slug, ville.slug)
+    );
 
     const faqItems = [
         {
@@ -291,7 +295,7 @@ export default async function FormationDomainePage({ params }: PageProps) {
             </section>
 
             {/* Villes */}
-            <section className="section-padding bg-surface">
+            {indexableVilles.length > 0 && <section className="section-padding bg-surface">
                 <div className="container-narrow mx-auto px-4">
                     <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-3">
                         Formation {domaine.name} par ville
@@ -301,7 +305,7 @@ export default async function FormationDomainePage({ params }: PageProps) {
                     </p>
 
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                        {topVilles.map((ville) => (
+                        {indexableVilles.map((ville) => (
                             <Link
                                 key={ville.slug}
                                 href={`/formation/${slug}/${ville.slug}`}
@@ -318,7 +322,7 @@ export default async function FormationDomainePage({ params }: PageProps) {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section>}
 
             {/* FAQ */}
             <section className="section-padding">

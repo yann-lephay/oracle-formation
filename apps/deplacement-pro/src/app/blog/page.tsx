@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { blogPosts } from "@/lib/data/blog";
 import { generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { isRedirectedBlogSlug } from "@/lib/content-owner-policy";
 
 export const metadata: Metadata = {
   title: "Blog — TMC, Cartes & Notes de Frais",
@@ -48,7 +49,7 @@ export default function BlogIndexPage() {
       <section className="section-padding">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {blogPosts.map((post) => (
+            {blogPosts.filter((post) => !isRedirectedBlogSlug(post.slug)).map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}

@@ -34,16 +34,6 @@ export const metadata: Metadata = {
   },
   description:
     "Comparez les meilleures formations professionnelles en France. Prix, avis, CPF, organismes certifiés Qualiopi. Trouvez la formation qui vous correspond.",
-  keywords: [
-    "formation professionnelle",
-    "comparateur formation",
-    "formation CPF",
-    "reconversion professionnelle",
-    "bootcamp",
-    "formation en ligne",
-    "formation certifiante",
-    "Qualiopi",
-  ],
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },

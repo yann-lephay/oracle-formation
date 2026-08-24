@@ -14,7 +14,55 @@ export interface Guide {
     content: string;
   }[];
   faq: { question: string; answer: string }[];
+  sources?: { label: string; url: string; date: string }[];
+  relatedGlossary?: { slug: string; label: string };
 }
+
+const urssafFraisProfessionnelsSource = {
+  label: "URSSAF — Frais professionnels",
+  url: "https://www.urssaf.fr/accueil/employeur/beneficier-exonerations/frais-professionnels.html",
+  date: "mis à jour le 7 avril 2026",
+};
+
+const urssafTravelAllowances2026 = {
+  checkedAt: "23 août 2026",
+  mealAtWork: "7,50 €",
+  mealWhileTravelling: "10,40 €",
+  mealAtRestaurant: "21,40 €",
+  twoMeals: "42,80 €",
+  lodgingParisAndInnerSuburbs: "76,60 €",
+  lodgingOtherDepartments: "56,80 €",
+} as const;
+
+const urssafBaremes2026Source = {
+  label: "URSSAF — Taux et barèmes 2026",
+  url: "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/frais-professionnels.html",
+  date: `consulté le ${urssafTravelAllowances2026.checkedAt}`,
+};
+
+const professionalExpenseReimbursementSource = {
+  label: "Cour de cassation — remboursement des frais professionnels justifiés",
+  url: "https://www.legifrance.gouv.fr/juri/id/JURITEXT000026439064/",
+  date: "arrêt du 26 septembre 2012",
+};
+
+const professionalExpensesOrderSource = {
+  label: "Légifrance — arrêté du 4 septembre 2025 relatif aux frais professionnels",
+  url: "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000052198430/2026-05-09",
+  date: "version en vigueur consultée le 23 août 2026",
+};
+
+const socialContributionsLimitationSource = {
+  label: "Légifrance — Code de la sécurité sociale, article L. 244-3",
+  url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033713008/2026-03-04",
+  date: "version en vigueur consultée le 23 août 2026",
+};
+
+const incomeTaxExemptionSource = {
+  label: "Légifrance — Code général des impôts, article 81",
+  url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051765336",
+  date: "version en vigueur consultée le 23 août 2026",
+};
 
 export const guides: Guide[] = [
   {
@@ -83,111 +131,136 @@ export const guides: Guide[] = [
       "Le guide complet des indemnités de repas 2026 : barèmes URSSAF, panier repas, restaurant, grand déplacement. Calcul, exonération et automatisation.",
     category: "réglementaire",
     publishedAt: "2026-01-20",
-    updatedAt: "2026-03-01",
+    updatedAt: "2026-08-23",
     readingTime: "6 min",
-    metaTitle: "Indemnités Repas 2026 — URSSAF",
+    metaTitle: "Indemnités repas 2026 — URSSAF",
     metaDescription:
       "Indemnités repas 2026 : barèmes URSSAF mis à jour, panier repas, restaurant, grand déplacement. Guide pratique avec exemples et automatisation.",
     sections: [
       {
-        title: "Les différents types d'indemnités repas",
+        title: "Les trois situations de repas distinguées par l'URSSAF",
         content:
-          "L'URSSAF distingue trois situations pour les frais de repas en déplacement professionnel : le repas sur le lieu de travail (panier repas), le repas hors des locaux mais sans déplacement (restaurant à proximité) et le repas en grand déplacement (hors du domicile). Chaque situation a son propre plafond d'exonération.",
+          "Pour les limites d'exonération, l'URSSAF distingue trois situations : le repas pris sur le lieu de travail en raison de conditions particulières d'organisation ou d'horaires ; le repas pris hors des locaux pendant un déplacement professionnel, sans que le salarié soit contraint de le prendre au restaurant ; le repas pris au restaurant pendant un déplacement professionnel lorsque le salarié y est contraint. Le grand déplacement ajoute, sous ses propres conditions, des limites pour les repas et le logement.",
       },
       {
         title: "Barèmes URSSAF 2026",
         content:
-          "Les plafonds d'exonération 2026 sont les suivants : panier repas (sur le lieu de travail) → 7,30 € ; repas hors des locaux → 10,10 € ; repas en grand déplacement (restaurant) → 20,70 €. Ces montants sont exonérés de cotisations sociales. Au-delà, la fraction excédentaire est soumise à charges.",
+          `Les limites d'exonération 2026 sont les suivantes : repas sur le lieu de travail → ${urssafTravelAllowances2026.mealAtWork} ; salarié en déplacement non contraint de prendre son repas au restaurant → ${urssafTravelAllowances2026.mealWhileTravelling} ; salarié en déplacement contraint de prendre son repas au restaurant → ${urssafTravelAllowances2026.mealAtRestaurant}. L'employeur peut rembourser au réel ou verser une allocation forfaitaire ; ces montants ne sont pas des budgets de repas recommandés.`,
       },
       {
         title: "Grand déplacement : indemnités hébergement + repas",
         content:
-          "En cas de grand déplacement (impossibilité de regagner le domicile), l'entreprise peut verser des indemnités forfaitaires couvrant les repas (2 × 20,70 € = 41,40 €/jour) et l'hébergement (Paris et grandes villes : 74,30 €/nuit ; autres villes : 55,10 €/nuit). Ces forfaits sont exonérés si le salarié ne peut pas rentrer chez lui.",
-      },
-      {
-        title: "Automatiser la gestion des indemnités",
-        content:
-          "Les logiciels de notes de frais comme Expensya ou SAP Concur intègrent les barèmes URSSAF et appliquent automatiquement les bons plafonds. Ils alertent le manager en cas de dépassement et facilitent le contrôle URSSAF en cas de vérification.",
+          `Pour les trois premiers mois d'un grand déplacement en métropole, l'URSSAF publie ${urssafTravelAllowances2026.mealAtRestaurant} par repas, soit ${urssafTravelAllowances2026.twoMeals} pour deux repas, et une limite logement avec petit-déjeuner de ${urssafTravelAllowances2026.lodgingParisAndInnerSuburbs} à Paris et dans les départements 92, 93 et 94, ou ${urssafTravelAllowances2026.lodgingOtherDepartments} dans les autres départements. Les conditions du grand déplacement et les réductions après trois mois restent à vérifier dans la source officielle.`,
       },
     ],
     faq: [
       {
         question: "Quel est le montant du panier repas en 2026 ?",
         answer:
-          "Le panier repas (repas pris sur le lieu de travail) est plafonné à 7,30 € en 2026, exonéré de cotisations sociales URSSAF.",
+          `La limite d'exonération pour un repas pris sur le lieu de travail est de ${urssafTravelAllowances2026.mealAtWork} en 2026. Ce montant ne constitue pas un budget obligatoire pour l'entreprise.`,
       },
       {
         question: "Quelle est l'indemnité repas en grand déplacement en 2026 ?",
         answer:
-          "L'indemnité repas en grand déplacement est de 20,70 € par repas en 2026, soit 41,40 € par jour (2 repas). Ce montant est exonéré de cotisations sociales.",
+          `Pour les trois premiers mois d'un grand déplacement, la limite d'exonération est de ${urssafTravelAllowances2026.mealAtRestaurant} par repas en 2026, soit ${urssafTravelAllowances2026.twoMeals} pour deux repas, sous réserve de remplir les conditions URSSAF.`,
       },
       {
         question: "L'employeur peut-il verser plus que le barème URSSAF ?",
         answer:
-          "Oui, mais la fraction excédentaire est soumise aux cotisations sociales. Par exemple, si l'entreprise verse 25 € pour un repas en déplacement, seuls 20,70 € sont exonérés, les 4,30 € restants sont soumis à charges.",
+          "Oui. Si l'entreprise verse une allocation forfaitaire au-delà de la limite applicable, le traitement social de l'excédent doit être vérifié. Un remboursement au réel suit une logique différente et nécessite les justificatifs correspondants.",
       },
     ],
+    sources: [urssafFraisProfessionnelsSource, urssafBaremes2026Source],
   },
   {
     slug: "politique-voyage-modele",
-    title: "Politique voyage entreprise — Modèle et bonnes pratiques 2026",
-    shortTitle: "Politique voyage modèle",
+    title: "Politique voyage d'entreprise — Modèle à adapter en 2026",
+    shortTitle: "Modèle de politique voyage",
     description:
-      "Modèle de politique voyage d'entreprise prêt à l'emploi. Classes de transport, hébergement, validation, outils de réservation. Guide complet avec template.",
+      "Une trame de décision pour fixer qui réserve, qui paie, qui valide et comment traiter les exceptions sans copier des plafonds arbitraires.",
     category: "pratique",
     publishedAt: "2026-02-01",
-    updatedAt: "2026-03-01",
-    readingTime: "10 min",
-    metaTitle: "Politique Voyage 2026 — Modèle",
+    updatedAt: "2026-08-23",
+    readingTime: "12 min",
+    metaTitle: "Politique voyage : modèle à adapter en 2026",
     metaDescription:
-      "Modèle de politique voyage entreprise 2026 : classes de transport, hébergement, validation, outils. Template gratuit prêt à l'emploi.",
+      "Construisez une politique voyage adaptée : règles, exceptions, validation, justificatifs, sécurité et barèmes URSSAF 2026 sourcés.",
     sections: [
       {
-        title: "Pourquoi une politique voyage ?",
+        title: "La décision à prendre avant d'écrire le document",
         content:
-          "Une politique voyage (ou travel policy) définit les règles de déplacement professionnel de l'entreprise : modes de transport autorisés, classes de service, plafonds d'hébergement, circuit de validation. Objectif : maîtriser les coûts (15-30 % d'économies potentielles), assurer l'équité entre collaborateurs et simplifier la gestion administrative.",
+          "Une politique voyage est un cadre interne : elle dit qui peut réserver, avec quel moyen de paiement, qui valide une exception et quelles preuves conserver. Commencez par vos situations réelles — mission client urgente, salon planifié, déplacement international, prolongation personnelle — puis attribuez une règle et un responsable à chacune. Copier les plafonds d'une autre entreprise produit un document précis en apparence mais impossible à appliquer à votre budget et à vos risques.",
       },
       {
-        title: "Les fondamentaux à inclure",
+        title: "1. Définir le périmètre et les responsables",
         content:
-          "Toute politique voyage doit couvrir : 1) Les modes de transport (train vs avion selon la distance, classe économique par défaut) ; 2) L'hébergement (plafonds par ville, catégorie d'hôtel) ; 3) Les repas (barèmes URSSAF) ; 4) Le circuit de validation (pré-approbation, seuils) ; 5) Les outils de réservation (TMC/SBT imposé) ; 6) Les exceptions et dérogations.",
+          "Nommez les personnes concernées, les entités et pays couverts, les dépenses incluses et le propriétaire du document. Pour chaque déplacement, rendez explicites le demandeur, l'approbateur, le payeur, le contact sécurité et la personne autorisée à déroger. Une exception sans responsable devient une règle parallèle ; une règle sans voie d'exception pousse les équipes à réserver hors processus.",
       },
       {
-        title: "Modèle type — Classes de transport",
+        title: "2. Écrire des règles de réservation vérifiables",
         content:
-          "Train : classe économique par défaut, 1ère classe autorisée pour les trajets > 2h. Avion : économie par défaut, business pour les vols > 6h. Voiture de location : catégorie B/C maximum. Taxi/VTC : autorisé si pas de transport en commun raisonnable. Véhicule personnel : remboursement au barème kilométrique si accord préalable du manager.",
+          "Pour le train, l'avion, l'hôtel et la voiture, définissez un choix par défaut, les données qui déclenchent une exception et la personne qui l'approuve. Exemple de structure : « option standard lorsque le trajet respecte le budget de référence ; exception documentée si contrainte médicale, sécurité, accessibilité, horaire client ou coût total inférieur ». Le coût total inclut les transferts, bagages, temps mobilisé et conditions d'annulation ; le prix du billet seul ne suffit pas.",
       },
       {
-        title: "Modèle type — Hébergement",
+        title: "3. Séparer budget interne et barèmes sociaux",
         content:
-          "Plafonds recommandés 2026 : Paris → 160 €/nuit maximum ; Lyon, Marseille, Bordeaux → 130 €/nuit ; Autres villes → 110 €/nuit. Hôtels 3 étoiles maximum sauf dérogation. Réservation via la TMC/SBT de l'entreprise obligatoire. Airbnb autorisé si moins cher que l'hôtel équivalent.",
+          `Les limites URSSAF ne sont pas des plafonds hôteliers ou repas recommandés : elles encadrent l'exonération de certaines allocations forfaitaires. En 2026, l'URSSAF publie ${urssafTravelAllowances2026.mealAtWork} pour un repas sur le lieu de travail, ${urssafTravelAllowances2026.mealWhileTravelling} pour un salarié en déplacement non contraint de manger au restaurant et ${urssafTravelAllowances2026.mealAtRestaurant} lorsqu'il y est contraint. Pour les trois premiers mois d'un grand déplacement en métropole, l'allocation logement et petit-déjeuner est limitée à ${urssafTravelAllowances2026.lodgingParisAndInnerSuburbs} à Paris et dans les départements 92, 93 et 94, et à ${urssafTravelAllowances2026.lodgingOtherDepartments} dans les autres départements. Vos budgets internes peuvent être différents ; indiquez le mode de remboursement, les justificatifs et le traitement du dépassement.`,
       },
       {
-        title: "Circuit de validation",
+        title: "4. Construire une matrice de validation",
         content:
-          "Circuit recommandé : déplacements < 500 € → validation manager N+1 automatique sous 24h ; déplacements 500-2 000 € → validation manager N+1 requise avant réservation ; déplacements > 2 000 € → validation N+1 + direction. Les TMC comme Navan et TravelPerk permettent d'intégrer ces règles directement dans l'outil de réservation.",
+          "Choisissez vos seuils à partir du budget, du niveau de risque et de la capacité de réponse de vos équipes, pas d'un modèle universel. La matrice minimale contient : situation, montant ou risque déclencheur, approbateur principal, suppléant, délai de réponse, preuve attendue et conséquence en cas d'absence. Ajoutez une voie urgente qui journalise la décision après coup sans bloquer un voyage nécessaire.",
       },
       {
-        title: "Intégrer la politique dans un outil",
+        title: "5. Prévoir sécurité, données et partie personnelle",
         content:
-          "Les TMC modernes (Navan, TravelPerk) permettent de paramétrer la politique voyage directement dans l'outil de réservation. Le collaborateur ne voit que les options conformes, les exceptions sont signalées et soumises à validation. Résultat : un taux de conformité de 90 %+ contre 50-60 % sans outil.",
+          "L'article L4121-1 du Code du travail impose à l'employeur des mesures adaptées pour protéger la santé physique et mentale des travailleurs. La politique doit donc donner un contact d'urgence, une procédure d'incident et des règles pour les destinations à risque. Si l'entreprise géolocalise des véhicules utilisés par des salariés, limitez la finalité, les personnes ayant accès et la durée de conservation conformément aux recommandations de la CNIL. Séparez aussi clairement la mission professionnelle d'une prolongation personnelle : coûts, assurance et responsabilité ne se déduisent pas d'une simple date de retour.",
+      },
+      {
+        title: "6. Modèle compact à compléter",
+        content:
+          "« Périmètre : [personnes, entités, pays]. Réservation : [canal] ; choix par défaut : [règle]. Paiement : [carte, avance ou remboursement]. Validation : [responsable, suppléant, délai]. Exceptions : [motifs et preuve]. Frais : [réel ou forfait, justificatifs, délai]. Sécurité : [contact et procédure]. Données : [finalité, accès, conservation]. Révision : [propriétaire, date et déclencheurs]. » Testez cette trame sur un voyage courant, une urgence et un cas international avant publication interne.",
+      },
+      {
+        title: "Faut-il un outil pour appliquer la politique ?",
+        content:
+          "Pas nécessairement. Avec peu de voyageurs et un approbateur unique, un formulaire clair et un registre partagé peuvent suffire. Un outil devient utile lorsque plusieurs entités, cartes, devises ou niveaux d'approbation rendent les exceptions difficiles à tracer. Notre recommandation : stabiliser d'abord les règles et les responsables ; choisir ensuite un outil capable de les exécuter sans créer un deuxième processus caché.",
       },
     ],
     faq: [
       {
         question: "Une politique voyage est-elle obligatoire ?",
         answer:
-          "Non, la politique voyage n'est pas une obligation légale. Mais elle est fortement recommandée pour les entreprises de plus de 20 salariés ayant des déplacements réguliers. Sans politique, les dépenses sont souvent 20-30 % plus élevées.",
+          "Aucun texte général n'impose un document portant exactement ce nom. En revanche, l'employeur doit rembourser les frais professionnels justifiés et prendre les mesures nécessaires pour protéger la santé et la sécurité des salariés. Une convention collective, un accord ou un contexte particulier peut ajouter des obligations : le modèle doit donc être vérifié dans votre cadre social et juridique.",
       },
       {
-        question: "À quelle fréquence mettre à jour la politique voyage ?",
+        question: "Les barèmes URSSAF fixent-ils le budget repas et hôtel ?",
         answer:
-          "Il est recommandé de réviser la politique voyage au moins une fois par an, idéalement en début d'exercice fiscal. Les barèmes URSSAF et les tarifs hôteliers évoluent chaque année.",
+          "Non. Ils fixent des limites d'exonération pour certaines allocations forfaitaires. L'entreprise définit sa politique de remboursement et doit préciser si elle rembourse au réel ou au forfait, quelles preuves sont requises et comment elle traite un dépassement.",
       },
       {
-        question: "Comment faire accepter la politique voyage par les collaborateurs ?",
+        question: "Quand faut-il réviser la politique voyage ?",
         answer:
-          "Communiquez sur le pourquoi (maîtrise des coûts, équité), impliquez les représentants du personnel dans la rédaction, prévoyez des exceptions raisonnables et utilisez un outil de self-booking qui simplifie le respect de la politique.",
+          "Fixez une revue datée au moins annuelle et rouvrez le document si les barèmes, fournisseurs, pays couverts, moyens de paiement, accords internes ou incidents changent. Le propriétaire du document doit être nommé afin que la date ne soit pas un simple rafraîchissement éditorial.",
+      },
+    ],
+    relatedGlossary: {
+      slug: "politique-voyage",
+      label: "Définition courte : politique voyage",
+    },
+    sources: [
+      urssafFraisProfessionnelsSource,
+      urssafBaremes2026Source,
+      professionalExpenseReimbursementSource,
+      {
+        label: "Légifrance — Code du travail, article L4121-1",
+        url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035640828/2020-06-24",
+        date: "version en vigueur",
+      },
+      {
+        label: "CNIL — Géolocalisation des véhicules des salariés",
+        url: "https://www.cnil.fr/fr/la-geolocalisation-des-vehicules-des-salaries",
+        date: "consulté le 23 août 2026",
       },
     ],
   },
@@ -315,26 +388,26 @@ export const guides: Guide[] = [
       "Les règles URSSAF pour les déplacements professionnels en 2026 : exonérations, barèmes, grand déplacement et contrôles. Guide pratique pour les employeurs.",
     category: "réglementaire",
     publishedAt: "2026-02-25",
-    updatedAt: "2026-03-01",
+    updatedAt: "2026-08-23",
     readingTime: "9 min",
-    metaTitle: "URSSAF Déplacements Pro 2026",
+    metaTitle: "URSSAF et déplacements professionnels en 2026",
     metaDescription:
-      "Règles URSSAF pour les déplacements professionnels 2026 : barèmes d'exonération, grand déplacement, petit déplacement, contrôles. Guide complet employeur.",
+      "Règles URSSAF pour les déplacements professionnels 2026 : repas, grand déplacement, régime sectoriel du petit déplacement et contrôles.",
     sections: [
       {
-        title: "Petit déplacement vs grand déplacement",
+        title: "Repas en déplacement, petit déplacement sectoriel et grand déplacement",
         content:
-          "L'URSSAF distingue deux situations : le petit déplacement (le salarié peut rentrer chez lui le soir) et le grand déplacement (le salarié est contraint de dormir hors de son domicile). Les barèmes d'exonération sont différents. En petit déplacement, seuls les repas sont indemnisés. En grand déplacement, l'employeur peut verser des indemnités forfaitaires couvrant repas, hébergement et frais accessoires, exonérées de cotisations sociales.",
+          "Les trois catégories générales de repas décrites ci-dessous concernent les allocations forfaitaires de repas selon le lieu et les contraintes du salarié. Elles ne doivent pas être confondues avec le régime URSSAF dit de petit déplacement, qui vise les salariés des entreprises de travail temporaire, des travaux publics, du bâtiment, de la tôlerie, de la chaudronnerie et de la tuyauterie industrielle. En grand déplacement, l'employeur peut verser des indemnités forfaitaires couvrant repas, hébergement et frais accessoires, sous réserve des conditions d'exclusion de l'assiette des cotisations sociales. Cette présentation ne couvre pas les remboursements au réel ni les frais kilométriques.",
       },
       {
-        title: "Barèmes d'exonération petit déplacement 2026",
+        title: "Allocations forfaitaires de repas en déplacement en 2026",
         content:
-          "Repas sur le lieu de travail (panier repas) : 7,30 €. Repas hors des locaux (contrainte de déplacement) : 10,10 €. Repas au restaurant (déplacement loin du lieu de travail) : 20,70 €. Ces montants sont exonérés de cotisations sociales. Au-delà, la fraction excédentaire est soumise à charges. L'employeur peut verser moins ou plus, mais l'exonération est plafonnée à ces montants.",
+          `Repas sur le lieu de travail : ${urssafTravelAllowances2026.mealAtWork}. Salarié en déplacement non contraint de prendre son repas au restaurant : ${urssafTravelAllowances2026.mealWhileTravelling}. Salarié en déplacement contraint de prendre son repas au restaurant : ${urssafTravelAllowances2026.mealAtRestaurant}. Ce sont des limites d'exonération d'allocations forfaitaires, pas des budgets de repas recommandés. Le remboursement au réel obéit à une logique différente et exige les justificatifs correspondants.`,
       },
       {
         title: "Barèmes d'exonération grand déplacement 2026",
         content:
-          "En métropole : repas 20,70 €/repas (41,40 €/jour pour 2 repas), hébergement Paris et grandes villes 74,30 €/nuit, autres villes 55,10 €/nuit. Outre-mer : repas et hébergement majorés (voir barèmes spécifiques). Étranger : barèmes par pays publiés par l'URSSAF. Au-delà de 3 mois de déplacement continu, les indemnités sont réduites de 15 %, puis de 30 % après 24 mois.",
+          `Pour les trois premiers mois en métropole : ${urssafTravelAllowances2026.mealAtRestaurant} par repas (${urssafTravelAllowances2026.twoMeals} pour deux repas), logement avec petit-déjeuner à ${urssafTravelAllowances2026.lodgingParisAndInnerSuburbs} à Paris et dans les départements 92, 93 et 94, ou ${urssafTravelAllowances2026.lodgingOtherDepartments} dans les autres départements. Les montants diminuent après trois mois puis après vingt-quatre mois ; l'Outre-mer et l'étranger suivent des tables spécifiques à consulter dans la source URSSAF.`,
       },
       {
         title: "Indemnités kilométriques et véhicule personnel",
@@ -344,25 +417,32 @@ export const guides: Guide[] = [
       {
         title: "Contrôle URSSAF : ce que vérifient les inspecteurs",
         content:
-          "Lors d'un contrôle, l'URSSAF vérifie : 1) La réalité du déplacement professionnel (preuves de mission). 2) Le respect des barèmes d'exonération. 3) La conservation des justificatifs (factures, billets). 4) La cohérence entre les remboursements et l'activité du salarié. En cas de redressement, les sommes sont requalifiées en salaire et soumises à cotisations + majorations. La prescription est de 3 ans.",
+          "Lors d'un contrôle, l'URSSAF vérifie la réalité du déplacement, les conditions d'application des allocations forfaitaires, les justificatifs requis et la cohérence avec l'activité du salarié. Si une somme présentée comme frais professionnel ne remplit pas les conditions d'exclusion de l'assiette, elle peut être réintégrée dans l'assiette des cotisations. L'article L. 244-3 du Code de la sécurité sociale fixe en principe une prescription de trois ans à compter de la fin de l'année civile au titre de laquelle les cotisations sont dues ; des règles particulières peuvent modifier ce calcul.",
       },
     ],
     faq: [
       {
         question: "Les indemnités de grand déplacement sont-elles imposables ?",
         answer:
-          "Non, les indemnités de grand déplacement exonérées de cotisations URSSAF sont également exonérées d'impôt sur le revenu pour le salarié, dans la limite des barèmes officiels.",
+          "Les allocations spéciales destinées à couvrir les frais inhérents à l'emploi sont exonérées d'impôt lorsqu'elles sont effectivement utilisées conformément à leur objet, selon l'article 81 du Code général des impôts. Pour un forfait de grand déplacement, vérifiez la situation, les justificatifs et les limites applicables : le seul respect d'un barème social ne suffit pas à garantir toutes les conditions fiscales.",
       },
       {
         question: "Comment prouver un grand déplacement ?",
         answer:
-          "Le grand déplacement est justifié si le salarié ne peut pas rentrer chez lui (distance domicile > 50 km ou temps de trajet > 1h30). L'employeur doit pouvoir fournir l'ordre de mission, les réservations et les justificatifs de frais.",
+          "Pour l'URSSAF, le salarié est présumé empêché de regagner chaque jour sa résidence habituelle lorsque deux conditions sont cumulativement remplies : la distance aller entre la résidence et le lieu de déplacement est d'au moins 50 km, et les transports en commun ne permettent pas de parcourir cette distance en moins de 1 h 30. Si ces deux critères ne sont pas réunis, l'employeur peut encore démontrer cet empêchement au regard des circonstances de fait. Conservez l'ordre de mission et les éléments de trajet utiles.",
       },
       {
         question: "Les indemnités forfaitaires sont-elles obligatoires ?",
         answer:
           "Non. L'employeur peut choisir de rembourser au réel (sur justificatifs) plutôt qu'au forfait. Le forfait URSSAF fixe le plafond d'exonération, pas le montant obligatoire de remboursement.",
       },
+    ],
+    sources: [
+      urssafFraisProfessionnelsSource,
+      urssafBaremes2026Source,
+      professionalExpensesOrderSource,
+      socialContributionsLimitationSource,
+      incomeTaxExemptionSource,
     ],
   },
   {

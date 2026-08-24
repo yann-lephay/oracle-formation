@@ -130,6 +130,25 @@ export default async function GlossaireTermPage({
         </div>
       </section>
 
+      {term.relatedGuide && (
+        <section className="section-padding !pt-0">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="max-w-3xl card p-5 border-l-4 border-primary">
+              <p className="text-sm text-muted-foreground mb-3">
+                Cette page définit le terme. Le modèle opérationnel, les exceptions et les sources sont regroupés dans un seul guide.
+              </p>
+              <Link
+                href={`/guides/${term.relatedGuide.slug}`}
+                className="text-primary font-medium inline-flex items-center gap-1"
+              >
+                {term.relatedGuide.label}
+                <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Related solutions */}
       {relatedSolutions.length > 0 && (
         <section className="section-padding bg-muted">

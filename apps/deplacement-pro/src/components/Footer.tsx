@@ -25,8 +25,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
-              Comparez les meilleures solutions de déplacement professionnel en France.
-              TMC, cartes corporate, notes de frais. 100 % indépendant.
+              Des repères pour distinguer réservation, paiement, notes de frais et contrôle
+              avant de comparer les solutions de déplacement professionnel.
             </p>
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
               <MapPin className="w-3.5 h-3.5" strokeWidth={1.5} />
@@ -185,8 +185,8 @@ export function Footer() {
             © {new Date().getFullYear()} DeplacementPro.fr — Tous droits réservés.
           </p>
           <p className="text-xs text-muted-foreground text-center md:text-right max-w-md">
-            DeplacementPro.fr est un comparateur indépendant. Certains liens sont des liens
-            d&apos;affiliation qui nous permettent de financer le site sans surcoût pour vous.
+            Certains liens sont des liens d&apos;affiliation : ils peuvent rémunérer
+            DeplacementPro.fr sans modifier le prix payé par l&apos;utilisateur.
           </p>
         </div>
       </div>

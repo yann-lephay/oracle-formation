@@ -10,6 +10,7 @@ export interface GlossaryTerm {
   metaTitle: string;
   metaDescription: string;
   faq: { question: string; answer: string }[];
+  relatedGuide?: { slug: string; label: string };
 }
 
 export const glossaryTerms: GlossaryTerm[] = [
@@ -358,31 +359,35 @@ export const glossaryTerms: GlossaryTerm[] = [
     slug: "politique-voyage",
     term: "Politique voyage",
     definition:
-      "La politique voyage est un document interne qui définit les règles de déplacement professionnel : classes de transport autorisées, plafonds hôteliers, processus de validation et délais de réservation.",
+      "La politique voyage est un cadre interne qui précise qui réserve, qui paie, qui valide et comment une entreprise traite les exceptions liées aux déplacements professionnels.",
     longDescription:
-      "La politique voyage (ou travel policy) est le cadre de référence qui régit les déplacements professionnels d'une entreprise. Elle définit : les classes de transport autorisées (éco, premium, business selon la durée du vol), les plafonds hôteliers par destination, les moyens de transport privilégiés (train vs avion selon la distance), les délais de réservation anticipée, les circuits de validation (manager, travel manager), et les règles de notes de frais. Une bonne politique voyage équilibre trois objectifs : maîtrise des coûts, confort des voyageurs et conformité réglementaire. Les TMC modernes permettent de paramétrer la politique voyage directement dans le SBT, bloquant ou alertant automatiquement les réservations hors politique. Le taux de conformité (pourcentage de réservations conformes à la politique) est un KPI clé : les meilleures entreprises atteignent 85-95 % de conformité.",
+      "La politique voyage (ou travel policy) sert de référence commune avant, pendant et après une mission. Elle peut couvrir les canaux de réservation, les moyens de paiement, les justificatifs, les approbateurs, les exceptions, la sécurité et les données collectées. Ce document ne remplace ni une convention collective ni les règles sociales applicables. Il ne doit pas non plus confondre les limites d'exonération URSSAF avec des budgets repas ou hôtel recommandés. Le glossaire s'arrête à cette définition ; la trame, la matrice de validation et les sources à jour sont consolidées dans notre guide modèle afin d'éviter deux propriétaires concurrents.",
     category: "Gestion",
     relatedTerms: ["tmc", "self-booking-tool", "duty-of-care", "compliance"],
-    metaTitle: "Politique Voyage d'Entreprise — Guide et Modèle 2026",
+    metaTitle: "Politique voyage d'entreprise — Définition",
     metaDescription:
-      "Qu'est-ce qu'une politique voyage ? Définition, contenu, bonnes pratiques. Guide pour rédiger une travel policy efficace en 2026.",
+      "Définition d'une politique voyage, périmètre et différence entre règles internes, budgets et barèmes URSSAF. Lien vers le modèle complet.",
     faq: [
       {
         question: "Que doit contenir une politique voyage ?",
         answer:
-          "Les éléments essentiels : classes de transport autorisées, plafonds hôteliers par destination, délais de réservation, processus de validation, règles de notes de frais, clauses bleisure et duty of care.",
+          "Au minimum : périmètre, canal de réservation, paiement, approbateur et suppléant, exceptions, justificatifs, sécurité, traitement des données et date de révision. Les seuils dépendent de l'entreprise.",
       },
       {
         question: "Comment faire respecter la politique voyage ?",
         answer:
-          "Le meilleur levier est l'intégration dans le SBT : les réservations hors politique sont bloquées ou signalées automatiquement. Le reporting permet d'identifier les écarts.",
+          "Commencez par des règles applicables, un approbateur disponible et une voie d'exception. Un outil peut ensuite signaler les écarts, mais il ne corrige pas une politique ambiguë.",
       },
       {
         question: "À quelle fréquence revoir sa politique voyage ?",
         answer:
-          "Une fois par an minimum, et à chaque changement significatif (nouveau fournisseur, changement de barèmes URSSAF, évolution réglementaire).",
+          "Planifiez une revue au moins annuelle et rouvrez le document après un changement de barème, fournisseur, pays, moyen de paiement, accord interne ou incident.",
       },
     ],
+    relatedGuide: {
+      slug: "politique-voyage-modele",
+      label: "Construire la politique : modèle et sources 2026",
+    },
   },
   {
     slug: "notes-de-frais",

@@ -1,5 +1,6 @@
 import { blogPosts } from "@/lib/data/blog";
 import { seoConfig } from "@/lib/seo-config";
+import { isRedirectedBlogSlug } from "@/lib/content-owner-policy";
 
 export const dynamic = "force-static";
 export const revalidate = 3600;
@@ -19,7 +20,7 @@ function rssDate(value: string) {
 }
 
 export function GET() {
-  const posts = [...blogPosts].sort((a, b) =>
+  const posts = blogPosts.filter((post) => !isRedirectedBlogSlug(post.slug)).sort((a, b) =>
     b.updatedAt.localeCompare(a.updatedAt)
   );
   const lastBuildDate = posts[0]

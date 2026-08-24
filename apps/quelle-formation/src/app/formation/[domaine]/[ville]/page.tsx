@@ -10,9 +10,20 @@ import { generateBreadcrumbSchema, generateFAQSchema, generateItemListSchema, ge
 import { seoConfig } from "@/lib/seo-config";
 import type { Organisme } from "@/lib/data/organismes";
 import { OrganismeOutboundLink } from "@/components/OrganismeOutboundLink";
+import {
+    getNoindexFormationVilleDescription,
+    isNoindexFormationVille,
+} from "@/lib/formation-ville-index-policy";
 
 interface PageProps {
     params: Promise<{ domaine: string; ville: string }>;
+}
+
+function getNoindexFormationLabel(domaineSlug: string, domaineName: string): string {
+    if (domaineSlug === "langues-anglais") return "Formation d'anglais professionnel";
+    if (domaineSlug === "sante-securite-travail") return "Formation en santé et sécurité au travail";
+    if (domaineSlug === "excel-bureautique") return "Formation Excel et bureautique";
+    return `Formation ${domaineName}`;
 }
 
 export const revalidate = false;
@@ -34,6 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     const { local, remote } = getOrganismesByDomaineAndVille(dSlug, vSlug);
     const totalCount = local.length + remote.length;
+    const isNoindex = isNoindexFormationVille(dSlug, vSlug);
 
     // Keep metaTitle under 42 chars (suffix " | QuelleFormation.fr" = 23 chars → total < 65)
     const MAX_TITLE = 42;
@@ -47,11 +59,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     if (title.length > MAX_TITLE) {
         title = `${domaine.shortName} ${ville.metaSuffix}`;
     }
-    const description = `Comparez ${totalCount} formations ${domaine.name.toLowerCase()} ${ville.metaSuffix} en 2026.${local.length > 0 ? ` ${local.length} organismes avec campus ${ville.metaSuffix}.` : ""} Prix, avis, CPF. Trouvez la meilleure formation.`;
+    if (isNoindex) {
+        title = `${getNoindexFormationLabel(domaine.slug, domaine.name)} ${ville.metaSuffix}`;
+    }
+    const description = isNoindex
+        ? getNoindexFormationVilleDescription(domaine.slug, domaine.name, ville.name)
+        : `Comparez ${totalCount} formations ${domaine.name.toLowerCase()} ${ville.metaSuffix} en 2026.${local.length > 0 ? ` ${local.length} organismes avec campus ${ville.metaSuffix}.` : ""} Prix, avis, CPF. Trouvez la meilleure formation.`;
 
     return {
         title,
         description,
+        robots: isNoindex ? { index: false, follow: true } : undefined,
         alternates: {
             canonical: `${seoConfig.siteUrl}/formation/${dSlug}/${vSlug}`,
         },
@@ -170,8 +188,15 @@ export default async function FormationVillePage({ params }: PageProps) {
 
     const { local, remote } = getOrganismesByDomaineAndVille(dSlug, vSlug);
     const totalCount = local.length + remote.length;
+    const isNoindex = isNoindexFormationVille(dSlug, vSlug);
+    const formationLabel = isNoindex
+        ? getNoindexFormationLabel(domaine.slug, domaine.name)
+        : `Formation ${domaine.name}`;
+    const indexableOtherVilles = topVilles.filter(
+        (v) => v.slug !== vSlug && !isNoindexFormationVille(dSlug, v.slug)
+    );
 
-    const faqItems = [
+    const faqItems = isNoindex ? [] : [
         {
             question: `Combien d'organismes proposent une formation ${domaine.name.toLowerCase()} ${ville.metaSuffix} ?`,
             answer: `${totalCount} organismes proposent des formations ${domaine.name.toLowerCase()} accessibles depuis ${ville.name} : ${local.length} avec un campus sur place (${local.map(o => o.name).join(", ") || "aucun"}) et ${remote.length} en distanciel/e-learning.`,
@@ -195,28 +220,46 @@ export default async function FormationVillePage({ params }: PageProps) {
     return (
         <>
             {/* JSON-LD */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(
-                        generateItemListSchema({
-                            name: `Organismes de formation ${domaine.name} ${ville.metaSuffix}`,
-                            description: `${totalCount} formations ${domaine.name.toLowerCase()} ${ville.metaSuffix}. ${local.length} en présentiel, ${remote.length} en distanciel. Certifiés Qualiopi, éligibles CPF.`,
-                            url: `${seoConfig.siteUrl}/formation/${dSlug}/${vSlug}`,
-                            items: [...local, ...remote].map((o) => ({
-                                name: o.name,
-                                url: `${seoConfig.siteUrl}/organisme/${o.slug}`,
-                            })),
-                        })
-                    ),
-                }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(generateFAQSchema(faqItems)),
-                }}
-            />
+            {!isNoindex && (
+                <>
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify(
+                                generateItemListSchema({
+                                    name: `Organismes de formation ${domaine.name} ${ville.metaSuffix}`,
+                                    description: `${totalCount} formations ${domaine.name.toLowerCase()} ${ville.metaSuffix}. ${local.length} en présentiel, ${remote.length} en distanciel. Certifiés Qualiopi, éligibles CPF.`,
+                                    url: `${seoConfig.siteUrl}/formation/${dSlug}/${vSlug}`,
+                                    items: [...local, ...remote].map((o) => ({
+                                        name: o.name,
+                                        url: `${seoConfig.siteUrl}/organisme/${o.slug}`,
+                                    })),
+                                })
+                            ),
+                        }}
+                    />
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify(generateFAQSchema(faqItems)),
+                        }}
+                    />
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify(
+                                generateCourseSchema({
+                                    name: `Formation ${domaine.name} ${ville.metaSuffix}`,
+                                    description: `Comparatif des ${totalCount} formations ${domaine.name.toLowerCase()} ${ville.metaSuffix} en 2026. Prix : ${domaine.priceRange}. Durée : ${domaine.averageDuration}.`,
+                                    provider: seoConfig.siteName,
+                                    providerUrl: seoConfig.siteUrl,
+                                    url: `${seoConfig.siteUrl}/formation/${dSlug}/${vSlug}`,
+                                })
+                            ),
+                        }}
+                    />
+                </>
+            )}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
@@ -224,7 +267,7 @@ export default async function FormationVillePage({ params }: PageProps) {
                         generateBreadcrumbSchema([
                             { name: "Accueil", url: seoConfig.siteUrl },
                             {
-                                name: `Formation ${domaine.name}`,
+                                name: formationLabel,
                                 url: `${seoConfig.siteUrl}/formation/${dSlug}`,
                             },
                             {
@@ -232,20 +275,6 @@ export default async function FormationVillePage({ params }: PageProps) {
                                 url: `${seoConfig.siteUrl}/formation/${dSlug}/${vSlug}`,
                             },
                         ])
-                    ),
-                }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(
-                        generateCourseSchema({
-                            name: `Formation ${domaine.name} ${ville.metaSuffix}`,
-                            description: `Comparatif des ${totalCount} formations ${domaine.name.toLowerCase()} ${ville.metaSuffix} en 2026. Prix : ${domaine.priceRange}. Durée : ${domaine.averageDuration}.`,
-                            provider: seoConfig.siteName,
-                            providerUrl: seoConfig.siteUrl,
-                            url: `${seoConfig.siteUrl}/formation/${dSlug}/${vSlug}`,
-                        })
                     ),
                 }}
             />
@@ -259,14 +288,16 @@ export default async function FormationVillePage({ params }: PageProps) {
                             <Link href="/" className="hover:text-foreground">Accueil</Link>
                             <span>/</span>
                             <Link href={`/formation/${dSlug}`} className="hover:text-foreground">
-                                Formation {domaine.name}
+                                {formationLabel}
                             </Link>
                             <span>/</span>
                             <span className="text-foreground">{ville.name}</span>
                         </nav>
 
                         <div className="flex items-center gap-3 mb-4">
-                            <span className="badge badge-cpf">Éligible CPF</span>
+                            <span className={`badge ${isNoindex ? "" : "badge-cpf"}`}>
+                                {isNoindex ? "Aucune offre référencée" : "Éligible CPF"}
+                            </span>
                             <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
                                 <MapPin className="w-4 h-4" />
                                 {ville.name}, {ville.region}
@@ -274,11 +305,13 @@ export default async function FormationVillePage({ params }: PageProps) {
                         </div>
 
                         <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-4 text-foreground">
-                            Formation {domaine.name} {ville.metaSuffix}
+                            {formationLabel} {ville.metaSuffix}
                         </h1>
 
                         <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
-                            {local.length > 0 ? (
+                            {isNoindex ? (
+                                <>Nous ne référençons actuellement aucun organisme, sur campus ou à distance, pour cette combinaison. La page reste accessible pour vous orienter, mais elle n&apos;est pas proposée aux moteurs comme résultat de recherche.</>
+                            ) : local.length > 0 ? (
                                 <>{local.length} organisme{local.length > 1 ? "s" : ""} avec campus {ville.metaSuffix} et {remote.length} en distanciel proposent des formations {domaine.name.toLowerCase()} en {new Date().getFullYear()}. Tous certifiés Qualiopi, éligibles CPF.</>
                             ) : (
                                 <>{totalCount} organismes proposent des formations {domaine.name.toLowerCase()} accessibles depuis {ville.name} en {new Date().getFullYear()}, principalement en e-learning et distanciel. Tous certifiés Qualiopi, éligibles CPF.</>
@@ -286,7 +319,7 @@ export default async function FormationVillePage({ params }: PageProps) {
                         </p>
 
                         {/* Key metrics */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                        {!isNoindex && <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                             <div className="glass-card p-4">
                                 <Euro className="w-5 h-5 text-accent mb-1" />
                                 <p className="text-xs text-muted-foreground">Prix moyen</p>
@@ -307,10 +340,29 @@ export default async function FormationVillePage({ params }: PageProps) {
                                 <p className="text-xs text-muted-foreground">En distanciel</p>
                                 <p className="text-sm font-bold text-foreground">{remote.length} organisme{remote.length > 1 ? "s" : ""}</p>
                             </div>
-                        </div>
+                        </div>}
                     </div>
                 </div>
             </section>
+
+            {isNoindex && (
+                <section className="section-padding">
+                    <div className="container-narrow mx-auto px-4">
+                        <div className="max-w-3xl glass-card p-6">
+                            <h2 className="text-xl font-extrabold text-foreground mb-3">
+                                Continuer sans fausse liste locale
+                            </h2>
+                            <p className="text-muted-foreground leading-relaxed mb-5">
+                                Consultez le guide national pour comparer les formats, les financements et les organismes réellement référencés. Une page locale ne sera remise dans le sitemap que lorsqu&apos;une offre accessible et vérifiable y apportera une valeur propre.
+                            </p>
+                            <Link href={`/formation/${dSlug}`} className="btn-primary text-sm inline-flex">
+                                Voir le guide national
+                                <ArrowRight className="w-4 h-4" />
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* Local organismes (with campus) */}
             {local.length > 0 && (
@@ -353,15 +405,13 @@ export default async function FormationVillePage({ params }: PageProps) {
             )}
 
             {/* Other cities */}
-            <section className="section-padding bg-surface">
+            {indexableOtherVilles.length > 0 && <section className="section-padding bg-surface">
                 <div className="container-narrow mx-auto px-4">
                     <h2 className="text-xl font-extrabold text-foreground mb-4">
-                        Formation {domaine.name} dans d&apos;autres villes
+                        {formationLabel} dans d&apos;autres villes
                     </h2>
                     <div className="flex flex-wrap gap-2">
-                        {topVilles
-                            .filter((v) => v.slug !== vSlug)
-                            .map((v) => (
+                        {indexableOtherVilles.map((v) => (
                                 <Link
                                     key={v.slug}
                                     href={`/formation/${dSlug}/${v.slug}`}
@@ -372,10 +422,10 @@ export default async function FormationVillePage({ params }: PageProps) {
                             ))}
                     </div>
                 </div>
-            </section>
+            </section>}
 
             {/* FAQ */}
-            <section className="section-padding">
+            {!isNoindex && <section className="section-padding">
                 <div className="container-narrow mx-auto px-4">
                     <h2 className="text-xl font-extrabold text-foreground mb-6">
                         Questions fréquentes
@@ -394,7 +444,7 @@ export default async function FormationVillePage({ params }: PageProps) {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section>}
         </>
     );
 }

@@ -11,8 +11,15 @@ import {
   generateBreadcrumbSchema,
 } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { SourceCitations } from "@/components/SourceCitations";
 
 export const revalidate = false;
+const truthOnlyGuideSlugs = new Set([
+  "politique-voyage-modele",
+  "indemnites-repas-2026",
+  "urssaf-deplacement",
+]);
+
 export function generateStaticParams() {
   return guides.map((g) => ({ slug: g.slug }));
 }
@@ -47,6 +54,7 @@ export default async function GuidePage({
   const { slug } = await params;
   const guide = getGuideBySlug(slug);
   if (!guide) notFound();
+  const isTruthOnlyGuide = truthOnlyGuideSlugs.has(guide.slug);
 
   return (
     <>
@@ -106,6 +114,21 @@ export default async function GuidePage({
                 <p className="text-muted-foreground leading-relaxed">{section.content}</p>
               </div>
             ))}
+            {guide.relatedGlossary && (
+              <div className="card p-5 border-l-4 border-primary">
+                <p className="text-sm text-muted-foreground mb-3">
+                  Besoin de distinguer la définition du modèle opérationnel ?
+                </p>
+                <Link
+                  href={`/glossaire/${guide.relatedGlossary.slug}`}
+                  className="text-primary font-medium inline-flex items-center gap-1"
+                >
+                  {guide.relatedGlossary.label}
+                  <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+                </Link>
+              </div>
+            )}
+            {guide.sources && <SourceCitations sources={guide.sources} />}
           </div>
         </div>
       </section>
@@ -129,7 +152,7 @@ export default async function GuidePage({
         </div>
       </section>
 
-      {/* Solutions liées */}
+      {!isTruthOnlyGuide && <>{/* Legacy discovery shell retained only outside the truth-only cohort. */}
       <section className="section-padding">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl font-bold font-heading text-foreground mb-6">
@@ -186,6 +209,7 @@ export default async function GuidePage({
           </div>
         </section>
       )}
+      </>}
 
       {/* Autres guides */}
       {(() => {

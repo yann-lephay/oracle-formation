@@ -6,10 +6,10 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "TMC", href: "/tmc" },
-  { label: "Self-booking", href: "/self-booking-tool" },
-  { label: "Cartes Corporate", href: "/carte-corporate" },
-  { label: "Notes de Frais", href: "/notes-de-frais" },
+  { label: "Agences de voyages (TMC)", href: "/tmc" },
+  { label: "Réservation autonome", href: "/self-booking-tool" },
+  { label: "Cartes d'entreprise", href: "/carte-corporate" },
+  { label: "Notes de frais", href: "/notes-de-frais" },
   { label: "Comparer", href: "/comparer" },
   { label: "Guides", href: "/guides" },
   { label: "Glossaire", href: "/glossaire" },

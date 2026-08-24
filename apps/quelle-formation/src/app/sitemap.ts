@@ -8,6 +8,7 @@ import { guides } from "@/lib/data/guides";
 import { personas } from "@/lib/data/personas";
 import { metiers } from "@/lib/data/metiers";
 import { glossaryTerms } from "@/lib/data/glossaire";
+import { isNoindexFormationVille } from "@/lib/formation-ville-index-policy";
 
 const BASE_URL = "https://quelleformationpro.fr";
 
@@ -42,7 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // formation/[domaine]/[ville]
     const villePages: MetadataRoute.Sitemap = domaines.flatMap((d) =>
-        topVilles.map((v) => ({
+        topVilles.filter((v) => !isNoindexFormationVille(d.slug, v.slug)).map((v) => ({
             url: `${BASE_URL}/formation/${d.slug}/${v.slug}`,
             lastModified: now,
             changeFrequency: "weekly" as const,

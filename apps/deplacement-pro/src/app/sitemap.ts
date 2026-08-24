@@ -9,6 +9,7 @@ import { personas } from "@/lib/data/personas";
 import { integrations } from "@/lib/data/integrations";
 import { glossaryTerms } from "@/lib/data/glossaire";
 import { secteurs } from "@/lib/data/secteurs";
+import { isRedirectedBlogSlug } from "@/lib/content-owner-policy";
 
 const BASE_URL = "https://deplacement-pro.fr";
 
@@ -76,7 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
+  const blogPages: MetadataRoute.Sitemap = blogPosts.filter((p) => !isRedirectedBlogSlug(p.slug)).map((p) => ({
     url: `${BASE_URL}/blog/${p.slug}`,
     lastModified: p.updatedAt,
     changeFrequency: "monthly" as const,

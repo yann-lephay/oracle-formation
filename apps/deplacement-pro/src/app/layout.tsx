@@ -30,19 +30,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://deplacement-pro.fr"),
   title: {
     template: "%s | DeplacementPro.fr",
-    default: "Comparateur Déplacements Professionnels 2026",
+    default: "Choisir sa solution de déplacement professionnel",
   },
   description:
-    "Comparez les meilleures solutions de déplacement professionnel : TMC, cartes corporate, notes de frais. Prix, avis, fonctionnalités. Indépendant et gratuit.",
-  keywords: [
-    "déplacement professionnel",
-    "TMC",
-    "travel management",
-    "carte corporate",
-    "notes de frais",
-    "voyage d'affaires",
-    "gestion des dépenses",
-  ],
+    "Distinguez votre besoin — réservation, paiement, notes de frais ou contrôle — puis comparez les solutions de déplacement professionnel dans le bon périmètre.",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -56,9 +47,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "DeplacementPro.fr",
-    title: "Comparateur Déplacements Professionnels 2026",
+    title: "Choisir sa solution de déplacement professionnel",
     description:
-      "Comparez les meilleures solutions de déplacement professionnel : TMC, cartes corporate, notes de frais.",
+      "Une méthode pour distinguer réservation, paiement, notes de frais et contrôle avant de comparer les solutions.",
     images: [
       {
         url: "/og-image.png",
@@ -70,9 +61,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Comparateur Déplacements Professionnels 2026",
+    title: "Choisir sa solution de déplacement professionnel",
     description:
-      "Comparez les meilleures solutions de déplacement professionnel en France.",
+      "Une méthode de choix par besoin, avec limites et sources datées sur les règles sensibles.",
     images: ["/og-image.png"],
   },
   robots: {
