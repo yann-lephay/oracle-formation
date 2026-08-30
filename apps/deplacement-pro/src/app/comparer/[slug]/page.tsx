@@ -112,18 +112,17 @@ export default async function ComparerPage({
               {[sol1, sol2].map((sol) => (
                 <div key={sol.slug} className="card p-5">
                   <div className="flex items-center gap-3 mb-3">
-                    <Image
+                    {sol.logo && <Image
                       src={sol.logo}
                       alt={`Logo ${sol.name}`}
                       width={48}
                       height={48}
                       className="rounded shrink-0"
                       unoptimized
-                    />
+                    />}
                     <div className="flex-1">
                       <h3 className="font-bold font-heading text-foreground">{sol.name}</h3>
                     </div>
-                    <span className="font-mono text-lg font-bold text-foreground">{sol.rating}/5</span>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">{sol.tagline}</p>
                   <div className="flex items-center justify-between text-sm">

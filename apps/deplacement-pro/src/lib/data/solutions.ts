@@ -1,26 +1,26 @@
 export interface Solution {
   slug: string;
   name: string;
-  logo: string;
+  logo?: string;
   tagline: string;
   description: string;
   categories: string[];
-  rating: number;
-  reviewCount: number;
   priceRange: string;
   pricingModel: string;
   targetSize: string;
-  foundedYear: number;
-  headquarters: string;
+  foundedYear?: number;
+  headquarters?: string;
   website: string;
   affiliateUrl: string;
   features: string[];
   pros: string[];
   cons: string[];
-  integrations: string[];
+  integrations?: string[];
   metaTitle: string;
   metaDescription: string;
   faq: { question: string; answer: string }[];
+  verdict?: string;
+  sources?: { label: string; url: string; date: string }[];
 }
 
 export const solutions: Solution[] = [
@@ -32,8 +32,6 @@ export const solutions: Solution[] = [
     description:
       "Navan (ex-TripActions) est une plateforme de gestion des voyages et dépenses d'entreprise qui combine TMC, self-booking et carte corporate. Utilisée par plus de 10 000 entreprises dans le monde, elle propose une expérience utilisateur proche du grand public avec un inventaire exhaustif (trains, vols, hôtels, voitures).",
     categories: ["tmc", "self-booking-tool"],
-    rating: 4.6,
-    reviewCount: 1240,
     priceRange: "Sur devis",
     pricingModel: "Par réservation + abonnement plateforme",
     targetSize: "PME, ETI, Grands comptes (50+ voyageurs)",
@@ -95,71 +93,58 @@ export const solutions: Solution[] = [
   },
   {
     slug: "travelperk",
-    name: "TravelPerk",
-    logo: "/logos/travelperk.png",
-    tagline: "Plateforme de voyage d'affaires flexible et transparente",
+    name: "Perk (ex-TravelPerk)",
+    tagline: "Voyage et dépenses réunis dans une même plateforme",
     description:
-      "TravelPerk est une plateforme de gestion des voyages d'affaires basée à Barcelone. Elle se distingue par sa tarification transparente, son programme FlexiPerk (annulation gratuite) et le plus grand inventaire de voyages au monde. Idéale pour les PME et ETI européennes.",
+      "TravelPerk est devenu Perk en novembre 2025. L'offre réunit désormais la réservation de voyages et la gestion des dépenses. Cette fiche conserve l'ancien nom dans son URL pour répondre aux recherches historiques, mais juge le produit et son périmètre actuel.",
     categories: ["tmc", "self-booking-tool"],
-    rating: 4.5,
-    reviewCount: 980,
-    priceRange: "À partir de 0 € (offre gratuite)",
-    pricingModel: "Freemium + plans payants par utilisateur",
-    targetSize: "TPE, PME, ETI (à partir de 10 voyageurs)",
-    foundedYear: 2015,
-    headquarters: "Barcelone, Espagne (bureaux Paris)",
-    website: "https://travelperk.com",
-    affiliateUrl: "https://travelperk.com",
+    priceRange: "Tarif à vérifier selon le périmètre",
+    pricingModel: "Voyage et dépenses, selon l'offre retenue",
+    targetSize: "Équipes qui veulent relier voyage et dépenses",
+    website: "https://www.perk.com/fr/",
+    affiliateUrl: "https://www.perk.com/fr/",
     features: [
       "Réservation train, avion, hôtel, voiture",
-      "FlexiPerk — annulation flexible",
-      "GreenPerk — compensation carbone",
-      "Politique voyage configurable",
-      "Reporting et analytics",
-      "Application mobile",
-      "Intégrations comptables",
-      "API ouverte",
+      "Règles de politique voyage",
+      "Gestion des dépenses et factures",
+      "Cartes et paiements professionnels",
+      "Reporting voyage et dépenses",
     ],
     pros: [
-      "Tarification transparente avec offre gratuite",
-      "FlexiPerk : annulation jusqu'à 2h avant le départ",
-      "GreenPerk : compensation carbone intégrée",
-      "Interface très intuitive",
-      "Plus grand inventaire mondial",
+      "Parcours voyage et dépenses dans une même offre",
+      "Choix cohérent si les deux périmètres doivent partager règles et données",
+      "Ancien nom TravelPerk encore identifiable pour les équipes en migration",
     ],
     cons: [
-      "Pas de carte corporate intégrée",
-      "Support premium payant",
-      "Gestion des notes de frais limitée (partenariats)",
+      "Périmètre exact, assistance et conditions de modification à vérifier au devis",
+      "Surdimensionné si le besoin se limite à quelques réservations simples",
+      "Le changement de marque ne prouve pas à lui seul la qualité des intégrations existantes",
     ],
-    integrations: [
-      "Xero",
-      "QuickBooks",
-      "Sage",
-      "Slack",
-      "BambooHR",
-      "Personio",
-      "Expensify",
-    ],
-    metaTitle: "Avis TravelPerk 2026 — Prix & Avis",
+    metaTitle: "Perk (ex-TravelPerk) : analyse 2026",
     metaDescription:
-      "Avis complet sur TravelPerk : tarifs transparents, FlexiPerk, GreenPerk. Comparatif avec Navan et SAP Concur. Guide 2026.",
+      "TravelPerk est devenu Perk. Analyse du nouveau périmètre voyage et dépenses, du bon cas d'usage et des points à vérifier au devis.",
     faq: [
       {
-        question: "TravelPerk est-il gratuit ?",
+        question: "TravelPerk s'appelle-t-il toujours TravelPerk ?",
         answer:
-          "Oui, TravelPerk propose une offre gratuite pour les petites équipes avec accès à l'inventaire complet. Les plans payants (à partir de 99 €/mois) ajoutent la politique voyage, le reporting avancé et FlexiPerk.",
+          "Non. TravelPerk a annoncé son passage à la marque Perk en novembre 2025. L'ancien nom reste utile pour retrouver le produit et comprendre les migrations en cours.",
       },
       {
-        question: "Qu'est-ce que FlexiPerk ?",
+        question: "Quel est le périmètre actuel de Perk ?",
         answer:
-          "FlexiPerk est un programme d'annulation flexible qui permet d'annuler n'importe quelle réservation jusqu'à 2 heures avant le départ avec un remboursement minimum de 80 %.",
+          "Perk présente aujourd'hui une plateforme qui réunit voyage et dépenses. Il faut néanmoins faire préciser au devis les modules, l'assistance et les conditions de modification incluses.",
       },
       {
-        question: "TravelPerk fonctionne-t-il en France ?",
+        question: "Perk est-il le meilleur choix pour toutes les PME ?",
         answer:
-          "Oui, TravelPerk a un bureau à Paris et propose l'inventaire SNCF complet, ainsi que tous les vols, hôtels et locations de voiture en France et dans le monde.",
+          "Non. Perk a du sens si voyage et dépenses doivent fonctionner ensemble. Pour quelques réservations simples, un outil plus léger ou un cadre de réservation directe peut suffire.",
       },
+    ],
+    verdict:
+      "Perk gagne quand voyage et dépenses doivent partager règles, paiements et reporting. Pour une petite équipe qui réserve peu, ce périmètre peut ajouter plus de processus que de valeur.",
+    sources: [
+      { label: "Perk — TravelPerk devient Perk", url: "https://www.perk.com/fr/press-release/travelperk-devient-perk-la-plateforme-intelligente-qui-propulse-le-vrai-travail/", date: "30 août 2026" },
+      { label: "Perk — présentation de la plateforme", url: "https://www.perk.com/welcome-perk/", date: "30 août 2026" },
     ],
   },
   {
@@ -170,8 +155,6 @@ export const solutions: Solution[] = [
     description:
       "Mooncard est une solution française de carte corporate qui automatise la gestion des dépenses professionnelles. Chaque paiement est automatiquement catégorisé, le justificatif est dématérialisé et la TVA est récupérée. Solution 100 % française, conforme RGPD.",
     categories: ["carte-corporate", "notes-de-frais"],
-    rating: 4.4,
-    reviewCount: 650,
     priceRange: "À partir de 4 €/carte/mois",
     pricingModel: "Par carte active par mois",
     targetSize: "TPE, PME, ETI",
@@ -239,8 +222,6 @@ export const solutions: Solution[] = [
     description:
       "Spendesk est une plateforme française de gestion des dépenses qui combine cartes corporate, validation des achats, notes de frais et pré-comptabilité. Utilisée par plus de 4 000 entreprises en Europe, elle s'adresse aux PME et ETI qui souhaitent centraliser et contrôler leurs dépenses.",
     categories: ["carte-corporate", "notes-de-frais"],
-    rating: 4.5,
-    reviewCount: 870,
     priceRange: "Sur devis",
     pricingModel: "Par utilisateur par mois",
     targetSize: "PME et ETI (20-1000 salariés)",
@@ -308,8 +289,6 @@ export const solutions: Solution[] = [
     description:
       "SAP Concur est le leader mondial de la gestion intégrée des voyages et des frais professionnels. Utilisé par plus de 46 000 entreprises, il offre une suite complète : Concur Travel (réservation), Concur Expense (notes de frais) et Concur Invoice (factures). Solution de référence pour les grandes entreprises.",
     categories: ["tmc", "notes-de-frais"],
-    rating: 4.1,
-    reviewCount: 2100,
     priceRange: "À partir de 8 €/utilisateur/mois",
     pricingModel: "Par utilisateur par mois + modules",
     targetSize: "ETI et Grands comptes (200+ salariés)",
@@ -371,71 +350,57 @@ export const solutions: Solution[] = [
   },
   {
     slug: "expensya",
-    name: "Expensya",
-    logo: "/logos/expensya.png",
-    tagline: "Gestion des notes de frais simple et intelligente",
+    name: "Medius Expense (ex-Expensya)",
+    tagline: "Gestion des notes de frais désormais portée par Medius",
     description:
-      "Expensya est une solution franco-tunisienne de gestion des notes de frais qui mise sur la simplicité et l'intelligence artificielle. Son OCR avancé reconnaît automatiquement les justificatifs, et ses règles de politique de dépenses automatisent les contrôles de conformité. Solution accessible dès 4,99 €/mois.",
+      "Expensya devient Medius Expense. L'éditeur précise que le produit ne change pas du seul fait de cette transition de marque. Cette fiche conserve l'ancien nom dans son URL, mais évalue le produit actuel et les conditions de migration à vérifier.",
     categories: ["notes-de-frais"],
-    rating: 4.3,
-    reviewCount: 520,
-    priceRange: "À partir de 4,99 €/utilisateur/mois",
-    pricingModel: "Par utilisateur par mois",
-    targetSize: "TPE, PME, ETI",
-    foundedYear: 2014,
-    headquarters: "Paris, France / Tunis, Tunisie",
-    website: "https://expensya.com",
-    affiliateUrl: "https://expensya.com",
+    priceRange: "Tarif à vérifier auprès de Medius",
+    pricingModel: "Abonnement selon utilisateurs et périmètre",
+    targetSize: "Équipes qui veulent encadrer et contrôler les dépenses",
+    website: "https://www.medius.com/solutions/expense/",
+    affiliateUrl: "https://www.medius.com/solutions/expense/",
     features: [
-      "OCR intelligent (justificatifs)",
-      "Politique de dépenses configurable",
-      "Workflow de validation",
-      "Indemnités kilométriques automatiques",
-      "Export comptable multi-format",
-      "Gestion multi-devises",
-      "Application mobile",
-      "Carte Expensya (option)",
+      "Capture et traitement des dépenses",
+      "Règles de politique de dépenses",
+      "Circuit de validation",
+      "Remboursement et visibilité sur les dépenses",
     ],
     pros: [
-      "OCR très performant",
-      "Tarif accessible dès 4,99 €/mois",
-      "Calcul automatique des indemnités kilométriques",
-      "Interface simple et rapide à prendre en main",
-      "Support en français réactif",
+      "Périmètre centré sur la dépense collaborateur",
+      "Continuité annoncée du produit pendant le changement de marque",
+      "À retenir si la gestion des dépenses prime sur la réservation voyage",
     ],
     cons: [
-      "Périmètre limité aux notes de frais (pas de carte intégrée de base)",
-      "Reporting moins avancé que SAP Concur",
-      "Intégrations ERP limitées par rapport à Concur",
+      "Prix, modules et accompagnement à confirmer au devis",
+      "La transition d'application doit être préparée par les clients existants",
+      "Ce n'est pas un substitut automatique à une suite voyage complète",
     ],
-    integrations: [
-      "Sage",
-      "Cegid",
-      "QuickBooks",
-      "Xero",
-      "Silae",
-      "Pennylane",
-      "Dynamics 365",
-    ],
-    metaTitle: "Avis Expensya 2026 — Prix & Avis",
+    metaTitle: "Medius Expense (ex-Expensya) : analyse 2026",
     metaDescription:
-      "Avis complet sur Expensya : OCR intelligent, indemnités kilométriques, tarifs. Comparatif avec SAP Concur. Guide notes de frais 2026.",
+      "Expensya devient Medius Expense. Analyse du périmètre actuel, de la transition et des points à vérifier avant de choisir.",
     faq: [
       {
-        question: "Combien coûte Expensya ?",
+        question: "Expensya est-il devenu Medius Expense ?",
         answer:
-          "Expensya propose des plans à partir de 4,99 €/utilisateur/mois (plan Starter). Les plans Professional et Enterprise ajoutent des fonctionnalités avancées (workflow multi-niveaux, intégrations ERP, carte).",
+          "Oui. L'éditeur annonce le passage de la marque Expensya à Medius Expense et précise que les fonctionnalités du produit ne changent pas du seul fait de cette transition.",
       },
       {
-        question: "Expensya gère-t-il les indemnités kilométriques ?",
+        question: "Quel est le prix de Medius Expense ?",
         answer:
-          "Oui, Expensya calcule automatiquement les indemnités kilométriques selon le barème fiscal en vigueur (2026). Il suffit de renseigner le trajet, Expensya applique le bon taux.",
+          "Le tarif doit être vérifié auprès de Medius selon le nombre d'utilisateurs, les modules et l'accompagnement retenus. Cette fiche ne reprend pas l'ancien prix Expensya comme un prix actuel.",
       },
       {
-        question: "Quelle est la différence entre Expensya et SAP Concur ?",
+        question: "Quand choisir Medius Expense plutôt qu'une suite voyage ?",
         answer:
-          "Expensya est plus simple, plus rapide à déployer et plus accessible en prix. SAP Concur offre un périmètre plus large (voyages + factures + notes de frais) et une meilleure intégration avec les ERP SAP.",
+          "Medius Expense est à examiner quand le besoin principal est d'encadrer, traiter et rembourser les dépenses. Une suite voyage reste plus cohérente si la réservation et l'assistance sont le cœur du besoin.",
       },
+    ],
+    verdict:
+      "Medius Expense gagne pour un besoin centré sur la dépense collaborateur. Il perd face à une suite voyage intégrée quand réservation, assistance et dépense doivent former un seul parcours.",
+    sources: [
+      { label: "Medius — Expensya devient Medius Expense", url: "https://help.expensya.com/l/en/article/yfn65x0xoj-expensya-is-becoming-medius-expense", date: "30 août 2026" },
+      { label: "Medius — solution Expense", url: "https://www.medius.com/solutions/expense/", date: "30 août 2026" },
     ],
   },
 ];

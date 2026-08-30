@@ -22,6 +22,7 @@ export function fitSeoTitle(value: string) {
   const title = normalize(value);
   if (title.length > TITLE_MAX) return truncateAtWord(title, TITLE_MAX, TITLE_MIN);
   if (title.length >= TITLE_MIN) return title;
+  if (/\b2026\b/.test(title)) return title;
 
   for (const suffix of [" — guide 2026", " — déplacements pro", " — comparatif"]) {
     const candidate = `${title}${suffix}`;

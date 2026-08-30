@@ -13,6 +13,10 @@ export interface Ville {
     content: string;
   }[];
   faq: { question: string; answer: string }[];
+  evidenceSafe?: boolean;
+  decisionCriteria?: string[];
+  counterCase?: string;
+  sources?: { label: string; url: string; date: string }[];
 }
 
 export const villes: Ville[] = [
@@ -20,57 +24,69 @@ export const villes: Ville[] = [
     slug: "paris",
     name: "Paris",
     description:
-      "Paris est le premier pôle d'affaires français avec plus de 30 millions de nuitées professionnelles par an. Guide complet pour optimiser vos déplacements vers la capitale.",
-    population: "2,1 millions (12,3M aire urbaine)",
-    businessTravelers: "30M+ nuitées pro/an",
-    avgHotelPrice: "145 €/nuit (3 étoiles)",
+      "À Paris, le bon trajet et le bon hôtel se choisissent d'abord par rapport au lieu exact du rendez-vous. Ce guide tranche entre gare, aéroport, quartier et nuitée sans inventer un budget universel.",
+    population: "Paris et proche couronne selon le rendez-vous",
+    businessTravelers: "Volume non utilisé pour décider",
+    avgHotelPrice: "Prix aux dates réelles",
     keyFacts: [
-      "1er aéroport européen (CDG + Orly)",
-      "6 gares TGV",
-      "Quartier d'affaires La Défense",
-      "30M+ nuitées professionnelles/an",
+      "Rendez-vous proche d'une gare : le train garde l'avantage porte à porte",
+      "Rendez-vous près d'un aéroport : comparer le trajet final, pas seulement le billet",
+      "Plusieurs sites dans la journée : choisir un point de correspondance plutôt qu'une adresse prestigieuse",
+      "Réunion matinale : une nuit proche du rendez-vous peut éviter un transfert fragile",
     ],
     metaTitle: "Déplacement professionnel à Paris — Guide 2026",
     metaDescription:
-      "Guide complet pour vos déplacements professionnels à Paris : transports, hébergement, quartiers d'affaires, budget. Conseils et tarifs 2026.",
+      "Choisissez train ou avion, quartier et hébergement à Paris selon le lieu du rendez-vous, les correspondances et le coût total vérifié.",
     sections: [
       {
         title: "Se rendre à Paris",
         content:
-          "Paris est accessible par TGV depuis toutes les grandes villes françaises (Lyon 2h, Marseille 3h, Bordeaux 2h). Les aéroports Charles de Gaulle (CDG) et Orly desservent les destinations internationales. Pour les déplacements domestiques, privilégiez le train : plus rapide porte-à-porte et moins émetteur de CO₂.",
+          "Le train gagne quand la gare de départ et le rendez-vous parisien forment un trajet direct et prévisible. L'avion peut rester cohérent pour une correspondance internationale ou un point de départ mal relié au rail. Comparez toujours le temps porte à porte, les changements et la marge nécessaire avant le rendez-vous.",
       },
       {
         title: "Se déplacer dans Paris",
         content:
-          "Le métro et le RER sont les moyens les plus efficaces pour se déplacer dans Paris. Le pass Navigo Liberté+ (à l'usage) est idéal pour les voyageurs occasionnels. Les VTC (Uber, Bolt) sont pratiques le soir. Évitez la voiture : stationnement difficile et coûteux (4-6 €/heure).",
+          "Le métro, le RER, le tram et le bus couvrent des usages différents. Vérifiez le titre de transport et l'accès aéroport adaptés au trajet réel sur Île-de-France Mobilités. Un VTC se justifie surtout pour un horaire tardif, du matériel ou une liaison mal couverte ; la voiture ajoute souvent stationnement et incertitude.",
       },
       {
         title: "Où loger ?",
         content:
-          "Quartiers d'affaires recommandés : La Défense (à partir de 110 €/nuit), 8e arrondissement (150 €+), Opéra/9e (120 €+). Pour un meilleur rapport qualité-prix, visez le 12e ou le 15e arrondissement (90-120 €). Réservez via votre TMC pour bénéficier des tarifs négociés.",
+          "Logez près du rendez-vous principal ou sur une ligne directe vers lui. La Défense est logique pour une mission à La Défense ; Opéra ne l'est pas par défaut. Pour plusieurs rendez-vous, privilégiez une correspondance simple. Comparez le tarif total et les conditions d'annulation au moment de réserver.",
       },
       {
-        title: "Budget moyen",
+        title: "Construire le budget",
         content:
-          "Budget journée type à Paris (2026) : hébergement 3 étoiles → 145 €, repas midi → 15-20 €, repas soir → 25-35 €, transports urbains → 10-15 €. Soit un budget total d'environ 200-215 €/jour hors transport aller-retour.",
+          "Il n'existe pas de budget parisien fiable sans dates, quartier et politique interne. Construisez-le avec des prix consultés pour le trajet, l'hôtel annulable si nécessaire, les transferts, les repas et une marge explicite. Une moyenne générique masque les périodes de salon et les écarts de quartier.",
       },
     ],
     faq: [
       {
-        question: "Quel est le budget moyen d'un déplacement pro à Paris ?",
+        question: "Comment budgéter un déplacement professionnel à Paris ?",
         answer:
-          "Comptez environ 200-215 €/jour (hors transport A/R) pour un hébergement 3 étoiles, 2 repas et les transports urbains. Soit environ 600-650 € pour un déplacement de 3 jours.",
+          "Relevez les prix aux dates du voyage et additionnez trajet, hôtel, transferts, repas et marge de modification. Un montant moyen non daté n'est pas une base de décision fiable.",
       },
       {
         question: "Faut-il prendre le train ou l'avion pour aller à Paris ?",
         answer:
-          "Pour les trajets < 4h en TGV (Lyon, Bordeaux, Lille, Strasbourg), le train est plus rapide porte-à-porte et moins émetteur de CO₂. L'avion reste pertinent pour les trajets > 4h (Nice, Toulouse) ou les correspondances internationales.",
+          "Le train est le choix de départ lorsque le trajet gare à rendez-vous est direct. L'avion reste un contre-cas pour une correspondance internationale ou un départ mal relié au rail. Comparez le porte-à-porte plutôt qu'une durée affichée seule.",
       },
       {
         question: "Où sont les principaux quartiers d'affaires à Paris ?",
         answer:
-          "La Défense (1er quartier d'affaires européen), le Triangle d'Or (8e), Opéra/Bourse (2e/9e) et la Gare de Lyon/Bercy (12e). Choisissez votre hébergement en fonction de vos rendez-vous.",
+          "Les rendez-vous sont répartis entre Paris et sa proche couronne, notamment La Défense, Opéra/Bourse et Bercy. L'adresse exacte du client doit décider du quartier d'hébergement, pas une liste générique de quartiers réputés.",
       },
+    ],
+    evidenceSafe: true,
+    decisionCriteria: [
+      "Temps porte à porte jusqu'au rendez-vous, changements et marge de retard",
+      "Ligne directe entre hôtel, réunion principale et éventuel second site",
+      "Tarif total consulté aux dates réelles et conditions de modification",
+      "Titre de transport adapté, notamment pour les liaisons aéroport",
+    ],
+    counterCase:
+      "Un hôtel central n'est pas toujours le meilleur choix : une nuit près du rendez-vous matinal peut coûter moins cher au total et supprimer un transfert à risque.",
+    sources: [
+      { label: "Île-de-France Mobilités — titres pour les aéroports", url: "https://www.iledefrance-mobilites.fr/aide-et-contacts/titres-unitaires-tarifs-reduits/quels-tickets-pour-l-aeroport", date: "30 août 2026" },
     ],
   },
   {

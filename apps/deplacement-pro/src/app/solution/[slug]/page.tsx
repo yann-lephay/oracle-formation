@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { Star, ExternalLink, Check, X as XIcon, ArrowRight } from "lucide-react";
+import { ExternalLink, Check, X as XIcon, ArrowRight } from "lucide-react";
 import { solutions, getSolutionBySlug } from "@/lib/data/solutions";
 import { comparisons } from "@/lib/data/comparisons";
 import { categories } from "@/lib/data/categories";
@@ -105,28 +105,21 @@ export default async function SolutionPage({
               })}
             </div>
 
-            <Image
+            {sol.logo && <Image
               src={sol.logo}
               alt={`Logo ${sol.name}`}
               width={120}
               height={40}
               className="rounded mb-4"
               unoptimized
-            />
+            />}
 
             <h1 className="text-3xl md:text-4xl font-extrabold font-heading text-foreground mb-2" data-speakable>
-              Avis {sol.name} — {new Date().getFullYear()}
+              Analyse documentaire {sol.name} — {new Date().getFullYear()}
             </h1>
             <p className="text-lg text-muted-foreground mb-4">{sol.tagline}</p>
 
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-1.5">
-                <Star className="w-5 h-5 text-accent fill-accent" strokeWidth={1.5} />
-                <span className="font-mono text-lg font-bold text-foreground">{sol.rating}</span>
-                <span className="text-sm text-muted-foreground">({sol.reviewCount} avis)</span>
-              </div>
-              <span className="font-mono text-sm text-muted-foreground">{sol.priceRange}</span>
-            </div>
+            <p className="font-mono text-sm text-muted-foreground">{sol.priceRange}</p>
           </div>
         </div>
       </section>
@@ -136,9 +129,9 @@ export default async function SolutionPage({
         <div className="max-w-6xl mx-auto px-4">
           <div className="card p-6 border-l-4 border-primary verdict">
             <p className="text-lg leading-relaxed text-foreground" data-speakable>
-              <strong>{sol.name}</strong> est noté <strong>{sol.rating}/5</strong> sur la base de {sol.reviewCount} avis.
-              {" "}Tarification : {sol.priceRange}.
-              {" "}{sol.tagline}
+              {sol.verdict ?? (
+                <><strong>{sol.name}</strong> répond à un périmètre précis : {sol.tagline.toLowerCase()}. Le prix et les conditions doivent être vérifiés sur l&apos;offre retenue.</>
+              )}
             </p>
           </div>
         </div>
@@ -231,14 +224,14 @@ export default async function SolutionPage({
                     <span className="text-muted-foreground">Cible</span>
                     <span className="text-foreground text-right max-w-[60%]">{sol.targetSize}</span>
                   </div>
-                  <div className="flex justify-between">
+                  {sol.foundedYear && <div className="flex justify-between">
                     <span className="text-muted-foreground">Fondé</span>
                     <span className="font-mono text-foreground">{sol.foundedYear}</span>
-                  </div>
-                  <div className="flex justify-between">
+                  </div>}
+                  {sol.headquarters && <div className="flex justify-between">
                     <span className="text-muted-foreground">Siège</span>
                     <span className="text-foreground text-right max-w-[60%]">{sol.headquarters}</span>
-                  </div>
+                  </div>}
                 </div>
                 <a
                   href={sol.affiliateUrl}
@@ -255,7 +248,7 @@ export default async function SolutionPage({
                 </a>
               </div>
 
-              <div className="card p-5">
+              {sol.integrations && <div className="card p-5">
                 <h3 className="font-semibold text-foreground mb-3">Intégrations</h3>
                 <div className="flex flex-wrap gap-1.5">
                   {sol.integrations.map((i) => (
@@ -264,7 +257,7 @@ export default async function SolutionPage({
                     </span>
                   ))}
                 </div>
-              </div>
+              </div>}
             </div>
           </div>
         </div>
@@ -275,13 +268,9 @@ export default async function SolutionPage({
         <p className="text-xs text-muted-foreground mt-8 mb-2">
           Dernière mise à jour : {BUILD_DATE_FR}
         </p>
-        <SourceCitations
-          sources={[
-            { label: "URSSAF — Barèmes frais professionnels", url: "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/frais-professionnels.html", date: "2026" },
-            { label: "Légifrance — Code du travail", url: "https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006072050/", date: "2026" },
-            { label: "DGCCRF — Marchés publics", url: "https://www.economie.gouv.fr/daj/marches-publics", date: "2025" },
-          ]}
-        />
+        <SourceCitations sources={sol.sources ?? [
+          { label: `${sol.name} — site officiel`, url: sol.website, date: "30 août 2026" },
+        ]} />
       </div>
 
       {/* Related comparisons */}

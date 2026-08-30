@@ -2,12 +2,13 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { categories, getCategoryBySlug } from "@/lib/data/categories";
 import { getSolutionsByCategory } from "@/lib/data/solutions";
 import { guides } from "@/lib/data/guides";
 import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
+import { SourceCitations } from "@/components/SourceCitations";
 
 export const revalidate = false;
 export function generateStaticParams() {
@@ -81,7 +82,7 @@ export default async function CategoriePage({
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
             <div className="card p-4">
-              <p className="text-xs text-muted-foreground mb-1">Prix moyen</p>
+              <p className="text-xs text-muted-foreground mb-1">{cat.evidenceSafe ? "Coût à établir" : "Prix moyen"}</p>
               <p className="font-mono font-bold text-foreground">{cat.priceRange}</p>
             </div>
             <div className="card p-4">
@@ -95,7 +96,7 @@ export default async function CategoriePage({
           </div>
 
           <h2 className="text-2xl font-bold font-heading text-foreground mb-6">
-            Les meilleures solutions {cat.shortName}
+            Solutions {cat.shortName} à examiner
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -106,31 +107,31 @@ export default async function CategoriePage({
                 className="card p-5 flex flex-col group"
               >
                 <div className="flex items-start gap-3 mb-3">
-                  <Image
+                  {sol.logo && <Image
                     src={sol.logo}
                     alt={`Logo ${sol.name}`}
                     width={40}
                     height={40}
                     className="rounded shrink-0"
                     unoptimized
-                  />
+                  />}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
                       <h3 className="font-bold font-heading text-foreground group-hover:text-primary transition-colors">
                         {sol.name}
                       </h3>
-                      <div className="flex items-center gap-1 shrink-0">
-                        <Star className="w-4 h-4 text-accent fill-accent" strokeWidth={1.5} />
-                        <span className="font-mono text-sm font-semibold">{sol.rating}</span>
-                      </div>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-0.5">{sol.tagline}</p>
+                    <p className="text-sm text-muted-foreground mt-0.5">
+                      {cat.evidenceSafe ? "Périmètre et conditions à confirmer sur l'offre retenue" : sol.tagline}
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center justify-between pt-3 border-t border-border">
-                  <span className="font-mono text-sm text-foreground">{sol.priceRange}</span>
+                  <span className="font-mono text-sm text-foreground">
+                    {cat.evidenceSafe ? "Tarif à vérifier" : sol.priceRange}
+                  </span>
                   <span className="text-xs text-primary font-medium flex items-center gap-1">
-                    Voir l&apos;avis
+                    Voir l&apos;analyse
                     <ArrowRight className="w-3.5 h-3.5" strokeWidth={1.5} />
                   </span>
                 </div>
@@ -139,6 +140,25 @@ export default async function CategoriePage({
           </div>
         </div>
       </section>
+
+      {cat.decisionCriteria && cat.counterCase && (
+        <section className="section-padding bg-muted">
+          <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="lg:col-span-2">
+              <h2 className="text-2xl font-bold font-heading text-foreground mb-4">Ce qui doit départager les offres</h2>
+              <ul className="space-y-3">
+                {cat.decisionCriteria.map((criterion) => (
+                  <li key={criterion} className="card p-4 text-sm text-muted-foreground">{criterion}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="card p-5 h-fit">
+              <h2 className="font-bold font-heading text-foreground mb-3">Le contre-cas</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">{cat.counterCase}</p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Use cases */}
       <section className="section-padding bg-muted">
@@ -203,6 +223,7 @@ export default async function CategoriePage({
 
       {/* FAQ */}
       {(() => {
+        if (cat.evidenceSafe) return null;
         const allFaq = sols.flatMap((s) => s.faq);
         if (allFaq.length === 0) return null;
         return (
@@ -229,6 +250,12 @@ export default async function CategoriePage({
           </section>
         );
       })()}
+
+      {cat.sources && (
+        <div className="max-w-6xl mx-auto px-4 pb-10">
+          <SourceCitations sources={cat.sources} />
+        </div>
+      )}
     </>
   );
 }

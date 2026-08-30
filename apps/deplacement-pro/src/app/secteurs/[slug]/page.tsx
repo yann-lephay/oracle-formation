@@ -177,7 +177,6 @@ export default async function SecteurPage({
                   <h3 className="font-bold font-heading text-foreground group-hover:text-primary transition-colors">
                     {sol.name}
                   </h3>
-                  <span className="font-mono text-xs text-muted-foreground">{sol.rating}/5</span>
                 </div>
                 <p className="text-sm text-muted-foreground mb-3">
                   {(sol as { reason: string }).reason}

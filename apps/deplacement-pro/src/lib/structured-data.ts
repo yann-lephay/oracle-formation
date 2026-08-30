@@ -95,20 +95,6 @@ export function generateSolutionSchema(solution: Solution) {
     ...(solution.logo && {
       image: `${seoConfig.siteUrl}${solution.logo}`,
     }),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: solution.rating,
-      bestRating: 5,
-      worstRating: 1,
-      ratingCount: solution.reviewCount,
-    },
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "EUR",
-      description: solution.priceRange,
-      category: solution.pricingModel,
-    },
   };
 }
 

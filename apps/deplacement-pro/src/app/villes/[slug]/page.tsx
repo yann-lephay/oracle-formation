@@ -1,13 +1,14 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { MapPin, ArrowRight, Star } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
 import { villes, getVilleBySlug } from "@/lib/data/villes";
 import { solutions } from "@/lib/data/solutions";
 import { comparisons } from "@/lib/data/comparisons";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
 import { fitSeoDescription, fitSeoTitle } from "@/lib/metadata";
+import { SourceCitations } from "@/components/SourceCitations";
 
 export const revalidate = false;
 export function generateStaticParams() {
@@ -89,24 +90,34 @@ export default async function VillePage({
       {/* Key facts */}
       <section className="section-padding !pb-8">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="card p-4 text-center">
-              <p className="text-xs text-muted-foreground mb-1">Population</p>
-              <p className="font-mono font-bold text-foreground text-sm">{ville.population}</p>
+          {ville.evidenceSafe && ville.decisionCriteria ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {ville.decisionCriteria.map((criterion) => (
+                <div key={criterion} className="card p-4">
+                  <p className="text-sm font-medium text-foreground">{criterion}</p>
+                </div>
+              ))}
             </div>
-            <div className="card p-4 text-center">
-              <p className="text-xs text-muted-foreground mb-1">Nuitées pro/an</p>
-              <p className="font-mono font-bold text-foreground text-sm">{ville.businessTravelers}</p>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="card p-4 text-center">
+                <p className="text-xs text-muted-foreground mb-1">Population</p>
+                <p className="font-mono font-bold text-foreground text-sm">{ville.population}</p>
+              </div>
+              <div className="card p-4 text-center">
+                <p className="text-xs text-muted-foreground mb-1">Nuitées pro/an</p>
+                <p className="font-mono font-bold text-foreground text-sm">{ville.businessTravelers}</p>
+              </div>
+              <div className="card p-4 text-center">
+                <p className="text-xs text-muted-foreground mb-1">Hôtel 3★ moyen</p>
+                <p className="font-mono font-bold text-foreground text-sm">{ville.avgHotelPrice}</p>
+              </div>
+              <div className="card p-4 text-center">
+                <p className="text-xs text-muted-foreground mb-1">Info clé</p>
+                <p className="text-xs font-medium text-foreground">{ville.keyFacts[0]}</p>
+              </div>
             </div>
-            <div className="card p-4 text-center">
-              <p className="text-xs text-muted-foreground mb-1">Hôtel 3★ moyen</p>
-              <p className="font-mono font-bold text-foreground text-sm">{ville.avgHotelPrice}</p>
-            </div>
-            <div className="card p-4 text-center">
-              <p className="text-xs text-muted-foreground mb-1">Info clé</p>
-              <p className="text-xs font-medium text-foreground">{ville.keyFacts[0]}</p>
-            </div>
-          </div>
+          )}
         </div>
       </section>
 
@@ -126,8 +137,19 @@ export default async function VillePage({
         </div>
       </section>
 
+      {ville.counterCase && (
+        <section className="pb-12">
+          <div className="max-w-3xl mx-auto px-4">
+            <div className="card p-5 border-l-4 border-primary">
+              <h2 className="font-bold font-heading text-foreground mb-2">Le contre-cas</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">{ville.counterCase}</p>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Solutions recommandées */}
-      <section className="section-padding bg-muted">
+      {!ville.evidenceSafe && <section className="section-padding bg-muted">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl font-bold font-heading text-foreground mb-6">
             Solutions recommandées pour {ville.name}
@@ -143,16 +165,12 @@ export default async function VillePage({
                   <h3 className="font-bold font-heading text-foreground group-hover:text-primary transition-colors">
                     {sol.name}
                   </h3>
-                  <div className="flex items-center gap-1 shrink-0">
-                    <Star className="w-4 h-4 text-accent fill-accent" strokeWidth={1.5} />
-                    <span className="font-mono text-sm font-semibold">{sol.rating}</span>
-                  </div>
                 </div>
                 <p className="text-xs text-muted-foreground mb-3">{sol.tagline}</p>
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs text-muted-foreground">{sol.priceRange}</span>
                   <span className="text-xs text-primary font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Voir l&apos;avis
+                    Voir l&apos;analyse
                     <ArrowRight className="w-3.5 h-3.5" strokeWidth={1.5} />
                   </span>
                 </div>
@@ -160,10 +178,10 @@ export default async function VillePage({
             ))}
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* Comparatifs */}
-      {comparisons.length > 0 && (
+      {!ville.evidenceSafe && comparisons.length > 0 && (
         <section className="section-padding">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-2xl font-bold font-heading text-foreground mb-6">
@@ -208,6 +226,12 @@ export default async function VillePage({
           </div>
         </div>
       </section>
+
+      {ville.sources && (
+        <div className="max-w-3xl mx-auto px-4 py-8">
+          <SourceCitations sources={ville.sources} />
+        </div>
+      )}
     </>
   );
 }

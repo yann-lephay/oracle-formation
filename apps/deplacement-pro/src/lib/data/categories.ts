@@ -11,6 +11,10 @@ export interface Categorie {
   useCases: string[];
   targetAudience: string;
   priceRange: string;
+  evidenceSafe?: boolean;
+  decisionCriteria?: string[];
+  counterCase?: string;
+  sources?: { label: string; url: string; date: string }[];
 }
 
 export const categories: Categorie[] = [
@@ -19,11 +23,11 @@ export const categories: Categorie[] = [
     name: "Travel Management Company (TMC)",
     shortName: "TMC",
     description:
-      "Les TMC nouvelle génération combinent plateforme de réservation, négociation tarifaire et accompagnement humain pour optimiser vos déplacements professionnels.",
+      "Une TMC organise la réservation et l'assistance ; un self-booking tool donne de l'autonomie dans un cadre ; une plateforme intégrée rapproche voyage et dépense. Le bon choix dépend du service attendu, pas d'un pourcentage d'économies générique.",
     icon: "Globe",
-    metaTitle: "Meilleure TMC 2026 — Comparatif",
+    metaTitle: "TMC, SBT ou plateforme intégrée : choisir en 2026",
     metaDescription:
-      "Comparez les meilleures TMC en France : Navan, TravelPerk, SAP Concur. Tarifs, fonctionnalités, avis clients. Guide complet pour choisir votre TMC.",
+      "Distinguez TMC, self-booking tool et plateforme intégrée. Comparez assistance, inventaire, modifications, reporting et coût complet.",
     keywords: [
       "TMC",
       "travel management company",
@@ -31,15 +35,28 @@ export const categories: Categorie[] = [
       "agence voyage entreprise",
     ],
     intro:
-      "Les Travel Management Companies (TMC) centralisent la réservation, le suivi et l'optimisation des voyages d'affaires. Elles permettent aux entreprises de réduire leurs coûts de déplacement de 15 à 30 % tout en simplifiant la gestion administrative.",
+      "Une TMC gagne quand les voyages sont fréquents, complexes ou exposés aux changements et que l'assistance humaine compte. Un self-booking tool gagne quand les collaborateurs réservent des trajets simples dans une politique claire. Une plateforme intégrée gagne si la réservation doit alimenter paiement, justificatifs et reporting — à condition que ce parcours soit démontré sur l'offre vendue.",
     useCases: [
       "Centraliser les réservations train, avion, hôtel",
       "Appliquer la politique voyage de l'entreprise",
-      "Négocier des tarifs corporate",
-      "Suivre les dépenses en temps réel",
+      "Gérer les modifications, annulations et urgences hors horaires",
+      "Comparer le coût complet et la restitution des données",
     ],
-    targetAudience: "PME et ETI avec plus de 50 déplacements par an",
-    priceRange: "5 € – 25 € / réservation",
+    targetAudience: "Équipes dont le volume, les changements ou le besoin d'assistance justifient un service géré",
+    priceRange: "Devis à comparer sur un périmètre commun",
+    evidenceSafe: true,
+    decisionCriteria: [
+      "Frais de réservation, abonnement, assistance et options incluses dans le même devis",
+      "Inventaire réellement accessible sur les trajets utilisés par l'entreprise",
+      "Traitement des modifications, annulations, urgences et voyageurs hors horaires",
+      "Données exportables, intégrations démontrées et conditions de sortie",
+    ],
+    counterCase:
+      "Une petite équipe qui réserve peu de trajets simples peut préférer un outil léger ou une réservation directe encadrée : une TMC complète ajouterait du coût et du processus sans service décisif.",
+    sources: [
+      { label: "SAP Concur — Concur Travel", url: "https://www.concur.fr/products/concur-travel", date: "30 août 2026" },
+      { label: "Perk — passage de TravelPerk à Perk", url: "https://www.perk.com/press-release/travelperk-rebrands-to-perk-the-intelligent-platform-powering-real-work/", date: "30 août 2026" },
+    ],
   },
   {
     slug: "self-booking-tool",
@@ -73,11 +90,11 @@ export const categories: Categorie[] = [
     name: "Carte Corporate & Paiement",
     shortName: "Carte Corporate",
     description:
-      "Les cartes corporate nouvelle génération offrent des plafonds personnalisés, une catégorisation automatique des dépenses et une visibilité en temps réel sur les frais professionnels.",
+      "Carte nominative, carte logée, carte virtuelle et plateforme de spend management ne répondent pas au même besoin. Le paiement peut être mieux encadré et documenté ; il ne rend pas la TVA déductible par lui-même.",
     icon: "CreditCard",
-    metaTitle: "Meilleure Carte Corporate 2026",
+    metaTitle: "Carte corporate : choisir le bon périmètre en 2026",
     metaDescription:
-      "Comparez les meilleures cartes corporate : Mooncard, Spendesk. Plafonds, cashback, intégration comptable. Guide complet cartes entreprise 2026.",
+      "Comparez carte nominative, logée, virtuelle et spend management. Vérifiez règles, justificatifs, export comptable et coût complet.",
     keywords: [
       "carte corporate",
       "carte entreprise",
@@ -85,15 +102,28 @@ export const categories: Categorie[] = [
       "carte paiement entreprise",
     ],
     intro:
-      "Les cartes corporate nouvelle génération remplacent les notes de frais manuelles par un suivi automatisé des dépenses. Chaque transaction est catégorisée, les justificatifs sont dématérialisés et les managers valident en un clic.",
+      "Une carte nominative gagne pour les dépenses récurrentes d'un collaborateur ; une carte virtuelle pour un achat, un projet ou un abonnement isolé ; une carte logée pour centraliser un type de dépense ; une plateforme de spend management si l'entreprise a aussi besoin de demandes, budgets, justificatifs et exports. L'outil peut extraire et préparer la TVA, mais l'entreprise reste responsable de vérifier le justificatif et le droit à déduction.",
     useCases: [
       "Éliminer les avances de frais",
       "Catégoriser automatiquement les dépenses",
       "Définir des plafonds par collaborateur",
-      "Récupérer la TVA automatiquement",
+      "Préparer les données de TVA sans décider de leur déductibilité",
     ],
     targetAudience: "TPE, PME et ETI",
-    priceRange: "0 € – 9 € / carte / mois",
+    priceRange: "Tarif à comparer selon cartes, utilisateurs et modules",
+    evidenceSafe: true,
+    decisionCriteria: [
+      "Type de carte, porteur, plafond, restrictions et responsabilité en cas d'usage anormal",
+      "Collecte du justificatif et contrôle des informations avant export comptable",
+      "Frais de carte, utilisateurs, change, retraits, options et accompagnement",
+      "Workflow de demande, validation, suspension et clôture réellement nécessaire",
+    ],
+    counterCase:
+      "Une entreprise qui cherche seulement un moyen de paiement n'a pas forcément besoin d'une plateforme complète ; inversement, une carte seule ne remplace pas un processus d'achat ou de validation.",
+    sources: [
+      { label: "Impots.gouv.fr — conditions de déduction de la TVA", url: "https://www.impots.gouv.fr/professionnel/questions/comment-deduire-la-tva-sur-mes-achats", date: "30 août 2026" },
+      { label: "Spendesk — cartes d'entreprise", url: "https://www.spendesk.com/fr/product/cards/", date: "30 août 2026" },
+    ],
   },
   {
     slug: "notes-de-frais",
