@@ -17,7 +17,8 @@
     "qc:internal-links": "node scripts/validate-internal-links.mjs quelle-formation deplacement-pro",
     "qc:gap14-formation": "node --import tsx scripts/validate-gap14-formation.ts",
     "qc:gap14-formation:mutations": "node --import tsx scripts/validate-gap14-formation.ts --mutations",
-    "qc:gap14-formation:served": "node scripts/validate-gap14-formation-served.mjs"
+    "qc:gap14-formation:served": "node scripts/validate-gap14-formation-served.mjs",
+    "qc:seo-titles": "node --import tsx scripts/validate-seo-title-fitting.ts"
   },
   "workspaces": [
     "apps/*"

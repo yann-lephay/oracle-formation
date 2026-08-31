@@ -1,5 +1,5 @@
-const TITLE_MIN = 50;
 const TITLE_MAX = 60;
+const TITLE_TRUNCATION_FLOOR = 50;
 const DESCRIPTION_MIN = 120;
 const DESCRIPTION_MAX = 160;
 
@@ -20,19 +20,8 @@ function truncateAtWord(value: string, maxLength: number, minLength = 0) {
 
 export function fitSeoTitle(value: string) {
   const title = normalize(value);
-  if (title.length > TITLE_MAX) return truncateAtWord(title, TITLE_MAX, TITLE_MIN);
-  if (title.length >= TITLE_MIN) return title;
-
-  for (const suffix of [" — avis", " — formations 2026", " — guide formation"]) {
-    const candidate = `${title}${suffix}`;
-    if (candidate.length >= TITLE_MIN && candidate.length <= TITLE_MAX) return candidate;
-  }
-
-  return truncateAtWord(
-    `${title} — formations, avis et comparatifs 2026`,
-    TITLE_MAX,
-    TITLE_MIN,
-  );
+  if (title.length <= TITLE_MAX) return title;
+  return truncateAtWord(title, TITLE_MAX, TITLE_TRUNCATION_FLOOR);
 }
 
 export function fitSeoDescription(value: string) {
