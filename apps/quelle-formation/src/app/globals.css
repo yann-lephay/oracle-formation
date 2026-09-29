@@ -144,7 +144,7 @@ body {
 
 .badge-cpf {
   background: rgba(34, 197, 94, 0.08);
-  color: var(--success);
+  color: #166534;
   border-color: rgba(34, 197, 94, 0.2);
   font-weight: 600;
 }
@@ -170,7 +170,7 @@ body {
   gap: 0.5rem;
   padding: 0.625rem 1.25rem;
   background: var(--primary);
-  color: var(--primary-foreground);
+  color: var(--foreground);
   font-weight: 500;
   font-size: 0.875rem;
   border-radius: var(--radius);

@@ -16,14 +16,14 @@ export function Footer() {
                         <Link href="/" className="flex items-center gap-2">
                             <Image
                                 src="/quelleformation-logo.png"
-                                alt="QuelleFormation"
+                                alt=""
                                 width={36}
                                 height={36}
                                 className="rounded-lg"
                                 unoptimized
                             />
                             <span className="text-lg font-bold font-heading text-primary-foreground">
-                                Quelle<span className="text-accent">Formation</span>
+                                Quelle<span className="text-teal-300">Formation</span>
                             </span>
                         </Link>
                         <p className="text-sm text-primary-foreground/50 leading-relaxed">
@@ -31,7 +31,7 @@ export function Footer() {
                             Prix, avis, CPF, organismes certifiés. Trouvez la formation qui
                             vous correspond.
                         </p>
-                        <div className="flex items-center gap-2 text-xs text-primary-foreground/40">
+                        <div className="flex items-center gap-2 text-xs text-primary-foreground/60">
                             <MapPin className="w-3.5 h-3.5" />
                             <span>Paris, France</span>
                         </div>
@@ -197,10 +197,10 @@ export function Footer() {
 
                 {/* Bottom */}
                 <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-xs text-primary-foreground/40">
+                    <p className="text-xs text-primary-foreground/60">
                         © {new Date().getFullYear()} QuelleFormation.fr — Tous droits réservés.
                     </p>
-                    <p className="text-xs text-primary-foreground/40 text-center md:text-right max-w-md">
+                    <p className="text-xs text-primary-foreground/60 text-center md:text-right max-w-md">
                         QuelleFormation.fr est un comparateur indépendant. Certains liens sont des liens
                         d&apos;affiliation qui nous permettent de financer le site sans surcoût pour vous.
                     </p>

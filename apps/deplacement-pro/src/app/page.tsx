@@ -362,15 +362,15 @@ export default function HomePage() {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Que vous cherchiez une{" "}
-              <Link href="/tmc" className="text-primary hover:underline">
+              <Link href="/tmc" className="text-primary underline underline-offset-2 hover:no-underline">
                 TMC nouvelle génération
               </Link>
               , une{" "}
-              <Link href="/carte-corporate" className="text-primary hover:underline">
+              <Link href="/carte-corporate" className="text-primary underline underline-offset-2 hover:no-underline">
                 carte corporate
               </Link>{" "}
               ou un{" "}
-              <Link href="/notes-de-frais" className="text-primary hover:underline">
+              <Link href="/notes-de-frais" className="text-primary underline underline-offset-2 hover:no-underline">
                 logiciel de notes de frais
               </Link>
               , comparez ensuite le coût total, la capacité à gérer les exceptions, les intégrations

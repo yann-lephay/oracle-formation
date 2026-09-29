@@ -206,7 +206,7 @@ export function SearchBar() {
                             router.push("/#domaines");
                         }
                     }}
-                    className="shrink-0 bg-primary px-4 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/80 sm:px-6"
+                    className="shrink-0 bg-primary px-4 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-primary/80 sm:px-6"
                 >
                     Chercher
                 </button>

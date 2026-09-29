@@ -466,7 +466,7 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl font-extrabold text-accent-foreground mb-3">
               Besoin d&apos;aide pour choisir ?
             </h2>
-            <p className="text-accent-foreground/70 text-lg max-w-2xl mx-auto">
+            <p className="text-accent-foreground/90 text-lg max-w-2xl mx-auto">
               Comparez les organismes, leurs prix et leurs formats sans transmettre
               vos coordonnées.
             </p>

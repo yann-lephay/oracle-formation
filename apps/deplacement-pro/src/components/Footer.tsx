@@ -14,7 +14,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/deplacement-pro-logo.png"
-                alt="DeplacementPro"
+                alt=""
                 width={28}
                 height={28}
                 className="rounded"

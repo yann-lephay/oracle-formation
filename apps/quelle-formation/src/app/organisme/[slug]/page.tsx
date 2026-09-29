@@ -362,7 +362,7 @@ export default async function OrganismePage({ params }: PageProps) {
                                 <ExternalLink className="w-4 h-4" />
                         </OrganismeOutboundLink>
                         {org.affiliateUrl && (
-                            <p className="mt-2 text-xs text-accent-foreground/70">
+                            <p className="mt-2 text-xs text-accent-foreground/90">
                                 Lien affilié : nous pouvons percevoir une commission, sans coût supplémentaire pour vous.
                             </p>
                         )}
