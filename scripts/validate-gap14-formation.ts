@@ -132,6 +132,15 @@ const qfSitemapCount =
   qfGlossary.length;
 assert.equal(qfSitemapCount, 248, "QF sitemap target must be 248 URLs");
 
+for (const org of organismes) {
+  assert.ok(!("rating" in org) && !("reviewCount" in org), `${org.slug} exposes an unsourced rating`);
+}
+assert.doesNotMatch(
+  readFileSync("apps/quelle-formation/src/lib/structured-data.ts", "utf8"),
+  /aggregateRating|AggregateRating|ratingValue/,
+  "QF structured data must not emit third-party or unsourced ratings",
+);
+
 let qfCitySource = readFileSync("apps/quelle-formation/src/app/formation/[domaine]/[ville]/page.tsx", "utf8");
 if (mutation === "restore-qf-noindex-title-case") qfCitySource = qfCitySource.replace("Formation d'anglais professionnel", "Formation Anglais Professionnel");
 const qfDomainSource = readFileSync("apps/quelle-formation/src/app/formation/[domaine]/page.tsx", "utf8");

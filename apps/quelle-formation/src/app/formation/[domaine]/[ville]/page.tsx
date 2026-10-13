@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { MapPin, ArrowRight, Star, CheckCircle2, Clock, Euro, Award, Monitor, Building2 } from "lucide-react";
+import { MapPin, ArrowRight, CheckCircle2, Clock, Euro, Award, Monitor, Building2 } from "lucide-react";
 import { domaines, getDomaineBySlug } from "@/lib/data/domaines";
 import { getOrganismesByDomaineAndVille } from "@/lib/data/organismes";
 import { topVilles, getVilleBySlug } from "@/lib/data/villes";
@@ -114,10 +114,6 @@ function OrganismeCard({
                 <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2 mb-2">
                         <h3 className="font-bold text-foreground">{org.name}</h3>
-                        <div className="flex items-center gap-1 shrink-0">
-                            <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                            <span className="text-sm font-semibold">{org.rating}</span>
-                        </div>
                     </div>
                     <p className="text-sm text-muted-foreground mb-3">
                         {org.tagline} — {org.priceRange}
@@ -213,7 +209,7 @@ export default async function FormationVillePage({ params }: PageProps) {
         },
         {
             question: `Quelle est la meilleure formation ${domaine.name.toLowerCase()} ${ville.metaSuffix} ?`,
-            answer: `Le choix dépend de votre profil. ${local.length > 0 ? `Pour du présentiel ${ville.metaSuffix}, ${local[0].name} est une option reconnue (${local[0].rating}/5).` : ""} ${remote.length > 0 ? `En distanciel, ${remote[0].name} (${remote[0].rating}/5) offre une grande flexibilité.` : ""} Comparez les critères qui comptent pour vous : prix, format, durée et accompagnement.`,
+            answer: `Le choix dépend de votre profil. ${local.length > 0 ? `Pour du présentiel ${ville.metaSuffix}, ${local[0].name} est une option reconnue.` : ""} ${remote.length > 0 ? `En distanciel, ${remote[0].name} offre une grande flexibilité.` : ""} Comparez les critères qui comptent pour vous : prix, format, durée et accompagnement.`,
         },
     ];
 

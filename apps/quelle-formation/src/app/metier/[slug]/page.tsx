@@ -217,7 +217,6 @@ export default async function MetierPage({ params }: PageProps) {
                                     <h3 className="font-bold text-foreground group-hover:text-accent transition-colors">
                                         {org.name}
                                     </h3>
-                                    <span className="text-xs text-muted-foreground">{org.rating}/5</span>
                                 </div>
                                 <p className="text-xs text-muted-foreground mb-2">{org.tagline}</p>
                                 <span className="text-xs text-accent font-medium flex items-center gap-1 group-hover:gap-2 transition-all">

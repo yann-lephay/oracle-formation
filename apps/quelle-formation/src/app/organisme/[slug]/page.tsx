@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import {
-    Star,
     ExternalLink,
     CheckCircle2,
     XCircle,
@@ -91,8 +90,6 @@ export default async function OrganismePage({ params }: PageProps) {
                             name: org.name,
                             url: org.website,
                             description: org.tagline,
-                            rating: org.rating,
-                            reviewCount: org.reviewCount,
                         })
                     ),
                 }}
@@ -142,26 +139,7 @@ export default async function OrganismePage({ params }: PageProps) {
                             {org.name} — Avis 2026
                         </h1>
 
-                        <p className="text-lg text-muted-foreground mb-2">{org.tagline}</p>
-
-                        {/* Rating */}
-                        <div className="mb-6 flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
-                            <div className="flex shrink-0 items-center gap-1">
-                                {[1, 2, 3, 4, 5].map((s) => (
-                                    <Star
-                                        key={s}
-                                        className={`w-5 h-5 ${s <= Math.round(org.rating)
-                                                ? "text-amber-400 fill-amber-400"
-                                                : "text-border"
-                                            }`}
-                                    />
-                                ))}
-                            </div>
-                            <span className="text-foreground font-bold">{org.rating}/5</span>
-                            <span className="text-muted-foreground text-sm">
-                                ({org.reviewCount} avis)
-                            </span>
-                        </div>
+                        <p className="text-lg text-muted-foreground mb-6">{org.tagline}</p>
 
                         {/* Key info */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -214,7 +192,7 @@ export default async function OrganismePage({ params }: PageProps) {
                 <div className="container-narrow mx-auto px-4">
                     <div className="max-w-3xl glass-card p-6 border-l-4 border-accent verdict">
                         <p className="text-lg leading-relaxed text-foreground" data-speakable>
-                            <strong>{org.name}</strong> est un organisme noté <strong>{org.rating}/5</strong> basé sur {org.reviewCount} avis.
+                            <strong>{org.name}</strong> en bref :
                             {" "}{org.cpfEligible ? "Formations éligibles au CPF." : ""} {org.certifications.length > 0 ? `Certifié ${org.certifications.join(", ")}.` : ""}
                             {" "}Prix : {org.priceRange}. Formats : {org.formats.join(", ")}.
                         </p>

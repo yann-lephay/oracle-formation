@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-    Star,
     CheckCircle2,
     ArrowRight,
     GraduationCap,
@@ -178,10 +177,6 @@ export function OrganismeFilters({ organismes, pageSlug }: OrganismeFiltersProps
                                         <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center">
                                             {index + 1}
                                         </span>
-                                    </div>
-                                    <div className="flex items-center gap-1">
-                                        <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                                        <span className="text-sm font-semibold">{org.rating}</span>
                                     </div>
                                 </div>
 

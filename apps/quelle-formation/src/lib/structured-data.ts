@@ -190,8 +190,6 @@ export function generateOrganismeSchema(org: {
     name: string;
     url: string;
     description: string;
-    rating: number;
-    reviewCount: number;
     logoPath?: string;
 }) {
     return {
@@ -203,44 +201,6 @@ export function generateOrganismeSchema(org: {
         ...(org.logoPath && {
             image: `${seoConfig.siteUrl}${org.logoPath}`,
         }),
-        aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: org.rating,
-            bestRating: 5,
-            ratingCount: org.reviewCount,
-        },
-    };
-}
-
-export function generateComparisonSchema(params: {
-    name: string;
-    description: string;
-    url: string;
-    items: { name: string; rating: number; ratingCount: number }[];
-}) {
-    return {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        name: params.name,
-        description: params.description,
-        url: params.url,
-        itemListElement: params.items.map((item, index) => ({
-            "@type": "ListItem",
-            position: index + 1,
-            name: item.name,
-            ...(item.rating && {
-                item: {
-                    "@type": "EducationalOrganization",
-                    name: item.name,
-                    aggregateRating: {
-                        "@type": "AggregateRating",
-                        ratingValue: item.rating,
-                        bestRating: 5,
-                        ratingCount: item.ratingCount,
-                    },
-                },
-            }),
-        })),
     };
 }
 
