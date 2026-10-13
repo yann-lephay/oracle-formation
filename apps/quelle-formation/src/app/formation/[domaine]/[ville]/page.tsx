@@ -209,7 +209,7 @@ export default async function FormationVillePage({ params }: PageProps) {
         },
         {
             question: `Quelle est la meilleure formation ${domaine.name.toLowerCase()} ${ville.metaSuffix} ?`,
-            answer: `Le choix dépend de votre profil. ${local.length > 0 ? `Pour du présentiel ${ville.metaSuffix}, ${local[0].name} est une option reconnue.` : ""} ${remote.length > 0 ? `En distanciel, ${remote[0].name} offre une grande flexibilité.` : ""} Comparez les critères qui comptent pour vous : prix, format, durée et accompagnement.`,
+            answer: `Le choix dépend de votre profil. ${local.length > 0 ? `Pour du présentiel ${ville.metaSuffix}, ${local[0].name} y a une présence locale.` : ""} ${remote.length > 0 ? `En distanciel, ${remote[0].name} offre une grande flexibilité.` : ""} Comparez les critères qui comptent pour vous : prix, format, durée et accompagnement.`,
         },
     ];
 
