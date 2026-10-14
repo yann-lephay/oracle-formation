@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { Star, ArrowRight, Users } from "lucide-react";
+import { ArrowRight, Users } from "lucide-react";
 import { organismes } from "@/lib/data/organismes";
 import { generateBreadcrumbSchema } from "@/lib/structured-data";
 import { seoConfig } from "@/lib/seo-config";
@@ -72,10 +72,6 @@ export default function OrganismesPage() {
                                         <h2 className="font-bold text-foreground group-hover:text-accent transition-colors">
                                             {org.name}
                                         </h2>
-                                        <div className="flex items-center gap-1 shrink-0">
-                                            <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                                            <span className="text-sm font-semibold">{org.rating}</span>
-                                        </div>
                                     </div>
                                     <p className="text-xs text-muted-foreground mb-2">
                                         {org.tagline}

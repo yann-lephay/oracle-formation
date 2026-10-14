@@ -174,7 +174,6 @@ export default async function PersonaPage({ params }: PageProps) {
                                         <h3 className="font-bold text-foreground group-hover:text-accent transition-colors">
                                             {org.name}
                                         </h3>
-                                        <span className="text-xs text-muted-foreground">{org.rating}/5</span>
                                     </div>
                                     <p className="text-sm text-muted-foreground mb-2">
                                         {(org as { reason: string }).reason}

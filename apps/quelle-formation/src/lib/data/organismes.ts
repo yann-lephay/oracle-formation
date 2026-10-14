@@ -34,8 +34,6 @@ export type Organisme = {
     cpfEligible: boolean;
     priceRange: string;
     studentsCount: string;
-    rating: number;
-    reviewCount: number;
     campusVilles: string[]; // slugs des villes avec campus/présence physique
     metaTitle: string;
     metaDescription: string;
@@ -93,8 +91,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "300 € – 1 200 €/mois",
         studentsCount: "300 000/mois",
-        rating: 4.0,
-        reviewCount: 1386,
         metaTitle: "OpenClassrooms : avis, prix et format en 2026",
         metaDescription:
             "Notre avis sur OpenClassrooms en 2026 : format par projets, mentorat hebdomadaire, prix, financements et profils auxquels la plateforme convient.",
@@ -183,8 +179,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "1 500 € – 7 995 €",
         studentsCount: "5 000+",
-        rating: 4.7,
-        reviewCount: 1200,
         metaTitle: "Jedha Avis 2026 : Prix, Bootcamps Data/IA et Test",
         metaDescription:
             "Avis sur Jedha en 2026. Bootcamps Data, IA et Cybersécurité. Prix, campus, CPF et avis alumni. OpenClassrooms vs Jedha : notre comparatif.",
@@ -231,8 +225,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "1 800 € – 3 000 €",
         studentsCount: "30 000+",
-        rating: 4.5,
-        reviewCount: 2800,
         affiliateUrl: "https://www.livementor.com/rencontrez-un-conseiller-livementor/?last_funnel=Funnel%20partenaire&last_source_level_3=yann_lephay&last_source_level_2=Affili%C3%A9",
         affiliateNetwork: "direct",
         affiliateCommission: "15 % TTC par commande",
@@ -286,8 +278,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "1 500 € – 3 500 €",
         studentsCount: "35 000+",
-        rating: 5,
-        reviewCount: 1300,
         affiliateUrl: "https://lb.affilae.com/r/?p=66ea961280385454e9869531&af=262&lp=https%3A%2F%2Fcreactifs.com%2F%3Futm_source%3Daffiliation%26utm_campaign%3DYannBuilds",
         affiliateNetwork: "Affilae",
         affiliateCommission: "15 % par vente validée",
@@ -345,8 +335,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "4 500 € – 9 000 €",
         studentsCount: "25 000+",
-        rating: 4.8,
-        reviewCount: 3500,
         metaTitle: "Le Wagon Avis 2026 : Prix, Bootcamp et Test Complet",
         metaDescription:
             "Avis sur Le Wagon en 2026. Bootcamp dev web et data science en 9 semaines. Prix, campus, CPF et avis alumni. Le meilleur bootcamp ?",
@@ -388,8 +376,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "3 000 € – 8 000 €",
         studentsCount: "15 000+",
-        rating: 4.4,
-        reviewCount: 950,
         metaTitle: "DataScientest Avis 2026 : Prix, Formations Data et Test",
         metaDescription:
             "Avis sur DataScientest en 2026. Formations Data, IA et Cloud. Format continu, partenariats Sorbonne. Prix, CPF et avis. Jedha vs DataScientest.",
@@ -440,8 +426,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "150 € – 500 €/mois",
         studentsCount: "70 000+",
-        rating: 3.9,
-        reviewCount: 4200,
         metaTitle: "Studi Avis 2026 : Prix, Formations et Test Complet",
         metaDescription:
             "Avis sur Studi en 2026. 200+ formations diplômantes en ligne. Prix compétitifs, CPF et avis. Studi vs OpenClassrooms : notre comparatif.",
@@ -483,8 +467,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "5 000 € – 9 000 €",
         studentsCount: "15 000+",
-        rating: 4.5,
-        reviewCount: 780,
         metaTitle: "Ironhack Paris Avis 2026 : Prix, Bootcamps et Test",
         metaDescription:
             "Avis sur Ironhack Paris en 2026. Bootcamps dev web, UX/UI, data et cyber. Prix, CPF et avis. Le Wagon vs Ironhack : notre comparatif.",
@@ -526,8 +508,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "3 000 € – 7 000 €",
         studentsCount: "10 000+",
-        rating: 4.3,
-        reviewCount: 650,
         metaTitle: "Wild Code School Avis 2026 : Prix, Formations et Campus",
         metaDescription:
             "Avis sur la Wild Code School en 2026. Formations dev web, data et cyber. Campus en France, CPF. Wild Code School vs Le Wagon : notre comparatif.",
@@ -576,8 +556,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "0 € – 8 000 € (financements publics)",
         studentsCount: "100 000+/an",
-        rating: 3.8,
-        reviewCount: 5600,
         metaTitle: "AFPA Avis 2026 : Prix, Formations et Test Complet",
         metaDescription:
             "Avis sur l'AFPA en 2026. Formations professionnelles qualifiantes, 115 centres en France. Prix, CPF, avis et comparatif. Notre analyse complète.",
@@ -632,8 +610,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "150 € – 300 €/UE (public)",
         studentsCount: "80 000+",
-        rating: 4.0,
-        reviewCount: 3200,
         metaTitle: "CNAM Avis 2026 : Prix, Formations et Diplômes",
         metaDescription:
             "Avis sur le CNAM en 2026. Formations diplômantes en cours du soir et en ligne. Prix publics, CPF, diplômes d'État. Notre analyse complète.",
@@ -687,8 +663,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "800 € – 3 500 €/session",
         studentsCount: "50 000+/an",
-        rating: 4.3,
-        reviewCount: 1800,
         metaTitle: "M2i Formation Avis 2026 : Prix, Catalogue IT et Test",
         metaDescription:
             "Avis sur M2i Formation en 2026. Leader de la formation IT en France. 2 400+ formations, 35 centres. Prix, CPF, certifications. Notre analyse.",
@@ -742,8 +716,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "700 € – 3 000 €/session",
         studentsCount: "40 000+/an",
-        rating: 4.0,
-        reviewCount: 1200,
         metaTitle: "Demos Avis 2026 : Prix, Formations et Test Complet",
         metaDescription:
             "Avis sur Demos en 2026. 1 500+ formations professionnelles. Management, RH, comptabilité, digital. Prix, CPF et avis. Notre analyse.",
@@ -791,8 +763,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "Selon la session et le financement",
         studentsCount: "56 772+ depuis 2013",
-        rating: 2.9,
-        reviewCount: 2,
         metaTitle: "Simplon : avis sur les bootcamps et formations en 2026",
         metaDescription:
             "Notre avis sur Simplon en 2026 : bootcamps, formations intensives et alternance, sélection, financement, rythme et points à vérifier avant de candidater.",
@@ -887,8 +857,6 @@ export const organismes: Organisme[] = [
         cpfEligible: true,
         priceRange: "5 500 € – 9 800 €/an",
         studentsCount: "10 000+",
-        rating: 4.1,
-        reviewCount: 1500,
         metaTitle: "Ynov Campus Avis 2026 : Prix, Formations et Campus",
         metaDescription:
             "Avis sur Ynov Campus en 2026. Formations numériques et créatives du Bac+1 au Bac+5. 12 campus, alternance, prix. Notre analyse complète.",

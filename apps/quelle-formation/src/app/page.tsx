@@ -4,7 +4,6 @@ import {
   GraduationCap,
   CheckCircle2,
   ArrowRight,
-  Star,
   Users,
   Award,
   TrendingUp,
@@ -223,15 +222,6 @@ export default function HomePage() {
                       <h3 className="min-w-0 font-bold text-foreground transition-colors group-hover:text-accent">
                         {org.name}
                       </h3>
-                      <div className="flex shrink-0 items-center gap-1">
-                        <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                        <span className="text-sm font-semibold text-foreground">
-                          {org.rating}
-                    </span>
-                    <span className="text-xs text-muted-foreground">
-                      ({org.reviewCount})
-                    </span>
-                      </div>
                     </div>
                     <p className="text-xs text-muted-foreground mt-0.5">{org.tagline}</p>
                   </div>
