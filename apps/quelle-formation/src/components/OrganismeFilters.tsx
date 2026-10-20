@@ -184,9 +184,16 @@ export function OrganismeFilters({ organismes, pageSlug }: OrganismeFiltersProps
                                 <div className="flex-1 min-w-0">
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
                                         <div>
-                                            <h3 className="text-xl font-bold text-foreground">
-                                                {org.name}
-                                            </h3>
+                                            <div className="flex flex-wrap items-center gap-2">
+                                                <h3 className="text-xl font-bold text-foreground">
+                                                    {org.name}
+                                                </h3>
+                                                {org.commercialPartner && (
+                                                    <span className="rounded-full border border-border bg-muted px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+                                                        Collaboration commerciale
+                                                    </span>
+                                                )}
+                                            </div>
                                             <p className="text-sm text-muted-foreground">{org.tagline}</p>
                                         </div>
                                         <div className="text-right">

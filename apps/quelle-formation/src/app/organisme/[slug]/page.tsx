@@ -120,6 +120,9 @@ export default async function OrganismePage({ params }: PageProps) {
                         </nav>
 
                         <div className="flex items-center gap-3 mb-4">
+                            {org.commercialPartner && (
+                                <span className="badge">Collaboration commerciale</span>
+                            )}
                             {org.certifications.map((c) => (
                                 <span key={c} className="badge badge-qualiopi">{c}</span>
                             ))}
@@ -140,6 +143,14 @@ export default async function OrganismePage({ params }: PageProps) {
                         </h1>
 
                         <p className="text-lg text-muted-foreground mb-6">{org.tagline}</p>
+
+                        {org.commercialPartner && (
+                            <p className="mb-6 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                                Cette fiche a été réalisée dans le cadre d&apos;un partenariat
+                                commercial. L&apos;analyse, les limites présentées et la sélection
+                                des sources restent sous la responsabilité de la rédaction.
+                            </p>
+                        )}
 
                         {/* Key info */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -193,7 +204,11 @@ export default async function OrganismePage({ params }: PageProps) {
                     <div className="max-w-3xl glass-card p-6 border-l-4 border-accent verdict">
                         <p className="text-lg leading-relaxed text-foreground" data-speakable>
                             <strong>{org.name}</strong> en bref :
-                            {" "}{org.cpfEligible ? "Formations éligibles au CPF." : ""} {org.certifications.length > 0 ? `Certifié ${org.certifications.join(", ")}.` : ""}
+                            {" "}{org.cpfEligible
+                                ? org.commercialPartner
+                                    ? "Formations pouvant être éligibles au CPF selon le parcours."
+                                    : "Formations éligibles au CPF."
+                                : ""} {org.certifications.length > 0 ? `Certifié ${org.certifications.join(", ")}.` : ""}
                             {" "}Prix : {org.priceRange}. Formats : {org.formats.join(", ")}.
                         </p>
                     </div>

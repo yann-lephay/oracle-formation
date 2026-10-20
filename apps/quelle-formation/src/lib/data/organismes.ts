@@ -48,6 +48,7 @@ export type Organisme = {
         url: string;
         date: string;
     }[];
+    commercialPartner?: boolean;
 } & AffiliateProgram;
 
 export const organismes: Organisme[] = [
@@ -874,6 +875,94 @@ export const organismes: Organisme[] = [
         ],
         campusVilles: ["paris", "lyon", "toulouse", "bordeaux", "nantes", "lille", "marseille", "strasbourg"],
         logoPath: "/logos/ynov-campus.png",
+    },
+    {
+        slug: "anglify",
+        name: "Anglify",
+        website: "https://www.anglify.com/formation-anglais",
+        tagline: "Une formation d’anglais en ligne personnalisée avec un coach dédié",
+        description:
+            "Anglify propose des formations d’anglais entièrement à distance, construites selon le niveau, le métier et les objectifs de l’apprenant. Le parcours associe des séances individuelles en visioconférence avec un coach et des ressources accessibles en ligne. Cette formule convient surtout aux adultes qui veulent progresser sur des situations professionnelles concrètes avec un accompagnement régulier. Les conditions de certification et de financement doivent être vérifiées pour la formation choisie.",
+        prosAndCons: {
+            pros: [
+                "Parcours adapté au niveau, au métier et aux objectifs professionnels",
+                "Accompagnement individuel à distance avec un coach dédié",
+                "Durée modulable de 3 à 12 mois selon le programme",
+                "Formations certifiantes et finançables selon le parcours et l’éligibilité",
+            ],
+            cons: [
+                "Pas de cours en présentiel ni de campus",
+                "Tarif final établi après analyse du besoin",
+                "Les conditions CPF, OPCO et de certification varient selon la formation",
+            ],
+        },
+        foundedYear: 2015,
+        headquarters: "Paris",
+        certifications: ["Qualiopi"],
+        domaines: ["langues-anglais"],
+        formats: ["distanciel", "e-learning"],
+        cpfEligible: true,
+        priceRange: "À partir de 1 200 €",
+        studentsCount: "6 000+",
+        campusVilles: [],
+        metaTitle: "Anglify : avis, prix et formation d’anglais en 2026",
+        metaDescription:
+            "Notre avis sur Anglify : coaching individuel, formation d’anglais à distance, prix à partir de 1 200 €, financement et profils concernés.",
+        decisionGuide: [
+            {
+                title: "À choisir si…",
+                text: "vous cherchez un parcours d’anglais à distance adapté à votre métier, avec des séances individuelles et un interlocuteur régulier pour guider votre progression.",
+            },
+            {
+                title: "À comparer si…",
+                text: "vous préférez apprendre en groupe, suivre des cours en présentiel ou disposer d’un calendrier collectif fixe : une école de langues ou un organisme hybride peut mieux convenir.",
+            },
+            {
+                title: "Point à vérifier avant de vous inscrire",
+                text: "le nombre de séances individuelles, la durée du parcours, la certification préparée et le montant restant à financer. Anglify indique un tarif à partir de 1 200 €, mais le devis dépend du besoin et du rythme retenu.",
+            },
+        ],
+        sources: [
+            {
+                label: "Anglify — formation d’anglais",
+                url: "https://www.anglify.com/formation-anglais",
+                date: "consulté en octobre 2026",
+            },
+            {
+                label: "Anglify — anglais professionnel",
+                url: "https://www.anglify.com/formation-anglais/professionnel",
+                date: "consulté en octobre 2026",
+            },
+            {
+                label: "Anglify — prix et financements",
+                url: "https://www.anglify.com/prix-financements",
+                date: "consulté en octobre 2026",
+            },
+            {
+                label: "Anglify — à propos",
+                url: "https://www.anglify.com/a-propos",
+                date: "consulté en octobre 2026",
+            },
+        ],
+        faq: [
+            {
+                question: "Combien coûte une formation Anglify ?",
+                answer:
+                    "Anglify indique un prix à partir de 1 200 €. Le montant final dépend de la durée, du rythme, des objectifs et du nombre de séances prévues dans le parcours.",
+            },
+            {
+                question: "Les formations Anglify sont-elles éligibles au CPF ?",
+                answer:
+                    "Certaines formations certifiantes Anglify peuvent être financées par le CPF ou un OPCO, sous réserve que le parcours choisi et la situation de l’apprenant répondent aux conditions du dispositif. L’éligibilité doit être vérifiée avant l’inscription.",
+            },
+            {
+                question: "À qui s’adresse Anglify ?",
+                answer:
+                    "Anglify s’adresse principalement aux adultes qui souhaitent améliorer leur anglais pour le travail, évoluer professionnellement ou préparer une certification, tout en suivant la formation à distance.",
+            },
+        ],
+        logoPath: "/logos/anglify.svg",
+        commercialPartner: true,
     },
 ];
 

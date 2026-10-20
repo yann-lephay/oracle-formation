@@ -56,6 +56,12 @@ export default async function FormationDomainePage({ params }: PageProps) {
 
     const organismes = getOrganismesByDomaine(slug);
     const hasClicCampusSpotlight = slug === "langues-anglais";
+    const anglify = slug === "langues-anglais"
+        ? organismes.find((organisme) => organisme.slug === "anglify")
+        : undefined;
+    const listedOrganismes = anglify
+        ? organismes.filter((organisme) => organisme.slug !== "anglify")
+        : organismes;
     const presentedOrganismeCount = organismes.length + (hasClicCampusSpotlight ? 1 : 0);
     const indexableVilles = topVilles.filter(
         (ville) => !isNoindexFormationVille(slug, ville.slug)
@@ -94,16 +100,22 @@ export default async function FormationDomainePage({ params }: PageProps) {
                             description: domaine.description,
                             url: `${seoConfig.siteUrl}/formation/${slug}`,
                             items: [
-                                ...organismes.map((o) => ({
-                                    name: o.name,
-                                    url: `${seoConfig.siteUrl}/organisme/${o.slug}`,
-                                })),
+                                ...(anglify
+                                    ? [{
+                                        name: anglify.name,
+                                        url: `${seoConfig.siteUrl}/organisme/${anglify.slug}`,
+                                    }]
+                                    : []),
                                 ...(hasClicCampusSpotlight
                                     ? [{
                                         name: "Clic Campus",
                                         url: "https://clic-campus.fr/formation-anglais-en-ligne-cpf/",
                                     }]
                                     : []),
+                                ...listedOrganismes.map((o) => ({
+                                    name: o.name,
+                                    url: `${seoConfig.siteUrl}/organisme/${o.slug}`,
+                                })),
                             ],
                         })
                     ),
@@ -183,7 +195,7 @@ export default async function FormationDomainePage({ params }: PageProps) {
                                     icon: BookOpen,
                                     label: "Organismes",
                                     value: hasClicCampusSpotlight
-                                        ? `${presentedOrganismeCount} présenté`
+                                        ? `${presentedOrganismeCount} présentés`
                                         : `${presentedOrganismeCount} comparés`,
                                 },
                             ].map((metric) => (
@@ -200,6 +212,64 @@ export default async function FormationDomainePage({ params }: PageProps) {
                     </div>
                 </div>
             </section>
+
+            {anglify && (
+                <section className="border-b border-border bg-surface/50">
+                    <div className="container-narrow mx-auto px-4 py-10 md:py-12">
+                        {/* Première présentation garantie jusqu'au 20 octobre 2027 ; révision manuelle au renouvellement. */}
+                        <div className="glass-card overflow-hidden border-accent/30 bg-background">
+                            <div className="grid gap-8 p-6 md:grid-cols-[1fr_auto] md:items-center md:p-8">
+                                <div>
+                                    <div className="mb-4 flex flex-wrap items-center gap-3">
+                                        <p className="text-sm font-semibold text-accent">Anglify</p>
+                                        <span className="rounded-full border border-border bg-muted px-2.5 py-1 text-[10px] font-medium text-muted-foreground">
+                                            Collaboration commerciale
+                                        </span>
+                                    </div>
+
+                                    <h2 className="mb-3 text-2xl font-extrabold text-foreground md:text-3xl">
+                                        Un parcours d&apos;anglais professionnel avec un coach dédié
+                                    </h2>
+                                    <p className="max-w-3xl leading-relaxed text-muted-foreground">
+                                        Anglify construit des formations à distance selon le niveau,
+                                        le métier et les objectifs de l&apos;apprenant. Le parcours associe
+                                        des séances individuelles en visioconférence et des ressources
+                                        en ligne, sur une durée généralement comprise entre 3 et 12 mois.
+                                    </p>
+
+                                    <div className="mt-5 flex flex-col gap-2 text-sm text-foreground sm:flex-row sm:flex-wrap sm:gap-x-6">
+                                        {[
+                                            "Programme adapté aux objectifs professionnels",
+                                            "Coaching individuel à distance",
+                                            "Financement possible selon le parcours et l’éligibilité",
+                                        ].map((item) => (
+                                            <span key={item} className="flex items-center gap-2">
+                                                <CheckCircle2 className="h-4 w-4 shrink-0 text-success" />
+                                                {item}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-col gap-3 md:w-64">
+                                    <Link href="/organisme/anglify" className="btn-primary w-full">
+                                        Consulter notre fiche
+                                        <ArrowRight className="h-4 w-4" />
+                                    </Link>
+                                    <a
+                                        href={anglify.website}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn-secondary w-full"
+                                    >
+                                        Voir Anglify
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {hasClicCampusSpotlight && (
                 <section className="border-b border-border bg-surface/50">
@@ -253,19 +323,19 @@ export default async function FormationDomainePage({ params }: PageProps) {
             )}
 
             {/* Organismes */}
-            {organismes.length > 0 && (
+            {listedOrganismes.length > 0 && (
                 <section className="section-padding">
                     <div className="container-narrow mx-auto px-4">
                         <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-8">
-                            {organismes.length} organismes pour se former en {domaine.name}
+                            {listedOrganismes.length} organismes pour se former en {domaine.name}
                         </h2>
 
-                        <OrganismeFilters organismes={organismes} pageSlug={slug} />
+                        <OrganismeFilters organismes={listedOrganismes} pageSlug={slug} />
                     </div>
                 </section>
             )}
 
-            {organismes.length === 0 && !hasClicCampusSpotlight && (
+            {listedOrganismes.length === 0 && !hasClicCampusSpotlight && !anglify && (
                 <section className="section-padding">
                     <div className="container-narrow mx-auto px-4">
                         <div className="glass-card p-8 text-center">
