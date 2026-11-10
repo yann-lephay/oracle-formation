@@ -228,7 +228,7 @@ export default async function FormationDomainePage({ params }: PageProps) {
                                     </div>
 
                                     <h2 className="mb-3 text-2xl font-extrabold text-foreground md:text-3xl">
-                                        Un parcours d&apos;anglais professionnel avec un coach dédié
+                                        Anglais pro à distance : un coach attribué selon votre profil, du début à la fin
                                     </h2>
                                     <p className="max-w-3xl leading-relaxed text-muted-foreground">
                                         Anglify construit des formations à distance selon le niveau,
@@ -241,7 +241,7 @@ export default async function FormationDomainePage({ params }: PageProps) {
                                         {[
                                             "Programme adapté aux objectifs professionnels",
                                             "Coaching individuel à distance",
-                                            "Financement possible selon le parcours et l’éligibilité",
+                                            "À partir de 1 200 €",
                                         ].map((item) => (
                                             <span key={item} className="flex items-center gap-2">
                                                 <CheckCircle2 className="h-4 w-4 shrink-0 text-success" />
@@ -257,7 +257,7 @@ export default async function FormationDomainePage({ params }: PageProps) {
                                         <ArrowRight className="h-4 w-4" />
                                     </Link>
                                     <a
-                                        href={anglify.website}
+                                        href={anglify.trackingUrl ?? anglify.website}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="btn-secondary w-full"

@@ -74,7 +74,7 @@ export default function OrganismesPage() {
                                         </h2>
                                     </div>
                                     <p className="text-xs text-muted-foreground mb-2">
-                                        {org.tagline}
+                                        {org.directoryTagline ?? org.tagline}
                                     </p>
                                     <div className="flex flex-wrap gap-1.5 mb-2">
                                         {org.certifications.map((c) => (

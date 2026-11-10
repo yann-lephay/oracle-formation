@@ -142,6 +142,24 @@ export default async function OrganismePage({ params }: PageProps) {
                             {org.name} — Avis 2026
                         </h1>
 
+                        {org.reviewScores && (
+                            <div className="mb-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
+                                {org.reviewScores.map((review) => (
+                                    <a
+                                        key={review.source}
+                                        href={review.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="underline decoration-border underline-offset-4 hover:text-foreground"
+                                    >
+                                        {review.source} : <strong className="text-foreground">{review.rating}</strong>
+                                        {" · "}{review.reviewCount} avis
+                                        {" · relevé le "}{review.checkedAt}
+                                    </a>
+                                ))}
+                            </div>
+                        )}
+
                         <p className="text-lg text-muted-foreground mb-6">{org.tagline}</p>
 
                         {org.commercialPartner && (
@@ -171,7 +189,7 @@ export default async function OrganismePage({ params }: PageProps) {
                         {/* CTA */}
                         <div className="flex flex-wrap gap-3 mt-6">
                             <OrganismeOutboundLink
-                                    href={org.affiliateUrl ?? org.website}
+                                    href={org.affiliateUrl ?? org.trackingUrl ?? org.website}
                                     isAffiliate={Boolean(org.affiliateUrl)}
                                     organismeSlug={org.slug}
                                     pageType="organisme"
@@ -234,6 +252,15 @@ export default async function OrganismePage({ params }: PageProps) {
                                         </p>
                                     </div>
                                 ))}
+                            </div>
+                        )}
+
+                        {org.fundingNote && (
+                            <div className="mb-8 rounded-lg border border-accent/25 bg-accent/5 p-5">
+                                <h3 className="mb-2 font-bold text-foreground">Financement</h3>
+                                <p className="text-sm leading-relaxed text-muted-foreground">
+                                    {org.fundingNote}
+                                </p>
                             </div>
                         )}
 
@@ -343,7 +370,7 @@ export default async function OrganismePage({ params }: PageProps) {
                             Comparez avec d&apos;autres organismes avant de faire votre choix.
                         </p>
                         <OrganismeOutboundLink
-                                href={org.affiliateUrl ?? org.website}
+                                href={org.affiliateUrl ?? org.trackingUrl ?? org.website}
                                 isAffiliate={Boolean(org.affiliateUrl)}
                                 organismeSlug={org.slug}
                                 pageType="organisme"

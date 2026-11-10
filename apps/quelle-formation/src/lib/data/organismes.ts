@@ -48,6 +48,16 @@ export type Organisme = {
         url: string;
         date: string;
     }[];
+    trackingUrl?: string;
+    directoryTagline?: string;
+    fundingNote?: string;
+    reviewScores?: {
+        source: string;
+        rating: string;
+        reviewCount: number;
+        url: string;
+        checkedAt: string;
+    }[];
     commercialPartner?: boolean;
 } & AffiliateProgram;
 
@@ -880,20 +890,24 @@ export const organismes: Organisme[] = [
         slug: "anglify",
         name: "Anglify",
         website: "https://www.anglify.com/formation-anglais",
+        trackingUrl:
+            "https://www.anglify.com/?utm_source=quelleformationpro&utm_medium=comparateur&utm_campaign=quelleformationpro",
         tagline: "Une formation d’anglais en ligne personnalisée avec un coach dédié",
+        directoryTagline:
+            "Formation d’anglais 100 % à distance, en individuel avec un coach dédié",
         description:
-            "Anglify propose des formations d’anglais entièrement à distance, construites selon le niveau, le métier et les objectifs de l’apprenant. Le parcours associe des séances individuelles en visioconférence avec un coach et des ressources accessibles en ligne. Cette formule convient surtout aux adultes qui veulent progresser sur des situations professionnelles concrètes avec un accompagnement régulier. Les conditions de certification et de financement doivent être vérifiées pour la formation choisie.",
+            "Anglify (ex-Ayni) est un organisme de formation d’anglais 100 % à distance, pour les adultes qui veulent parler anglais au travail. Chaque parcours, de 3 à 12 mois, est construit sur le projet professionnel de l’apprenant et prépare une certification (English 360, LILATE ou TOEIC). Chaque semaine : une heure de cours individuel avec le même coach, attribué selon son profil, des exercices personnalisés et des cours collectifs en petits groupes pour pratiquer l’oral. Les cours se calent en journée, le soir ou le week-end, et l’espace de travail reste accessible à vie. Anglify est certifié Qualiopi ; ses formations sont éligibles au CPF et aux OPCO, et ses conseillers aident à monter le dossier de financement. Plus de 6 000 stagiaires ont été formés depuis 2015.",
         prosAndCons: {
             pros: [
-                "Parcours adapté au niveau, au métier et aux objectifs professionnels",
-                "Accompagnement individuel à distance avec un coach dédié",
-                "Durée modulable de 3 à 12 mois selon le programme",
-                "Formations certifiantes et finançables selon le parcours et l’éligibilité",
+                "Un parcours construit sur le projet professionnel, avec le même coach du début à la fin",
+                "Chaque semaine : 1 h de cours individuel, des exercices personnalisés et des cours collectifs",
+                "Des cours en journée, le soir ou le week-end, et un espace de travail accessible à vie",
+                "Des parcours certifiants (English 360, LILATE ou TOEIC), éligibles au CPF et aux OPCO",
             ],
             cons: [
-                "Pas de cours en présentiel ni de campus",
-                "Tarif final établi après analyse du besoin",
-                "Les conditions CPF, OPCO et de certification varient selon la formation",
+                "Formation 100 % à distance : aucune séance en présentiel",
+                "À partir de 1 200 € : le tarif final dépend de la durée et du rythme, et il est fixé après un échange avec un conseiller",
+                "Avec le CPF, le projet de formation doit être professionnel",
             ],
         },
         foundedYear: 2015,
@@ -907,7 +921,25 @@ export const organismes: Organisme[] = [
         campusVilles: [],
         metaTitle: "Anglify : avis, prix et formation d’anglais en 2026",
         metaDescription:
-            "Notre avis sur Anglify : coaching individuel, formation d’anglais à distance, prix à partir de 1 200 €, financement et profils concernés.",
+            "Anglify : formation d’anglais professionnel 100 % à distance, coach attribué selon votre profil, 3 à 12 mois. Éligible CPF et OPCO, certifié Qualiopi.",
+        fundingNote:
+            "Formations éligibles au CPF et aux OPCO. Les conseillers d’Anglify vous aident à identifier le dispositif adapté et à monter votre dossier de financement. Pour un financement CPF, le projet de formation doit être professionnel. Le CPF peut être complété par un abondement de l’employeur.",
+        reviewScores: [
+            {
+                source: "Google",
+                rating: "4,8/5",
+                reviewCount: 248,
+                url: "https://www.google.com/maps/search/?api=1&query=Anglify&query_place_id=ChIJAQeRlT1u5kcRTUD-s5NHp0A",
+                checkedAt: "10 novembre 2026",
+            },
+            {
+                source: "Trustpilot",
+                rating: "4,8/5",
+                reviewCount: 88,
+                url: "https://fr.trustpilot.com/review/anglify.com",
+                checkedAt: "10 novembre 2026",
+            },
+        ],
         decisionGuide: [
             {
                 title: "À choisir si…",
@@ -926,39 +958,54 @@ export const organismes: Organisme[] = [
             {
                 label: "Anglify — formation d’anglais",
                 url: "https://www.anglify.com/formation-anglais",
-                date: "consulté en octobre 2026",
+                date: "consulté en novembre 2026",
             },
             {
                 label: "Anglify — anglais professionnel",
                 url: "https://www.anglify.com/formation-anglais/professionnel",
-                date: "consulté en octobre 2026",
+                date: "consulté en novembre 2026",
             },
             {
                 label: "Anglify — prix et financements",
                 url: "https://www.anglify.com/prix-financements",
-                date: "consulté en octobre 2026",
+                date: "consulté en novembre 2026",
             },
             {
                 label: "Anglify — à propos",
                 url: "https://www.anglify.com/a-propos",
-                date: "consulté en octobre 2026",
+                date: "consulté en novembre 2026",
+            },
+            {
+                label: "Google — avis Anglify",
+                url: "https://www.google.com/maps/search/?api=1&query=Anglify&query_place_id=ChIJAQeRlT1u5kcRTUD-s5NHp0A",
+                date: "consulté le 10 novembre 2026",
+            },
+            {
+                label: "Trustpilot — avis Anglify",
+                url: "https://fr.trustpilot.com/review/anglify.com",
+                date: "consulté le 10 novembre 2026",
             },
         ],
         faq: [
             {
                 question: "Combien coûte une formation Anglify ?",
                 answer:
-                    "Anglify indique un prix à partir de 1 200 €. Le montant final dépend de la durée, du rythme, des objectifs et du nombre de séances prévues dans le parcours.",
+                    "La formation est proposée à partir de 1 200 €. Le prix final dépend de la durée (3 à 12 mois), du rythme et du nombre de séances. Il est fixé après un échange avec un conseiller Anglify, qui analyse le besoin.",
             },
             {
-                question: "Les formations Anglify sont-elles éligibles au CPF ?",
+                question: "Anglify est-elle éligible au CPF ?",
                 answer:
-                    "Certaines formations certifiantes Anglify peuvent être financées par le CPF ou un OPCO, sous réserve que le parcours choisi et la situation de l’apprenant répondent aux conditions du dispositif. L’éligibilité doit être vérifiée avant l’inscription.",
+                    "Oui, ses parcours certifiants sont éligibles au CPF et aux OPCO, et le CPF peut être complété par un abondement de l’employeur. Le projet doit être professionnel ; les conseillers d’Anglify aident à monter le dossier.",
+            },
+            {
+                question: "Comment se déroule la formation ?",
+                answer:
+                    "Chaque semaine : 1 h de cours individuel en visio avec le même coach, des exercices personnalisés et des cours collectifs en petits groupes pour pratiquer l’oral. Les cours se calent en journée, le soir ou le week-end.",
             },
             {
                 question: "À qui s’adresse Anglify ?",
                 answer:
-                    "Anglify s’adresse principalement aux adultes qui souhaitent améliorer leur anglais pour le travail, évoluer professionnellement ou préparer une certification, tout en suivant la formation à distance.",
+                    "Aux adultes qui ont besoin de l’anglais au travail (réunions, clients, présentations) et qui, souvent, comprennent mais bloquent à l’oral.",
             },
         ],
         logoPath: "/logos/anglify.svg",
