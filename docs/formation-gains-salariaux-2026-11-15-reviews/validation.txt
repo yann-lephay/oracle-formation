@@ -1,0 +1,76 @@
+Build Webpack PASS
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+Lint PASS
+
+> quelle-formation@0.1.0 lint
+> eslint
+
+
+Internal links QF PASS
+[quelle-formation] 249 URLs sitemap, 0-inlink-hors-accueil=0, inaccessibles=0, profondeur-max=3
+
+Title regression cases PASS
+
+> qc:seo-titles
+> node --import tsx scripts/validate-seo-title-fitting.ts
+
+SEO titles: 17 régressions validées.
+
+Gap14 source FAIL on changed checkout
+
+> qc:gap14-formation
+> node --import tsx scripts/validate-gap14-formation.ts
+
+node:internal/modules/run_main:122
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: langues-anglais/lille unexpectedly has a remote offer
+
+1 !== 0
+
+    at assert (/Users/yann/Documents/Usine/formation-gains-salariaux-20261115/scripts/validate-gap14-formation.ts:116:10)
+    at Object.<anonymous> (/Users/yann/Documents/Usine/formation-gains-salariaux-20261115/scripts/validate-gap14-formation.ts:359:12)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object.transformer (/Users/yann/Documents/Usine/formation-gains-salariaux-20261115/node_modules/tsx/dist/register-DJgoUG_Q.cjs:9:1709)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+
+Gap14 source same FAIL on clean base archive0fc4547
+node:internal/modules/run_main:122
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: langues-anglais/lille unexpectedly has a remote offer
+
+1 !== 0
+
+    at assert (/private/tmp/formation-base-check-20261115/scripts/validate-gap14-formation.ts:116:10)
+    at Object.<anonymous> (/private/tmp/formation-base-check-20261115/scripts/validate-gap14-formation.ts:359:12)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object.transformer (/Users/yann/Documents/Usine/formation-gains-salariaux-20261115/node_modules/tsx/dist/register-DJgoUG_Q.cjs:9:1709)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+
+Served global BLOCKED missing DP build; no global PASS
+                        ^
+
+Error: ENOENT: no such file or directory, open '/Users/yann/Documents/Usine/formation-gains-salariaux-20261115//apps/deplacement-pro/.next/server/app/sitemap.xml.body'
+    at async open (node:internal/fs/promises:638:25)
+    at async readFile (node:internal/fs/promises:1242:14)
+    at async Promise.all (index 1)
+    at async file:///Users/yann/Documents/Usine/formation-gains-salariaux-20261115/scripts/validate-gap14-formation-served.mjs:72:38 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/yann/Documents/Usine/formation-gains-salariaux-20261115//apps/deplacement-pro/.next/server/app/sitemap.xml.body'
+}
+
+Node.js v22.14.0

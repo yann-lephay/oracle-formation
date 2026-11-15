@@ -1,0 +1,121 @@
+{
+  "policy": "qc/QC-JURY-POLICY.md@2026-08-28",
+  "mode": "JURY",
+  "risk": "R1",
+  "reason": "Correction de mesure salariale présentée sans contexte et aide au choix ; truth et experience, pas de parcours SaaS/calcul/transaction nouveau",
+  "base_commit": "0fc4547f7630b1cd2369d445a646b372916c0048",
+  "surfaces": [
+    "/formation/langues-anglais",
+    "/formation/excel-bureautique"
+  ],
+  "recorded_at": "2026-11-15T08:33:32.755354+00:00",
+  "common_context": {
+    "artifact": "docs/formation-gains-salariaux-2026-11-15-reviews/context.md",
+    "sha256": "e37e15f4f5f80c458fc6a90d7857dcf6bb27a03de9fcc8b914e85ed7432d83f9",
+    "version_note": "Initial checks pending; evidence and final capture complement sent in scoped follow-ups, final context preserves this chronology"
+  },
+  "reviews": [
+    {
+      "execution_id": "/root/formation_nov15_truth",
+      "context": "fork_turns=none; read-only; own mission and scoped follow-ups; other reports only to arbiter",
+      "model_declared": "inherited; exact identifier not exposed",
+      "recorded_at": "2026-11-15T08:33:32.755354+00:00",
+      "timestamp_note": "persistence timestamp, not exact execution completion",
+      "status": "PASS_SCOPED",
+      "domains": [
+        "truth"
+      ],
+      "artifact": "docs/formation-gains-salariaux-2026-11-15-reviews/truth.md",
+      "sha256": "e41b0b4f4e2ef591058cf0e1f0249b1772bd5f62910055e13ecaefb5b295d89f"
+    },
+    {
+      "execution_id": "/root/formation_nov15_experience",
+      "context": "fork_turns=none; read-only; own mission and scoped follow-ups; other reports only to arbiter",
+      "model_declared": "inherited; exact identifier not exposed",
+      "recorded_at": "2026-11-15T08:33:32.755354+00:00",
+      "timestamp_note": "persistence timestamp, not exact execution completion",
+      "status": "PASS_SCOPED",
+      "domains": [
+        "experience"
+      ],
+      "artifact": "docs/formation-gains-salariaux-2026-11-15-reviews/experience.md",
+      "sha256": "39d96298aa13787ba16327a4823a8c87c9808a3ff945364181c0820a0e84e132"
+    },
+    {
+      "execution_id": "/root/formation_nov15_simplicity",
+      "context": "fork_turns=none; read-only; own mission and scoped follow-ups; other reports only to arbiter",
+      "model_declared": "inherited; exact identifier not exposed",
+      "recorded_at": "2026-11-15T08:33:32.755354+00:00",
+      "timestamp_note": "persistence timestamp, not exact execution completion",
+      "status": "PASS_SCOPED",
+      "domains": [
+        "anti_overengineering"
+      ],
+      "artifact": "docs/formation-gains-salariaux-2026-11-15-reviews/simplicity.md",
+      "sha256": "39d6a74e90ca7c791d14271376122d78f4d56bcd66fabcce1df1d18fa060e206"
+    }
+  ],
+  "arbitration": {
+    "execution_id": "/root/formation_nov15_arbitration",
+    "model_declared": "inherited; exact identifier not exposed",
+    "recorded_at": "2026-11-15T08:33:32.755354+00:00",
+    "timestamp_note": "persistence timestamp",
+    "status": "PASS_FOR_DRAFT_REVIEW",
+    "artifact": "docs/formation-gains-salariaux-2026-11-15-reviews/arbitration.md",
+    "sha256": "bafcefd6b4f071208295186bb6b282301784d4fb691174d89260263e65594215",
+    "dissent": []
+  },
+  "publication": "NOT_DEPLOYED",
+  "release_status": "NOT_APPROVED; shared checks remain non-green",
+  "next_trigger": "Draft review, explicit treatment of shared checks before any later delivery; after verified live content J0 then J28 complete finalized days, J56/J90 if needed",
+  "verification": {
+    "build": "PASS exit0 Webpack527staticoutputs Next16.4.3 installed/lock match",
+    "lint": "PASS",
+    "decision_contract": "PASS with documented product candidate warning",
+    "internal_links": "PASS QF249URLs;0unreachable/0orphan,maxdepth3",
+    "seo_titles": "PASS17cases",
+    "html": "PASS2routes 1H1/canonical/robots/descriptionsunchanged; oldpercentagesabsent; sourcepresent;visibleFAQJSONLDsameanswer",
+    "sitemap": "PASS249URLs identical live/local",
+    "controls": "home/developpeur-web/EnglishLille visibletext identical live/local;non-regression only",
+    "screenshots": "7 desktop1440/mobile390 including mobile source links and ExcelFAQ",
+    "keyboard": "Excel details closed false then open true via Enter, each separately observed by root;root390atviewport390",
+    "gap14_source": "FAIL_PREEXISTING_REPRODUCED on clean base0fc4547: langues-anglais/lille unexpectedly has a remote offer",
+    "gap14_served": "BLOCKED_MISSING_DEPLACEMENTPRO_BUILD; remaining global assertions unverified",
+    "global_gap14": "NOT_PASS",
+    "analytics": "local legacy cockpit relay403;no inference about production collection",
+    "checkpoint": "No STATE rewrite or stale checkpoint promoted to PASS"
+  },
+  "validation_artifact": {
+    "path": "docs/formation-gains-salariaux-2026-11-15-reviews/validation.txt",
+    "sha256": "e2cafd845fdf8b6c53b581af69314fc9732ab0cf12567498a76cddcc49696dfb"
+  },
+  "limits": [
+    "No global validation of prices, CPF, durations, other salaries or historical superlatives",
+    "Primary sources concern skills assessment, not zero or guaranteed wage effect",
+    "No course trial, certificate, transaction or causal measurement",
+    "No production/Docker/standalone validation",
+    "No screen reader or physical device",
+    "No AI citation or conversion measured"
+  ],
+  "file_sha256": {
+    "apps/quelle-formation/src/app/formation/[domaine]/page.tsx": "bbb350767590da759aff26412bb7dd80cbee26a2fbaa962cb98eab3cd5a40e81",
+    "apps/quelle-formation/src/lib/data/domaines.ts": "4f00886cbda0a869fcfdc5cbe361468c7e58d548487deab8c7c1d547a91e2c7e",
+    "docs/formation-gains-salariaux-2026-11-15.decision-surface.json": "060df4665a2c09205df48fe597a95ed4c03765e95785b2955ca0097e17f7814b",
+    "docs/formation-gains-salariaux-2026-11-15-cockpit.json": "6466faac1c9a483388087496aceb1419acc9e1686ea77b33726744ba50930a24",
+    "docs/formation-gains-salariaux-2026-11-15-html.json": "4b37e96d59089b51dbed6b202fa0feb6177a04eca772fb20339687b7ae5e3547",
+    "docs/formation-gains-salariaux-2026-11-15-coverage.json": "a7eaef6e66c267af3874eb2a2362cac976023d2e4dd6d08d19ffbedda8e091b0"
+  },
+  "screenshot_sha256": {
+    "output/playwright/formation-nov15-anglais-desktop.png": "f912c8190ac2d390f3871e525774448a463ae52505288b709c4640babe9c0cb2",
+    "output/playwright/formation-nov15-anglais-mobile.png": "5d9df342fc2cd1930d47dde2daf01ec441703b02810da93359615d3dadad0478",
+    "output/playwright/formation-nov15-anglais-source-mobile.png": "9ed02c1717b36c2c69b9fe06e554932a4386d557787f79860ed3ebcfd8693230",
+    "output/playwright/formation-nov15-excel-desktop.png": "14be06b7c02fbda773d3051f2ff396c80ddecce0111a66df77c14348a68e43e9",
+    "output/playwright/formation-nov15-excel-faq-mobile.png": "617c9a37e653cbdbc695ca926230b2425dd6e6bc523d3258a6db92f575f0d6c7",
+    "output/playwright/formation-nov15-excel-mobile.png": "92bb43d9b3ad146102cac76dab1989d4db93ab310724912d05101a47cdd120ae",
+    "output/playwright/formation-nov15-excel-source-mobile.png": "e0a8cf7edf072cd9aee50022b1ef18b5458592089b425fd925c36e95dd7385a8"
+  },
+  "pull_request": "https://github.com/yann-lephay/oracle-formation/pull/7",
+  "pull_request_state": "OPEN_DRAFT",
+  "implementation_commit": "1cae06cfd64a36b0885d374dea0bdbccd8eb77d0",
+  "pr_opened_at": "2026-11-15T08:35:02Z"
+}

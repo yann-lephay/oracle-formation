@@ -15,6 +15,7 @@ export interface Domaine {
   cpfEligible: boolean;
   demandLevel: "très forte" | "forte" | "moyenne";
   salaryRange: string;
+  salaryContext?: { answer: string; sourceLabel: string; sourceUrl: string };
   metaTitle: string;
   metaDescription: string;
 }
@@ -202,7 +203,12 @@ export const domaines: Domaine[] = [
     priceRange: "500 € – 3 000 €",
     cpfEligible: true,
     demandLevel: "très forte",
-    salaryRange: "+15-25% sur le salaire moyen",
+    salaryRange: "Selon le poste exercé",
+    salaryContext: {
+      answer: "L’anglais professionnel s’utilise dans des métiers différents : la rémunération dépend du poste exercé. Nous conseillons de partir de vos usages réels, puis de situer votre niveau avec la grille CECR et de demander les compétences visées en fin de parcours.",
+      sourceLabel: "Europass — grille d’évaluation linguistique CECR",
+      sourceUrl: "https://europass.europa.eu/fr/common-european-framework-reference-language-skills",
+    },
     metaTitle: "Formation Anglais Pro 2026 : Prix & CPF",
     metaDescription:
       "Comparez les formations anglais professionnel en 2026. TOEIC, anglais des affaires. Prix, avis et CPF. Wall Street English, EF, Babbel…",
@@ -236,7 +242,12 @@ export const domaines: Domaine[] = [
     priceRange: "500 € – 2 000 €",
     cpfEligible: true,
     demandLevel: "très forte",
-    salaryRange: "+10-15% valorisation CV",
+    salaryRange: "Selon le poste exercé",
+    salaryContext: {
+      answer: "Excel et la bureautique servent des postes variés ; cette page n’en déduit pas un gain salarial moyen. Nous conseillons de préciser les tâches à réaliser et de demander un test de niveau, puis de vérifier les compétences travaillées avec l’organisme.",
+      sourceLabel: "ICDL — évaluer son niveau avant de se former",
+      sourceUrl: "https://icdlfrance.org/faq/",
+    },
     metaTitle: "Formation Excel 2026 : TOSA, Prix & CPF",
     metaDescription:
       "Comparez les formations Excel et bureautique en 2026. TOSA, ICDL, Excel avancé. Prix, avis et CPF. Trouvez votre formation bureautique.",
