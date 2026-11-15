@@ -113,5 +113,9 @@
     "output/playwright/formation-nov15-excel-faq-mobile.png": "617c9a37e653cbdbc695ca926230b2425dd6e6bc523d3258a6db92f575f0d6c7",
     "output/playwright/formation-nov15-excel-mobile.png": "92bb43d9b3ad146102cac76dab1989d4db93ab310724912d05101a47cdd120ae",
     "output/playwright/formation-nov15-excel-source-mobile.png": "e0a8cf7edf072cd9aee50022b1ef18b5458592089b425fd925c36e95dd7385a8"
-  }
+  },
+  "pull_request": "https://github.com/yann-lephay/oracle-formation/pull/7",
+  "pull_request_state": "OPEN_DRAFT",
+  "implementation_commit": "1cae06cfd64a36b0885d374dea0bdbccd8eb77d0",
+  "pr_opened_at": "2026-11-15T08:35:02Z"
 }
