@@ -1,0 +1,183 @@
+{
+  "readAt": "2026-11-15T08:00:39.867Z",
+  "database": [
+    {
+      "current_database": "cockpit_prod"
+    }
+  ],
+  "windows": [
+    {
+      "current_start": "2026-10-16T00:00:00.000Z",
+      "current_end": "2026-11-12T00:00:00.000Z",
+      "previous_start": "2026-09-18T00:00:00.000Z",
+      "previous_end": "2026-10-15T00:00:00.000Z"
+    }
+  ],
+  "coverage": [
+    {
+      "project_slug": "quelle-formation",
+      "period": "current28d",
+      "first": "2026-10-16",
+      "last": "2026-11-12",
+      "days": 28,
+      "truncated": false,
+      "last_synced": "2026-11-15 00:05:24.653"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "period": "previous28d",
+      "first": "2026-09-18",
+      "last": "2026-10-15",
+      "days": 28,
+      "truncated": false,
+      "last_synced": "2026-10-18 00:05:16.755"
+    }
+  ],
+  "pages": [
+    {
+      "project_slug": "quelle-formation",
+      "page": "https://quelleformationpro.fr/organisme/openclassrooms",
+      "period": "current28d",
+      "impressions": 1915,
+      "clicks": 0,
+      "position": "9.61"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "page": "https://quelleformationpro.fr/organisme/simplon",
+      "period": "current28d",
+      "impressions": 1463,
+      "clicks": 0,
+      "position": "4.06"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "page": "https://quelleformationpro.fr/formation/developpeur-web",
+      "period": "current28d",
+      "impressions": 1049,
+      "clicks": 0,
+      "position": "35.34"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "page": "https://quelleformationpro.fr/formation/langues-anglais",
+      "period": "current28d",
+      "impressions": 627,
+      "clicks": 0,
+      "position": "73.44"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "page": "https://quelleformationpro.fr/metier/chef-de-projet-digital",
+      "period": "current28d",
+      "impressions": 272,
+      "clicks": 0,
+      "position": "80.52"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "page": "https://quelleformationpro.fr/organisme/simplon",
+      "period": "previous28d",
+      "impressions": 2442,
+      "clicks": 1,
+      "position": "4.95"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "page": "https://quelleformationpro.fr/organisme/openclassrooms",
+      "period": "previous28d",
+      "impressions": 2401,
+      "clicks": 0,
+      "position": "6.99"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "page": "https://quelleformationpro.fr/formation/developpeur-web",
+      "period": "previous28d",
+      "impressions": 569,
+      "clicks": 0,
+      "position": "34.04"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "page": "https://quelleformationpro.fr/formation/langues-anglais",
+      "period": "previous28d",
+      "impressions": 495,
+      "clicks": 0,
+      "position": "65.88"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "page": "https://quelleformationpro.fr/metier/chef-de-projet-digital",
+      "period": "previous28d",
+      "impressions": 218,
+      "clicks": 0,
+      "position": "84.13"
+    }
+  ],
+  "queries": [
+    {
+      "project_slug": "quelle-formation",
+      "query": "openclassrooms avis 2026",
+      "pages": "https://quelleformationpro.fr/comparer/openclassrooms-vs-jedha | https://quelleformationpro.fr/comparer/openclassrooms-vs-le-wagon | https://quelleformationpro.fr/comparer/openclassrooms-vs-studi | https://quelleformationpro.fr/organisme/openclassrooms",
+      "impressions": 2218,
+      "clicks": 0,
+      "position": "16.28",
+      "rn": "1"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "query": "simplon bootcamp avis",
+      "pages": "https://quelleformationpro.fr/comparer | https://quelleformationpro.fr/formation/cybersecurite | https://quelleformationpro.fr/formation/developpeur-web | https://quelleformationpro.fr/formation/intelligence-artificielle | https://quelleformationpro.fr/organisme/simplon | https://quelleformationpro.fr/organismes",
+      "impressions": 1635,
+      "clicks": 0,
+      "position": "12.26",
+      "rn": "2"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "query": "reconversion professionnelle",
+      "pages": "https://quelleformationpro.fr/guide/reconversion-professionnelle",
+      "impressions": 435,
+      "clicks": 0,
+      "position": "85.48",
+      "rn": "3"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "query": "formation marketing digital",
+      "pages": "https://quelleformationpro.fr/formation/marketing-digital",
+      "impressions": 319,
+      "clicks": 0,
+      "position": "84.13",
+      "rn": "4"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "query": "formation anglais professionnel",
+      "pages": "https://quelleformationpro.fr/formation/langues-anglais",
+      "impressions": 245,
+      "clicks": 0,
+      "position": "80.23",
+      "rn": "5"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "query": "cours d'anglais professionnel",
+      "pages": "https://quelleformationpro.fr/formation/langues-anglais",
+      "impressions": 93,
+      "clicks": 0,
+      "position": "70.60",
+      "rn": "24"
+    },
+    {
+      "project_slug": "quelle-formation",
+      "query": "chef de projet digital",
+      "pages": "https://quelleformationpro.fr/metier/chef-de-projet-digital",
+      "impressions": 92,
+      "clicks": 0,
+      "position": "78.66",
+      "rn": "25"
+    }
+  ]
+}

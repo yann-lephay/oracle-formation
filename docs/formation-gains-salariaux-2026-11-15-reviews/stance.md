@@ -1,0 +1,6 @@
+Lecteur : actif qui envisage de financer une formation d’anglais professionnel ou de bureautique pour mieux réaliser son travail.
+Thèse : choisir d’après une tâche et un niveau vérifiables ; une compétence transversale ne fournit pas à elle seule un salaire moyen après formation.
+Ordre des choix : préciser l’usage professionnel, situer le niveau de départ, vérifier le programme sur un exemple réel, puis comparer le coût complet. Anglais pour les usages linguistiques nécessaires ; bureautique pour les tâches de documents et tableaux identifiées. Pas de nouveau classement d’organismes.
+Raisons : la décision porte sur une compétence mobilisable, alors que le métier, le poste et l’expérience ne sont pas fixés par ces deux cours.
+Contre-cas : si l’objectif est un nouveau métier ou une certification imposée, vérifier ce parcours précis ; ne pas présenter la formation comme une hausse automatique de rémunération.
+Périmètre pressenti : retirer les pourcentages sans provenance du champ salaire de ces deux pages et aligner leur FAQ. Préserver prix, partenariats, ordre commercial, CPF et autres domaines. Recherche des mêmes réponses avant modification ; sources primaires à consulter avant rédaction.

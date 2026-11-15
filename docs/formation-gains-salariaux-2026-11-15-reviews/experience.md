@@ -1,0 +1,5 @@
+# Experience — /root/formation_nov15_experience
+
+PASS initial limité au diff et cinq captures, revue fraîche fork_turns=none/read-only. Aucun point critique/important. Carte Rémunération lisible, conseil après métriques explicite usages/niveau/compétences. Sources desktop lisibles/datées ; les premières captures mobiles ne les couvraient pas. FAQ Excel ouverte lisible, une réponse partagée dans le diff. Prix/CPF/ordre/partenariats préservés, Anglify garde sa séparation et son badge commercial.
+
+Optionnel : recentrer « cette page n’en déduit pas » sur le lecteur lors d’une évolution ultérieure, non bloquant. Complément final : PASS sur sept captures, réserve mobile levée. Liens Europass/ICDL lisibles et datés, sans coupure ni débordement ; retour à la ligne compréhensible. Source Anglais distincte de la carte Anglify avec badge commercial, source Excel avant l’état organismes à venir. Clavier exécuté par root, pas par le juge. Aucun factcheck nouveau, essai réel, verdict global Gap14 ou production. Aucun fichier modifié.

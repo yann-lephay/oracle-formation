@@ -1,0 +1,107 @@
+{
+  "version": "0.1",
+  "objective": {
+    "requestedOutcome": "Retirer des pourcentages sans contexte présentés comme salaire moyen et aider à choisir deux formations transversales selon les usages et le niveau.",
+    "nonGoals": [
+      "Deux pages existantes, aucune nouvelle route, suppression, redirection, indexation ou dépendance.",
+      "Prix, CPF, classements, partenariats Anglify/ClicCampus et autres salaires non réaudités."
+    ],
+    "changeType": "surface"
+  },
+  "surface": {
+    "id": "formation:competences-remuneration",
+    "mode": "guided",
+    "scope": {
+      "kind": "page",
+      "parentId": null
+    },
+    "episode": {
+      "trigger": "Un actif compare une formation d’anglais ou de bureautique.",
+      "userJob": "Relier son investissement à une compétence utilisable, sans confondre un pourcentage avec un salaire après formation.",
+      "completionEvidence": "Peut préciser un usage et un niveau à vérifier avant de comparer les parcours."
+    }
+  },
+  "truth": {
+    "mustBeTrue": [
+      "Les anciens pourcentages sans provenance ne sont pas présentés comme salaires moyens.",
+      "Les sources primaires portent sur l’évaluation des compétences, pas sur une absence universelle de gain salarial.",
+      "Même réponse dans le texte visible, la FAQ et le JSON-LD."
+    ],
+    "canonicalTerms": [
+      {
+        "canonical": "compétence transversale",
+        "userFacing": "compétence utilisée dans différents postes",
+        "precisionMoment": "Après les métriques et dans la FAQ",
+        "source": "https://europass.europa.eu/fr/common-european-framework-reference-language-skills"
+      }
+    ]
+  },
+  "decision": {
+    "currentState": "Évaluer l’usage professionnel et le niveau plutôt qu’acheter sur une hausse salariale générale.",
+    "dominantAction": {
+      "id": "qualifier-objectif",
+      "label": "Préciser les compétences visées",
+      "expectedResult": "Demander niveau initial, programme et résultat observable.",
+      "reversibility": "reversible",
+      "guard": "direct"
+    },
+    "constraints": [
+      {
+        "id": "gain-general",
+        "mustBeTrue": "Un gain chiffré ne remplace pas le métier et le poste visés.",
+        "detectability": "delayed",
+        "consequence": "Attente de rémunération non établie après achat.",
+        "recovery": "Qualifier l’objectif et le parcours avant financement."
+      }
+    ]
+  },
+  "languageAndTrust": {
+    "complexityAbsorbed": [
+      "Distinguer compétence, métier et salaire avec une réponse courte."
+    ],
+    "consequencesNeverHidden": [
+      "Aucune hausse générale chiffrée déduite des sources de compétences."
+    ],
+    "reassurance": [
+      {
+        "claim": "Conseil de choix borné à deux cours transversaux.",
+        "evidence": "Europass CECR et ICDL FAQ consultés le 15 novembre, sans essai de formation.",
+        "placement": "Après les métriques et FAQ avec lien daté."
+      }
+    ]
+  },
+  "elements": [
+    {
+      "id": "evaluation",
+      "purpose": "decision",
+      "visibility": "persistent",
+      "hierarchy": 1,
+      "verdict": "keep",
+      "reason": "Conseil lié au niveau et aux usages ; pas de nouveau palmarès."
+    },
+    {
+      "id": "sources",
+      "purpose": "evidence",
+      "visibility": "contextual",
+      "hierarchy": 2,
+      "verdict": "keep",
+      "reason": "Réutiliser SourceCitations et les styles approuvés."
+    }
+  ],
+  "states": [],
+  "motion": [],
+  "review": {
+    "risk": "R1",
+    "domains": [
+      "claims",
+      "financial",
+      "experience"
+    ],
+    "requiredJudges": [
+      "truth",
+      "experience"
+    ],
+    "humanGate": [],
+    "selectionReason": "Truth pour le sens de la rémunération et la portée des sources ; expérience pour conditions visibles. Aucun parcours SaaS, calcul ou transaction modifié, product non retenu."
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "path": "/formation/langues-anglais",
+    "h1": 1,
+    "canonical": "https://quelleformationpro.fr/formation/langues-anglais",
+    "robots": "index, follow",
+    "robots_unchanged": true,
+    "description_unchanged": true,
+    "old_percentages_absent": true,
+    "new_metric": true,
+    "faq_answer_in_visible_html": true,
+    "jsonld_answer": "L’anglais professionnel s’utilise dans des métiers différents : la rémunération dépend du poste exercé. Nous conseillons de partir de vos usages réels, puis de situer votre niveau avec la grille CECR et de demander les compétences visées en fin de parcours.",
+    "source_present": true,
+    "anglify_before_cliccampus": true
+  },
+  {
+    "path": "/formation/excel-bureautique",
+    "h1": 1,
+    "canonical": "https://quelleformationpro.fr/formation/excel-bureautique",
+    "robots": "index, follow",
+    "robots_unchanged": true,
+    "description_unchanged": true,
+    "old_percentages_absent": true,
+    "new_metric": true,
+    "faq_answer_in_visible_html": true,
+    "jsonld_answer": "Excel et la bureautique servent des postes variés ; cette page n’en déduit pas un gain salarial moyen. Nous conseillons de préciser les tâches à réaliser et de demander un test de niveau, puis de vérifier les compétences travaillées avec l’organisme.",
+    "source_present": true,
+    "anglify_before_cliccampus": null
+  }
+]

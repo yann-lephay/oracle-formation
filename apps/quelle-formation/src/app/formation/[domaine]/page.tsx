@@ -1,3 +1,4 @@
+import { SourceCitations } from "@/components/SourceCitations";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -84,7 +85,7 @@ export default async function FormationDomainePage({ params }: PageProps) {
         },
         {
             question: `Quel salaire après une formation ${domaine.name.toLowerCase()} ?`,
-            answer: `Le salaire moyen après une formation ${domaine.name.toLowerCase()} est de ${domaine.salaryRange}. Ce chiffre varie selon l'expérience, la localisation et l'entreprise.`,
+            answer: domaine.salaryContext?.answer ?? `Le salaire moyen après une formation ${domaine.name.toLowerCase()} est de ${domaine.salaryRange}. Ce chiffre varie selon l'expérience, la localisation et l'entreprise.`,
         },
     ];
 
@@ -188,7 +189,7 @@ export default async function FormationDomainePage({ params }: PageProps) {
                                 },
                                 {
                                     icon: TrendingUp,
-                                    label: "Salaire moyen",
+                                    label: domaine.salaryContext ? "Rémunération" : "Salaire moyen",
                                     value: domaine.salaryRange,
                                 },
                                 {
@@ -209,6 +210,18 @@ export default async function FormationDomainePage({ params }: PageProps) {
                                 </div>
                             ))}
                         </div>
+                        {domaine.salaryContext && (
+                            <div className="mt-5 max-w-2xl">
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    {domaine.salaryContext.answer}
+                                </p>
+                                <SourceCitations sources={[{
+                                    label: domaine.salaryContext.sourceLabel,
+                                    url: domaine.salaryContext.sourceUrl,
+                                    date: "15 novembre 2026",
+                                }]} />
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>
